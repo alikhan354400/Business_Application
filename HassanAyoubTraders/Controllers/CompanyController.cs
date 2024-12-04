@@ -19,6 +19,7 @@ namespace HassanAyoubTraders.Controllers
     {
         // GET: Company
 
+
         public ActionResult CompanyList()
         {
             var vm = new CompanyViewModel();
