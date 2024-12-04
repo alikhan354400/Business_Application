@@ -1,0 +1,146 @@
+﻿@model EmanTraders.Models.ViewModels.ProfitAndLostSummaryViewModel
+@using System.Globalization;
+
+@{
+    CultureInfo ciPk = new CultureInfo("ur-PK");
+}
+
+@Html.HiddenFor(model => model.ReportName)
+<div id="dvTableHeader" class="dvTableHeader" style="text-align:center; display:none;">
+    <span>
+        <strong>@Model.ReportName</strong>
+    </span><br />
+    <span style="text-align:center;"><strong>Profit &Aacute; Loss Report For the Period from :</strong> @Model.StartDate <strong> to </strong> @Model.EndDate</span>
+    <hr />
+</div>
+
+<table class="table table-striped table-bordered datatable grid" id="tbl">
+    <thead>
+        <tr>
+            <th style="width: 5%; text-align:center;">Sr #</th>
+            <th style="width: 5%; text-align:center;">SO #</th>
+            <th style="width: 8%; text-align:center;">SO Date</th>
+            <th style="width: 10%; text-align:center;">Type</th>
+            <th style="">Customer Name</th>
+            <th style="">Product Name</th>
+            <th style="width: 5%; text-align:center;">Qty</th>
+            <th style="width: 8%; text-align:center;">P/Price</th>
+            <th style="width: 8%; text-align:center;">T/Price</th>
+            <th style="width: 10%; text-align:center;">Total Purchase</th>
+            <th style="width: 10%; text-align:center;">Total Sale</th>
+            <th style="width: 10%; text-align:center;">Total Profit</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            int srNo = 0;
+            foreach (var item in Model.ProfitAndLostSummaryDetail)
+            {
+                <tr>
+                    <td style="text-align:center;">@(++srNo)</td>
+                    <td style="text-align:center;">@item.SONumber</td>
+                    <td style="text-align:center;">@item.SODate</td>
+                    <td style="text-align:center;">@item.RecordType</td>
+                    <td>@item.CustomerName</td>
+                    <td>@item.ProductName</td>
+                    <td style="text-align:center;">@item.Quantity</td>
+                    <td style="text-align:right;">
+                        @{
+                            decimal pPurchasePrice = decimal.Parse(item.PurchasePrice.ToString(), CultureInfo.InvariantCulture);
+                            string tPurchasePrice = string.Format(ciPk, "{0:c}", pPurchasePrice);
+                        }
+                        @tPurchasePrice
+                    </td>
+                    <td style="text-align:right;">
+                        @{
+                            decimal pSalesPrice = decimal.Parse(item.SalesPrice.ToString(), CultureInfo.InvariantCulture);
+                            string tSalesPrice = string.Format(ciPk, "{0:c}", pSalesPrice);
+                        }
+                        @tSalesPrice
+                    </td>
+                    <td style="text-align:right;">
+                        @{
+                            decimal pTotalPurchase = decimal.Parse(item.TotalPurchase.ToString(), CultureInfo.InvariantCulture);
+                            string tTotalPurchase = string.Format(ciPk, "{0:c}", pTotalPurchase);
+                        }
+                        @tTotalPurchase
+                    </td>
+                    <td style="text-align:right;">
+                        @{
+                            decimal pTotalSale = decimal.Parse(item.TotalSale.ToString(), CultureInfo.InvariantCulture);
+                            string tTotalSale = string.Format(ciPk, "{0:c}", pTotalSale);
+                        }
+                        @tTotalSale
+                    </td>
+                    <td style="text-align:right;">
+                        @{
+                            decimal pTotalProfit = decimal.Parse((item.TotalProfit).ToString(), CultureInfo.InvariantCulture);
+                            string tTotalProfit = string.Format(ciPk, "{0:c}", pTotalProfit);
+                        }
+                        @tTotalProfit
+                    </td>
+                </tr>
+            }
+        }
+
+
+    </tbody>
+    <tfoot>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td style="text-align:center;"><strong>Total</strong></td>
+            <td style="text-align:right;">
+                <strong>
+                    @{
+                        decimal ppTotalPurchase = decimal.Parse(Model.ProfitAndLostSummaryDetail.Sum(x => x.TotalPurchase).ToString(), CultureInfo.InvariantCulture);
+                        string ttTotalPurchase = string.Format(ciPk, "{0:c}", ppTotalPurchase);
+                    }
+                    @ttTotalPurchase
+                </strong>
+            </td>
+            <td style="text-align:right;">
+                <strong>
+                    @{
+                        decimal ppTotalSale = decimal.Parse(Model.ProfitAndLostSummaryDetail.Sum(x => x.TotalSale).ToString(), CultureInfo.InvariantCulture);
+                        string ttTotalSale = string.Format(ciPk, "{0:c}", ppTotalSale);
+                    }
+                    @ttTotalSale
+                </strong>
+            </td>
+            <td style="text-align:right;">
+                <strong>
+                    @{
+                        decimal ppTotalProfit = decimal.Parse(Model.ProfitAndLostSummaryDetail.Sum(x => x.TotalProfit).ToString(), CultureInfo.InvariantCulture);
+                        string ttTotalProfit = string.Format(ciPk, "{0:c}", ppTotalProfit);
+                    }
+                    @ttTotalProfit
+                </strong>
+            </td>
+        </tr>
+    </tfoot>
+
+</table>
+
+
+<script>
+    $(document).ready(function () {
+        //$('.datatable').DataTable({});
+        $('.datatable').DataTable({
+            responsive: true,
+            aaSorting: [[0, 'desc']],
+            dom: 'Bfrtip',
+            buttons: [
+                'excel', 'print'
+            ]
+        });
+
+    });
+
+</script>

@@ -1,0 +1,348 @@
+﻿@model HassanAyoubTraders.Models.ViewModels.SubItemAddEditListViewModel
+
+@{
+    ViewBag.Title = "Sub Item Add";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@using (Html.BeginForm("", "", FormMethod.Post, new { id = "add-sub-item" }))
+{
+
+    @Html.HiddenFor(x => x.UserRole);
+    @Html.HiddenFor(x => x.OpeningInventoryId);
+
+    <div class="row clearfix">
+
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="card">
+                <div class="header">
+                    <h2>
+                        Sub Item Add
+                    </h2>
+                </div>
+                <div class="body">
+                    <div class="row clearfix">
+                        <div class="col-md-3">
+                            <p>
+                                <b>Item</b>
+                            </p>
+                            @Html.DropDownListFor(x => x.ItemID, Model.ItemsList, "Select", new { @class = "form-control  js-select2" })
+                        </div>
+                        <div class="col-md-2">
+                            <p>
+                                <b>Sub Item Code</b>
+                            </p>
+                            @Html.TextBoxFor(x => x.SubItemCode, new { @class = "form-control" })
+                        </div>
+                        <div class="col-md-3">
+                            <p>
+                                <b>Sub Item Name</b>
+                            </p>
+                            @Html.TextBoxFor(x => x.SubItemName, new { @class = "form-control" })
+                        </div>
+                        <div class="col-md-2">
+                            <p>
+                                <b>Purchase Price</b>
+                            </p>
+                            @Html.TextBoxFor(x => x.PurchasePrice, new { @class = "form-control AllowDecimal" })
+                        </div>
+                        <div class="col-md-2">
+                            <p>
+                                <b>Trade Price</b>
+                            </p>
+                            @Html.TextBoxFor(x => x.SalePrice, new { @class = "form-control AllowDecimal" })
+                        </div>
+
+                        <div class="col-md-2">
+                            <p>
+                                <b>Sales Tax</b>
+                            </p>
+                            @Html.TextBoxFor(x => x.SalesTax, new { @class = "form-control AllowDecimal" })
+                        </div>
+                        <div class="col-md-2">
+                            <p>
+                                <b>Pcs/CTN</b>
+                            </p>
+                            @Html.TextBoxFor(x => x.PicesPerCorton, new { @class = "form-control AllowDecimal" })
+                        </div>
+                        <div class="col-md-2">
+                            <p>
+                                <b>Opening Inventory</b>
+                            </p>
+                            @Html.TextBoxFor(x => x.OpeningInventoryQty, new { @class = "form-control AllowDecimal" })
+                        </div>
+                        <div class="col-md-1">
+                            <button id="btnAddItem" type="button" style="top: 30px;" class="btn btn-danger waves-effect btn-sm">
+                                <i class="material-icons">queue</i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="row clearfix">
+                        <hr />
+                    </div>
+
+                    <div class="row clearfix">
+
+                        <div class="col-md-12">
+                            <table class="table table-striped table-bordered" id="tbl">
+                                <tr>
+                                    <th style="width: 5%;">Sr #</th>
+                                    <th style="">Item</th>
+                                    <th style="width: 10%;">Sub Item Code</th>
+                                    <th style="">Sub Item Name</th>
+                                    <th style="width: 5%;">P/Price</th>
+                                    <th style="width: 5%;">T/Price</th>
+                                    <th style="width: 8%;">Sales Tax</th>
+                                    <th style="width: 5%;">Pcs/CTN</th>
+                                    <th style="width: 10%; ">Opening Inventory</th>
+                                    <th style="width: 5%;">Remove</th>
+                                </tr>
+                            </table>
+                        </div>
+
+                    </div>
+
+                    <div class="row clearfix">
+                        <div class="col-md-5 pull-right">
+                            <button type="button" id="btnSave" class="btn btn-success waves-effect pull-right">
+                                <i class="material-icons">save</i>
+                                <span>Save</span>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+}
+
+<script>
+
+    $(document).ready(function () {
+
+        $("#add-sub-item :input").change(function () {
+            $("#add-sub-item").data("changed", true);
+        });
+
+        $('#btnSave').click(function () {
+            Save();
+        });
+
+        $('#btnAddItem').click(function () {
+
+            if (Vaidation()) {
+                AddRow(
+                    $("#ItemID option:selected").text(),
+                    $('#ItemID').val(),
+                    $('#SubItemCode').val(),
+                    $('#SubItemName').val(),
+                    $('#PurchasePrice').val(),
+                    $('#SalePrice').val(),
+                    $('#SalesTax').val(),
+                    $('#PicesPerCorton').val(),
+                    $('#OpeningInventoryQty').val()
+                    );
+            }
+
+        });
+    });
+
+    function Validation() {
+        var table = document.getElementById("tbl"); //get the table
+        var rowcount = table.rows.length;
+        if (rowcount == 1) {
+            AlertMsg('<strong>Required!</strong>', 'Please Add at least one Sub Item!', 'danger');
+            return false;
+        }
+
+        return true;
+    }
+
+    function Save() {
+
+        if (!$("#add-sub-item").data("changed")) {
+            AlertMsg('', '<strong>Form is unchanged!</strong>', 'warning');
+            return;
+        }
+
+        if (Validation()) {
+            var model = GetDataModel();
+            //Show loader here
+            $('.page-loader-wrapper').show();
+            $.ajax({
+                contentType: 'application/json; charset=utf-8',
+                dataType: 'json',
+                type: 'POST',
+                url: "@Url.Action("SaveSubItem")",
+                data: JSON.stringify(model),
+                success: function (res) {
+                    if (res.Result == "OK") {
+
+                        AlertMsg('<strong>Success! </strong>', res.detail, 'info');
+                        setTimeout(function () {
+                            location.reload();
+                        }, 2000);
+                    }
+                    else {
+                        $('.page-loader-wrapper').hide();
+                        AlertMsg('<strong>Error! </strong>', res.detail, 'info');
+                    }
+                },
+                failure: function (response) {
+                    $('#result').html(response);
+                },
+                complete: function () {
+                    $('.page-loader-wrapper').hide();
+                }
+            });
+        }
+
+    }
+
+    function GetDataModel() {
+
+        var items = [];
+        $(".datarow").each(function (index) {
+            $row = $(this);
+            var itemid = $row.find("td:eq(1) input[type=hidden]").val();
+            var subItemCode = ($row.find("td:eq(2) input[type=text]").val() == "") ? '' : $row.find("td:eq(2) input[type=text]").val();
+            var subItemName = ($row.find("td:eq(3) input[type=text]").val() == "") ? '' : $row.find("td:eq(3) input[type=text]").val();
+            var purchaseprice = ($row.find("td:eq(4) input[type=number]").val() == "") ? 0 : parseFloat($row.find("td:eq(4) input[type=number]").val());
+            var saleprice = ($row.find("td:eq(5) input[type=number]").val() == "") ? 0 : parseFloat($row.find("td:eq(5) input[type=number]").val());
+            var salestax = ($row.find("td:eq(6) input[type=number]").val() == "") ? 0 : parseFloat($row.find("td:eq(6) input[type=number]").val());
+            var pcsPerCtn = ($row.find("td:eq(7) input[type=number]").val() == "") ? 0 : parseFloat($row.find("td:eq(7) input[type=number]").val());
+            var oiQty = ($row.find("td:eq(8) input[type=number]").val() == "") ? 0 : parseFloat($row.find("td:eq(8) input[type=number]").val());
+
+            items.push({
+                ItemID: itemid,
+                SubItemCode: subItemCode,
+                SubItemName: subItemName,
+                PurchasePrice: purchaseprice,
+                SalePrice: saleprice,
+                SalesTax: salestax,
+                PicesPerCorton: pcsPerCtn,
+                OpeningInventoryQty: oiQty,
+            });
+        });
+
+        var model = {
+            AddSubItemList: items,
+        };
+        return model;
+    }
+
+    function IsItemExist(itemId) {
+        var IsExist = false;
+        $(".datarow").each(function (index) {
+            $row = $(this);
+            var id = $row.find("td:eq(1) input[type=hidden]").val();
+            if (id == itemId) {
+                IsExist = true;
+            }
+        });
+
+        return IsExist;
+    }
+
+    function AddRow(itemName, itemID, subItemCode, subItemName, purchasePrice, salePrice, salesTax, pcsPerCtn, OIQty) {
+        var table = document.getElementById("tbl"); //get the table
+        var rowcount = table.rows.length; //get no. of rows in the table
+
+        subItemName = subItemName == '' || subItemName == null ? '' : subItemName;
+        salePrice = salePrice == '' || salePrice == null ? 0 : salePrice;
+        purchasePrice = purchasePrice == '' || purchasePrice == null ? 0 : purchasePrice;
+        salesTax = salesTax == '' || salesTax == null ? 0 : salesTax;
+        pcsPerCtn = pcsPerCtn == '' || pcsPerCtn == null ? 1 : pcsPerCtn;
+        OIQty = OIQty == '' || OIQty == null ? 0 : OIQty;
+
+        var colSrNo = '<td> ' + rowcount + ' </td>';
+        var colitemName = '<td> <label>' + itemName + '</label> <input type="hidden" value="' + itemID + '" id="itemid" /></td>';
+        var colsubitemcode = '<td> <input type="text" class="" style="" value="' + subItemCode + '"/> </td>';
+        var colsubitemname = '<td> <input type="text" class="" style="" value="' + subItemName + '"/> </td>';
+        var colpurchasePrice = '<td> <input type="number" class="AllowDecimal" style="width: 80px;" value="' + parseFloat(purchasePrice) + '"/> </td>';
+        var colsalePrice = '<td> <input type="number" class="AllowDecimal" style="width: 80px;" value="' + parseFloat(salePrice) + '"/> </td>';
+        var colrpPcsPerCtn = '<td> <input type="number" class="AllowDecimal" style="width: 80px;" value="' + parseFloat(pcsPerCtn) + '"/> </td>';
+        var colOIQty = '<td> <input type="number" class="AllowDecimal" style="width: 80px;" value="' + parseFloat(OIQty) + '"/> </td>';
+        var colAction = '<td class="text-center"> ' + '<a style="cursor:pointer;" onclick="RemoveRow(' + rowcount + ')"> <i class="material-icons">delete</i> </a>' + ' </td>';
+        var colsalesTax = '<td> <input type="number" class="AllowDecimal" style="width: 80px;" value="' + parseFloat(salesTax) + '"/> </td>';
+
+        var tblRow = '<tr class="datarow" id="row' + rowcount + '">' + colSrNo + colitemName + colsubitemcode + colsubitemname + colpurchasePrice + colsalePrice + colsalesTax + colrpPcsPerCtn + colOIQty + colAction + '</tr>';
+
+        $("#tbl").append(tblRow);
+        ClearControls();
+    }
+
+    function RemoveRow(rowId) {
+        $('#row' + rowId).remove();
+        UpdateSerialNumbers();
+    }
+
+    function Vaidation() {
+        if ($("#ItemID").val() == "") {
+            AlertMsg('<strong>Alert!</strong>', 'Item is required.', 'info');
+            $('#ItemID').focus();
+            return;
+        }
+        if ($("#SubItemCode").val() == "") {
+            AlertMsg('<strong>Alert!</strong>', 'Sub Item Code is required.', 'info');
+            $('#SubItemCode').focus();
+            return;
+        }
+        if ($("#SubItemName").val() == "") {
+            AlertMsg('<strong>Alert!</strong>', 'Sub Item Name is required.', 'info');
+            $('#SubItemName').focus();
+            return;
+        }
+        if ($("#PurchasePrice").val() == "") {
+            AlertMsg('<strong>Alert!</strong>', 'Purchase Price is Required!', 'info');
+            $('#PurchasePrice').focus();
+            return;
+        }
+
+        if ($("#SalePrice").val() == "") {
+            AlertMsg('<strong>Alert!</strong>', 'Sale Price is Required!', 'info');
+            $('#SalePrice').focus();
+            return;
+        }
+         
+        if ($("#OpeningInventoryQty").val() == "") {
+            AlertMsg('<strong>Alert!</strong>', 'Opening Inventory Quantity is Required!', 'info');
+            $('#OpeningInventoryQty').focus();
+            return;
+        }
+        //if ($("#PicesPerCorton").val() == "" || $("#PicesPerCorton").val() == "0") {
+        //    AlertMsg('<strong>Alert!</strong>', 'Pcs/CTN is Required!', 'info');
+        //    $('#PicesPerCorton').focus();
+        //    return;
+        //}
+
+
+        return true;
+    }
+
+    function UpdateSerialNumbers() {
+
+        $(".datarow").each(function (index) {
+            $row = $(this);
+            $row.find("td:eq(0)").html((index + 1));
+        });
+
+    }
+
+    function ClearControls() {
+        $('#ItemID').val('');
+        $('#SubItemCode').val('');
+        $('#SubItemName').val('');
+        $('#PurchasePrice').val('0');
+        $('#SalePrice').val('0') ;
+        $('#SalesTax').val('0');
+        $('#PicesPerCorton').val('0');
+        $('#OpeningInventoryQty').val('0');
+        $('#ItemID').trigger('change');
+    }
+
+</script>

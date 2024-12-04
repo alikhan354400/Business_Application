@@ -1,0 +1,288 @@
+﻿@model SamaaMarketing.Models.ViewModels.AddEditAccountViewModel
+
+@{
+    ViewBag.Title = "CustomerAddEdit";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<style>
+    .textRight {
+        text-align: right;
+    }
+
+    [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: absolute !important;
+        left: 20px !important;
+        opacity: 1 !important;
+    }
+</style>
+
+@using (Html.BeginForm("", "", FormMethod.Post, new { id = "add-edit-vendor" }))
+{
+
+    @Html.HiddenFor(x => x.AccountID)
+
+    <div class="row clearfix">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="card">
+                <div class="header">
+                    <h2>
+                        Add/Edit Customer
+                    </h2>
+                </div>
+                <div class="body">
+                    <div class="row clearfix">
+                        <div class="col-md-4">
+                            <p>
+                                <b>Company</b>
+                            </p>
+                            @Html.DropDownListFor(x => x.CompanyId, Model.CompanyList, "Select", new { @class = "form-control input-sm  js-select2 " })
+                        </div>
+                        <div class="col-md-4">
+                            <p>
+                                <b>Title</b>
+                            </p>
+                            @Html.TextBoxFor(x => x.AccountTitle, new { @class = "form-control " })
+                        </div>
+                        <div class="col-md-4">
+                            <p>
+                                <b>Name</b>
+                            </p>
+                            @Html.TextBoxFor(x => x.Name, new { @class = "form-control " })
+                        </div>
+
+                        <div class="col-md-2">
+                            <p>
+                                <b>Mobile #</b>
+                            </p>
+                            @Html.TextBoxFor(x => x.MobileNo, new { @class = "form-control OnlyNumbers" })
+                        </div>
+                        <div class="col-md-2">
+                            <p>
+                                <b>Opening Balance</b>
+                            </p>
+                            @Html.TextBoxFor(x => x.OpeningBalance, new { @class = "form-control AllowDecimal " })
+                        </div>
+                        <div class="col-md-2">
+                            <p>
+                                <b>Opening Balance Date</b>
+                            </p>
+                            @Html.TextBoxFor(x => x.OpeningBalanceDate, new { @class = "form-control appdatepicker openingBalanceDate" })
+                            @*<input type="text" id="OpeningBalanceDate" name="OpeningBalanceDate" value=@( Model.OpeningBalanceDate.HasValue ? Model.OpeningBalanceDate.Value.ToString("d") : DateTime.Now.ToString("d") ) class="form-control appdatepicker" />*@
+                        </div>
+                        <div class="col-md-2">
+                            <p>
+                                <b>CNIC</b>
+                            </p>
+                            @Html.TextBoxFor(x => x.CNIC, new { @class = "form-control OnlyNumbers" })
+                        </div>
+                        <div class="col-md-2">
+                            <p>
+                                <b>STRN #</b>
+                            </p>
+                            @Html.TextBoxFor(x => x.STR, new { @class = "form-control" })
+                        </div>
+                        <div class="col-md-2">
+                            <p>
+                                <b>NTN</b>
+                            </p>
+                            @Html.TextBoxFor(x => x.NTN, new { @class = "form-control  " })
+                        </div>
+                        <div class="col-md-2" style="display:none;">
+                            <p>
+                                <b>Cash Account</b>
+                            </p>
+                            @Html.CheckBoxFor(x => x.IsCashAccount, new { @class = "" })
+                        </div>
+
+                        <div class="col-md-3">
+                            <p>
+                                <b>City</b>
+                            </p>
+                            @Html.DropDownListFor(x => x.City, Model.CityList, "Select", new { @class = "form-control input-sm  js-select2" })
+                        </div>
+                        <div class="col-md-3">
+                            <p>
+                                <b>City Area</b>
+                            </p>
+                            @Html.DropDownListFor(x => x.CityAreaID, Model.CityAreaList, "Select", new { @class = "form-control input-sm ddlCA  js-select2" })
+                        </div>
+                        <div class="col-md-3">
+                            <p>
+                                <b>Sales Officer</b>
+                            </p>
+                            @Html.DropDownListFor(x => x.EmployeeID, Model.EmployeesList, "Select", new { @class = "form-control input-sm  js-select2" })
+                        </div>
+
+                        <div class="col-md-12">
+                            <p>
+                                <b>Address</b>
+                            </p>
+                            @Html.TextAreaFor(x => x.Address, new { @class = "form-control  " })
+                        </div>
+                    </div>
+                    <div class="row clearfix">
+                        <div class="col-md-5 pull-right">
+                            <button type="button" id="btnSave" class="btn btn-success waves-effect pull-right">
+                                <i class="material-icons">add_shopping_cart</i>
+                                <span>Save</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+}
+
+
+<script>
+
+    $(document).ready(function () {
+
+        $("#add-edit-vendor :input").change(function () {
+            $("#add-edit-vendor").data("changed", true);
+        });
+
+        $('#btnSave').click(function () {
+            Checkout();
+        });
+    });
+
+    function Checkout() {
+        var table = document.getElementById("tbl"); //get the table
+
+        if (!$("#add-edit-vendor").data("changed")) {
+            AlertMsg('', '<strong>Form is unchanged!</strong>', 'warning');
+            return;
+        }
+
+        if ($("#CompanyId").val() == "") {
+            AlertMsg('<strong>Alert!</strong>', 'Company is Required!', 'info');
+            $('#CompanyId').focus();
+            return false;
+        }
+
+        if ($("#Name").val() == "") {
+            AlertMsg('<strong>Required!</strong>', 'Name is Required!', 'info');
+            $('#Name').focus();
+            return;
+        }
+
+        if ($("#OpeningBalance").val() == "") {
+            AlertMsg('<strong>Required!</strong>', 'Opening Balance is Required!', 'info');
+            $('#OpeningBalance').focus();
+            return;
+        }
+
+        if (($("#OpeningBalance").val() != "" && parseFloat($("#OpeningBalance").val()) > 0) && $('.openingBalanceDate').val() == "") {
+            AlertMsg('<strong>Required!</strong>', 'Opening Balance Date is required', 'info');
+            $('.openingBalanceDate').focus();
+            return false;
+        }
+
+        if ($(".openingBalanceDate").val() == "") {
+            AlertMsg('<strong>Alert!</strong>', 'Opening Balance Date is Required!', 'info');
+            $('.openingBalanceDate').focus();
+            return false;
+        }
+
+        if ($("#City").val() == "") {
+            AlertMsg('<strong>Alert!</strong>', 'City is Required!', 'info');
+            $('#City').focus();
+            return false;
+        }
+
+        if ($("#CityAreaID").val() == "") {
+            AlertMsg('<strong>Alert!</strong>', 'City Area is Required!', 'info');
+            $('#CityAreaID').focus();
+            return false;
+        }
+        if ($("#EmployeeID").val() == "") {
+            AlertMsg('<strong>Alert!</strong>', 'Sales Officer is Required!', 'info');
+            $('#EmployeeID').focus();
+            return false;
+        }
+
+
+        var model = GetDataModel();
+
+        //Show loader here
+        $('.page-loader-wrapper').show();
+        $.ajax({
+            contentType: 'application/json; charset=utf-8',
+            dataType: 'json',
+            type: 'POST',
+            url: "@Url.Action("SaveAccount")",
+            data: JSON.stringify(model),
+            success: function (res) {
+                if (res.Result == "OK") {
+                    AlertMsg('<strong>Success! </strong>', res.detail, 'info');
+                    setTimeout(function () {
+                        location.reload();
+                    }, 2000);
+                }
+                else {
+                    $('.page-loader-wrapper').hide();
+                    AlertMsg('<strong>Error! </strong>', res.detail, 'info');
+                }
+            },
+            failure: function (response) {
+                $('#result').html(response);
+            },
+            complete: function () {
+                $('.page-loader-wrapper').hide();
+            }
+        });
+    }
+
+    function GetDataModel() {
+        var model = {
+            CompanyId: $('#CompanyId').val(),
+            City: $('#City').val(),
+            EmployeeID: $('#EmployeeID').val(),
+            CityAreaID: $('#CityAreaID').val(),
+            AccountTypeID: $('#AccountTypeID').val(),
+            Name: $('#Name').val(),
+            AccountTitle: $('#AccountTitle').val(),
+            MobileNo: $('#MobileNo').val(),
+            OpeningBalance: $('#OpeningBalance').val(),
+            OpeningBalanceDate: $('.openingBalanceDate').val(),
+            AccountID: $('#AccountID').val(),
+            CNIC: $('#CNIC').val(),
+            Address: $('#Address').val(),
+            STR: $('#STR').val(),
+            NTN: $('#NTN').val(),
+            IsCashAccount: $('#IsCashAccount').is(":checked")
+        };
+        return model;
+    }
+
+    $("#City").change(function () {
+        var cityId = parseInt($(this).val());
+
+        if (!isNaN(cityId)) {
+            var ddlCA = $('.ddlCA');
+            ddlCA.empty();
+            ddlCA.append($("<option></option>").val('').html('Please wait ...'));
+
+            $.ajax({
+                url: "@Url.Action("GetCityAreaByCityID")",
+                dataType: 'json',
+                type: 'POST',
+                data: { Id: cityId },
+                success: function (d) {
+                    ddlCA.empty(); // Clear the please wait
+                    ddlCA.append($("<option></option>").val('').html('Select'));
+                    $.each(d.CityAreaList, function (i, ca) {
+                        ddlCA.append($("<option></option>").val(ca.Value).html(ca.Text));
+                    });
+                },
+                error: function (e) {
+                    alert('Error!' + e.responseText);
+                }
+            });
+        }
+    });
+</script>

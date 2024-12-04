@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4638049c21c3499a8f4d5b611314d3a0" Name="Diagram1" ZoomLevel="92">
+        <EntityTypeShape EntityType="SamaaMarketModel.Account" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="SamaaMarketModel.AspNetRole" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="SamaaMarketModel.AspNetUserClaim" Width="1.5" PointX="2.75" PointY="3.75" />
+        <EntityTypeShape EntityType="SamaaMarketModel.AspNetUserLogin" Width="1.5" PointX="4.75" PointY="0.75" />
+        <EntityTypeShape EntityType="SamaaMarketModel.AspNetUserRole" Width="1.5" PointX="4.75" PointY="3.75" />
+        <EntityTypeShape EntityType="SamaaMarketModel.AspNetUser" Width="1.5" PointX="6.75" PointY="0.75" />
+        <EntityTypeShape EntityType="SamaaMarketModel.Bank" Width="1.5" PointX="2.75" PointY="6.75" />
+        <EntityTypeShape EntityType="SamaaMarketModel.BankToBankTransfer" Width="1.5" PointX="4.75" PointY="6.75" />
+        <EntityTypeShape EntityType="SamaaMarketModel.ChartofAccount" Width="1.5" PointX="6.75" PointY="5.75" />
+        <EntityTypeShape EntityType="SamaaMarketModel.ChartOfAccountType" Width="1.5" PointX="8.75" PointY="0.75" />
+        <EntityTypeShape EntityType="SamaaMarketModel.City" Width="1.5" PointX="8.75" PointY="3.75" />
+        <EntityTypeShape EntityType="SamaaMarketModel.CityArea" Width="1.5" PointX="8.75" PointY="6.75" />
+        <EntityTypeShape EntityType="SamaaMarketModel.Code" Width="1.5" PointX="6.75" PointY="9.75" />
+        <EntityTypeShape EntityType="SamaaMarketModel.CompanyInformation" Width="1.5" PointX="8.75" PointY="9.75" />
+        <EntityTypeShape EntityType="SamaaMarketModel.Country" Width="1.5" PointX="10.75" PointY="0.75" />
+        <EntityTypeShape EntityType="SamaaMarketModel.Designation" Width="1.5" PointX="10.75" PointY="3.75" />
+        <EntityTypeShape EntityType="SamaaMarketModel.Employee" Width="1.5" PointX="10.75" PointY="7.75" />
+        <EntityTypeShape EntityType="SamaaMarketModel.EntryType" Width="1.5" PointX="0.75" PointY="11.75" />
+        <EntityTypeShape EntityType="SamaaMarketModel.Expens" Width="1.5" PointX="2.75" PointY="11.75" />
+        <EntityTypeShape EntityType="SamaaMarketModel.Inventory" Width="1.5" PointX="12.75" PointY="0.75" />
+        <EntityTypeShape EntityType="SamaaMarketModel.Item" Width="1.5" PointX="12.75" PointY="4.75" />
+        <EntityTypeShape EntityType="SamaaMarketModel.Payment" Width="1.5" PointX="12.75" PointY="9.75" />
+        <EntityTypeShape EntityType="SamaaMarketModel.PaymentHeader" Width="1.5" PointX="4.75" PointY="13.75" />
+        <EntityTypeShape EntityType="SamaaMarketModel.ProfitAndLoss" Width="1.5" PointX="14.75" PointY="0.75" />
+        <EntityTypeShape EntityType="SamaaMarketModel.PurchaseOrder" Width="1.5" PointX="14.75" PointY="3.75" />
+        <EntityTypeShape EntityType="SamaaMarketModel.PurchaseOrderLine" Width="1.5" PointX="6.75" PointY="14.75" />
+        <EntityTypeShape EntityType="SamaaMarketModel.PurchaseOrderReturn" Width="1.5" PointX="8.75" PointY="14.75" />
+        <EntityTypeShape EntityType="SamaaMarketModel.PurchaseOrderReturnLine" Width="1.5" PointX="14.75" PointY="10.75" />
+        <EntityTypeShape EntityType="SamaaMarketModel.SaleOrder" Width="1.5" PointX="10.75" PointY="15.75" />
+        <EntityTypeShape EntityType="SamaaMarketModel.SaleOrderLine" Width="1.5" PointX="12.75" PointY="15.75" />
+        <EntityTypeShape EntityType="SamaaMarketModel.SaleOrderReturn" Width="1.5" PointX="14.75" PointY="15.75" />
+        <EntityTypeShape EntityType="SamaaMarketModel.SaleOrderReturnLine" Width="1.5" PointX="16.75" PointY="0.75" />
+        <EntityTypeShape EntityType="SamaaMarketModel.StatesByCountryID" Width="1.5" PointX="16.75" PointY="5.75" />
+        <EntityTypeShape EntityType="SamaaMarketModel.SubItem" Width="1.5" PointX="16.75" PointY="8.75" />
+        <EntityTypeShape EntityType="SamaaMarketModel.Transaction" Width="1.5" PointX="16.75" PointY="14.75" />
+        <EntityTypeShape EntityType="SamaaMarketModel.UnitType" Width="1.5" PointX="0.75" PointY="17.75" />
+        <EntityTypeShape EntityType="SamaaMarketModel.User" Width="1.5" PointX="2.75" PointY="17.75" />
+        <EntityTypeShape EntityType="SamaaMarketModel.vv_ProfitLossExpanse" Width="1.5" PointX="18.75" PointY="0.75" />
+        <EntityTypeShape EntityType="SamaaMarketModel.vv_ProfitLossGrossProfit" Width="1.5" PointX="18.75" PointY="3.75" />
+        <EntityTypeShape EntityType="SamaaMarketModel.vv_ProfitLossPurchase" Width="1.5" PointX="18.75" PointY="6.75" />
+        <EntityTypeShape EntityType="SamaaMarketModel.vv_ProfitLossSale" Width="1.5" PointX="18.75" PointY="9.75" />
+        <EntityTypeShape EntityType="SamaaMarketModel.vw_AccountTransactions" Width="1.5" PointX="18.75" PointY="12.75" />
+        <EntityTypeShape EntityType="SamaaMarketModel.vw_BankTransactions" Width="1.5" PointX="16.75" PointY="18.75" />
+        <EntityTypeShape EntityType="SamaaMarketModel.vw_CashTransactions" Width="1.5" PointX="18.75" PointY="17.75" />
+        <EntityTypeShape EntityType="SamaaMarketModel.vw_DailyCashTransactions" Width="1.5" PointX="4.75" PointY="19.75" />
+        <EntityTypeShape EntityType="SamaaMarketModel.vw_DetailLedgerStatement" Width="1.5" PointX="20.75" PointY="0.75" />
+        <EntityTypeShape EntityType="SamaaMarketModel.vw_GetCustomerAllTableInfo" Width="1.5" PointX="20.75" PointY="5.75" />
+        <EntityTypeShape EntityType="SamaaMarketModel.vw_GetPOReReturnItemForInventory" Width="1.5" PointX="20.75" PointY="9.75" />
+        <EntityTypeShape EntityType="SamaaMarketModel.vw_GetSalesItemForInventory" Width="1.5" PointX="20.75" PointY="12.75" />
+        <EntityTypeShape EntityType="SamaaMarketModel.vw_GetSOReReturnItemForInventory" Width="1.5" PointX="20.75" PointY="15.75" />
+        <EntityTypeShape EntityType="SamaaMarketModel.vw_InvertoryOnHandAllTypes" Width="1.5" PointX="20.75" PointY="18.75" />
+        <EntityTypeShape EntityType="SamaaMarketModel.vw_PaymentDetailForHeader" Width="1.5" PointX="0.75" PointY="21.75" />
+        <EntityTypeShape EntityType="SamaaMarketModel.vw_PaymentHeader" Width="1.5" PointX="6.75" PointY="21.75" />
+        <EntityTypeShape EntityType="SamaaMarketModel.vw_Payments" Width="1.5" PointX="22.75" PointY="0.75" />
+        <EntityTypeShape EntityType="SamaaMarketModel.vw_PurchaseDetailForHeader" Width="1.5" PointX="22.75" PointY="6.75" />
+        <EntityTypeShape EntityType="SamaaMarketModel.vw_PurchaseOrder" Width="1.5" PointX="8.75" PointY="22.75" />
+        <EntityTypeShape EntityType="SamaaMarketModel.vw_PurchaseOrderReturn" Width="1.5" PointX="22.75" PointY="9.75" />
+        <EntityTypeShape EntityType="SamaaMarketModel.vw_PurchaseReturnDetailForHeader" Width="1.5" PointX="10.75" PointY="22.75" />
+        <EntityTypeShape EntityType="SamaaMarketModel.vw_SaleOrder" Width="1.5" PointX="12.75" PointY="22.75" />
+        <EntityTypeShape EntityType="SamaaMarketModel.vw_SaleOrderReturn" Width="1.5" PointX="22.75" PointY="15.75" />
+        <EntityTypeShape EntityType="SamaaMarketModel.vw_SalesDetailForHeader" Width="1.5" PointX="2.75" PointY="23.75" />
+        <EntityTypeShape EntityType="SamaaMarketModel.vw_SalesReturnDetailForHeader" Width="1.5" PointX="14.75" PointY="23.75" />
+        <EntityTypeShape EntityType="SamaaMarketModel.vw_Transactions" Width="1.5" PointX="16.75" PointY="23.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

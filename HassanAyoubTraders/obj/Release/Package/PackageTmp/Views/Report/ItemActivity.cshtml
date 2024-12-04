@@ -1,0 +1,121 @@
+﻿@model EmanTraders.Models.ViewModels.LedgerViewModel
+
+@{
+    ViewBag.Title = "Item Activity Report";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+@using (Html.BeginForm("", "", FormMethod.Post, new { id = "Account Ledger" }))
+{
+    <div class="row clearfix">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="card">
+                <div class="header">
+                    <h2>
+                        Item Activity Report
+                    </h2>
+                </div>
+                <div class="body">
+                    <div class="row clearfix">
+                        <div class="col-md-2">
+                            <p>
+                                <b>Items</b>
+                            </p>
+                            @Html.DropDownListFor(x => x.SubItemID, Model.ItemList, "Select", new { @class = "form-control js-select2" })
+                        </div>
+
+                        <div class="col-md-2">
+                            <p>
+                                <b>From Date</b>
+                            </p>
+                            @Html.TextBoxFor(x => x.StartDate, new { @class = "form-control icon-download appdatepicker" })
+                        </div>
+                        <div class="col-md-2">
+                            <p>
+                                <b>To Date</b>
+                            </p>
+                            @Html.TextBoxFor(x => x.EndDate, new { @class = "form-control icon-download appdatepicker" })
+                        </div>
+                        <div class="col-md-4">
+                            <button id="btnSearch" type="button" style="top: 30px;" class="btn btn-danger waves-effect btn-sm">Search</button>
+                            <button id="btnPrint" type="button" style="top: 30px;" class="btn btn-danger waves-effect Print btn-sm">Print</button>
+                        </div>
+                    </div>
+
+                    <div class="row  ">
+                        <div class="col-md-12">
+                            <div id="divResult"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<script>
+
+    $(document).ready(function () {
+        $('#btnSearch').on('click', function () {
+            if ($("#SubItemID").val() == "") {
+                AlertMsg('<strong>Required!</strong>', 'Item is required.', 'info');
+                $('#SubItemID').focus()
+                return false;
+            }
+            LoadOrders($('#SubItemID').val(), $('#StartDate').val(), $('#EndDate').val());
+        });
+
+
+        $('.Print').on('click', function () {
+            if ($("#SubItemID").val() == "") {
+                AlertMsg('<strong>Required!</strong>', 'Item is required.', 'info');
+                $('#SubItemID').focus()
+                return false;
+            }
+
+            var subitemId = $('#SubItemID').val();
+            var st = $('#StartDate').val();
+            var ed = $('#EndDate').val();
+
+            var src = getWebsiteUrl +  "/PrintReports/ViewReport.aspx?ReportName=ItemActivity&SubItemID=" + subitemId + "&StartDate=" + st.replace("/", "|").replace("/", "|") + "&EndDate=" + ed.replace("/", "|").replace("/", "|");
+            PrintPopup(src, 900, 650, "Item Activity");
+        });
+
+    });
+
+    function LoadOrders(subItemID, startdate, enddate) {
+        $('.page-loader-wrapper').show();
+        var model = {
+           
+            EndDate: enddate,
+            StartDate: startdate,
+            SubItemID: subItemID
+        };
+
+        $.ajax({
+            type: "POST",
+            url: '@Url.Action("GetItemActivity")',
+            data: JSON.stringify(model),
+            contentType: "application/json; charset=utf-8",
+            dataType: "html",
+            success: function (response) {
+                $('#divResult').html(response);
+                $('.page-loader-wrapper').hide();
+            },
+            failure: function (response) {
+                $('.page-loader-wrapper').hide();
+                alert(response.responseText);
+            },
+            error: function (response) {
+                $('.page-loader-wrapper').hide();
+                alert(response.responseText);
+            }
+        });
+
+        //$("#divResult").load('@Url.Action("GetItemActivity")', { SubItemID: subItemID, StartDate: startdate, EndDate: enddate });
+    }
+
+</script>
+
+

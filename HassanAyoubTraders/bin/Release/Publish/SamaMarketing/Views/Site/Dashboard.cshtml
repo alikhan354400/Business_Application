@@ -1,0 +1,416 @@
+﻿
+@{
+    ViewBag.Title = "Dashboard";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<style>
+    .info-box .content .text {
+        font-size: 16px !important;
+    }
+</style>
+
+<div class="container-fluid">
+    <div class="block-header">
+        <h2>DASHBOARD</h2>
+    </div>
+    <!-- Widgets -->
+    <div class="row clearfix">
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <div class="info-box bg-cyan">
+                <a href="javascript:void(0);" id="lnkInvoiceSearch">
+                    <div class="icon">
+                        <i class="material-icons">search</i>
+                    </div>
+                </a>
+                <div class="content">
+                    <div class="text">
+                        Invoice #
+                        <input type="text" id="txtInvoiceNo" class="form-control input-sm OnlyNumbers" />
+                    </div>
+                    <div class="number count-to" data-from="0" data-to="125" data-speed="15" data-fresh-interval="20"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row clearfix">
+
+
+        @*<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <div class="info-box bg-pink hover-expand-effect">
+                <a href="~/Employee/EmployeeList">
+                    <div class="icon">
+                        <i class="material-icons">playlist_add_check</i>
+                    </div>
+                </a>
+                <div class="content">
+                    <div class="text">
+                        List of Employee
+                    </div>
+                    <div class="number count-to" data-from="0" data-to="125" data-speed="15" data-fresh-interval="20"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <div class="info-box bg-orange hover-expand-effect">
+                <a href="~/Employee/AddEditEmployee">
+                    <div class="icon">
+                        <i class="material-icons">person_add</i>
+                    </div>
+                </a>
+                <div class="content">
+                    <div class="text">Add New Employee</div>
+                    <div class="number count-to" data-from="0" data-to="1225" data-speed="1000" data-fresh-interval="20"></div>
+                </div>
+            </div>
+        </div>*@
+
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <div class="info-box bg-pink hover-expand-effect">
+                <a href="~/Vendors/VendorList">
+                    <div class="icon">
+                        <i class="material-icons">playlist_add_check</i>
+                    </div>
+                </a>
+                <div class="content">
+                    <div class="text">
+                        List of Supplier
+                    </div>
+                    <div class="number count-to" data-from="0" data-to="125" data-speed="15" data-fresh-interval="20"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <div class="info-box bg-orange hover-expand-effect">
+                <a href="~/Vendors/VendorAddEdit">
+                    <div class="icon">
+                        <i class="material-icons">person_add</i>
+                    </div>
+                </a>
+                <div class="content">
+                    <div class="text">Add New Supplier</div>
+                    <div class="number count-to" data-from="0" data-to="1225" data-speed="1000" data-fresh-interval="20"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <div class="info-box bg-pink hover-expand-effect">
+                <a href="~/Customer/CustomerList">
+                    <div class="icon">
+                        <i class="material-icons">playlist_add_check</i>
+                    </div>
+                </a>
+                <div class="content">
+                    <div class="text">
+                        List of Customer
+                    </div>
+                    <div class="number count-to" data-from="0" data-to="125" data-speed="15" data-fresh-interval="20"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <div class="info-box bg-orange hover-expand-effect">
+                <a href="~/Customer/CustomerAddEdit">
+                    <div class="icon">
+                        <i class="material-icons">person_add</i>
+                    </div>
+                </a>
+                <div class="content">
+                    <div class="text">Add New Customer</div>
+                    <div class="number count-to" data-from="0" data-to="1225" data-speed="1000" data-fresh-interval="20"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <div class="info-box bg-pink hover-expand-effect">
+                <a href="~/Items/ItemList">
+                    <div class="icon">
+                        <i class="material-icons">playlist_add_check</i>
+                    </div>
+                </a>
+                <div class="content">
+                    <div class="text">
+                        List of Items
+                    </div>
+                    <div class="number count-to" data-from="0" data-to="125" data-speed="15" data-fresh-interval="20"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <div class="info-box bg-orange hover-expand-effect">
+                <a href="~/Items/ItemAddEdit">
+                    <div class="icon">
+                        <i class="material-icons">receipt</i>
+                    </div>
+                </a>
+                <div class="content">
+                    <div class="text">Add New Item</div>
+                    <div class="number count-to" data-from="0" data-to="1225" data-speed="1000" data-fresh-interval="20"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <div class="info-box bg-pink hover-expand-effect">
+                <a href="~/Items/SubItemList">
+                    <div class="icon">
+                        <i class="material-icons">playlist_add_check</i>
+                    </div>
+                </a>
+                <div class="content">
+                    <div class="text">
+                        List of Sub Items
+                    </div>
+                    <div class="number count-to" data-from="0" data-to="125" data-speed="15" data-fresh-interval="20"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <div class="info-box bg-orange hover-expand-effect">
+                <a href="~/Items/SubItemAdd">
+                    <div class="icon">
+                        <i class="material-icons">receipt</i>
+                    </div>
+                </a>
+                <div class="content">
+                    <div class="text">Add New Sub Item</div>
+                    <div class="number count-to" data-from="0" data-to="1225" data-speed="1000" data-fresh-interval="20"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <div class="info-box bg-pink hover-expand-effect">
+                <a href="~/Purchase/PurchaseList">
+                    <div class="icon">
+                        <i class="material-icons">playlist_add_check</i>
+                    </div>
+                </a>
+                <div class="content">
+                    <div class="text">
+                        List of Purchase Order
+                    </div>
+                    <div class="number count-to" data-from="0" data-to="125" data-speed="15" data-fresh-interval="20"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <div class="info-box bg-orange hover-expand-effect">
+                <a href="~/Purchase/PurchaseOrder">
+                    <div class="icon">
+                        <i class="material-icons">add_shopping_cart</i>
+                    </div>
+                </a>
+                <div class="content">
+                    <div class="text">Add New Purchase Order</div>
+                    <div class="number count-to" data-from="0" data-to="1225" data-speed="1000" data-fresh-interval="20"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <div class="info-box bg-pink hover-expand-effect">
+                <a href="~/PaymentMulti/PaymentList">
+                    <div class="icon">
+                        <i class="material-icons">playlist_add_check</i>
+                    </div>
+                </a>
+                <div class="content">
+                    <div class="text">
+                        List of Purchase Payments
+                    </div>
+                    <div class="number count-to" data-from="0" data-to="125" data-speed="15" data-fresh-interval="20"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <div class="info-box bg-orange hover-expand-effect">
+                <a href="~/PaymentMulti/AddEditPayment">
+                    <div class="icon">
+                        <i class="material-icons">payment</i>
+                    </div>
+                </a>
+                <div class="content">
+                    <div class="text">Add New Purchase Payment</div>
+                    <div class="number count-to" data-from="0" data-to="1225" data-speed="1000" data-fresh-interval="20"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <div class="info-box bg-pink hover-expand-effect">
+                <a href="~/Sale/SaleList">
+                    <div class="icon">
+                        <i class="material-icons">playlist_add_check</i>
+                    </div>
+                </a>
+                <div class="content">
+                    <div class="text">
+                        List of Sales Order
+                    </div>
+                    <div class="number count-to" data-from="0" data-to="125" data-speed="15" data-fresh-interval="20"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <div class="info-box bg-orange hover-expand-effect">
+                <a href="~/Sale/SaleOrder">
+                    <div class="icon">
+                        <i class="material-icons">add_shopping_cart</i>
+                    </div>
+                </a>
+                <div class="content">
+                    <div class="text">Add New Sales Order</div>
+                    <div class="number count-to" data-from="0" data-to="1225" data-speed="1000" data-fresh-interval="20"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <div class="info-box bg-pink hover-expand-effect">
+                <a href="~/PaymentMulti/ReceiptList">
+                    <div class="icon">
+                        <i class="material-icons">playlist_add_check</i>
+                    </div>
+                </a>
+                <div class="content">
+                    <div class="text">
+                        List of Cash Receipt
+                    </div>
+                    <div class="number count-to" data-from="0" data-to="125" data-speed="15" data-fresh-interval="20"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <div class="info-box bg-orange hover-expand-effect">
+                <a href="~/PaymentMulti/AddEditReceipt">
+                    <div class="icon">
+                        <i class="material-icons">payment</i>
+                    </div>
+                </a>
+                <div class="content">
+                    <div class="text">Add New Cash Receipt</div>
+                    <div class="number count-to" data-from="0" data-to="1225" data-speed="1000" data-fresh-interval="20"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <div class="info-box bg-green hover-expand-effect">
+                <a href="~/Inventory/InventoryOnHand">
+                    <div class="icon">
+                        <i class="material-icons">assignment</i>
+                    </div>
+                </a>
+                <div class="content">
+                    <div class="text">
+                        Inventory On Hand
+                    </div>
+                    <div class="number count-to" data-from="0" data-to="125" data-speed="15" data-fresh-interval="20"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <div class="info-box bg-green hover-expand-effect">
+                <a href="~/Report/AccountLedger">
+                    <div class="icon">
+                        <i class="material-icons">account_balance_wallet</i>
+                    </div>
+                </a>
+                <div class="content">
+                    <div class="text">Account Ledger</div>
+                    <div class="number count-to" data-from="0" data-to="1225" data-speed="1000" data-fresh-interval="20"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <div class="info-box bg-green hover-expand-effect">
+                <a href="~/Report/AccountPayable">
+                    <div class="icon">
+                        <i class="material-icons">account_balance_wallet</i>
+                    </div>
+                </a>
+                <div class="content">
+                    <div class="text">Account Payable</div>
+                    <div class="number count-to" data-from="0" data-to="1225" data-speed="1000" data-fresh-interval="20"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <div class="info-box bg-green hover-expand-effect">
+                <a href="~/Report/AccountRecievable">
+                    <div class="icon">
+                        <i class="material-icons">account_balance_wallet</i>
+                    </div>
+                </a>
+                <div class="content">
+                    <div class="text">Account Receivable</div>
+                    <div class="number count-to" data-from="0" data-to="1225" data-speed="1000" data-fresh-interval="20"></div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <!-- #END# Widgets -->
+</div>
+
+<script>
+
+    $(document).ready(function () {
+
+        //------------------------ Search Invoice on enter key press ----------------------------------------
+        $(document).on('keypress', function (e) {
+            if (e.which == 13) {
+                SearchSO();
+            }
+        });
+
+        //------------------------ Search Invoice ----------------------------------------
+        $('body').on('click', '#lnkInvoiceSearch', function () {
+            SearchSO();
+        });
+
+
+        function SearchSO() {
+             var invNo = $('#txtInvoiceNo').val();
+
+            if (invNo == null || invNo == '0' || invNo == '') {
+                AlertMsg('<strong>Error! </strong>', "Please fill valid invoice #", 'info');
+                return;
+            }
+
+            var model = {
+                SONo: invNo
+            };
+
+              //Show loader here
+            $('.page-loader-wrapper').show();
+            $.ajax({
+                contentType: 'application/json; charset=utf-8',
+                dataType: 'json',
+                type: 'POST',
+                url: "@Url.Action("IsValidSONo")",
+                data: JSON.stringify(model),
+                success: function (res) {
+                    if (res.Result == "OK") {
+                        window.location.href = (getWebsiteUrl + "/Sale/SaleOrder/" + res.SOID);
+                    }
+                    else {
+                        $('.page-loader-wrapper').hide();
+                        AlertMsg('<strong>Error! </strong>', "Error...! Invalid Invoice #", 'info');
+                    }
+                },
+                failure: function (response) {
+                    $('#result').html(response);
+                },
+                complete: function () {
+                    $('.page-loader-wrapper').hide();
+                }
+            });
+        }
+
+    });
+</script>

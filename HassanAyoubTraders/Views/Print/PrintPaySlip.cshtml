@@ -1,0 +1,251 @@
+﻿@model HassanAyoubTraders.Models.ViewModels.PrintPaymentReceiptViewModel
+@using System.Globalization;
+
+@{
+    ViewBag.Title = "Print Pay Slip";
+    Layout = null;
+    CultureInfo ciPk = new CultureInfo("ur-PK");
+}
+<title>Emaan Traders.</title>
+
+<!-- Favicon-->
+<link href="@Url.Content(" ~/favicon.ico")" rel="stylesheet" type="image/x-icon" />
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+
+<!-- Bootstrap Core Css -->
+<link href="@Url.Content("~/Content/plugins/bootstrap/css/bootstrap.css")" rel="stylesheet">
+
+<!-- Waves Effect Css -->
+<link href="@Url.Content("~/Content/plugins/node-waves/waves.css")" rel="stylesheet">
+
+<!-- Animation Css -->
+<link href="@Url.Content("~/Content/plugins/animate-css/animate.css")" rel="stylesheet">
+
+<!-- JQuery DataTable Css -->
+<link href="@Url.Content("~/Content/plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css")" rel="stylesheet">
+
+<!-- Bootstrap Material Datetime Picker Css -->
+<link href="@Url.Content("~/Content/plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css")" rel="stylesheet">
+
+<!-- Bootstrap DatePicker Css -->
+<link href="@Url.Content("~/Content/plugins/bootstrap-datepicker/css/bootstrap-datepicker.css")" rel="stylesheet">
+
+<!-- Morris Chart Css-->
+<link href="@Url.Content("~/Content/plugins/morrisjs/morris.css")" rel="stylesheet">
+
+<!-- Custom Css -->
+<link href="@Url.Content("~/Content/css/style.css")" rel="stylesheet">
+
+<!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
+<link href="@Url.Content("~/Content/css/themes/all-themes.css")" rel="stylesheet">
+
+<link href="@Url.Content("~/Content/jquery.typeahead.min.css")" rel="stylesheet" />
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+    .invoice-heading {
+        width: 100%;
+        text-align: center;
+        /* font-size: 20; */
+        font: bold 15px Helvetica, Sans-Serif;
+        height: 30px;
+        margin: 2px 0;
+        background-color: #222 !important;
+        -webkit-print-color-adjust: exact;
+        color: white !important;
+        letter-spacing: 20px;
+        padding: 7px 0px;
+    }
+
+    body {
+        background-color: white;
+        font-family: 'Calibri';
+    }
+
+    .page-wrap {
+        width: 800px;
+        margin: 0 auto;
+    }
+
+    .customer-title {
+        font-weight: bold;
+        float: left;
+        font: bold 24px Helvetica, Sans-Serif;
+    }
+</style>
+
+
+<div class="page-wrap">
+
+    <p class="invoice-heading">PAY SLIP</p>
+    <table class="col-sm-12" style="margin-bottom: 5px;">
+        <tr>
+            <td style="font-size: 12px; width:30%; ">
+                <span style="font: bold 20px Helvetica, Sans-Serif;">@Model.AccountName</span><br />
+                <small style="flex-wrap: wrap;">
+                    NIC/NTN/GST #:  @Model.CNIC, @Model.NTN, @Model.STRN
+                </small>
+                <br />
+                <small>
+                    Contact #:  @Model.ContactNo
+                </small>
+                <br>
+                <small>
+                    City Area: @Model.CityAreaName
+                </small>
+                <br>
+                <small>
+                    Address :  @Model.Address
+                </small>
+            </td>
+            <td style="">
+                <table border="1" style="width:90%;">
+                    <tr>
+                        <th colspan="2" style="text-align:center; width: 30%;padding: 2px;">PAY SIP</th>
+                    </tr>
+                    <tr>
+                        <th style="padding: 2px;background-color: #eee !important;">Pay slip  #</th>
+                        <td style="padding: 2px; text-align: right;">@Model.ReceiptNo</td>
+                    </tr>
+                    <tr>
+                        <th style="padding: 2px;background-color: #eee !important;">Slip Date</th>
+                        <td style="padding: 2px; text-align: right;">@Model.PaymentDate</td>
+                    </tr>
+                    <tr>
+                        <th style="padding: 2px;background-color: #eee !important;">Total Amt</th>
+                        <td style="padding: 2px; text-align: right;">
+                            @{
+                                decimal pTotalAmount = decimal.Parse(@Model.TotalAmount.ToString(), CultureInfo.InvariantCulture);
+                                string Ptotal = string.Format(ciPk, "{0:c}", pTotalAmount);
+                            }
+                            @Ptotal
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td style="font-size: 12px;  width:40%; padding-left:20px; ">
+                @if (string.IsNullOrEmpty(Model.CompanyInfo.ImagePath))
+                {<span style="font: bold 20px Helvetica, Sans-Serif;">@Model.CompanyInfo.CompanyName</span><br />
+            }
+            else
+            {
+                <img id="output" src="@string.Format("{0}/{1}",System.Configuration.ConfigurationManager.AppSettings["WebsiteUrl"], Model.CompanyInfo.ImagePath.Replace("~",""))" alt="your image" style="width:50%;" />
+            }<br />
+                <span style="flex-wrap: wrap; ">@Model.CompanyInfo.Address1</span><br />
+                <small style="flex-wrap: wrap;">
+                    STRN/NTN/GST #:  @Model.CompanyInfo.STRNNumber, @Model.CompanyInfo.ReferenceNumber, @Model.CompanyInfo.RegistrationNumber
+                </small>
+                <br />
+                <span>Email: @Model.CompanyInfo.Email</span><br />
+                <span>
+                    Phone: @Model.CompanyInfo.ContactNo1, @Model.CompanyInfo.ContactNo2
+                </span>
+            </td>
+        </tr>
+    </table>
+    <table class="col-sm-12" style="width: 100%;margin-bottom: 5px; font-size:12px;" border="1">
+        <thead>
+            <tr style="background-color: #eee !important;">
+                <th style="width:5%">#</th>
+                <th style="padding: 2px;text-align: center;width: 200px;">Vendor</th>
+                <th style="padding: 2px;text-align: center;">Remarks</th>
+                <th style="padding: 2px;text-align: center;width: 100px;">Mode</th>
+                <th style="padding: 2px;text-align: center;width: 100px;">Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @{
+                int count = 1;
+                foreach (var item in Model.ItemDetail)
+                {
+                    <tr>
+                        <td><span class="sn">@count</span>.</td>
+                        <td class="text-left" style="padding: 2px;">@item.AccountName</td>
+                        <td class="">@item.Particulars</td>
+                        <td class="">@item.PaymentMode</td>
+                        <td class="" style="padding: 2px; text-align: right;">
+                            @{
+                                decimal pAmount = decimal.Parse(item.Amount.ToString(), CultureInfo.InvariantCulture);
+                                string amt = string.Format(ciPk, "{0:c}", pAmount);
+                            }
+                            @amt
+                        </td>
+                    </tr>
+                    {
+                        count++;
+                    }
+                }
+                <tr style="background-color: #eee !important;">
+                    <td class="text-left" style="padding: 2px; text-align: center;"><b></b></td>
+                    <td class="text-left" style="padding: 2px; text-align: center;"><b>Total</b></td>
+                    <td class="" style="padding: 2px; text-align: right;"></td>
+                    <td class="" style="padding: 2px; text-align: right;"></td>
+                    <td class="" style="padding: 2px; text-align: right;">
+                        <b>
+                            @{
+                                decimal prTO = decimal.Parse(Model.ItemDetail.Sum(x => x.Amount).ToString(), CultureInfo.InvariantCulture);
+                                string rTO = string.Format(ciPk, "{0:c}", prTO);
+                            }
+                            @rTO
+                        </b>
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+    <table class="" style="margin-bottom: 5px; width: 40%; float: left; margin: 5px;font-size: 11px;" border="0">
+        <tbody>
+            <tr>
+                <th style="border-bottom: 1px solid lightgray;padding:2px;text-align:center;border-right-style: hidden;border-left-style: hidden;border-top-style: hidden;letter-spacing: 2px;font-size: 12px;">
+                    شرائط
+                </th>
+            </tr>
+            <tr>
+                <td style="text-align:right ;">
+                    <br />.١. مال سیلز میں کی موجودگی میں چیک کر لیں بعد میں کوئی ذمداری نہیں ہو گی
+                    <br />.٢. سیلز میں سے بل کے علاوہ لیں دیں کی کمپنی ذمدار نہیں ہو گی
+                    <br />.٣. ماؤس کاٹ اور ایکسپائری تاریخ کی کمپنی ذمدار نہیں ہو گی
+                    
+                    
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="" style="margin-bottom: 5px;width: 50%;float: left;margin: 5px; font-size: 12px;" border="0">
+        <tbody>
+            <tr>
+                <th style="padding:2px;text-align:right;border-right-style: hidden;padding-bottom: 12px;width:100px">
+                    Recvr Name & Sign:
+                </th>
+                <td style="padding: 2px;width:120px;padding-bottom: 12px;border-bottom: 1px solid lightgray;"></td>
+            </tr>
+            <tr>
+                <th style="padding:2px;text-align:right;border-right-style: hidden;padding-bottom: 12px;">
+                    Remarks:
+                </th>
+                <td style="padding: 2px;border-bottom: 1px solid lightgray;"></td>
+            </tr>
+            <tr>
+                <th style="padding:2px;text-align:right;border-right-style: hidden;padding-bottom: 13px;">
+                    Generated By:
+                </th>
+                <td style="padding: 2px;padding-bottom: 13px;border-bottom: 1px solid lightgray;"></td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="col-sm-12" style="width: 100%;margin-bottom: 5px;">
+        <tbody>
+            <tr>
+                <td style="text-align: center;font-size: 14px;">
+                    Developed By: Muhammad Ahsan (+92-332-2641184)  
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,872 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <title>Emaan Traders</title>
+
+    <!-- Favicon-->
+    <link href="@Url.Content("~/favicon.ico")" rel="stylesheet" type="image/x-icon" />
+
+    <!-- Google Fonts -->
+    <!-- Google Fonts -->
+    @*<link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">*@
+
+    <link href="@Url.Content("~/Content/css/robot-font.css")" rel="stylesheet" type="text/css">
+
+    <!-- Bootstrap Core Css -->
+    <link href="@Url.Content("~/Content/plugins/bootstrap/css/bootstrap.css")" rel="stylesheet">
+
+    <!-- Waves Effect Css -->
+    <link href="@Url.Content("~/Content/plugins/node-waves/waves.css")" rel="stylesheet">
+
+    <!-- Animation Css -->
+    <link href="@Url.Content("~/Content/plugins/animate-css/animate.css")" rel="stylesheet">
+
+    <!-- JQuery DataTable Css -->
+    <link href="@Url.Content("~/Content/plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css")" rel="stylesheet">
+
+    <!-- Bootstrap Material Datetime Picker Css -->
+    <link href="@Url.Content("~/Content/plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css")" rel="stylesheet">
+
+    <!-- Bootstrap DatePicker Css -->
+    <link href="@Url.Content("~/Content/plugins/bootstrap-datepicker/css/bootstrap-datepicker.css")" rel="stylesheet">
+
+    <!-- Morris Chart Css-->
+    <link href="@Url.Content("~/Content/plugins/morrisjs/morris.css")" rel="stylesheet">
+
+    <!-- Custom Css -->
+    <link href="@Url.Content("~/Content/css/style.css")" rel="stylesheet">
+
+    <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
+    <link href="@Url.Content("~/Content/css/themes/all-themes.css")" rel="stylesheet">
+
+    <link href="@Url.Content("~/Content/jquery.typeahead.min.css")" rel="stylesheet" />
+
+    <link href="@Url.Content("~/Content/css/font-awesome.min.css")" rel="stylesheet" />
+    @*<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">*@
+
+    <link href="@Url.Content("~/Content/css/select2.min.css")" rel="stylesheet" />
+    @RenderSection("CssImport", false)
+
+</head>
+<body class="theme-red">
+
+    <!-- Page Loader -->
+    <div class="page-loader-wrapper">
+        <div class="loader">
+            <div class="preloader">
+                <div class="spinner-layer pl-red">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+            </div>
+            <p>Please wait...</p>
+        </div>
+    </div>
+    <!-- #END# Page Loader -->
+    <!-- Overlay For Sidebars -->
+    <div class="overlay"></div>
+    <!-- #END# Overlay For Sidebars -->
+    <!-- Search Bar -->
+    <div class="search-bar">
+        <div class="search-icon">
+            <i class="material-icons">search</i>
+        </div>
+        <input type="text" placeholder="START TYPING...">
+        <div class="close-search">
+            <i class="material-icons">close</i>
+        </div>
+    </div>
+    <!-- #END# Search Bar -->
+    <!-- Top Bar -->
+    <nav class="navbar">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
+                <a href="javascript:void(0);" class="bars"></a>
+                <a class="navbar-brand" href="/Site/Dashboard">
+                    <img src="~/Content/images/PNG/Artboard 1 copy.png" style="width: 150px; margin-top: -20px;" />
+                </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right hidden">
+                    <!-- Call Search -->
+                    <li><a href="javascript:void(0);" class="js-search" data-close="true"><i class="material-icons">search</i></a></li>
+                    <!-- #END# Call Search -->
+                    <!-- Notifications -->
+                    <li class="dropdown">
+                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button">
+                            <i class="material-icons">notifications</i>
+                            <span class="label-count">7</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="header">NOTIFICATIONS</li>
+                            <li class="body">
+                                <ul class="menu">
+                                    <li>
+                                        <a href="javascript:void(0);">
+                                            <div class="icon-circle bg-light-green">
+                                                <i class="material-icons">person_add</i>
+                                            </div>
+                                            <div class="menu-info">
+                                                <h4>12 new members joined</h4>
+                                                <p>
+                                                    <i class="material-icons">access_time</i> 14 mins ago
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);">
+                                            <div class="icon-circle bg-cyan">
+                                                <i class="material-icons">add_shopping_cart</i>
+                                            </div>
+                                            <div class="menu-info">
+                                                <h4>4 sales made</h4>
+                                                <p>
+                                                    <i class="material-icons">access_time</i> 22 mins ago
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);">
+                                            <div class="icon-circle bg-red">
+                                                <i class="material-icons">delete_forever</i>
+                                            </div>
+                                            <div class="menu-info">
+                                                <h4><b>Nancy Doe</b> deleted account</h4>
+                                                <p>
+                                                    <i class="material-icons">access_time</i> 3 hours ago
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);">
+                                            <div class="icon-circle bg-orange">
+                                                <i class="material-icons">mode_edit</i>
+                                            </div>
+                                            <div class="menu-info">
+                                                <h4><b>Nancy</b> changed name</h4>
+                                                <p>
+                                                    <i class="material-icons">access_time</i> 2 hours ago
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);">
+                                            <div class="icon-circle bg-blue-grey">
+                                                <i class="material-icons">comment</i>
+                                            </div>
+                                            <div class="menu-info">
+                                                <h4><b>John</b> commented your post</h4>
+                                                <p>
+                                                    <i class="material-icons">access_time</i> 4 hours ago
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);">
+                                            <div class="icon-circle bg-light-green">
+                                                <i class="material-icons">cached</i>
+                                            </div>
+                                            <div class="menu-info">
+                                                <h4><b>John</b> updated status</h4>
+                                                <p>
+                                                    <i class="material-icons">access_time</i> 3 hours ago
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);">
+                                            <div class="icon-circle bg-purple">
+                                                <i class="material-icons">settings</i>
+                                            </div>
+                                            <div class="menu-info">
+                                                <h4>Settings updated</h4>
+                                                <p>
+                                                    <i class="material-icons">access_time</i> Yesterday
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="footer">
+                                <a href="javascript:void(0);">View All Notifications</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- #END# Notifications -->
+                    <!-- Tasks -->
+                    <li class="dropdown">
+                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button">
+                            <i class="material-icons">flag</i>
+                            <span class="label-count">9</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="header">TASKS</li>
+                            <li class="body">
+                                <ul class="menu tasks">
+                                    <li>
+                                        <a href="javascript:void(0);">
+                                            <h4>
+                                                Footer display issue
+                                                <small>32%</small>
+                                            </h4>
+                                            <div class="progress">
+                                                <div class="progress-bar bg-pink" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 32%">
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);">
+                                            <h4>
+                                                Make new buttons
+                                                <small>45%</small>
+                                            </h4>
+                                            <div class="progress">
+                                                <div class="progress-bar bg-cyan" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 45%">
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);">
+                                            <h4>
+                                                Create new dashboard
+                                                <small>54%</small>
+                                            </h4>
+                                            <div class="progress">
+                                                <div class="progress-bar bg-teal" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 54%">
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);">
+                                            <h4>
+                                                Solve transition issue
+                                                <small>65%</small>
+                                            </h4>
+                                            <div class="progress">
+                                                <div class="progress-bar bg-orange" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 65%">
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);">
+                                            <h4>
+                                                Answer GitHub questions
+                                                <small>92%</small>
+                                            </h4>
+                                            <div class="progress">
+                                                <div class="progress-bar bg-purple" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 92%">
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="footer">
+                                <a href="javascript:void(0);">View All Tasks</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- #END# Tasks -->
+                    <li class="pull-right"><a href="javascript:void(0);" class="js-right-sidebar" data-close="true"><i class="material-icons">more_vert</i></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- #Top Bar -->
+    <section>
+        <!-- Left Sidebar -->
+        <aside id="leftsidebar" class="sidebar">
+            <!-- User Info -->
+            <div class="user-info">
+                <div class="image">
+                    <img src="~/Content/images/user.png" width="48" height="48" alt="User" />
+                </div>
+                <div class="info-container">
+                    @*@if (User.IsInRole("Filer"))
+                        {
+                            <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Filer</div>
+                        }
+                        else
+                        {
+                            <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Non Filer</div>
+                        }*@
+                    <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Welcome Admin</div>
+
+                    <div class="btn-group user-helper-dropdown">
+                        <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">keyboard_arrow_down</i>
+                        <ul class="dropdown-menu pull-right">
+
+                            @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
+                            {
+                                <li><a href="javascript:void(0);"><i class="material-icons">person</i>Profile</a></li>
+                                <li role="separator" class="divider"></li>
+                                @Html.AntiForgeryToken()
+                                <li><a href="javascript:document.getElementById('logoutForm').submit()"><i class="material-icons">input</i>Sign Out</a></li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- #User Info -->
+            <!-- Menu -->
+            <div class="menu">
+                <ul class="list" id="ulMenues">
+                    <li class="header">MAIN NAVIGATION</li>
+                    <li>
+                        <a href="~/Site/Dashboard">
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);" class="menu-toggle">
+                            <span>Settings</span>
+                        </a>
+                        <ul class="ml-menu">
+                            <li>
+                                <a href="~/Company/CompanyList">Manage Companies</a>
+                            </li>
+                            <li>
+                                <a href="~/CityArea/CityList">Manage City</a>
+                            </li>
+                            <li>
+                                <a href="~/CityArea/AreaList">Manage City Area</a>
+                            </li>
+                            <li>
+                                <a href="~/Employee/EmployeeList">Manage Employees</a>
+                            </li>
+                            @*<li>
+                                    <a href="~/ExpenseAccount/ExpenseAccountList">Manage Expense Accounts</a>
+                                </li>*@
+                            <li>
+                                <a href="~/Bank/AccountsList">Manage Banks</a>
+                            </li>
+                            <li>
+                                <a href="~/Vendors/VendorList">Manage Vendor</a>
+                            </li>
+                            <li>
+                                <a href="~/Customer/CustomerList">Mange Customers</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    @*<li>
+                            <a href="javascript:void(0);" class="menu-toggle">
+                                <span>Banks</span>
+                            </a>
+                            <ul class="ml-menu">
+                                <li>
+                                    <a href="~/Bank/AccountsList">Manage Banks</a>
+                                </li>
+                                <li>
+                                    <a href="~/Bank/BankTransferList">Bank To Bank Transfer</a>
+                                </li>
+                            </ul>
+                        </li>*@
+
+                    <li>
+                        <a href="javascript:void(0);" class="menu-toggle">
+                            <span>Items</span>
+                        </a>
+                        <ul class="ml-menu">
+                            <li>
+                                <a href="~/Items/ItemList">Manage Items</a>
+                            </li>
+                            <li>
+                                <a href="~/Items/SubItemList">Manage Sub Items</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="javascript:void(0);" class="menu-toggle">
+                            <span>Purchase</span>
+                        </a>
+                        <ul class="ml-menu">
+                            <li>
+                                <a href="~/Purchase/PurchaseList">Manage Purchase Orders</a>
+                            </li>
+                            <li>
+                                <a href="~/Purchase/PurchaseReturnList">Manage Purchase Order Return</a>
+                            </li>
+                            <li>
+                                <a href="~/Payments/PaymentList">Manage Purchase Payment</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);" class="menu-toggle">
+                            <span>Sale</span>
+                        </a>
+                        <ul class="ml-menu">
+                            <li>
+                                <a href="~/Sale/SaleList">Manage Sale Invoices</a>
+                            </li>
+                            <li>
+                                <a href="~/Sale/SaleReturnList">Manage Sale Invoice Return</a>
+                            </li>
+                            <li>
+                                <a href="~/PaymentMulti/ReceiptList">Manage Cash Receipt</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    @*<li>
+                            <a href="javascript:void(0);" class="menu-toggle">
+                                <span>Expense</span>
+                            </a>
+                            <ul class="ml-menu">
+                                <li>
+                                    <a href="~/Expense/ExpenseList">Manage Expense</a>
+                                </li>
+                                <li>
+                                    <a href="~/Expense/Expense">Add Expense</a>
+                                </li>
+                            </ul>
+                        </li>*@
+
+                    <li>
+                        <a href="javascript:void(0);" class="menu-toggle">
+                            <span>Reports</span>
+                        </a>
+                        <ul class="ml-menu">
+                            <li>
+                                <a href="~/Inventory/InventoryOnHand">Inventory Report</a>
+                            </li>
+                            <li>
+                                <a href="~/Report/VendorLedger">Vendor Ledger</a>
+                            </li>
+                            <li>
+                                <a href="~/Report/AccountPayable">Account Payable </a>
+                            </li>
+                            <li>
+                                <a href="~/Report/AccountRecievable">Account Receivable</a>
+                            </li>
+                            <li>
+                                <a href="~/Report/ProfitAndLostSummary">Profit & Lost Summary</a>
+                            </li>
+                            <li>
+                                <a href="~/Report/CustomerLedger">Customer Ledger</a>
+                            </li>
+                            <li>
+                                <a href="~/Report/SaleInvoiceSummaryReport">Sale Invoice Summary</a>
+                            </li>
+                            <li>
+                                <a href="~/Report/CustomerWiseBalanceReport">Customer Balance</a>
+                            </li>
+                            <li>
+                                <a href="~/Report/SalesReport">Sales Report</a>
+                            </li>
+                            <li>
+                                <a href="~/Report/ExecutionReport">Execution Report</a>
+                            </li>
+
+
+                            @* <li>
+                                    <a href="~/Report/ProfitAndLoss">Profit And Lost</a>
+                                </li><li>
+                                           <a href="~/Inventory/InventoryOnHand">Sales Register Report</a>
+                                       </li>
+                                       <li>
+                                           <a href="~/Inventory/InventoryOnHand">Expanse Detail Report</a>
+                                       </li>
+                                    <li>
+                                           <a href="~/Report/BankLedger">Bank Ledger</a>
+                                       </li>
+                                       <li>
+                                           <a href="~/Report/CashLedger">Cash Ledger</a>
+                                       </li>
+                                       <li>
+                                           <a href="~/Report/DailyCashReport">Daily Cash/Bank</a>
+                                       </li>
+                                       <li>
+                                           <a href="~/Report/DetailLedgerStatement">Detail Ledger Statement</a>
+                                       </li>
+                                       <li>
+                                           <a href="~/Report/ItemActivity">Item Activity</a>
+                                       </li>
+
+                                       <li>
+                                           <a href="~/Report/ProfitAndLoss">Profit And Lost</a>
+                                       </li>
+                                       <li>
+                                           <a href="~/Report/CompanyPositionReport">Company Position Report</a>
+                                       </li>*@
+                        </ul>
+                    </li>
+
+                </ul>
+            </div>
+            <!-- #Menu -->
+            <!-- Footer -->
+            <div class="legal">
+                <div class="copyright">
+                    Deveoped By: <a href="javascript:void(0);">GeniusSoutions</a>.
+                </div>
+            </div>
+            <!-- #Footer -->
+        </aside>
+        <!-- #END# Left Sidebar -->
+        <!-- Right Sidebar -->
+        <aside id="rightsidebar" class="right-sidebar">
+            <ul class="nav nav-tabs tab-nav-right" role="tablist">
+                <li role="presentation" class="active"><a href="#skins" data-toggle="tab">SKINS</a></li>
+                <li role="presentation"><a href="#settings" data-toggle="tab">SETTINGS</a></li>
+            </ul>
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane fade in active in active" id="skins">
+                    <ul class="demo-choose-skin">
+                        <li data-theme="red" class="active">
+                            <div class="red"></div>
+                            <span>Red</span>
+                        </li>
+                        <li data-theme="pink">
+                            <div class="pink"></div>
+                            <span>Pink</span>
+                        </li>
+                        <li data-theme="purple">
+                            <div class="purple"></div>
+                            <span>Purple</span>
+                        </li>
+                        <li data-theme="deep-purple">
+                            <div class="deep-purple"></div>
+                            <span>Deep Purple</span>
+                        </li>
+                        <li data-theme="indigo">
+                            <div class="indigo"></div>
+                            <span>Indigo</span>
+                        </li>
+                        <li data-theme="blue">
+                            <div class="blue"></div>
+                            <span>Blue</span>
+                        </li>
+                        <li data-theme="light-blue">
+                            <div class="light-blue"></div>
+                            <span>Light Blue</span>
+                        </li>
+                        <li data-theme="cyan">
+                            <div class="cyan"></div>
+                            <span>Cyan</span>
+                        </li>
+                        <li data-theme="teal">
+                            <div class="teal"></div>
+                            <span>Teal</span>
+                        </li>
+                        <li data-theme="green">
+                            <div class="green"></div>
+                            <span>Green</span>
+                        </li>
+                        <li data-theme="light-green">
+                            <div class="light-green"></div>
+                            <span>Light Green</span>
+                        </li>
+                        <li data-theme="lime">
+                            <div class="lime"></div>
+                            <span>Lime</span>
+                        </li>
+                        <li data-theme="yellow">
+                            <div class="yellow"></div>
+                            <span>Yellow</span>
+                        </li>
+                        <li data-theme="amber">
+                            <div class="amber"></div>
+                            <span>Amber</span>
+                        </li>
+                        <li data-theme="orange">
+                            <div class="orange"></div>
+                            <span>Orange</span>
+                        </li>
+                        <li data-theme="deep-orange">
+                            <div class="deep-orange"></div>
+                            <span>Deep Orange</span>
+                        </li>
+                        <li data-theme="brown">
+                            <div class="brown"></div>
+                            <span>Brown</span>
+                        </li>
+                        <li data-theme="grey">
+                            <div class="grey"></div>
+                            <span>Grey</span>
+                        </li>
+                        <li data-theme="blue-grey">
+                            <div class="blue-grey"></div>
+                            <span>Blue Grey</span>
+                        </li>
+                        <li data-theme="black">
+                            <div class="black"></div>
+                            <span>Black</span>
+                        </li>
+                    </ul>
+                </div>
+                <div role="tabpanel" class="tab-pane fade" id="settings">
+                    <div class="demo-settings">
+                        <p>GENERAL SETTINGS</p>
+                        <ul class="setting-list">
+                            <li>
+                                <span>Report Panel Usage</span>
+                                <div class="switch">
+                                    <label><input type="checkbox" checked><span class="lever"></span></label>
+                                </div>
+                            </li>
+                            <li>
+                                <span>Email Redirect</span>
+                                <div class="switch">
+                                    <label><input type="checkbox"><span class="lever"></span></label>
+                                </div>
+                            </li>
+                        </ul>
+                        <p>SYSTEM SETTINGS</p>
+                        <ul class="setting-list">
+                            <li>
+                                <span>Notifications</span>
+                                <div class="switch">
+                                    <label><input type="checkbox" checked><span class="lever"></span></label>
+                                </div>
+                            </li>
+                            <li>
+                                <span>Auto Updates</span>
+                                <div class="switch">
+                                    <label><input type="checkbox" checked><span class="lever"></span></label>
+                                </div>
+                            </li>
+                        </ul>
+                        <p>ACCOUNT SETTINGS</p>
+                        <ul class="setting-list">
+                            <li>
+                                <span>Offline</span>
+                                <div class="switch">
+                                    <label><input type="checkbox"><span class="lever"></span></label>
+                                </div>
+                            </li>
+                            <li>
+                                <span>Location Permission</span>
+                                <div class="switch">
+                                    <label><input type="checkbox" checked><span class="lever"></span></label>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        <!-- #END# Right Sidebar -->
+    </section>
+    <section class="content">
+
+        <!-- Jquery Core Js -->
+        @*        <script src="@Url.Content("~/Content/plugins/jquery/jquery.min.js")"></script>*@
+        <script src="@Url.Content("~/Scripts/jquery-1.10.2.min.js")"></script>
+        @*<script src="~/Scripts/jquery-1.10.2.min.js"></script>*@
+        <!-- Bootstrap Core Js -->
+        <script src="@Url.Content("~/Content/plugins/bootstrap/js/bootstrap.js")"></script>
+
+        @*js for autocomplete*@
+        <script src="@Url.Content("~/Scripts/jquery.typeahead.min.js")"></script>
+        <script src="@Url.Content("~/Scripts/select2.min.js")"></script>
+
+        @RenderSection("JavascriptImport", false)
+
+        @RenderBody()
+
+    </section>
+
+    <!-- /.modal -->
+    <div class="modal fade" id="PrintModel">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel"></h4>
+                </div>
+                <div class="modal-body" style="padding: 0px 0px;">
+                </div>
+                @*<div class="modal-footer">
+                        <button type="button" class="btn" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary hidden">Save changes</button>
+                    </div>*@
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel"></h4>
+                </div>
+                <div class="modal-body" style="padding: 0px 0px;">
+                    <iframe frameborder="0" width="100%" height="300" scrolling="yes"></iframe>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="~/Content/plugins/bootstrap-notify/bootstrap-notify.min.js"></script>
+    < !-- Slimscroll Plugin Js -->
+    <script src="@Url.Content("~/Content/plugins/jquery-slimscroll/jquery.slimscroll.js")"></script>
+    <!-- Waves Effect Plugin Js -->
+    <script src="@Url.Content("~/Content/plugins/node-waves/waves.js")"></script>
+    <!-- Jquery DataTable Plugin Js -->
+    <script src="@Url.Content("~/Content/plugins/jquery-datatable/jquery.dataTables.js")"></script>
+    <script src="@Url.Content("~/Content/plugins/jquery-datatable/skin/bootstrap/js/dataTables.bootstrap.js")"></script>
+    <script src="@Url.Content("~/Content/plugins/jquery-datatable/extensions/export/dataTables.buttons.min.js")"></script>
+    <script src="@Url.Content("~/Content/plugins/jquery-datatable/extensions/export/buttons.flash.min.js")"></script>
+    <script src="@Url.Content("~/Content/plugins/jquery-datatable/extensions/export/jszip.min.js")"></script>
+    <script src="@Url.Content("~/Content/plugins/jquery-datatable/extensions/export/pdfmake.min.js")"></script>
+    <script src="@Url.Content("~/Content/plugins/jquery-datatable/extensions/export/vfs_fonts.js")"></script>
+    <script src="@Url.Content("~/Content/plugins/jquery-datatable/extensions/export/buttons.html5.min.js")"></script>
+    <script src="@Url.Content("~/Content/plugins/jquery-datatable/extensions/export/buttons.print.min.js")"></script>
+    <!-- Jquery CountTo Plugin Js -->
+    <script src="@Url.Content("~/Content/plugins/jquery-countto/jquery.countTo.js")"></script>
+    <!-- Morris Plugin Js -->
+    <script src="@Url.Content("~/Content/plugins/raphael/raphael.min.js")"></script>
+    <script src="@Url.Content("~/Content/plugins/morrisjs/morris.js")"></script>
+    <!-- ChartJs -->
+    <script src="@Url.Content("~/Content/plugins/chartjs/Chart.bundle.js")"></script>
+    <!-- Flot Charts Plugin Js -->
+    @*<script src="@Url.Content("~/Content/plugins/flot-charts/jquery.flot.js")"></script>
+        <script src="@Url.Content("~/Content/plugins/flot-charts/jquery.flot.resize.js")"></script>
+        <script src="@Url.Content("~/Content/plugins/flot-charts/jquery.flot.pie.js")"></script>
+        <script src="@Url.Content("~/Content/plugins/flot-charts/jquery.flot.categories.js")"></script>
+        <script src="@Url.Content("~/Content/plugins/flot-charts/jquery.flot.time.js")"></script>*@
+    <!-- Sparkline Chart Plugin Js -->
+    <script src="@Url.Content("~/Content/plugins/jquery-sparkline/jquery.sparkline.js")"></script>
+
+    <!-- Moment Plugin Js -->
+    <script src="@Url.Content("~/Content/plugins/momentjs/moment.js")"></script>
+
+    <!-- Bootstrap Material Datetime Picker Plugin Js -->
+    <script src="@Url.Content("~/Content/plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js")"></script>
+
+    <!-- Bootstrap Datepicker Plugin Js -->
+    <script src="@Url.Content("~/Content/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js")"></script>
+
+    <!-- Custom Js -->
+    <script src="@Url.Content("~/Content/js/admin.js")"></script>
+    <script src="@Url.Content("~/Content/js/pages/forms/basic-form-elements.js")"></script>
+
+    <!-- Demo Js -->
+    <script src="@Url.Content("~/Content/js/demo.js")"></script>
+
+    <script>
+
+        var getWebsiteUrl = '@(System.Configuration.ConfigurationManager.AppSettings["WebsiteUrl"].ToString())';
+
+        // ------------------------ li Menues selection ------------------------------
+        $(function () {
+            $('#ulMenues li').removeClass('active');
+            $('#ulMenues li a').removeClass('toggled');
+            $('#ulMenues li').each(function () {
+                var aa = $(this).find('a').attr('href');
+                var url = document.location.href.replace("#", "");
+                if (aa != null && aa != "") {
+                    if (url == (getWebsiteUrl + aa)) {
+                        $(this).closest('ul').attr('style', 'display:block');
+                        $(this).find('a').addClass('toggled');
+                        $(this).addClass('active');
+                    }
+                }
+            });
+        });
+
+        function AlertMsg(title, message, type) {
+            //type: 'success'
+            //type: 'warning'
+            //type: 'danger'
+            //type: 'info'
+
+            $.notify({
+                title: title,
+                message: message
+            }, {
+                type: type
+            });
+        }
+
+        $(".AllowDecimal").on("keypress keyup blur", function (event) {
+            //this.value = this.value.replace(/[^0-9\.]/g,'');
+            $(this).val($(this).val().replace(/[^0-9\.]/g, ''));
+            if ((event.which != 46 || $(this).val().indexOf('.') != -1) && (event.which < 48 || event.which > 57)) {
+                event.preventDefault();
+            }
+        });
+
+        $(".OnlyNumbers").on("keypress keyup blur", function (event) {
+            $(this).val($(this).val().replace(/[^\d].+/, ""));
+            if ((event.which < 48 || event.which > 57)) {
+                event.preventDefault();
+            }
+        });
+
+        //$('.datatable').DataTable({
+        //    responsive: true
+        //});
+
+        $('.datatablethis').DataTable({
+            responsive: true,
+            aaSorting: [[0, 'desc']],
+            dom: 'Bfrtip',
+            buttons: [
+                'excel', 'print'
+            ]
+        });
+
+        $('.datatable').DataTable({
+            responsive: true,
+            aaSorting: [[0, 'desc']]
+            //dom: 'Bfrtip',
+            //buttons: [
+            //    'excel'//, 'print'
+            //]
+        });
+
+        $("input:text,form").attr("autocomplete", "off");
+
+        function PrintPopup(src, width, height, title) {
+            var iframe = '<iframe id="reportFrame" width="100%" height="' + height + 'px" scrolling="no" frameborder="0" src="' + src + '" allowfullscreen></iframe>';
+            $mymodal = $("#PrintModel");
+            $mymodal.attr('data-height', height);
+            $mymodal.find("h4.modal-title").html(title);
+            $mymodal.find("div.modal-body").html(iframe);
+            $mymodal.modal("show");
+            $('#PrintModel .modal-dialog').css('width', width + 'px');
+
+            //$('#myModal').attr('data-src', src);
+            //$('#myModal').attr('data-height', height);
+            //$('#myModalLabel').html(title);
+            //$('#myModal').modal('show');
+            //$('#myModal .modal-dialog').css('width', width + 'px');
+
+        }
+        $(document).ready(function () {
+
+        $(".js-select2").select2();
+        });
+
+
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,164 @@
+﻿@model EmanTraders.Models.ViewModels.BankAccountViewModel
+
+@{
+    ViewBag.Title = "Bank Transfer";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@using (Html.BeginForm("", "", FormMethod.Post, new { id = "bank-transfer" }))
+{
+    @Html.HiddenFor(x => x.BankTransferID)
+
+    <div class="row clearfix">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="card">
+                <div class="header">
+                    <h2>
+                        Bank to Bank Transfer
+                    </h2>
+                </div>
+                <div class="body">
+                    <div class="row clearfix">
+                        <div class="col-md-3">
+                            <p>
+                                <b>From Bank Account</b>
+                            </p>
+                            @Html.DropDownListFor(x => x.FromBankID, Model.BankList, "Select", new { @class = "form-control input-sm  js-select2" })
+                        </div>
+
+                        <div class="col-md-3">
+                            <p>
+                                <b>To Bank Account</b>
+                            </p>
+                            @Html.DropDownListFor(x => x.ToBankID, Model.BankList, "Select", new { @class = "form-control input-sm  js-select2" })
+                        </div>
+
+                        <div class="col-md-3">
+                            <p>
+                                <b>Date</b>
+                            </p>
+                            @Html.TextBoxFor(x => x.TransferDate, new { @class = "form-control icon-download appdatepicker input-sm", id= "TransferDate" })
+                        </div>
+
+                        <div class="col-md-3">
+                            <p>
+                                <b>Bank Charges</b>
+                            </p>
+                            @Html.TextBoxFor(x => x.OtherCharges, new { @class = "form-control icon-download input-sm AllowDecimal" })
+                        </div>
+                     
+                        <div class="col-md-3">
+                            <p>
+                                <b>Amount</b>
+                            </p>
+                            @Html.TextBoxFor(x => x.Amount, new { @class = "form-control icon-download input-sm AllowDecimal" })
+                        </div>
+
+                        <div class="col-md-9">
+                            <p>
+                                <b>Description</b>
+                            </p>
+                            @Html.TextAreaFor(x => x.Description, new { @class = "form-control icon-download input-sm" })
+
+                        </div>
+                        <div class="col-md-3">
+                            <button id="btnSave" type="button" class="btn btn-danger waves-effect col-md-3">SAVE</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+}
+<script>
+
+    $(document).ready(function () {
+       
+
+        $('#btnSave').click(function () {
+
+            if ($('#FromBankID').val() == "") {
+                AlertMsg('<strong>Required!</strong>', 'From Bank is required.', 'info');
+                $('#FromBankID').focus()
+                return false;
+            }
+
+            if ($('#FromBankID').val() == $("#ToBankID").val()) {
+                AlertMsg('<strong>Required!</strong>', 'Bank should be different.', 'info');
+                $('#ToBankID').focus()
+                return false;
+            }
+
+            if ($("#ToBankID").val() == "") {
+                AlertMsg('<strong>Required!</strong>', 'To Bank is required.', 'info');
+                $('#ToBankID').focus()
+                return false;
+            }
+
+            if ($('#TransferDate').val() == "") {
+                AlertMsg('<strong>Required!</strong>', 'Transfer Date is required.', 'info');
+                $('#TransferDate').focus();
+                return false;
+            }
+
+            if ($('#Amount').val() == "") {
+                AlertMsg('<strong>Required!</strong>', 'Amount is required.', 'info');
+                $('#Amount').focus();
+                return false;
+            }
+
+            if ($('#Description').val() == "") {
+                AlertMsg('<strong>Required!</strong>', 'Description is required', 'info');
+                $('#Description').focus()
+                return false;
+            }
+
+                InsertRecord();
+        });
+    });
+
+
+    function GetRecord() {
+        
+        var model = {
+            BankTransferID: $('#BankTransferID').val(),
+            FromBankID: $('#FromBankID').val(),
+            ToBankID: $('#ToBankID').val(),
+            TransferDate: $('#TransferDate').val(),
+            OtherCharges: $('#OtherCharges').val(),
+            Amount: $('#Amount').val(),
+            Description: $('#Description').val(),
+        }
+        return model;
+    }
+
+    function InsertRecord() {
+        var model = GetRecord();
+        $('.page-loader-wrapper').show();
+
+        $.ajax({
+            contentType: 'application/json; charset=utf-8',
+            dataType: 'json',
+            type: 'POST',
+            url: "@Url.Action("InsertBankTransfer")",
+            data: JSON.stringify(model),
+            success: function (res) {
+                if (res.Result == "OK") {
+                    $('.page-loader-wrapper').hide();
+
+                    AlertMsg('<strong>Success!</strong>', 'Record Save Successfully!', 'info');
+                    setTimeout(function () {
+                        location.reload();
+                    }, 1000);
+                }
+                else {
+                    AlertMsg('<strong>Error!</strong>', 'Record Not Save, Try Again!', 'info');
+                }
+            },
+            failure: function (response) {
+                console.log(response);
+            }
+        });
+    }
+</script>

@@ -1,0 +1,116 @@
+﻿@using NadeemAndCo.Models
+
+@model LoginViewModel
+
+@{
+    ViewBag.Title = "Log in";
+    Layout = null;
+}
+
+<title>Login</title>
+
+<!-- Favicon-->
+<link href="@Url.Content("~/favicon.ico")" rel="stylesheet" type="image/x-icon" />
+
+<!-- Google Fonts -->
+<!-- Google Fonts -->
+@*<link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">*@
+
+<link href="@Url.Content("~/Content/css/robot-font.css")" rel="stylesheet" type="text/css">
+
+<!-- Bootstrap Core Css -->
+<link href="@Url.Content("~/Content/plugins/bootstrap/css/bootstrap.css")" rel="stylesheet">
+<!-- Waves Effect Css -->
+<link href="@Url.Content("~/Content/plugins/node-waves/waves.css")" rel="stylesheet" />
+<!-- Animation Css -->
+<link href="@Url.Content("~/Content/plugins/animate-css/animate.css")" rel="stylesheet" />
+<!-- Custom Css -->
+<link href="@Url.Content("~/Content/css/style.css")" rel="stylesheet">
+
+
+<body class="login-page">
+    <div class="login-box">
+        <div class="logo">
+            <a href="javascript:void(0);"><b>Nadeem & Co.</b></a>
+            <small>Business Management</small>
+        </div>
+        <div class="card">
+            <div class="body">
+                @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                {
+                    <div id="sign_in">
+                        <div class="msg">Sign in to start your session</div>
+                        @Html.AntiForgeryToken()
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                <i class="material-icons">person</i>
+                            </span>
+                            <div class="form-line">
+                                @*<input type="text" class="form-control" name="username" placeholder="Username" required autofocus>*@
+                                @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = "Username" })
+                            </div>
+                            @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+
+
+                        </div>
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                <i class="material-icons">lock</i>
+                            </span>
+                            <div class="form-line">
+                                @*<input type="password" class="form-control" name="password" placeholder="Password" required>*@
+                                @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = "Password" })
+                            </div>
+                            @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-8 p-t-5">
+                                <input type="checkbox" name="RememberMe" id="RememberMe" class="filled-in chk-col-pink">
+                                <label for="rememberme">Remember Me</label>
+                            </div>
+                            <div class="col-xs-4">
+                                <button class="btn btn-block bg-pink waves-effect" type="submit">SIGN IN</button>
+                            </div>
+                        </div>
+                        <div class="row m-t-15 m-b--20">
+                            <div class="col-xs-6 hidden">
+                                <a href="sign-up.html">Register Now!</a>
+                            </div>
+                            <div class="col-xs-6">
+                                <a href="/Account/ForgotPassword">Forgot Password?</a>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+
+            <div class="footer">
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <footer class="text-center" style="color: white;    font-size: larger;    font-weight: bold;">
+        <strong>Developed By <br /> Muhammad Ahsan (+92-332-2641184) <br /> Syed Jamil (+92-345-3419534) </strong>
+    </footer>
+
+    <!-- Jquery Core Js -->
+    <script src="@Url.Content("~/Content/plugins/jquery/jquery.min.js")"></script>
+    <!-- Bootstrap Core Js -->
+    <script src="@Url.Content("~/Content/plugins/bootstrap/js/bootstrap.js")"></script>
+    <!-- Waves Effect Plugin Js -->
+    <script src="@Url.Content("~/Content/plugins/node-waves/waves.js")"></script>
+    <!-- Validation Plugin Js -->
+    <script src="@Url.Content("~/Content/plugins/jquery-validation/jquery.validate.js")"></script>
+    <!-- Custom Js -->
+    <script src="@Url.Content("~/Content/js/admin.js")"></script>
+    <script src="@Url.Content("~/Content/js/pages/examples/sign-in.js")"></script>
+</body>
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,209 @@
+﻿@model HassanAyoubTraders.Models.ViewModels.ProfitAndLostSummaryViewModel
+
+@{
+    ViewBag.Title = "ProfitAndLostSummary";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+<style>
+    [type="radio"]:not(:checked), [type="radio"]:checked {
+        position: initial !important;
+        left: -9999px !important;
+        opacity: 1 !important;
+    }
+</style>
+
+@using (Html.BeginForm("", "", FormMethod.Post, new { id = "Profit & Lost Summary Report" }))
+{
+    <div class="row clearfix">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="card">
+                <div class="header">
+                    <h2>
+                        Profit & Lost Summary Report
+                    </h2>
+                </div>
+                <div class="body">
+                    <div class="row clearfix">
+                        <div class="col-md-3"  >
+                            <p>
+                                <b>Vendor</b>
+                            </p>
+                            @Html.DropDownListFor(x => x.VendorID, Model.VendorList, "Select", new { @class = "form-control input-sm js-select2" })
+                        </div>
+                        <div class="col-md-3">
+                            <p>
+                                <b>Items</b>
+                            </p>
+                            @Html.DropDownListFor(x => x.ItemID, Model.ItemList, "Select", new { @class = "form-control input-sm js-select2" })
+                        </div>
+                        <div class="col-md-3">
+                            <p>
+                                <b>Sales Officer</b>
+                            </p>
+                            @Html.DropDownListFor(x => x.SalesOfficerID, Model.SalesOfficerList, "Select", new { @class = "form-control input-sm js-select2" })
+                        </div>
+                        <div class="col-md-3">
+                            <p>
+                                <b>Booker</b>
+                            </p>
+                            @Html.DropDownListFor(x => x.BookerID, Model.BookerList, "Select", new { @class = "form-control input-sm js-select2" })
+                        </div>
+                        <div class="col-md-2">
+                            <p>
+                                <b>City</b>
+                            </p>
+                            @Html.DropDownListFor(x => x.CityID, Model.CityList, "Select", new { @class = "form-control input-sm js-select2" })
+                        </div>
+                        <div class="col-md-2">
+                            <p>
+                                <b>City Area</b>
+                            </p>
+                            @Html.DropDownListFor(x => x.CityAreaID, Model.CityAreaList, "Select", new { @class = "form-control input-sm ddlCA js-select2" })
+                        </div>
+                        <div class="col-md-2">
+                            <p>
+                                <b>SO #</b>
+                            </p>
+                            @Html.TextBoxFor(x => x.SONumber, new { @class = "form-control input-sm" })
+                        </div>
+                        <div class="col-md-2">
+                            <p>
+                                <b>From Date</b>
+                            </p>
+                            @Html.TextBoxFor(x => x.StartDate, new { @class = "form-control icon-download appdatepicker" })
+                        </div>
+                        <div class="col-md-2">
+                            <p>
+                                <b>To Date</b>
+                            </p>
+                            @Html.TextBoxFor(x => x.EndDate, new { @class = "form-control icon-download appdatepicker" })
+                        </div>
+                        <div class="col-md-2">
+                            <button id="btnSearch" type="button" style="top: 30px;" class="btn btn-danger waves-effect btn-sm">Search</button>
+                            @*<button id="btnPrint" type="button" style="top: 30px;" class="btn btn-danger waves-effect Print btn-sm">Print</button>*@
+                        </div>
+                    </div>
+
+                    <div class="row dvPrint" id="dvPrint">
+                        <div class="col-md-12">
+                            <div id="divResult"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<script>
+
+    $(document).ready(function () {
+
+        $("#CityID").change(function () {
+            var cityId = parseInt($(this).val());
+
+            if (!isNaN(cityId)) {
+                var ddlCA = $('.ddlCA');
+                ddlCA.empty();
+                ddlCA.append($("<option></option>").val('').html('Please wait ...'));
+
+                $.ajax({
+                    url: "@Url.Action("GetCityAreaByCityID")",
+                    dataType: 'json',
+                    type: 'POST',
+                    data: { Id: cityId },
+                    success: function (d) {
+                        ddlCA.empty(); // Clear the please wait
+                        ddlCA.append($("<option></option>").val('').html('Select'));
+                        $.each(d.CityAreaList, function (i, ca) {
+                            ddlCA.append($("<option></option>").val(ca.Value).html(ca.Text));
+                        });
+                    },
+                    error: function (e) {
+                        alert('Error!' + e.responseText);
+                    }
+                });
+            }
+        });
+
+        setTimeout(function (s, e) {
+            LoadOrders( '-1', '-1', '-1', '-1', '-1', '-1','-1', $('#StartDate').val(), $('#EndDate').val());
+        }, 50);
+
+        $('#btnSearch').on('click', function () {
+
+            LoadOrders(
+                ($('#VendorID').val() == "" ? "-1" : $('#VendorID').val()),
+                ($('#ItemID').val() == "" ? "-1" : $('#ItemID').val()),
+                ($('#SalesOfficerID').val() == "" ? "-1" : $('#SalesOfficerID').val()),
+                ($('#BookerID').val() == "" ? "-1" : $('#BookerID').val()),
+                ($('#CityID').val() == "" ? "-1" : $('#CityID').val()),
+                ($('#CityAreaID').val() == "" ? "-1" : $('#CityAreaID').val()),
+                $('#SONumber').val() == "" ? "-1" : $('#SONumber').val(),
+                $('#StartDate').val(),
+                $('#EndDate').val());
+        });
+
+        $('.Print').on('click', function () {
+
+            var venId = ($('#VendorID').val() == "" ? -1 : $('#VendorID').val());
+            var itmId = ($('#ItemID').val() == "" ? -1 : $('#ItemID').val());
+            var soId = ($('#SalesOfficerID').val() == "" ? -1 : $('#SalesOfficerID').val());
+            var bookerId = ($('#BookerID').val() == "" ? -1 : $('#BookerID').val());
+            var ctId = ($('#CityID').val() == "" ? -1 : $('#CityID').val());
+            var arId = ($('#CityAreaID').val() == "" ? -1 : $('#CityAreaID').val());
+            var soNo = ($('#SONumber').val() == "" ? "-1" : $('#SONumber').val());
+            var st = $('#StartDate').val();
+            var ed = $('#EndDate').val();
+
+            //var src = getWebsiteUrl + "/PrintReports/ViewReport.aspx?ReportName=ProfitAndLossSummaryReport&VendorID=" + venId + "&ItemID=" + itmId + "&SalesOfficerID=" + soId + "&&CityID=" + ctId + "&CityAreaID=" + arId + "&StartDate=" + st.replace("/", "|").replace("/", "|") + "&EndDate=" + ed.replace("/", "|").replace("/", "|");
+            //PrintPopup(src, 950, 650, "Profit And Loss Summary Report");
+        });
+
+    });
+
+
+
+    function LoadOrders(venId, itmId, sOffierId, bookerId, cityId, cirtAreaId, soNo, startdate, enddate) {
+        debugger
+        $('.page-loader-wrapper').show();
+        var model = {
+            SONumber: soNo,
+            VendorId: venId,
+            ItemId: itmId,
+            SaleOfficerId: sOffierId,
+            BookerId: bookerId,
+            CityId: cityId,
+            CityAreaId: cirtAreaId,
+            StartDate: startdate,
+            EndDate: enddate
+        };
+
+        $.ajax({
+            type: "POST",
+            url: '@Url.Action("ProfitAndLostSummarySearch")',
+            data: JSON.stringify(model),
+            contentType: "application/json; charset=utf-8",
+            dataType: "html",
+            success: function (response) {
+                $('#divResult').html(response);
+                $('.page-loader-wrapper').hide();
+            },
+            failure: function (response) {
+                $('.page-loader-wrapper').hide();
+                alert(response.responseText);
+            },
+            error: function (response) {
+                $('.page-loader-wrapper').hide();
+                alert(response.responseText);
+            }
+        });
+    }
+
+</script>
+
+
+
+

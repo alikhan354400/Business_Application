@@ -1,0 +1,2139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HassanAyoubTradersDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Accounts">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CompanyId" Type="int" />
+    <Property Name="AccountTypeID" Type="int" />
+    <Property Name="RoleID" Type="nvarchar" MaxLength="50" />
+    <Property Name="EmployeeID" Type="int" />
+    <Property Name="AccountTite" Type="nvarchar" MaxLength="500" />
+    <Property Name="Name" Type="nvarchar" MaxLength="500" />
+    <Property Name="Designation" Type="nvarchar" MaxLength="50" />
+    <Property Name="MobileNo" Type="nvarchar" MaxLength="20" />
+    <Property Name="PhoneNo" Type="nvarchar" MaxLength="20" />
+    <Property Name="OpeningBalance" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="OpeningBalanceDate" Type="datetime" />
+    <Property Name="CNIC" Type="nvarchar" MaxLength="20" />
+    <Property Name="Address" Type="nvarchar" MaxLength="500" />
+    <Property Name="City" Type="nvarchar" MaxLength="50" />
+    <Property Name="CityArea" Type="int" />
+    <Property Name="IsDelete" Type="bit" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="HiringDate" Type="datetime" />
+    <Property Name="Salary" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="STR" Type="nvarchar" MaxLength="255" />
+    <Property Name="NTN" Type="nvarchar" MaxLength="255" />
+    <Property Name="IsCashAccount" Type="bit" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="ModifyDate" Type="datetime" />
+    <Property Name="ModifyBy" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="AspNetRoles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="256" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetUserClaims">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="ClaimType" Type="nvarchar(max)" />
+    <Property Name="ClaimValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="AspNetUserLogins">
+    <Key>
+      <PropertyRef Name="LoginProvider" />
+      <PropertyRef Name="ProviderKey" />
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="LoginProvider" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="ProviderKey" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetUserRoles">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="RoleId" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetUsers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="256" />
+    <Property Name="EmailConfirmed" Type="bit" Nullable="false" />
+    <Property Name="PasswordHash" Type="nvarchar(max)" />
+    <Property Name="SecurityStamp" Type="nvarchar(max)" />
+    <Property Name="PhoneNumber" Type="nvarchar(max)" />
+    <Property Name="PhoneNumberConfirmed" Type="bit" Nullable="false" />
+    <Property Name="TwoFactorEnabled" Type="bit" Nullable="false" />
+    <Property Name="LockoutEndDateUtc" Type="datetime" />
+    <Property Name="LockoutEnabled" Type="bit" Nullable="false" />
+    <Property Name="AccessFailedCount" Type="int" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Bank">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BankName" Type="nvarchar" MaxLength="500" />
+    <Property Name="BankBranch" Type="nvarchar" MaxLength="500" />
+    <Property Name="BankBranchCity" Type="nvarchar" MaxLength="500" />
+    <Property Name="AccountTitle" Type="nvarchar" MaxLength="250" />
+    <Property Name="AccountNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="OpeningBalance" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="OpeningBalanceDate" Type="datetime" />
+    <Property Name="ContactNo" Type="nvarchar" MaxLength="20" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="ModifyDate" Type="datetime" />
+    <Property Name="ModifyBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="RoleId" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="BankToBankTransfers">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FromBankID" Type="int" />
+    <Property Name="ToBankID" Type="int" />
+    <Property Name="TransferDate" Type="datetime" />
+    <Property Name="ServiceCharges" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Amount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="RoleID" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ChartofAccounts">
+    <Key>
+      <PropertyRef Name="ChartofAccountID" />
+    </Key>
+    <Property Name="ChartofAccountID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AccountCode" Type="varchar" MaxLength="50" />
+    <Property Name="AccountName" Type="varchar" MaxLength="500" />
+    <Property Name="AccountTypeID" Type="int" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="CreatedDate" Type="smalldatetime" />
+  </EntityType>
+  <EntityType Name="ChartOfAccountTypes">
+    <Key>
+      <PropertyRef Name="ChartOfAccountTypeID" />
+    </Key>
+    <Property Name="ChartOfAccountTypeID" Type="int" Nullable="false" />
+    <Property Name="AccountType" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ShortCode" Type="varchar" MaxLength="10" />
+    <Property Name="SortOrder" Type="int" />
+    <Property Name="TransType" Type="char" MaxLength="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Cities">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="250" />
+    <Property Name="State_Id" Type="int" />
+  </EntityType>
+  <EntityType Name="CityArea">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="250" />
+    <Property Name="CityId" Type="int" />
+  </EntityType>
+  <EntityType Name="Codes">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CodeType" Type="nvarchar" MaxLength="50" />
+    <Property Name="CodeValue" Type="nvarchar" MaxLength="500" />
+    <Property Name="IsDelete" Type="bit" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="ModifyDate" Type="datetime" />
+    <Property Name="ModifyBy" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="CompanyInformation">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CompanyName" Type="nvarchar" MaxLength="500" />
+    <Property Name="OwnerName" Type="nvarchar" MaxLength="500" />
+    <Property Name="Address1" Type="nvarchar(max)" />
+    <Property Name="Address2" Type="nvarchar(max)" />
+    <Property Name="ContactNo1" Type="nvarchar" MaxLength="20" />
+    <Property Name="ContactNo2" Type="nvarchar" MaxLength="20" />
+    <Property Name="Email" Type="nvarchar" MaxLength="255" />
+    <Property Name="RegistrationNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="ReferenceNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="STRNNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="RoleId" Type="nvarchar" MaxLength="50" />
+    <Property Name="ImagePath" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Countries">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="SortName" Type="varchar" MaxLength="3" />
+    <Property Name="Name" Type="varchar" MaxLength="150" />
+    <Property Name="PhoneCode" Type="int" />
+  </EntityType>
+  <EntityType Name="Designations">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="500" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="ModifyDate" Type="datetime" />
+    <Property Name="ModifyBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="RoleId" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="EmployeeID" />
+    </Key>
+    <Property Name="EmployeeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EmpName" Type="nvarchar" MaxLength="500" />
+    <Property Name="CNICNo" Type="nvarchar" MaxLength="20" />
+    <Property Name="MobileNo" Type="nvarchar" MaxLength="20" />
+    <Property Name="HiringDate" Type="datetime" />
+    <Property Name="MonthlySalary" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="BranchID" Type="int" />
+    <Property Name="Address" Type="nvarchar" MaxLength="500" />
+    <Property Name="EmployeeTypeID" Type="int" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="RoleID" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="EntryType">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Type" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Expenses">
+    <Key>
+      <PropertyRef Name="ExpenseID" />
+    </Key>
+    <Property Name="ExpenseID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AccountID" Type="int" />
+    <Property Name="PaymentModeID" Type="int" />
+    <Property Name="Amount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="CheckNumberOrOnlineReciptNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="CheckDate" Type="datetime" />
+    <Property Name="PaymentDate" Type="datetime" />
+    <Property Name="Particulars" Type="nvarchar(max)" />
+    <Property Name="VoucherType" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="ModifyDate" Type="datetime" />
+    <Property Name="ModifyBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="BankID" Type="int" />
+    <Property Name="BranchID" Type="int" />
+    <Property Name="ExpenseTypeID" Type="int" />
+    <Property Name="RoleID" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Inventory">
+    <Key>
+      <PropertyRef Name="InventoryID" />
+    </Key>
+    <Property Name="InventoryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SubItemID" Type="int" />
+    <Property Name="Quantity" Type="int" />
+    <Property Name="Price" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="SalePrice" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="RoleID" Type="nvarchar" MaxLength="50" />
+    <Property Name="RecordType" Type="nvarchar" MaxLength="50" />
+    <Property Name="RecordID" Type="int" />
+  </EntityType>
+  <EntityType Name="Items">
+    <Key>
+      <PropertyRef Name="ItemID" />
+    </Key>
+    <Property Name="ItemID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RoleID" Type="nvarchar" MaxLength="50" />
+    <Property Name="CompanyId" Type="int" />
+    <Property Name="VendorId" Type="int" />
+    <Property Name="UnitTypeID" Type="int" />
+    <Property Name="ProductName" Type="nvarchar" MaxLength="500" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="ProductImage" Type="nvarchar" MaxLength="500" />
+    <Property Name="IsDelete" Type="bit" />
+    <Property Name="IsScrap" Type="bit" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifyBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="ModifiedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Payment">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AccountID" Type="int" />
+    <Property Name="PaymentMode" Type="nvarchar" MaxLength="50" />
+    <Property Name="Amount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="CheckNumberOrOnlineReciptNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="CheckDate" Type="datetime" />
+    <Property Name="TransactionDate" Type="datetime" />
+    <Property Name="Particulars" Type="nvarchar(max)" />
+    <Property Name="VoucherType" Type="nvarchar" MaxLength="50" />
+    <Property Name="RecordType" Type="nvarchar" MaxLength="50" />
+    <Property Name="RecordId" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="ModifyDate" Type="datetime" />
+    <Property Name="ModifyBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="BankID" Type="int" />
+    <Property Name="RoleId" Type="nvarchar" MaxLength="50" />
+    <Property Name="PaymentHeaderID" Type="int" />
+    <Property Name="OrderNumber" Type="int" />
+  </EntityType>
+  <EntityType Name="PaymentHeader">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EmployeeID" Type="int" />
+    <Property Name="ReceiptNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="TotalAmount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Particulars" Type="nvarchar(max)" />
+    <Property Name="VoucherType" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="ModifyDate" Type="datetime" />
+    <Property Name="ModifyBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="PaymentDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ProfitAndLoss">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TransID" Type="int" />
+    <Property Name="Amount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="RecordID" Type="int" />
+    <Property Name="RecordType" Type="nvarchar" MaxLength="100" />
+    <Property Name="CreatedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="PurchaseOrder">
+    <Key>
+      <PropertyRef Name="PurchaseOrderID" />
+    </Key>
+    <Property Name="PurchaseOrderID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PONumber" Type="int" />
+    <Property Name="RecordType" Type="nvarchar" MaxLength="50" />
+    <Property Name="EntryTypeID" Type="int" />
+    <Property Name="VendorID" Type="int" />
+    <Property Name="PODate" Type="datetime" />
+    <Property Name="InvoiceNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="Notes" Type="nvarchar(max)" />
+    <Property Name="SubTotal" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Expense" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Discount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="SalesTax" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="PaidAmount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="TotalAmount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="RoleID" Type="nvarchar" MaxLength="50" />
+    <Property Name="Status" Type="nvarchar" MaxLength="50" />
+    <Property Name="SalesOrderID" Type="int" />
+    <Property Name="BookerID" Type="int" />
+    <Property Name="SupplierID" Type="int" />
+    <Property Name="IsTaxInvoice" Type="bit" />
+    <Property Name="CompanyId" Type="int" />
+  </EntityType>
+  <EntityType Name="PurchaseOrderLine">
+    <Key>
+      <PropertyRef Name="PurchaseOrderLineID" />
+    </Key>
+    <Property Name="PurchaseOrderLineID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PurchaseOrderID" Type="int" />
+    <Property Name="SubItemID" Type="int" />
+    <Property Name="Quantity" Type="int" />
+    <Property Name="PurchasePrice" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="SalePrice" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="T_O" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Discount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="SalesTax" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="SubTotal" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="TotalAmount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="SOLineID" Type="int" />
+  </EntityType>
+  <EntityType Name="PurchaseOrderReturn">
+    <Key>
+      <PropertyRef Name="PurchaseOrderReturnID" />
+    </Key>
+    <Property Name="PurchaseOrderReturnID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PONumber" Type="int" />
+    <Property Name="RecordType" Type="nvarchar" MaxLength="50" />
+    <Property Name="EntryTypeID" Type="int" />
+    <Property Name="VendorID" Type="int" />
+    <Property Name="PODate" Type="datetime" />
+    <Property Name="InvoiceNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="Notes" Type="nvarchar(max)" />
+    <Property Name="SubTotal" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Expense" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Discount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="SalesTax" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="PaidAmount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="TotalAmount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="RoleID" Type="nvarchar" MaxLength="50" />
+    <Property Name="Status" Type="nvarchar" MaxLength="50" />
+    <Property Name="SalesOrderID" Type="int" />
+    <Property Name="BookerID" Type="int" />
+    <Property Name="SupplierID" Type="int" />
+  </EntityType>
+  <EntityType Name="PurchaseOrderReturnLine">
+    <Key>
+      <PropertyRef Name="PurchaseOrderReturnLineID" />
+    </Key>
+    <Property Name="PurchaseOrderReturnLineID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PurchaseOrderReturnID" Type="int" />
+    <Property Name="SubItemID" Type="int" />
+    <Property Name="Quantity" Type="int" />
+    <Property Name="PurchasePrice" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="SalePrice" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="T_O" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Discount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="SalesTax" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="SubTotal" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="TotalAmount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="SOLineID" Type="int" />
+  </EntityType>
+  <EntityType Name="SaleOrder">
+    <Key>
+      <PropertyRef Name="SaleOrderID" />
+    </Key>
+    <Property Name="SaleOrderID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SONumber" Type="int" />
+    <Property Name="RecordType" Type="nvarchar" MaxLength="50" />
+    <Property Name="EntryTypeID" Type="int" />
+    <Property Name="CustomerID" Type="int" />
+    <Property Name="SODate" Type="datetime" />
+    <Property Name="InvoiceNo" Type="nvarchar" MaxLength="100" />
+    <Property Name="Notes" Type="nvarchar(max)" />
+    <Property Name="SubTotal" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Expense" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Discount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="SalesTax" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="PaidAmount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="NetTotalAmount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="RoleID" Type="nvarchar" MaxLength="100" />
+    <Property Name="Status" Type="nvarchar" MaxLength="50" />
+    <Property Name="BookerID" Type="int" />
+    <Property Name="SupplierID" Type="int" />
+    <Property Name="IsTaxInvoice" Type="bit" />
+    <Property Name="CompanyId" Type="int" />
+    <Property Name="Discount2" Type="decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="SaleOrderLine">
+    <Key>
+      <PropertyRef Name="SaleOrderLineID" />
+    </Key>
+    <Property Name="SaleOrderLineID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SaleOrderID" Type="int" />
+    <Property Name="SubItemID" Type="int" />
+    <Property Name="Quantity" Type="int" />
+    <Property Name="SalePrice" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="T_O" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Discount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="SalesTax" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="SubTotal" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="NetTotalAmount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="InventoryID" Type="int" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="PurchasePrice" Type="decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="SaleOrderReturn">
+    <Key>
+      <PropertyRef Name="SaleOrderReturnID" />
+    </Key>
+    <Property Name="SaleOrderReturnID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SONumber" Type="int" />
+    <Property Name="RecordType" Type="nvarchar" MaxLength="50" />
+    <Property Name="EntryTypeID" Type="int" />
+    <Property Name="CustomerID" Type="int" />
+    <Property Name="SODate" Type="datetime" />
+    <Property Name="InvoiceNo" Type="nvarchar" MaxLength="100" />
+    <Property Name="Notes" Type="nvarchar(max)" />
+    <Property Name="SubTotal" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="TotalExpense" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Discount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="SalesTax" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="PaidAmount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="NetTotalAmount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="BookerID" Type="int" />
+    <Property Name="SupplierID" Type="int" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="RoleID" Type="nvarchar" MaxLength="100" />
+    <Property Name="CompanyId" Type="int" />
+    <Property Name="IsTaxInvoice" Type="bit" />
+  </EntityType>
+  <EntityType Name="SaleOrderReturnLine">
+    <Key>
+      <PropertyRef Name="SaleOrderReturnLineID" />
+    </Key>
+    <Property Name="SaleOrderReturnLineID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SaleOrderReturnID" Type="int" />
+    <Property Name="SubItemID" Type="int" />
+    <Property Name="Quantity" Type="int" />
+    <Property Name="SalePrice" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="T_O" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Discount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="SalesTaxRate" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="SubTotal" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="NetTotalAmount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="InventoryID" Type="int" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="PurchasePrice" Type="decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="StatesByCountryID">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="CountryID" Type="int" />
+  </EntityType>
+  <EntityType Name="SubItem">
+    <Key>
+      <PropertyRef Name="SubItemID" />
+    </Key>
+    <Property Name="SubItemID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RoleID" Type="nvarchar" MaxLength="50" />
+    <Property Name="CompanyId" Type="int" />
+    <Property Name="ItemID" Type="int" />
+    <Property Name="SubItemName" Type="nvarchar" MaxLength="500" />
+    <Property Name="PurchasePrice" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="SalePrice" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="SalesTax" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="RPCharges" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Length" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Width" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Height" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Diameter" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="OpeningInventoryId" Type="int" />
+    <Property Name="OpeningInventoryQty" Type="int" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="IsScrap" Type="bit" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="SubItemCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="PicesPerCorton" Type="decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="Transactions">
+    <Key>
+      <PropertyRef Name="TransID" />
+    </Key>
+    <Property Name="TransID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AccountCode" Type="int" />
+    <Property Name="TransDate" Type="datetime" />
+    <Property Name="DR" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="CR" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="200" />
+    <Property Name="Remarks" Type="varchar" MaxLength="200" />
+    <Property Name="RecordID" Type="int" />
+    <Property Name="RecordType" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="UnitTypes">
+    <Key>
+      <PropertyRef Name="UnitTypeID" />
+    </Key>
+    <Property Name="UnitTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UnitType" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="int" Nullable="false" />
+    <Property Name="AspNetUserID" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="SimplePassword" Type="nvarchar" MaxLength="500" />
+    <Property Name="BranchID" Type="int" />
+    <Property Name="FullName" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifyBy" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'HassanAyoubTradersDB.dbo.vv_ProfitLossExpanse' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vv_ProfitLossExpanse">
+    <Key>
+      <PropertyRef Name="ExpenseID" />
+    </Key>
+    <Property Name="Total" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="PaymentDate" Type="datetime" />
+    <Property Name="RoleID" Type="nvarchar" MaxLength="50" />
+    <Property Name="ExpenseID" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'HassanAyoubTradersDB.dbo.vv_ProfitLossGrossProfit' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vv_ProfitLossGrossProfit">
+    <Key>
+      <PropertyRef Name="SaleOrderID" />
+    </Key>
+    <Property Name="SaleOrderID" Type="int" Nullable="false" />
+    <Property Name="SoDate" Type="datetime" />
+    <Property Name="RoleID" Type="nvarchar" MaxLength="100" />
+    <Property Name="Dis" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Total" Type="decimal" Precision="38" Scale="6" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'HassanAyoubTradersDB.dbo.vv_ProfitLossPurchase' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vv_ProfitLossPurchase">
+    <Key>
+      <PropertyRef Name="PurchaseOrderID" />
+    </Key>
+    <Property Name="Total" Type="decimal" Precision="38" Scale="6" />
+    <Property Name="PoDate" Type="datetime" />
+    <Property Name="RoleID" Type="nvarchar" MaxLength="50" />
+    <Property Name="PurchaseOrderID" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'HassanAyoubTradersDB.dbo.vv_ProfitLossSale' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vv_ProfitLossSale">
+    <Key>
+      <PropertyRef Name="SaleOrderID" />
+    </Key>
+    <Property Name="Total" Type="decimal" Precision="38" Scale="6" />
+    <Property Name="SoDate" Type="datetime" />
+    <Property Name="RoleID" Type="nvarchar" MaxLength="100" />
+    <Property Name="SaleOrderID" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'HassanAyoubTradersDB.dbo.vw_AccountTransactions' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vw_AccountTransactions">
+    <Key>
+      <PropertyRef Name="TransID" />
+      <PropertyRef Name="Particular" />
+    </Key>
+    <Property Name="TransID" Type="int" Nullable="false" />
+    <Property Name="AccountCode" Type="int" />
+    <Property Name="TransDate" Type="datetime" />
+    <Property Name="DR" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="CR" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="200" />
+    <Property Name="Remarks" Type="varchar" MaxLength="200" />
+    <Property Name="RecordID" Type="int" />
+    <Property Name="RecordType" Type="nvarchar" MaxLength="100" />
+    <Property Name="BankID" Type="int" />
+    <Property Name="AccountID" Type="int" />
+    <Property Name="AccountName" Type="nvarchar" MaxLength="500" />
+    <Property Name="ChartOfAccountName" Type="varchar" MaxLength="500" />
+    <Property Name="RoleID" Type="nvarchar" MaxLength="100" />
+    <Property Name="Particular" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'HassanAyoubTradersDB.dbo.vw_BankTransactions' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vw_BankTransactions">
+    <Key>
+      <PropertyRef Name="TransID" />
+    </Key>
+    <Property Name="TransID" Type="int" Nullable="false" />
+    <Property Name="AccountCode" Type="int" />
+    <Property Name="TransDate" Type="datetime" />
+    <Property Name="DR" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="CR" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="200" />
+    <Property Name="Remarks" Type="varchar" MaxLength="200" />
+    <Property Name="RecordID" Type="int" />
+    <Property Name="RecordType" Type="nvarchar" MaxLength="100" />
+    <Property Name="BankID" Type="int" />
+    <Property Name="AccountID" Type="int" />
+    <Property Name="AccountName" Type="nvarchar" MaxLength="500" />
+    <Property Name="RoleID" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'HassanAyoubTradersDB.dbo.vw_CashTransactions' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vw_CashTransactions">
+    <Key>
+      <PropertyRef Name="TransID" />
+    </Key>
+    <Property Name="TransID" Type="int" Nullable="false" />
+    <Property Name="AccountCode" Type="int" />
+    <Property Name="TransDate" Type="datetime" />
+    <Property Name="DR" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="CR" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="200" />
+    <Property Name="Remarks" Type="varchar" MaxLength="200" />
+    <Property Name="RecordID" Type="int" />
+    <Property Name="RecordType" Type="nvarchar" MaxLength="100" />
+    <Property Name="AccountID" Type="int" />
+    <Property Name="AccountName" Type="nvarchar" MaxLength="500" />
+    <Property Name="RoleID" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'HassanAyoubTradersDB.dbo.vw_DailyCashTransactions' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vw_DailyCashTransactions">
+    <Key>
+      <PropertyRef Name="TransID" />
+    </Key>
+    <Property Name="TransID" Type="int" Nullable="false" />
+    <Property Name="TransDate" Type="datetime" />
+    <Property Name="AccountCode" Type="int" />
+    <Property Name="ChartOfAccountName" Type="varchar" MaxLength="500" />
+    <Property Name="Particular" Type="nvarchar(max)" />
+    <Property Name="AccountID" Type="int" />
+    <Property Name="AccountName" Type="nvarchar" MaxLength="500" />
+    <Property Name="DR" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="CR" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="RoleID" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'HassanAyoubTradersDB.dbo.vw_DetailLedgerStatement' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vw_DetailLedgerStatement">
+    <Key>
+      <PropertyRef Name="Descriptions" />
+      <PropertyRef Name="Remarks" />
+      <PropertyRef Name="RecordId" />
+    </Key>
+    <Property Name="AccountId" Type="int" />
+    <Property Name="AccountName" Type="nvarchar" MaxLength="500" />
+    <Property Name="TransDate" Type="datetime" />
+    <Property Name="Descriptions" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="InQty" Type="int" />
+    <Property Name="OutQty" Type="int" />
+    <Property Name="Rate" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Dr" Type="decimal" Precision="29" Scale="2" />
+    <Property Name="Cr" Type="decimal" Precision="29" Scale="2" />
+    <Property Name="Remarks" Type="varchar" MaxLength="21" Nullable="false" />
+    <Property Name="RecordId" Type="int" Nullable="false" />
+    <Property Name="RoleID" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'HassanAyoubTradersDB.dbo.vw_GetAvailableStockBySubItem' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vw_GetAvailableStockBySubItem">
+    <Key>
+      <PropertyRef Name="SubItemID" />
+    </Key>
+    <Property Name="SubItemID" Type="int" Nullable="false" />
+    <Property Name="AvailableStock" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'HassanAyoubTradersDB.dbo.vw_GetCustomerAllTableInfo' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vw_GetCustomerAllTableInfo">
+    <Key>
+      <PropertyRef Name="CustomerID" />
+      <PropertyRef Name="RecordType" />
+    </Key>
+    <Property Name="RecordID" Type="int" />
+    <Property Name="CustomerID" Type="int" Nullable="false" />
+    <Property Name="RecordType" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="SODate" Type="datetime" />
+    <Property Name="TotalAmount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="CityID" Type="nvarchar" MaxLength="50" />
+    <Property Name="CityName" Type="varchar" MaxLength="250" />
+    <Property Name="CityAreaID" Type="int" />
+    <Property Name="CityAreaName" Type="varchar" MaxLength="250" />
+    <Property Name="SalesOfficer" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'HassanAyoubTradersDB.dbo.vw_GetInventoryForInventoryOnHand' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="vw_GetInventoryForInventoryOnHand">
+          <Property Name="TotalPOQty" Type="int" />
+          <Property Name="SubItemID" Type="int" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'HassanAyoubTradersDB.dbo.vw_GetPOReReturnItemForInventory' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vw_GetPOReReturnItemForInventory">
+    <Key>
+      <PropertyRef Name="TotalPORQty" />
+    </Key>
+    <Property Name="TotalPORQty" Type="int" Nullable="false" />
+    <Property Name="SubItemID" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'HassanAyoubTradersDB.dbo.vw_GetSalesItemForInventory' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vw_GetSalesItemForInventory">
+    <Key>
+      <PropertyRef Name="TotalSOQty" />
+    </Key>
+    <Property Name="TotalSOQty" Type="int" Nullable="false" />
+    <Property Name="SubItemID" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'HassanAyoubTradersDB.dbo.vw_GetSOReReturnItemForInventory' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vw_GetSOReReturnItemForInventory">
+    <Key>
+      <PropertyRef Name="TotalSORQty" />
+    </Key>
+    <Property Name="TotalSORQty" Type="int" Nullable="false" />
+    <Property Name="SubItemID" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'HassanAyoubTradersDB.dbo.vw_Inventory' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="vw_Inventory">
+          <Property Name="Quantity" Type="int" />
+          <Property Name="Price" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="InventoryID" Type="int" />
+          <Property Name="RecordType" Type="nvarchar" MaxLength="50" />
+          <Property Name="RecordID" Type="int" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'HassanAyoubTradersDB.dbo.vw_InvertoryOnHandAllTypes' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vw_InvertoryOnHandAllTypes">
+    <Key>
+      <PropertyRef Name="ItemID" />
+      <PropertyRef Name="ItemName" />
+      <PropertyRef Name="SubItemID" />
+      <PropertyRef Name="SubItemName" />
+      <PropertyRef Name="InventoryID" />
+      <PropertyRef Name="PurchasePrice" />
+      <PropertyRef Name="SalePrice" />
+      <PropertyRef Name="CreatedBy" />
+      <PropertyRef Name="RoleID" />
+      <PropertyRef Name="RecordID" />
+      <PropertyRef Name="RecordType" />
+      <PropertyRef Name="OrderID" />
+      <PropertyRef Name="DeailID" />
+    </Key>
+    <Property Name="ItemID" Type="int" Nullable="false" />
+    <Property Name="ItemName" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="SubItemID" Type="int" Nullable="false" />
+    <Property Name="SubItemName" Type="nvarchar" MaxLength="552" Nullable="false" />
+    <Property Name="InventoryID" Type="int" Nullable="false" />
+    <Property Name="PurchasePrice" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="SalePrice" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Quantity" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="RoleID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="RecordID" Type="int" Nullable="false" />
+    <Property Name="RecordType" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="OrderID" Type="int" Nullable="false" />
+    <Property Name="DeailID" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'HassanAyoubTradersDB.dbo.vw_PaymentDetailForHeader' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vw_PaymentDetailForHeader">
+    <Key>
+      <PropertyRef Name="PaymentHeaderID" />
+    </Key>
+    <Property Name="PaymentHeaderID" Type="int" Nullable="false" />
+    <Property Name="PaymentDetail" Type="nvarchar(max)" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'HassanAyoubTradersDB.dbo.vw_PaymentHeader' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vw_PaymentHeader">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="CompanyId" />
+      <PropertyRef Name="CompanyName" />
+      <PropertyRef Name="ReceiptNo" />
+      <PropertyRef Name="EmployeeId" />
+      <PropertyRef Name="SalesOfficer" />
+      <PropertyRef Name="ContactNo" />
+      <PropertyRef Name="CNIC" />
+      <PropertyRef Name="OfficerAddress" />
+      <PropertyRef Name="STRN" />
+      <PropertyRef Name="NTN" />
+      <PropertyRef Name="CityAreaName" />
+      <PropertyRef Name="TotalAmount" />
+      <PropertyRef Name="Particular" />
+      <PropertyRef Name="VoucharType" />
+      <PropertyRef Name="PaymentDetail" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="CompanyId" Type="int" Nullable="false" />
+    <Property Name="CompanyName" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="PaymentDate" Type="datetime" />
+    <Property Name="ReceiptNo" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="EmployeeId" Type="int" Nullable="false" />
+    <Property Name="SalesOfficer" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="ContactNo" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="CNIC" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="OfficerAddress" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="STRN" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="NTN" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="CityAreaName" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="TotalAmount" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Particular" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="VoucharType" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="PaymentDetail" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'HassanAyoubTradersDB.dbo.vw_Payments' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vw_Payments">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="AccountName" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="AccountID" Type="int" />
+    <Property Name="PaymentMode" Type="nvarchar" MaxLength="50" />
+    <Property Name="Amount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="CheckNumberOrOnlineReciptNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="CheckDate" Type="datetime" />
+    <Property Name="TransactionDate" Type="datetime" />
+    <Property Name="Particulars" Type="nvarchar(max)" />
+    <Property Name="VoucherType" Type="nvarchar" MaxLength="50" />
+    <Property Name="RecordType" Type="nvarchar" MaxLength="50" />
+    <Property Name="RecordId" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="ModifyDate" Type="datetime" />
+    <Property Name="ModifyBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="BankID" Type="int" />
+    <Property Name="RoleId" Type="nvarchar" MaxLength="50" />
+    <Property Name="PaymentHeaderID" Type="int" />
+    <Property Name="OrderNumber" Type="int" />
+    <Property Name="AccountName" Type="nvarchar" MaxLength="1509" Nullable="false" />
+    <Property Name="BankName" Type="nvarchar" MaxLength="553" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'HassanAyoubTradersDB.dbo.vw_PurchaseDetailForHeader' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vw_PurchaseDetailForHeader">
+    <Key>
+      <PropertyRef Name="PurchaseOrderID" />
+      <PropertyRef Name="PurchaseDetail" />
+    </Key>
+    <Property Name="PurchaseOrderID" Type="int" Nullable="false" />
+    <Property Name="PurchaseDetail" Type="varchar" MaxLength="37" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'HassanAyoubTradersDB.dbo.vw_PurchaseOrder' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vw_PurchaseOrder">
+    <Key>
+      <PropertyRef Name="PurchaseOrderID" />
+      <PropertyRef Name="CompanyId" />
+      <PropertyRef Name="CompanyName" />
+      <PropertyRef Name="PONumber" />
+      <PropertyRef Name="RecordType" />
+      <PropertyRef Name="EntryTypeID" />
+      <PropertyRef Name="EntryType" />
+      <PropertyRef Name="AccountID" />
+      <PropertyRef Name="VendorName" />
+      <PropertyRef Name="ContactNo" />
+      <PropertyRef Name="InvoiceNo" />
+      <PropertyRef Name="Notes" />
+      <PropertyRef Name="SubTotal" />
+      <PropertyRef Name="Expense" />
+      <PropertyRef Name="Discount" />
+      <PropertyRef Name="SalesTax" />
+      <PropertyRef Name="PaidAmount" />
+      <PropertyRef Name="TotalAmount" />
+      <PropertyRef Name="Status" />
+      <PropertyRef Name="TotalPurchasePrice" />
+      <PropertyRef Name="TotalQty" />
+      <PropertyRef Name="TotalSubTotal" />
+      <PropertyRef Name="IsTaxInvoice" />
+      <PropertyRef Name="VendorCNIC" />
+      <PropertyRef Name="VendorAddress" />
+      <PropertyRef Name="VendorSTR" />
+      <PropertyRef Name="VendorNTN" />
+      <PropertyRef Name="VendorCityArea" />
+      <PropertyRef Name="BookerID" />
+      <PropertyRef Name="BookerName" />
+      <PropertyRef Name="SupplierID" />
+      <PropertyRef Name="SupplierName" />
+    </Key>
+    <Property Name="PurchaseOrderID" Type="int" Nullable="false" />
+    <Property Name="CompanyId" Type="int" Nullable="false" />
+    <Property Name="CompanyName" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="PONumber" Type="int" Nullable="false" />
+    <Property Name="RecordType" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="EntryTypeID" Type="int" Nullable="false" />
+    <Property Name="EntryType" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="AccountID" Type="int" Nullable="false" />
+    <Property Name="VendorName" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="ContactNo" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="PurchaseOrderDate" Type="date" />
+    <Property Name="InvoiceNo" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Notes" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="SubTotal" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Expense" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Discount" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="SalesTax" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="PaidAmount" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="TotalAmount" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Status" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="TotalPurchasePrice" Type="decimal" Precision="38" Scale="2" Nullable="false" />
+    <Property Name="TotalQty" Type="int" Nullable="false" />
+    <Property Name="TotalSubTotal" Type="decimal" Precision="38" Scale="2" Nullable="false" />
+    <Property Name="IsTaxInvoice" Type="bit" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="VendorCNIC" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="VendorAddress" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="VendorSTR" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="VendorNTN" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="VendorCityArea" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="BookerID" Type="int" Nullable="false" />
+    <Property Name="BookerName" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="SupplierID" Type="int" Nullable="false" />
+    <Property Name="SupplierName" Type="nvarchar" MaxLength="500" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'HassanAyoubTradersDB.dbo.vw_PurchaseOrderReturn' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vw_PurchaseOrderReturn">
+    <Key>
+      <PropertyRef Name="PurchaseOrderReturnID" />
+      <PropertyRef Name="CompanyId" />
+      <PropertyRef Name="CompanyName" />
+      <PropertyRef Name="PONumber" />
+      <PropertyRef Name="RecordType" />
+      <PropertyRef Name="EntryTypeID" />
+      <PropertyRef Name="EntryType" />
+      <PropertyRef Name="AccountID" />
+      <PropertyRef Name="VendorName" />
+      <PropertyRef Name="ContactNo" />
+      <PropertyRef Name="InvoiceNo" />
+      <PropertyRef Name="Notes" />
+      <PropertyRef Name="SubTotal" />
+      <PropertyRef Name="Expense" />
+      <PropertyRef Name="Discount" />
+      <PropertyRef Name="SalesTax" />
+      <PropertyRef Name="PaidAmount" />
+      <PropertyRef Name="TotalAmount" />
+      <PropertyRef Name="Status" />
+      <PropertyRef Name="TotalPurchasePrice" />
+      <PropertyRef Name="TotalQty" />
+      <PropertyRef Name="TotalSubTotal" />
+      <PropertyRef Name="IsTaxInvoice" />
+      <PropertyRef Name="VendorCNIC" />
+      <PropertyRef Name="VendorAddress" />
+      <PropertyRef Name="VendorSTR" />
+      <PropertyRef Name="VendorNTN" />
+      <PropertyRef Name="VendorCityArea" />
+      <PropertyRef Name="BookerID" />
+      <PropertyRef Name="BookerName" />
+      <PropertyRef Name="SupplierID" />
+      <PropertyRef Name="SupplierName" />
+    </Key>
+    <Property Name="PurchaseOrderReturnID" Type="int" Nullable="false" />
+    <Property Name="CompanyId" Type="int" Nullable="false" />
+    <Property Name="CompanyName" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="PONumber" Type="int" Nullable="false" />
+    <Property Name="RecordType" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="EntryTypeID" Type="int" Nullable="false" />
+    <Property Name="EntryType" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="AccountID" Type="int" Nullable="false" />
+    <Property Name="VendorName" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="ContactNo" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="PurchaseOrderDate" Type="date" />
+    <Property Name="InvoiceNo" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Notes" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="SubTotal" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Expense" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Discount" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="SalesTax" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="PaidAmount" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="TotalAmount" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Status" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="TotalPurchasePrice" Type="decimal" Precision="38" Scale="2" Nullable="false" />
+    <Property Name="TotalQty" Type="int" Nullable="false" />
+    <Property Name="TotalSubTotal" Type="decimal" Precision="38" Scale="2" Nullable="false" />
+    <Property Name="IsTaxInvoice" Type="int" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="VendorCNIC" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="VendorAddress" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="VendorSTR" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="VendorNTN" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="VendorCityArea" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="BookerID" Type="int" Nullable="false" />
+    <Property Name="BookerName" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="SupplierID" Type="int" Nullable="false" />
+    <Property Name="SupplierName" Type="nvarchar" MaxLength="500" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'HassanAyoubTradersDB.dbo.vw_PurchaseReturnDetailForHeader' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vw_PurchaseReturnDetailForHeader">
+    <Key>
+      <PropertyRef Name="PurchaseOrderReturnID" />
+      <PropertyRef Name="PurchaseReturnDetail" />
+    </Key>
+    <Property Name="PurchaseOrderReturnID" Type="int" Nullable="false" />
+    <Property Name="PurchaseReturnDetail" Type="varchar" MaxLength="44" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'HassanAyoubTradersDB.dbo.vw_SaleOrder' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vw_SaleOrder">
+    <Key>
+      <PropertyRef Name="SaleOrderID" />
+      <PropertyRef Name="CompanyId" />
+      <PropertyRef Name="CompanyName" />
+      <PropertyRef Name="SONumber" />
+      <PropertyRef Name="RecordType" />
+      <PropertyRef Name="EntryType" />
+      <PropertyRef Name="CustomerName" />
+      <PropertyRef Name="ContactNo" />
+      <PropertyRef Name="CustomerCNIC" />
+      <PropertyRef Name="CustomerAddress" />
+      <PropertyRef Name="CustomerSTRN" />
+      <PropertyRef Name="CustomerNTN" />
+      <PropertyRef Name="CustomerCityArea" />
+      <PropertyRef Name="SubTotal" />
+      <PropertyRef Name="Expense" />
+      <PropertyRef Name="Discount" />
+      <PropertyRef Name="Discount2" />
+      <PropertyRef Name="SalesTax" />
+      <PropertyRef Name="PaidAmount" />
+      <PropertyRef Name="TotalAmount" />
+      <PropertyRef Name="IsTaxInvoice" />
+      <PropertyRef Name="InvoiceNo" />
+      <PropertyRef Name="Notes" />
+      <PropertyRef Name="Status" />
+      <PropertyRef Name="EntryTypeID" />
+      <PropertyRef Name="BookerID" />
+      <PropertyRef Name="BookerName" />
+      <PropertyRef Name="SupplierID" />
+      <PropertyRef Name="SalesOfficer" />
+      <PropertyRef Name="AccountID" />
+    </Key>
+    <Property Name="SaleOrderID" Type="int" Nullable="false" />
+    <Property Name="CompanyId" Type="int" Nullable="false" />
+    <Property Name="CompanyName" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="SONumber" Type="int" Nullable="false" />
+    <Property Name="RecordType" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="EntryType" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CustomerName" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="ContactNo" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="CustomerCNIC" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="CustomerAddress" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="CustomerSTRN" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="CustomerNTN" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="CustomerCityArea" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="SubTotal" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Expense" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Discount" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Discount2" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="SalesTax" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="PaidAmount" Type="decimal" Precision="38" Scale="2" Nullable="false" />
+    <Property Name="TotalAmount" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="IsTaxInvoice" Type="bit" Nullable="false" />
+    <Property Name="InvoiceNo" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Notes" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Status" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="SaleOrderDate" Type="date" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="RoleID" Type="nvarchar" MaxLength="100" />
+    <Property Name="EntryTypeID" Type="int" Nullable="false" />
+    <Property Name="BookerID" Type="int" Nullable="false" />
+    <Property Name="BookerName" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="SupplierID" Type="int" Nullable="false" />
+    <Property Name="SalesOfficer" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="AccountID" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'HassanAyoubTradersDB.dbo.vw_SaleOrderReturn' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vw_SaleOrderReturn">
+    <Key>
+      <PropertyRef Name="SaleOrderReturnID" />
+      <PropertyRef Name="CompanyId" />
+      <PropertyRef Name="CompanyName" />
+      <PropertyRef Name="SONumber" />
+      <PropertyRef Name="RecordType" />
+      <PropertyRef Name="EntryType" />
+      <PropertyRef Name="CustomerName" />
+      <PropertyRef Name="ContactNo" />
+      <PropertyRef Name="CustomerCNIC" />
+      <PropertyRef Name="CustomerAddress" />
+      <PropertyRef Name="CustomerSTRN" />
+      <PropertyRef Name="CustomerNTN" />
+      <PropertyRef Name="CustomerCityArea" />
+      <PropertyRef Name="SubTotal" />
+      <PropertyRef Name="Expense" />
+      <PropertyRef Name="Discount" />
+      <PropertyRef Name="SalesTax" />
+      <PropertyRef Name="PaidAmount" />
+      <PropertyRef Name="TotalAmount" />
+      <PropertyRef Name="IsTaxInvoice" />
+      <PropertyRef Name="InvoiceNo" />
+      <PropertyRef Name="Notes" />
+      <PropertyRef Name="Status" />
+      <PropertyRef Name="EntryTypeID" />
+      <PropertyRef Name="BookerID" />
+      <PropertyRef Name="BookerName" />
+      <PropertyRef Name="SupplierID" />
+      <PropertyRef Name="SalesOfficer" />
+      <PropertyRef Name="AccountID" />
+    </Key>
+    <Property Name="SaleOrderReturnID" Type="int" Nullable="false" />
+    <Property Name="CompanyId" Type="int" Nullable="false" />
+    <Property Name="CompanyName" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="SONumber" Type="int" Nullable="false" />
+    <Property Name="RecordType" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="EntryType" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CustomerName" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="ContactNo" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="CustomerCNIC" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="CustomerAddress" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="CustomerSTRN" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="CustomerNTN" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="CustomerCityArea" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="SubTotal" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Expense" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Discount" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="SalesTax" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="PaidAmount" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="TotalAmount" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="IsTaxInvoice" Type="bit" Nullable="false" />
+    <Property Name="InvoiceNo" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Notes" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Status" Type="varchar" MaxLength="9" Nullable="false" />
+    <Property Name="SaleOrderDate" Type="date" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="RoleID" Type="nvarchar" MaxLength="100" />
+    <Property Name="EntryTypeID" Type="int" Nullable="false" />
+    <Property Name="BookerID" Type="int" Nullable="false" />
+    <Property Name="BookerName" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="SupplierID" Type="int" Nullable="false" />
+    <Property Name="SalesOfficer" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="AccountID" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'HassanAyoubTradersDB.dbo.vw_SalesDetailForHeader' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vw_SalesDetailForHeader">
+    <Key>
+      <PropertyRef Name="SaleOrderID" />
+      <PropertyRef Name="SalesDetail" />
+    </Key>
+    <Property Name="SaleOrderID" Type="int" Nullable="false" />
+    <Property Name="SalesDetail" Type="varchar" MaxLength="33" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'HassanAyoubTradersDB.dbo.vw_SalesReturnDetailForHeader' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vw_SalesReturnDetailForHeader">
+    <Key>
+      <PropertyRef Name="SaleOrderReturnID" />
+      <PropertyRef Name="SalesReturnDetail" />
+    </Key>
+    <Property Name="SaleOrderReturnID" Type="int" Nullable="false" />
+    <Property Name="SalesReturnDetail" Type="varchar" MaxLength="40" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'HassanAyoubTradersDB.dbo.vw_TotalPaidAmountByOrderNo' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vw_TotalPaidAmountByOrderNo">
+    <Key>
+      <PropertyRef Name="OrderNumber" />
+    </Key>
+    <Property Name="TotalPaid" Type="decimal" Precision="38" Scale="2" />
+    <Property Name="OrderNumber" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'HassanAyoubTradersDB.dbo.vw_Transactions' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vw_Transactions">
+    <Key>
+      <PropertyRef Name="TransID" />
+      <PropertyRef Name="Remarks" />
+    </Key>
+    <Property Name="TransID" Type="int" Nullable="false" />
+    <Property Name="AccountCode" Type="int" />
+    <Property Name="RecordID" Type="int" />
+    <Property Name="RecordType" Type="nvarchar" MaxLength="100" />
+    <Property Name="Remarks" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="TransDate" Type="date" />
+    <Property Name="DR" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="CR" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="RoleID" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <Function Name="AddUpdateBankTransferTrans" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="BankTransferID" Type="int" Mode="In" />
+    <Parameter Name="TransferDate" Type="datetime" Mode="In" />
+    <Parameter Name="Action" Type="nvarchar" Mode="In" />
+    <Parameter Name="Amount" Type="decimal" Mode="In" />
+    <Parameter Name="ServiceCharges" Type="decimal" Mode="In" />
+  </Function>
+  <Function Name="AddUpdatePurchaseOrderReturnTransactions" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PurchaseOrderReturnID" Type="int" Mode="In" />
+    <Parameter Name="OrderDate" Type="datetime" Mode="In" />
+    <Parameter Name="Action" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="AddUpdatePurchaseOrderTransactions" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PurchaseOrderID" Type="int" Mode="In" />
+    <Parameter Name="OrderDate" Type="datetime" Mode="In" />
+    <Parameter Name="Action" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="AddUpdatePurchasePaymentTransactions" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PaymentID" Type="int" Mode="In" />
+    <Parameter Name="OrderDate" Type="datetime" Mode="In" />
+    <Parameter Name="Action" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="AddUpdateSaleOrderReturnTransactions" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="SaleOrderReturnID" Type="int" Mode="In" />
+    <Parameter Name="OrderDate" Type="datetime" Mode="In" />
+    <Parameter Name="Action" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="AddUpdateSaleOrderTransactions" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="SaleOrderID" Type="int" Mode="In" />
+    <Parameter Name="OrderDate" Type="datetime" Mode="In" />
+    <Parameter Name="Action" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="BrowseAccount" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="BrowseAccountByID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="AccountID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="BrowseAccountLedger" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="AccountID" Type="int" Mode="In" />
+    <Parameter Name="StartDate" Type="datetime" Mode="In" />
+    <Parameter Name="EndDate" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="BrowseAccountLedger_New" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="StartDate" Type="datetime" Mode="In" />
+    <Parameter Name="EndDate" Type="datetime" Mode="In" />
+    <Parameter Name="AccountID" Type="int" Mode="In" />
+    <Parameter Name="RoleID" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="BrowseAccountPayableReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="StartDate" Type="date" Mode="In" />
+    <Parameter Name="UserRole" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="BrowseAccountRecievableReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="StartDate" Type="date" Mode="In" />
+    <Parameter Name="UserRole" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="BrowseAllCityArea" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="BrowseAllCompanies" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="BrowseAllEmployees" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="BrowseAllItmes" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="BrowseAllSubItems" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="BrowseBankAccount" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="BrowseBankTransfers" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="StartDate" Type="date" Mode="In" />
+    <Parameter Name="EndDate" Type="date" Mode="In" />
+  </Function>
+  <Function Name="BrowseCodesByType" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CodeType" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="BrowseCustomerWiseBalanceReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CityID" Type="int" Mode="In" />
+    <Parameter Name="CityAreaID" Type="int" Mode="In" />
+    <Parameter Name="SalesOfficerID" Type="int" Mode="In" />
+    <Parameter Name="StartDate" Type="datetime" Mode="In" />
+    <Parameter Name="EndDate" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="BrowseDetailLedgerStatement" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="StartDate" Type="datetime" Mode="In" />
+    <Parameter Name="EndDate" Type="datetime" Mode="In" />
+    <Parameter Name="AccountID" Type="int" Mode="In" />
+    <Parameter Name="RoleID" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="BrowseEditPOLine" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="BrowseEditPOReturnLine" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="BrowseExceutionReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IsSale" Type="bit" Mode="In" />
+    <Parameter Name="VendorID" Type="int" Mode="In" />
+    <Parameter Name="CustomerID" Type="int" Mode="In" />
+    <Parameter Name="SalesOfficerID" Type="int" Mode="In" />
+    <Parameter Name="CityID" Type="int" Mode="In" />
+    <Parameter Name="CityAreaID" Type="int" Mode="In" />
+    <Parameter Name="StartDate" Type="datetime" Mode="In" />
+    <Parameter Name="EndDate" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="BrowseExceutionReport_New" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IsSale" Type="bit" Mode="In" />
+    <Parameter Name="VendorID" Type="int" Mode="In" />
+    <Parameter Name="CustomerID" Type="int" Mode="In" />
+    <Parameter Name="SalesOfficerID" Type="int" Mode="In" />
+    <Parameter Name="CityID" Type="int" Mode="In" />
+    <Parameter Name="CityAreaID" Type="int" Mode="In" />
+    <Parameter Name="StartDate" Type="datetime" Mode="In" />
+    <Parameter Name="EndDate" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="BrowseExpenses" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PaymentType" Type="nvarchar" Mode="In" />
+    <Parameter Name="AccountId" Type="int" Mode="In" />
+    <Parameter Name="StartDate" Type="date" Mode="In" />
+    <Parameter Name="EndDate" Type="date" Mode="In" />
+  </Function>
+  <Function Name="BrowseItemActivityReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="StartDate" Type="date" Mode="In" />
+    <Parameter Name="EndDate" Type="date" Mode="In" />
+    <Parameter Name="SubItemID" Type="int" Mode="In" />
+    <Parameter Name="UserRole" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="BrowseNewNumber" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Type" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="BrowsePaymentHeader" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="StartDate" Type="date" Mode="In" />
+    <Parameter Name="EndDate" Type="date" Mode="In" />
+  </Function>
+  <Function Name="BrowsePayments" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PaymentType" Type="nvarchar" Mode="In" />
+    <Parameter Name="AccountId" Type="int" Mode="In" />
+    <Parameter Name="StartDate" Type="date" Mode="In" />
+    <Parameter Name="EndDate" Type="date" Mode="In" />
+  </Function>
+  <Function Name="BrowsePODetailBPOID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="POID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="BrowsePurchaseOrderReturn" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="StartDate" Type="date" Mode="In" />
+    <Parameter Name="EndDate" Type="date" Mode="In" />
+  </Function>
+  <Function Name="BrowsePurchaseOrders" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="StartDate" Type="date" Mode="In" />
+    <Parameter Name="EndDate" Type="date" Mode="In" />
+  </Function>
+  <Function Name="BrowseSaleOrders" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="StartDate" Type="date" Mode="In" />
+    <Parameter Name="EndDate" Type="date" Mode="In" />
+  </Function>
+  <Function Name="BrowseSaleOrdersReturn" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="StartDate" Type="date" Mode="In" />
+    <Parameter Name="EndDate" Type="date" Mode="In" />
+  </Function>
+  <Function Name="BrowseSalesInvoiceSummary" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="SalesOfficerID" Type="int" Mode="In" />
+    <Parameter Name="CustomerID" Type="int" Mode="In" />
+    <Parameter Name="StartDate" Type="datetime" Mode="In" />
+    <Parameter Name="EndDate" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="BrowseSalesReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="VendorID" Type="int" Mode="In" />
+    <Parameter Name="ItemID" Type="int" Mode="In" />
+    <Parameter Name="SalesOfficerID" Type="int" Mode="In" />
+    <Parameter Name="CityID" Type="int" Mode="In" />
+    <Parameter Name="CityAreaID" Type="int" Mode="In" />
+    <Parameter Name="StartDate" Type="datetime" Mode="In" />
+    <Parameter Name="EndDate" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="BrowseSODetailBSOID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="SOID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="BrowseSOReturnDetailBSOID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="SOReturnID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="DeleteBankTransfer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="BankTransferID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="DeleteCashPaymentEntry" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="RecordID" Type="int" Mode="In" />
+    <Parameter Name="RecordType" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="DeleteExpense" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ExpenseID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="DeletePayment" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="paymentId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="DeletePaymentTransaction" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PaymentType" Type="nvarchar" Mode="In" />
+    <Parameter Name="PaymentID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="DeletePOLine" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="POLineID" Type="int" Mode="In" />
+    <Parameter Name="POID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="DeletePOReturnLine" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="POReturnLineID" Type="int" Mode="In" />
+    <Parameter Name="POReturnID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="DeletePurchaseOrder" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="OrderID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="DeletePurchaseOrderReturn" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="OrderID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="DeleteSaleOrderLine" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="SaleOrderLineID" Type="int" Mode="In" />
+    <Parameter Name="SaleOrderID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="DeleteSaleOrderReturnLine" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="SaleOrderReturnLineID" Type="int" Mode="In" />
+    <Parameter Name="SaleOrderReturnID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="DeleteSalesOrder" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="OrderID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="DeleteSalesOrderReturn" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="OrderID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="DeleteSinglePaymentTransaction" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PaymentType" Type="nvarchar" Mode="In" />
+    <Parameter Name="PaymentID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetAccountDueAmountByIDandEndDate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="AccountID" Type="int" Mode="In" />
+    <Parameter Name="EndDate" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="GetAccountPayableForCompanyPosition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="StartDate" Type="date" Mode="In" />
+    <Parameter Name="EndDate" Type="date" Mode="In" />
+    <Parameter Name="UserRole" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="GetAccountRecievableForCompanyPosition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="StartDate" Type="date" Mode="In" />
+    <Parameter Name="EndDate" Type="date" Mode="In" />
+    <Parameter Name="UserRole" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="GetBankLedger" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="StartDate" Type="datetime" Mode="In" />
+    <Parameter Name="EndDate" Type="datetime" Mode="In" />
+    <Parameter Name="BankID" Type="int" Mode="In" />
+    <Parameter Name="RoleID" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="GetBankLedgerForCompanyPosition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="StartDate" Type="datetime" Mode="In" />
+    <Parameter Name="EndDate" Type="datetime" Mode="In" />
+    <Parameter Name="RoleID" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="GetCashLedger" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="StartDate" Type="datetime" Mode="In" />
+    <Parameter Name="EndDate" Type="datetime" Mode="In" />
+    <Parameter Name="RoleID" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="GetCompanyPositionReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="StartDate" Type="date" Mode="In" />
+    <Parameter Name="EndDate" Type="date" Mode="In" />
+    <Parameter Name="RoleId" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="GetDailCashReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ReportDate" Type="datetime" Mode="In" />
+    <Parameter Name="RoleID" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="GetDailCashReportForCompanyPosition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="StartDate" Type="datetime" Mode="In" />
+    <Parameter Name="EndDate" Type="datetime" Mode="In" />
+    <Parameter Name="RoleID" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="GetInventoryItemByID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="SubItemID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetInventoryItemOnHand" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="GetInventoryItemOnHand_New" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ItemId" Type="int" Mode="In" />
+    <Parameter Name="SubItemId" Type="int" Mode="In" />
+    <Parameter Name="StartDate" Type="datetime" Mode="In" />
+    <Parameter Name="EndDate" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="GetMainProductsForDdl" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="GetPaymentsByPaymentHeaderId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PaymentHeaderId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetProductsForDdl" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="GetProductsForDdlWithoutDetail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="GetProfitAndLossReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="StartDate" Type="date" Mode="In" />
+    <Parameter Name="EndDate" Type="date" Mode="In" />
+    <Parameter Name="RoleId" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="GetProfitAndLossReport_New" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="StartDate" Type="date" Mode="In" />
+    <Parameter Name="EndDate" Type="date" Mode="In" />
+    <Parameter Name="RoleId" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="GetPurhcaseOrderItemById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PurchaseOrderID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetPurhcaseOrderReturnItemById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PurchaseOrderReturnID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetSalesOrderItemById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="SaleOrderID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetSalesOrderReturnItemById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="SaleOrderReturnID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetTotalRecovery" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IsSale" Type="bit" Mode="In" />
+    <Parameter Name="VendorID" Type="int" Mode="In" />
+    <Parameter Name="CustomerID" Type="int" Mode="In" />
+    <Parameter Name="SalesOfficerID" Type="int" Mode="In" />
+    <Parameter Name="CityID" Type="int" Mode="In" />
+    <Parameter Name="CityAreaID" Type="int" Mode="In" />
+    <Parameter Name="StartDate" Type="datetime" Mode="In" />
+    <Parameter Name="EndDate" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="GetTotalRecoveryForSalesReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="VendorID" Type="int" Mode="In" />
+    <Parameter Name="ItemID" Type="int" Mode="In" />
+    <Parameter Name="SalesOfficerID" Type="int" Mode="In" />
+    <Parameter Name="CityID" Type="int" Mode="In" />
+    <Parameter Name="CityAreaID" Type="int" Mode="In" />
+    <Parameter Name="StartDate" Type="datetime" Mode="In" />
+    <Parameter Name="EndDate" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="InsertAndDeleteLedgerEntry" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="AccountCode" Type="int" Mode="In" />
+    <Parameter Name="TransDate" Type="datetime" Mode="In" />
+    <Parameter Name="DR" Type="decimal" Mode="In" />
+    <Parameter Name="CR" Type="decimal" Mode="In" />
+    <Parameter Name="CreatedBy" Type="varchar" Mode="In" />
+    <Parameter Name="Remarks" Type="nvarchar" Mode="In" />
+    <Parameter Name="RecordID" Type="int" Mode="In" />
+    <Parameter Name="RecordType" Type="nvarchar" Mode="In" />
+    <Parameter Name="TransactionID" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="InsertPayment" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="AccountId" Type="int" Mode="In" />
+    <Parameter Name="PaymentMode" Type="nvarchar" Mode="In" />
+    <Parameter Name="OrderNumber" Type="int" Mode="In" />
+    <Parameter Name="Amount" Type="decimal" Mode="In" />
+    <Parameter Name="CheckNumberOrOnlineReciptNumber" Type="nvarchar" Mode="In" />
+    <Parameter Name="CheckDate" Type="datetime" Mode="In" />
+    <Parameter Name="TransactionDate" Type="datetime" Mode="In" />
+    <Parameter Name="Particulars" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="VoucherType" Type="nvarchar" Mode="In" />
+    <Parameter Name="BankId" Type="int" Mode="In" />
+    <Parameter Name="RecordType" Type="nvarchar" Mode="In" />
+    <Parameter Name="RecordId" Type="int" Mode="In" />
+    <Parameter Name="CreatedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="RoleId" Type="nvarchar" Mode="In" />
+    <Parameter Name="PaymentHeaderID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="InsertProfitAndLoss" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TransID" Type="int" Mode="In" />
+    <Parameter Name="Amount" Type="decimal" Mode="In" />
+    <Parameter Name="RecordID" Type="int" Mode="In" />
+    <Parameter Name="RecordType" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="ResetDatabase" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_GetPaymentPendingReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CustomerID" Type="int" Mode="In" />
+    <Parameter Name="SupplierID" Type="int" Mode="In" />
+    <Parameter Name="BookerID" Type="int" Mode="In" />
+    <Parameter Name="StartDate" Type="datetime" Mode="In" />
+    <Parameter Name="EndDate" Type="datetime" Mode="In" />
+    <Parameter Name="NoOfDays" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_ProfitAndLostSummary" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="SONumber" Type="int" Mode="In" />
+    <Parameter Name="VendorID" Type="int" Mode="In" />
+    <Parameter Name="ItemID" Type="int" Mode="In" />
+    <Parameter Name="SalesOfficerID" Type="int" Mode="In" />
+    <Parameter Name="BookerID" Type="int" Mode="In" />
+    <Parameter Name="CityID" Type="int" Mode="In" />
+    <Parameter Name="CityAreaID" Type="int" Mode="In" />
+    <Parameter Name="StartDate" Type="datetime" Mode="In" />
+    <Parameter Name="EndDate" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="UpdatePayment" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PaymentId" Type="int" Mode="In" />
+    <Parameter Name="AccountId" Type="int" Mode="In" />
+    <Parameter Name="PaymentMode" Type="nvarchar" Mode="In" />
+    <Parameter Name="OrderNumber" Type="int" Mode="In" />
+    <Parameter Name="Amount" Type="decimal" Mode="In" />
+    <Parameter Name="CheckNumberOrOnlineReciptNumber" Type="nvarchar" Mode="In" />
+    <Parameter Name="CheckDate" Type="datetime" Mode="In" />
+    <Parameter Name="TransactionDate" Type="datetime" Mode="In" />
+    <Parameter Name="Particulars" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="VoucherType" Type="nvarchar" Mode="In" />
+    <Parameter Name="BankId" Type="int" Mode="In" />
+    <Parameter Name="RecordType" Type="nvarchar" Mode="In" />
+    <Parameter Name="RecordId" Type="int" Mode="In" />
+    <Parameter Name="CreatedBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="RoleId" Type="nvarchar" Mode="In" />
+  </Function>
+  <EntityContainer Name="HassanAyoubTradersDBModelStoreContainer">
+    <EntitySet Name="Accounts" EntityType="Self.Accounts" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaims" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogins" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUserRoles" EntityType="Self.AspNetUserRoles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Bank" EntityType="Self.Bank" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BankToBankTransfers" EntityType="Self.BankToBankTransfers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ChartofAccounts" EntityType="Self.ChartofAccounts" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ChartOfAccountTypes" EntityType="Self.ChartOfAccountTypes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Cities" EntityType="Self.Cities" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CityArea" EntityType="Self.CityArea" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Codes" EntityType="Self.Codes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CompanyInformation" EntityType="Self.CompanyInformation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Countries" EntityType="Self.Countries" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Designations" EntityType="Self.Designations" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EntryType" EntityType="Self.EntryType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Expenses" EntityType="Self.Expenses" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Inventory" EntityType="Self.Inventory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Items" EntityType="Self.Items" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Payment" EntityType="Self.Payment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PaymentHeader" EntityType="Self.PaymentHeader" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProfitAndLoss" EntityType="Self.ProfitAndLoss" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PurchaseOrder" EntityType="Self.PurchaseOrder" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PurchaseOrderLine" EntityType="Self.PurchaseOrderLine" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PurchaseOrderReturn" EntityType="Self.PurchaseOrderReturn" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PurchaseOrderReturnLine" EntityType="Self.PurchaseOrderReturnLine" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SaleOrder" EntityType="Self.SaleOrder" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SaleOrderLine" EntityType="Self.SaleOrderLine" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SaleOrderReturn" EntityType="Self.SaleOrderReturn" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SaleOrderReturnLine" EntityType="Self.SaleOrderReturnLine" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StatesByCountryID" EntityType="Self.StatesByCountryID" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SubItem" EntityType="Self.SubItem" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Transactions" EntityType="Self.Transactions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UnitTypes" EntityType="Self.UnitTypes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="vv_ProfitLossExpanse" EntityType="Self.vv_ProfitLossExpanse" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vv_ProfitLossExpanse].[Total] AS [Total], 
+    [vv_ProfitLossExpanse].[PaymentDate] AS [PaymentDate], 
+    [vv_ProfitLossExpanse].[RoleID] AS [RoleID], 
+    [vv_ProfitLossExpanse].[ExpenseID] AS [ExpenseID]
+    FROM [dbo].[vv_ProfitLossExpanse] AS [vv_ProfitLossExpanse]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vv_ProfitLossGrossProfit" EntityType="Self.vv_ProfitLossGrossProfit" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vv_ProfitLossGrossProfit].[SaleOrderID] AS [SaleOrderID], 
+    [vv_ProfitLossGrossProfit].[SoDate] AS [SoDate], 
+    [vv_ProfitLossGrossProfit].[RoleID] AS [RoleID], 
+    [vv_ProfitLossGrossProfit].[Dis] AS [Dis], 
+    [vv_ProfitLossGrossProfit].[Total] AS [Total]
+    FROM [dbo].[vv_ProfitLossGrossProfit] AS [vv_ProfitLossGrossProfit]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vv_ProfitLossPurchase" EntityType="Self.vv_ProfitLossPurchase" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vv_ProfitLossPurchase].[Total] AS [Total], 
+    [vv_ProfitLossPurchase].[PoDate] AS [PoDate], 
+    [vv_ProfitLossPurchase].[RoleID] AS [RoleID], 
+    [vv_ProfitLossPurchase].[PurchaseOrderID] AS [PurchaseOrderID]
+    FROM [dbo].[vv_ProfitLossPurchase] AS [vv_ProfitLossPurchase]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vv_ProfitLossSale" EntityType="Self.vv_ProfitLossSale" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vv_ProfitLossSale].[Total] AS [Total], 
+    [vv_ProfitLossSale].[SoDate] AS [SoDate], 
+    [vv_ProfitLossSale].[RoleID] AS [RoleID], 
+    [vv_ProfitLossSale].[SaleOrderID] AS [SaleOrderID]
+    FROM [dbo].[vv_ProfitLossSale] AS [vv_ProfitLossSale]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vw_AccountTransactions" EntityType="Self.vw_AccountTransactions" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vw_AccountTransactions].[TransID] AS [TransID], 
+    [vw_AccountTransactions].[AccountCode] AS [AccountCode], 
+    [vw_AccountTransactions].[TransDate] AS [TransDate], 
+    [vw_AccountTransactions].[DR] AS [DR], 
+    [vw_AccountTransactions].[CR] AS [CR], 
+    [vw_AccountTransactions].[CreatedDate] AS [CreatedDate], 
+    [vw_AccountTransactions].[CreatedBy] AS [CreatedBy], 
+    [vw_AccountTransactions].[Remarks] AS [Remarks], 
+    [vw_AccountTransactions].[RecordID] AS [RecordID], 
+    [vw_AccountTransactions].[RecordType] AS [RecordType], 
+    [vw_AccountTransactions].[BankID] AS [BankID], 
+    [vw_AccountTransactions].[AccountID] AS [AccountID], 
+    [vw_AccountTransactions].[AccountName] AS [AccountName], 
+    [vw_AccountTransactions].[ChartOfAccountName] AS [ChartOfAccountName], 
+    [vw_AccountTransactions].[RoleID] AS [RoleID], 
+    [vw_AccountTransactions].[Particular] AS [Particular]
+    FROM [dbo].[vw_AccountTransactions] AS [vw_AccountTransactions]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vw_BankTransactions" EntityType="Self.vw_BankTransactions" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vw_BankTransactions].[TransID] AS [TransID], 
+    [vw_BankTransactions].[AccountCode] AS [AccountCode], 
+    [vw_BankTransactions].[TransDate] AS [TransDate], 
+    [vw_BankTransactions].[DR] AS [DR], 
+    [vw_BankTransactions].[CR] AS [CR], 
+    [vw_BankTransactions].[CreatedDate] AS [CreatedDate], 
+    [vw_BankTransactions].[CreatedBy] AS [CreatedBy], 
+    [vw_BankTransactions].[Remarks] AS [Remarks], 
+    [vw_BankTransactions].[RecordID] AS [RecordID], 
+    [vw_BankTransactions].[RecordType] AS [RecordType], 
+    [vw_BankTransactions].[BankID] AS [BankID], 
+    [vw_BankTransactions].[AccountID] AS [AccountID], 
+    [vw_BankTransactions].[AccountName] AS [AccountName], 
+    [vw_BankTransactions].[RoleID] AS [RoleID]
+    FROM [dbo].[vw_BankTransactions] AS [vw_BankTransactions]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vw_CashTransactions" EntityType="Self.vw_CashTransactions" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vw_CashTransactions].[TransID] AS [TransID], 
+    [vw_CashTransactions].[AccountCode] AS [AccountCode], 
+    [vw_CashTransactions].[TransDate] AS [TransDate], 
+    [vw_CashTransactions].[DR] AS [DR], 
+    [vw_CashTransactions].[CR] AS [CR], 
+    [vw_CashTransactions].[CreatedDate] AS [CreatedDate], 
+    [vw_CashTransactions].[CreatedBy] AS [CreatedBy], 
+    [vw_CashTransactions].[Remarks] AS [Remarks], 
+    [vw_CashTransactions].[RecordID] AS [RecordID], 
+    [vw_CashTransactions].[RecordType] AS [RecordType], 
+    [vw_CashTransactions].[AccountID] AS [AccountID], 
+    [vw_CashTransactions].[AccountName] AS [AccountName], 
+    [vw_CashTransactions].[RoleID] AS [RoleID]
+    FROM [dbo].[vw_CashTransactions] AS [vw_CashTransactions]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vw_DailyCashTransactions" EntityType="Self.vw_DailyCashTransactions" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vw_DailyCashTransactions].[TransID] AS [TransID], 
+    [vw_DailyCashTransactions].[TransDate] AS [TransDate], 
+    [vw_DailyCashTransactions].[AccountCode] AS [AccountCode], 
+    [vw_DailyCashTransactions].[ChartOfAccountName] AS [ChartOfAccountName], 
+    [vw_DailyCashTransactions].[Particular] AS [Particular], 
+    [vw_DailyCashTransactions].[AccountID] AS [AccountID], 
+    [vw_DailyCashTransactions].[AccountName] AS [AccountName], 
+    [vw_DailyCashTransactions].[DR] AS [DR], 
+    [vw_DailyCashTransactions].[CR] AS [CR], 
+    [vw_DailyCashTransactions].[RoleID] AS [RoleID]
+    FROM [dbo].[vw_DailyCashTransactions] AS [vw_DailyCashTransactions]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vw_DetailLedgerStatement" EntityType="Self.vw_DetailLedgerStatement" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vw_DetailLedgerStatement].[AccountId] AS [AccountId], 
+    [vw_DetailLedgerStatement].[AccountName] AS [AccountName], 
+    [vw_DetailLedgerStatement].[TransDate] AS [TransDate], 
+    [vw_DetailLedgerStatement].[Descriptions] AS [Descriptions], 
+    [vw_DetailLedgerStatement].[InQty] AS [InQty], 
+    [vw_DetailLedgerStatement].[OutQty] AS [OutQty], 
+    [vw_DetailLedgerStatement].[Rate] AS [Rate], 
+    [vw_DetailLedgerStatement].[Dr] AS [Dr], 
+    [vw_DetailLedgerStatement].[Cr] AS [Cr], 
+    [vw_DetailLedgerStatement].[Remarks] AS [Remarks], 
+    [vw_DetailLedgerStatement].[RecordId] AS [RecordId], 
+    [vw_DetailLedgerStatement].[RoleID] AS [RoleID]
+    FROM [dbo].[vw_DetailLedgerStatement] AS [vw_DetailLedgerStatement]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vw_GetAvailableStockBySubItem" EntityType="Self.vw_GetAvailableStockBySubItem" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vw_GetAvailableStockBySubItem].[SubItemID] AS [SubItemID], 
+    [vw_GetAvailableStockBySubItem].[AvailableStock] AS [AvailableStock]
+    FROM [dbo].[vw_GetAvailableStockBySubItem] AS [vw_GetAvailableStockBySubItem]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vw_GetCustomerAllTableInfo" EntityType="Self.vw_GetCustomerAllTableInfo" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vw_GetCustomerAllTableInfo].[RecordID] AS [RecordID], 
+    [vw_GetCustomerAllTableInfo].[CustomerID] AS [CustomerID], 
+    [vw_GetCustomerAllTableInfo].[RecordType] AS [RecordType], 
+    [vw_GetCustomerAllTableInfo].[SODate] AS [SODate], 
+    [vw_GetCustomerAllTableInfo].[TotalAmount] AS [TotalAmount], 
+    [vw_GetCustomerAllTableInfo].[CityID] AS [CityID], 
+    [vw_GetCustomerAllTableInfo].[CityName] AS [CityName], 
+    [vw_GetCustomerAllTableInfo].[CityAreaID] AS [CityAreaID], 
+    [vw_GetCustomerAllTableInfo].[CityAreaName] AS [CityAreaName], 
+    [vw_GetCustomerAllTableInfo].[SalesOfficer] AS [SalesOfficer]
+    FROM [dbo].[vw_GetCustomerAllTableInfo] AS [vw_GetCustomerAllTableInfo]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vw_GetPOReReturnItemForInventory" EntityType="Self.vw_GetPOReReturnItemForInventory" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vw_GetPOReReturnItemForInventory].[TotalPORQty] AS [TotalPORQty], 
+    [vw_GetPOReReturnItemForInventory].[SubItemID] AS [SubItemID]
+    FROM [dbo].[vw_GetPOReReturnItemForInventory] AS [vw_GetPOReReturnItemForInventory]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vw_GetSalesItemForInventory" EntityType="Self.vw_GetSalesItemForInventory" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vw_GetSalesItemForInventory].[TotalSOQty] AS [TotalSOQty], 
+    [vw_GetSalesItemForInventory].[SubItemID] AS [SubItemID]
+    FROM [dbo].[vw_GetSalesItemForInventory] AS [vw_GetSalesItemForInventory]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vw_GetSOReReturnItemForInventory" EntityType="Self.vw_GetSOReReturnItemForInventory" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vw_GetSOReReturnItemForInventory].[TotalSORQty] AS [TotalSORQty], 
+    [vw_GetSOReReturnItemForInventory].[SubItemID] AS [SubItemID]
+    FROM [dbo].[vw_GetSOReReturnItemForInventory] AS [vw_GetSOReReturnItemForInventory]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vw_InvertoryOnHandAllTypes" EntityType="Self.vw_InvertoryOnHandAllTypes" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vw_InvertoryOnHandAllTypes].[ItemID] AS [ItemID], 
+    [vw_InvertoryOnHandAllTypes].[ItemName] AS [ItemName], 
+    [vw_InvertoryOnHandAllTypes].[SubItemID] AS [SubItemID], 
+    [vw_InvertoryOnHandAllTypes].[SubItemName] AS [SubItemName], 
+    [vw_InvertoryOnHandAllTypes].[InventoryID] AS [InventoryID], 
+    [vw_InvertoryOnHandAllTypes].[PurchasePrice] AS [PurchasePrice], 
+    [vw_InvertoryOnHandAllTypes].[SalePrice] AS [SalePrice], 
+    [vw_InvertoryOnHandAllTypes].[Quantity] AS [Quantity], 
+    [vw_InvertoryOnHandAllTypes].[CreatedDate] AS [CreatedDate], 
+    [vw_InvertoryOnHandAllTypes].[CreatedBy] AS [CreatedBy], 
+    [vw_InvertoryOnHandAllTypes].[RoleID] AS [RoleID], 
+    [vw_InvertoryOnHandAllTypes].[RecordID] AS [RecordID], 
+    [vw_InvertoryOnHandAllTypes].[RecordType] AS [RecordType], 
+    [vw_InvertoryOnHandAllTypes].[OrderID] AS [OrderID], 
+    [vw_InvertoryOnHandAllTypes].[DeailID] AS [DeailID]
+    FROM [dbo].[vw_InvertoryOnHandAllTypes] AS [vw_InvertoryOnHandAllTypes]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vw_PaymentDetailForHeader" EntityType="Self.vw_PaymentDetailForHeader" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vw_PaymentDetailForHeader].[PaymentHeaderID] AS [PaymentHeaderID], 
+    [vw_PaymentDetailForHeader].[PaymentDetail] AS [PaymentDetail]
+    FROM [dbo].[vw_PaymentDetailForHeader] AS [vw_PaymentDetailForHeader]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vw_PaymentHeader" EntityType="Self.vw_PaymentHeader" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vw_PaymentHeader].[ID] AS [ID], 
+    [vw_PaymentHeader].[CompanyId] AS [CompanyId], 
+    [vw_PaymentHeader].[CompanyName] AS [CompanyName], 
+    [vw_PaymentHeader].[PaymentDate] AS [PaymentDate], 
+    [vw_PaymentHeader].[ReceiptNo] AS [ReceiptNo], 
+    [vw_PaymentHeader].[EmployeeId] AS [EmployeeId], 
+    [vw_PaymentHeader].[SalesOfficer] AS [SalesOfficer], 
+    [vw_PaymentHeader].[ContactNo] AS [ContactNo], 
+    [vw_PaymentHeader].[CNIC] AS [CNIC], 
+    [vw_PaymentHeader].[OfficerAddress] AS [OfficerAddress], 
+    [vw_PaymentHeader].[STRN] AS [STRN], 
+    [vw_PaymentHeader].[NTN] AS [NTN], 
+    [vw_PaymentHeader].[CityAreaName] AS [CityAreaName], 
+    [vw_PaymentHeader].[TotalAmount] AS [TotalAmount], 
+    [vw_PaymentHeader].[Particular] AS [Particular], 
+    [vw_PaymentHeader].[VoucharType] AS [VoucharType], 
+    [vw_PaymentHeader].[PaymentDetail] AS [PaymentDetail]
+    FROM [dbo].[vw_PaymentHeader] AS [vw_PaymentHeader]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vw_Payments" EntityType="Self.vw_Payments" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vw_Payments].[ID] AS [ID], 
+    [vw_Payments].[AccountID] AS [AccountID], 
+    [vw_Payments].[PaymentMode] AS [PaymentMode], 
+    [vw_Payments].[Amount] AS [Amount], 
+    [vw_Payments].[CheckNumberOrOnlineReciptNumber] AS [CheckNumberOrOnlineReciptNumber], 
+    [vw_Payments].[CheckDate] AS [CheckDate], 
+    [vw_Payments].[TransactionDate] AS [TransactionDate], 
+    [vw_Payments].[Particulars] AS [Particulars], 
+    [vw_Payments].[VoucherType] AS [VoucherType], 
+    [vw_Payments].[RecordType] AS [RecordType], 
+    [vw_Payments].[RecordId] AS [RecordId], 
+    [vw_Payments].[CreatedDate] AS [CreatedDate], 
+    [vw_Payments].[CreatedBy] AS [CreatedBy], 
+    [vw_Payments].[ModifyDate] AS [ModifyDate], 
+    [vw_Payments].[ModifyBy] AS [ModifyBy], 
+    [vw_Payments].[BankID] AS [BankID], 
+    [vw_Payments].[RoleId] AS [RoleId], 
+    [vw_Payments].[PaymentHeaderID] AS [PaymentHeaderID], 
+    [vw_Payments].[OrderNumber] AS [OrderNumber], 
+    [vw_Payments].[AccountName] AS [AccountName], 
+    [vw_Payments].[BankName] AS [BankName]
+    FROM [dbo].[vw_Payments] AS [vw_Payments]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vw_PurchaseDetailForHeader" EntityType="Self.vw_PurchaseDetailForHeader" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vw_PurchaseDetailForHeader].[PurchaseOrderID] AS [PurchaseOrderID], 
+    [vw_PurchaseDetailForHeader].[PurchaseDetail] AS [PurchaseDetail]
+    FROM [dbo].[vw_PurchaseDetailForHeader] AS [vw_PurchaseDetailForHeader]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vw_PurchaseOrder" EntityType="Self.vw_PurchaseOrder" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vw_PurchaseOrder].[PurchaseOrderID] AS [PurchaseOrderID], 
+    [vw_PurchaseOrder].[CompanyId] AS [CompanyId], 
+    [vw_PurchaseOrder].[CompanyName] AS [CompanyName], 
+    [vw_PurchaseOrder].[PONumber] AS [PONumber], 
+    [vw_PurchaseOrder].[RecordType] AS [RecordType], 
+    [vw_PurchaseOrder].[EntryTypeID] AS [EntryTypeID], 
+    [vw_PurchaseOrder].[EntryType] AS [EntryType], 
+    [vw_PurchaseOrder].[AccountID] AS [AccountID], 
+    [vw_PurchaseOrder].[VendorName] AS [VendorName], 
+    [vw_PurchaseOrder].[ContactNo] AS [ContactNo], 
+    [vw_PurchaseOrder].[PurchaseOrderDate] AS [PurchaseOrderDate], 
+    [vw_PurchaseOrder].[InvoiceNo] AS [InvoiceNo], 
+    [vw_PurchaseOrder].[Notes] AS [Notes], 
+    [vw_PurchaseOrder].[SubTotal] AS [SubTotal], 
+    [vw_PurchaseOrder].[Expense] AS [Expense], 
+    [vw_PurchaseOrder].[Discount] AS [Discount], 
+    [vw_PurchaseOrder].[SalesTax] AS [SalesTax], 
+    [vw_PurchaseOrder].[PaidAmount] AS [PaidAmount], 
+    [vw_PurchaseOrder].[TotalAmount] AS [TotalAmount], 
+    [vw_PurchaseOrder].[Status] AS [Status], 
+    [vw_PurchaseOrder].[TotalPurchasePrice] AS [TotalPurchasePrice], 
+    [vw_PurchaseOrder].[TotalQty] AS [TotalQty], 
+    [vw_PurchaseOrder].[TotalSubTotal] AS [TotalSubTotal], 
+    [vw_PurchaseOrder].[IsTaxInvoice] AS [IsTaxInvoice], 
+    [vw_PurchaseOrder].[CreatedDate] AS [CreatedDate], 
+    [vw_PurchaseOrder].[VendorCNIC] AS [VendorCNIC], 
+    [vw_PurchaseOrder].[VendorAddress] AS [VendorAddress], 
+    [vw_PurchaseOrder].[VendorSTR] AS [VendorSTR], 
+    [vw_PurchaseOrder].[VendorNTN] AS [VendorNTN], 
+    [vw_PurchaseOrder].[VendorCityArea] AS [VendorCityArea], 
+    [vw_PurchaseOrder].[BookerID] AS [BookerID], 
+    [vw_PurchaseOrder].[BookerName] AS [BookerName], 
+    [vw_PurchaseOrder].[SupplierID] AS [SupplierID], 
+    [vw_PurchaseOrder].[SupplierName] AS [SupplierName]
+    FROM [dbo].[vw_PurchaseOrder] AS [vw_PurchaseOrder]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vw_PurchaseOrderReturn" EntityType="Self.vw_PurchaseOrderReturn" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vw_PurchaseOrderReturn].[PurchaseOrderReturnID] AS [PurchaseOrderReturnID], 
+    [vw_PurchaseOrderReturn].[CompanyId] AS [CompanyId], 
+    [vw_PurchaseOrderReturn].[CompanyName] AS [CompanyName], 
+    [vw_PurchaseOrderReturn].[PONumber] AS [PONumber], 
+    [vw_PurchaseOrderReturn].[RecordType] AS [RecordType], 
+    [vw_PurchaseOrderReturn].[EntryTypeID] AS [EntryTypeID], 
+    [vw_PurchaseOrderReturn].[EntryType] AS [EntryType], 
+    [vw_PurchaseOrderReturn].[AccountID] AS [AccountID], 
+    [vw_PurchaseOrderReturn].[VendorName] AS [VendorName], 
+    [vw_PurchaseOrderReturn].[ContactNo] AS [ContactNo], 
+    [vw_PurchaseOrderReturn].[PurchaseOrderDate] AS [PurchaseOrderDate], 
+    [vw_PurchaseOrderReturn].[InvoiceNo] AS [InvoiceNo], 
+    [vw_PurchaseOrderReturn].[Notes] AS [Notes], 
+    [vw_PurchaseOrderReturn].[SubTotal] AS [SubTotal], 
+    [vw_PurchaseOrderReturn].[Expense] AS [Expense], 
+    [vw_PurchaseOrderReturn].[Discount] AS [Discount], 
+    [vw_PurchaseOrderReturn].[SalesTax] AS [SalesTax], 
+    [vw_PurchaseOrderReturn].[PaidAmount] AS [PaidAmount], 
+    [vw_PurchaseOrderReturn].[TotalAmount] AS [TotalAmount], 
+    [vw_PurchaseOrderReturn].[Status] AS [Status], 
+    [vw_PurchaseOrderReturn].[TotalPurchasePrice] AS [TotalPurchasePrice], 
+    [vw_PurchaseOrderReturn].[TotalQty] AS [TotalQty], 
+    [vw_PurchaseOrderReturn].[TotalSubTotal] AS [TotalSubTotal], 
+    [vw_PurchaseOrderReturn].[IsTaxInvoice] AS [IsTaxInvoice], 
+    [vw_PurchaseOrderReturn].[CreatedDate] AS [CreatedDate], 
+    [vw_PurchaseOrderReturn].[VendorCNIC] AS [VendorCNIC], 
+    [vw_PurchaseOrderReturn].[VendorAddress] AS [VendorAddress], 
+    [vw_PurchaseOrderReturn].[VendorSTR] AS [VendorSTR], 
+    [vw_PurchaseOrderReturn].[VendorNTN] AS [VendorNTN], 
+    [vw_PurchaseOrderReturn].[VendorCityArea] AS [VendorCityArea], 
+    [vw_PurchaseOrderReturn].[BookerID] AS [BookerID], 
+    [vw_PurchaseOrderReturn].[BookerName] AS [BookerName], 
+    [vw_PurchaseOrderReturn].[SupplierID] AS [SupplierID], 
+    [vw_PurchaseOrderReturn].[SupplierName] AS [SupplierName]
+    FROM [dbo].[vw_PurchaseOrderReturn] AS [vw_PurchaseOrderReturn]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vw_PurchaseReturnDetailForHeader" EntityType="Self.vw_PurchaseReturnDetailForHeader" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vw_PurchaseReturnDetailForHeader].[PurchaseOrderReturnID] AS [PurchaseOrderReturnID], 
+    [vw_PurchaseReturnDetailForHeader].[PurchaseReturnDetail] AS [PurchaseReturnDetail]
+    FROM [dbo].[vw_PurchaseReturnDetailForHeader] AS [vw_PurchaseReturnDetailForHeader]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vw_SaleOrder" EntityType="Self.vw_SaleOrder" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vw_SaleOrder].[SaleOrderID] AS [SaleOrderID], 
+    [vw_SaleOrder].[CompanyId] AS [CompanyId], 
+    [vw_SaleOrder].[CompanyName] AS [CompanyName], 
+    [vw_SaleOrder].[SONumber] AS [SONumber], 
+    [vw_SaleOrder].[RecordType] AS [RecordType], 
+    [vw_SaleOrder].[EntryType] AS [EntryType], 
+    [vw_SaleOrder].[CustomerName] AS [CustomerName], 
+    [vw_SaleOrder].[ContactNo] AS [ContactNo], 
+    [vw_SaleOrder].[CustomerCNIC] AS [CustomerCNIC], 
+    [vw_SaleOrder].[CustomerAddress] AS [CustomerAddress], 
+    [vw_SaleOrder].[CustomerSTRN] AS [CustomerSTRN], 
+    [vw_SaleOrder].[CustomerNTN] AS [CustomerNTN], 
+    [vw_SaleOrder].[CustomerCityArea] AS [CustomerCityArea], 
+    [vw_SaleOrder].[SubTotal] AS [SubTotal], 
+    [vw_SaleOrder].[Expense] AS [Expense], 
+    [vw_SaleOrder].[Discount] AS [Discount], 
+    [vw_SaleOrder].[Discount2] AS [Discount2], 
+    [vw_SaleOrder].[SalesTax] AS [SalesTax], 
+    [vw_SaleOrder].[PaidAmount] AS [PaidAmount], 
+    [vw_SaleOrder].[TotalAmount] AS [TotalAmount], 
+    [vw_SaleOrder].[IsTaxInvoice] AS [IsTaxInvoice], 
+    [vw_SaleOrder].[InvoiceNo] AS [InvoiceNo], 
+    [vw_SaleOrder].[Notes] AS [Notes], 
+    [vw_SaleOrder].[Status] AS [Status], 
+    [vw_SaleOrder].[SaleOrderDate] AS [SaleOrderDate], 
+    [vw_SaleOrder].[CreatedDate] AS [CreatedDate], 
+    [vw_SaleOrder].[RoleID] AS [RoleID], 
+    [vw_SaleOrder].[EntryTypeID] AS [EntryTypeID], 
+    [vw_SaleOrder].[BookerID] AS [BookerID], 
+    [vw_SaleOrder].[BookerName] AS [BookerName], 
+    [vw_SaleOrder].[SupplierID] AS [SupplierID], 
+    [vw_SaleOrder].[SalesOfficer] AS [SalesOfficer], 
+    [vw_SaleOrder].[AccountID] AS [AccountID]
+    FROM [dbo].[vw_SaleOrder] AS [vw_SaleOrder]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vw_SaleOrderReturn" EntityType="Self.vw_SaleOrderReturn" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vw_SaleOrderReturn].[SaleOrderReturnID] AS [SaleOrderReturnID], 
+    [vw_SaleOrderReturn].[CompanyId] AS [CompanyId], 
+    [vw_SaleOrderReturn].[CompanyName] AS [CompanyName], 
+    [vw_SaleOrderReturn].[SONumber] AS [SONumber], 
+    [vw_SaleOrderReturn].[RecordType] AS [RecordType], 
+    [vw_SaleOrderReturn].[EntryType] AS [EntryType], 
+    [vw_SaleOrderReturn].[CustomerName] AS [CustomerName], 
+    [vw_SaleOrderReturn].[ContactNo] AS [ContactNo], 
+    [vw_SaleOrderReturn].[CustomerCNIC] AS [CustomerCNIC], 
+    [vw_SaleOrderReturn].[CustomerAddress] AS [CustomerAddress], 
+    [vw_SaleOrderReturn].[CustomerSTRN] AS [CustomerSTRN], 
+    [vw_SaleOrderReturn].[CustomerNTN] AS [CustomerNTN], 
+    [vw_SaleOrderReturn].[CustomerCityArea] AS [CustomerCityArea], 
+    [vw_SaleOrderReturn].[SubTotal] AS [SubTotal], 
+    [vw_SaleOrderReturn].[Expense] AS [Expense], 
+    [vw_SaleOrderReturn].[Discount] AS [Discount], 
+    [vw_SaleOrderReturn].[SalesTax] AS [SalesTax], 
+    [vw_SaleOrderReturn].[PaidAmount] AS [PaidAmount], 
+    [vw_SaleOrderReturn].[TotalAmount] AS [TotalAmount], 
+    [vw_SaleOrderReturn].[IsTaxInvoice] AS [IsTaxInvoice], 
+    [vw_SaleOrderReturn].[InvoiceNo] AS [InvoiceNo], 
+    [vw_SaleOrderReturn].[Notes] AS [Notes], 
+    [vw_SaleOrderReturn].[Status] AS [Status], 
+    [vw_SaleOrderReturn].[SaleOrderDate] AS [SaleOrderDate], 
+    [vw_SaleOrderReturn].[CreatedDate] AS [CreatedDate], 
+    [vw_SaleOrderReturn].[RoleID] AS [RoleID], 
+    [vw_SaleOrderReturn].[EntryTypeID] AS [EntryTypeID], 
+    [vw_SaleOrderReturn].[BookerID] AS [BookerID], 
+    [vw_SaleOrderReturn].[BookerName] AS [BookerName], 
+    [vw_SaleOrderReturn].[SupplierID] AS [SupplierID], 
+    [vw_SaleOrderReturn].[SalesOfficer] AS [SalesOfficer], 
+    [vw_SaleOrderReturn].[AccountID] AS [AccountID]
+    FROM [dbo].[vw_SaleOrderReturn] AS [vw_SaleOrderReturn]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vw_SalesDetailForHeader" EntityType="Self.vw_SalesDetailForHeader" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vw_SalesDetailForHeader].[SaleOrderID] AS [SaleOrderID], 
+    [vw_SalesDetailForHeader].[SalesDetail] AS [SalesDetail]
+    FROM [dbo].[vw_SalesDetailForHeader] AS [vw_SalesDetailForHeader]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vw_SalesReturnDetailForHeader" EntityType="Self.vw_SalesReturnDetailForHeader" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vw_SalesReturnDetailForHeader].[SaleOrderReturnID] AS [SaleOrderReturnID], 
+    [vw_SalesReturnDetailForHeader].[SalesReturnDetail] AS [SalesReturnDetail]
+    FROM [dbo].[vw_SalesReturnDetailForHeader] AS [vw_SalesReturnDetailForHeader]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vw_TotalPaidAmountByOrderNo" EntityType="Self.vw_TotalPaidAmountByOrderNo" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vw_TotalPaidAmountByOrderNo].[TotalPaid] AS [TotalPaid], 
+    [vw_TotalPaidAmountByOrderNo].[OrderNumber] AS [OrderNumber]
+    FROM [dbo].[vw_TotalPaidAmountByOrderNo] AS [vw_TotalPaidAmountByOrderNo]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vw_Transactions" EntityType="Self.vw_Transactions" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vw_Transactions].[TransID] AS [TransID], 
+    [vw_Transactions].[AccountCode] AS [AccountCode], 
+    [vw_Transactions].[RecordID] AS [RecordID], 
+    [vw_Transactions].[RecordType] AS [RecordType], 
+    [vw_Transactions].[Remarks] AS [Remarks], 
+    [vw_Transactions].[TransDate] AS [TransDate], 
+    [vw_Transactions].[DR] AS [DR], 
+    [vw_Transactions].[CR] AS [CR], 
+    [vw_Transactions].[RoleID] AS [RoleID]
+    FROM [dbo].[vw_Transactions] AS [vw_Transactions]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

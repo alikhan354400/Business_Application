@@ -1,0 +1,94 @@
+﻿@model  List<HassanAyoubTraders.Models.EF.BrowsePayments_Result>
+@using System.Globalization;
+
+@{
+    CultureInfo ciPk = new CultureInfo("ur-PK");
+}
+
+<div class="row clearfix">
+    <div class="col-md-12">
+        <div>
+            <table class="table table-striped table-bordered datatable" id="tblList">
+                <thead>
+                    <tr>
+                        <th style="width:10%;">Payment #</th>
+                        <th style="width:10%;">Payment Date</th>
+                        <th>Name</th>
+                        <th style="width:20%;">Detail</th>
+                        <th>Particular</th>
+                        <th style="width:10%;">Amount</th>
+                        <th style="width:10%;">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @item.ID
+                            </td>
+                            <td>@(item.TransactionDate.HasValue == false ? "" : @item.TransactionDate.Value.ToString("dd/MM/yyyy"))</td>
+                            <td>
+                                @item.AccountName
+                            </td>
+                            <td>
+                                @if (item.PaymentMode.Equals("Cash"))
+                                {
+                                    <div>
+                                        <p> <strong>Payment Mode:</strong> @item.PaymentMode</p>
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div>
+                                        <p style="margin: 0px 0px 0px;"> <strong>Payment Mode:</strong> @item.PaymentMode</p>
+                                        <p style="margin: 0px 0px 0px;"> <strong>Bank:</strong> @item.BankName</p>
+                                        <p style="margin: 0px 0px 0px;"> <strong>Check/Online #:</strong> @item.CheckNumberOrOnlineReciptNumber</p>
+                                        <p style="margin: 0px 0px 0px;"> <strong>Date:</strong> @item.CheckDate.Value.ToShortDateString()</p>
+                                    </div>
+                                }
+                            </td>
+                            <td>
+                                @item.Particulars
+                            </td>
+                            <td>
+                                @{
+                                    decimal parsedItemPrice = decimal.Parse(item.Amount.ToString(), CultureInfo.InvariantCulture);
+                                    string Price = string.Format(ciPk, "{0:c}", parsedItemPrice);
+                                }
+                                @Price
+                            </td>
+                            <td>
+                                <div class="dt-buttons">
+                                    <a href="#" data-id="@item.ID" class="btn btn-xs edit" title="Edit"><i class="fa fa-pencil-square-o"></i></a>
+                                    |
+                                    <a href="#" data-id="@item.ID" class="btn btn-xs delete" title="Remove"><i class="fa fa-trash"></i></a>
+                                </div>
+                            </td>
+                        </tr>
+                                    }
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    $(document).ready(function () {
+ 
+        $('.datatable').on('click', '.delete', function () {
+            var id = $(this).attr("data-id");
+            RemoveRow(id);
+        });
+
+        $('.datatable').on('click', '.edit', function () {
+            var id = $(this).attr("data-id");
+            $('.page-loader-wrapper').show();
+            var url = getWebsiteUrl + "/Payments/Payment?Id=" + id;
+            window.location.href = url;
+        });
+    });
+</script>

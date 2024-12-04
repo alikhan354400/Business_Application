@@ -1,0 +1,374 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\Projects\\EmanTraders\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{25D76B3E-36D5-46A5-95AC-DB19B90F26B6}|EmanTraders\\EmanTraders.csproj|E:\\Projects\\EmanTraders\\emantraders\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{25D76B3E-36D5-46A5-95AC-DB19B90F26B6}|EmanTraders\\EmanTraders.csproj|solutionrelative:emantraders\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25D76B3E-36D5-46A5-95AC-DB19B90F26B6}|EmanTraders\\EmanTraders.csproj|e:\\projects\\emantraders\\emantraders\\views\\print\\salesinvoicereturn.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{25D76B3E-36D5-46A5-95AC-DB19B90F26B6}|EmanTraders\\EmanTraders.csproj|solutionrelative:emantraders\\views\\print\\salesinvoicereturn.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25D76B3E-36D5-46A5-95AC-DB19B90F26B6}|EmanTraders\\EmanTraders.csproj|E:\\Projects\\EmanTraders\\emantraders\\views\\print\\salesinvoice.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{25D76B3E-36D5-46A5-95AC-DB19B90F26B6}|EmanTraders\\EmanTraders.csproj|solutionrelative:emantraders\\views\\print\\salesinvoice.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25D76B3E-36D5-46A5-95AC-DB19B90F26B6}|EmanTraders\\EmanTraders.csproj|E:\\Projects\\EmanTraders\\emantraders\\views\\print\\purchasereturninvoice.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{25D76B3E-36D5-46A5-95AC-DB19B90F26B6}|EmanTraders\\EmanTraders.csproj|solutionrelative:emantraders\\views\\print\\purchasereturninvoice.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25D76B3E-36D5-46A5-95AC-DB19B90F26B6}|EmanTraders\\EmanTraders.csproj|E:\\Projects\\EmanTraders\\emantraders\\views\\print\\purchaseinvoice.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{25D76B3E-36D5-46A5-95AC-DB19B90F26B6}|EmanTraders\\EmanTraders.csproj|solutionrelative:emantraders\\views\\print\\purchaseinvoice.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25D76B3E-36D5-46A5-95AC-DB19B90F26B6}|EmanTraders\\EmanTraders.csproj|E:\\Projects\\EmanTraders\\emantraders\\views\\print\\printreceipt.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{25D76B3E-36D5-46A5-95AC-DB19B90F26B6}|EmanTraders\\EmanTraders.csproj|solutionrelative:emantraders\\views\\print\\printreceipt.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25D76B3E-36D5-46A5-95AC-DB19B90F26B6}|EmanTraders\\EmanTraders.csproj|E:\\Projects\\EmanTraders\\emantraders\\views\\print\\printpayslip.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{25D76B3E-36D5-46A5-95AC-DB19B90F26B6}|EmanTraders\\EmanTraders.csproj|solutionrelative:emantraders\\views\\print\\printpayslip.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25D76B3E-36D5-46A5-95AC-DB19B90F26B6}|EmanTraders\\EmanTraders.csproj|E:\\Projects\\EmanTraders\\emantraders\\printreports\\rptsalesreport.rdlc||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{25D76B3E-36D5-46A5-95AC-DB19B90F26B6}|EmanTraders\\EmanTraders.csproj|solutionrelative:emantraders\\printreports\\rptsalesreport.rdlc||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25D76B3E-36D5-46A5-95AC-DB19B90F26B6}|EmanTraders\\EmanTraders.csproj|E:\\Projects\\EmanTraders\\emantraders\\printreports\\rptsaleinvoicesummary.rdlc||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{25D76B3E-36D5-46A5-95AC-DB19B90F26B6}|EmanTraders\\EmanTraders.csproj|solutionrelative:emantraders\\printreports\\rptsaleinvoicesummary.rdlc||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25D76B3E-36D5-46A5-95AC-DB19B90F26B6}|EmanTraders\\EmanTraders.csproj|E:\\Projects\\EmanTraders\\emantraders\\printreports\\rptprofitandloss.rdlc||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{25D76B3E-36D5-46A5-95AC-DB19B90F26B6}|EmanTraders\\EmanTraders.csproj|solutionrelative:emantraders\\printreports\\rptprofitandloss.rdlc||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25D76B3E-36D5-46A5-95AC-DB19B90F26B6}|EmanTraders\\EmanTraders.csproj|E:\\Projects\\EmanTraders\\emantraders\\printreports\\rptledger.rdlc||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{25D76B3E-36D5-46A5-95AC-DB19B90F26B6}|EmanTraders\\EmanTraders.csproj|solutionrelative:emantraders\\printreports\\rptledger.rdlc||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25D76B3E-36D5-46A5-95AC-DB19B90F26B6}|EmanTraders\\EmanTraders.csproj|E:\\Projects\\EmanTraders\\emantraders\\printreports\\rptitemactivity.rdlc||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{25D76B3E-36D5-46A5-95AC-DB19B90F26B6}|EmanTraders\\EmanTraders.csproj|solutionrelative:emantraders\\printreports\\rptitemactivity.rdlc||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25D76B3E-36D5-46A5-95AC-DB19B90F26B6}|EmanTraders\\EmanTraders.csproj|E:\\Projects\\EmanTraders\\emantraders\\printreports\\rptinventoryonhand.rdlc||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{25D76B3E-36D5-46A5-95AC-DB19B90F26B6}|EmanTraders\\EmanTraders.csproj|solutionrelative:emantraders\\printreports\\rptinventoryonhand.rdlc||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25D76B3E-36D5-46A5-95AC-DB19B90F26B6}|EmanTraders\\EmanTraders.csproj|E:\\Projects\\EmanTraders\\emantraders\\printreports\\rptexecutionreport.rdlc||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{25D76B3E-36D5-46A5-95AC-DB19B90F26B6}|EmanTraders\\EmanTraders.csproj|solutionrelative:emantraders\\printreports\\rptexecutionreport.rdlc||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25D76B3E-36D5-46A5-95AC-DB19B90F26B6}|EmanTraders\\EmanTraders.csproj|E:\\Projects\\EmanTraders\\emantraders\\printreports\\rptdailyledgerstatement.rdlc||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{25D76B3E-36D5-46A5-95AC-DB19B90F26B6}|EmanTraders\\EmanTraders.csproj|solutionrelative:emantraders\\printreports\\rptdailyledgerstatement.rdlc||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25D76B3E-36D5-46A5-95AC-DB19B90F26B6}|EmanTraders\\EmanTraders.csproj|E:\\Projects\\EmanTraders\\emantraders\\printreports\\rptdailycashreport.rdlc||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{25D76B3E-36D5-46A5-95AC-DB19B90F26B6}|EmanTraders\\EmanTraders.csproj|solutionrelative:emantraders\\printreports\\rptdailycashreport.rdlc||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25D76B3E-36D5-46A5-95AC-DB19B90F26B6}|EmanTraders\\EmanTraders.csproj|E:\\Projects\\EmanTraders\\emantraders\\printreports\\rptcustomerwisebalance.rdlc||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{25D76B3E-36D5-46A5-95AC-DB19B90F26B6}|EmanTraders\\EmanTraders.csproj|solutionrelative:emantraders\\printreports\\rptcustomerwisebalance.rdlc||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25D76B3E-36D5-46A5-95AC-DB19B90F26B6}|EmanTraders\\EmanTraders.csproj|E:\\Projects\\EmanTraders\\emantraders\\printreports\\rptcompanypositionreport.rdlc||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{25D76B3E-36D5-46A5-95AC-DB19B90F26B6}|EmanTraders\\EmanTraders.csproj|solutionrelative:emantraders\\printreports\\rptcompanypositionreport.rdlc||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25D76B3E-36D5-46A5-95AC-DB19B90F26B6}|EmanTraders\\EmanTraders.csproj|E:\\Projects\\EmanTraders\\emantraders\\printreports\\rptaccountreceivable.rdlc||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{25D76B3E-36D5-46A5-95AC-DB19B90F26B6}|EmanTraders\\EmanTraders.csproj|solutionrelative:emantraders\\printreports\\rptaccountreceivable.rdlc||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25D76B3E-36D5-46A5-95AC-DB19B90F26B6}|EmanTraders\\EmanTraders.csproj|E:\\Projects\\EmanTraders\\emantraders\\printreports\\rptaccountpayable.rdlc||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{25D76B3E-36D5-46A5-95AC-DB19B90F26B6}|EmanTraders\\EmanTraders.csproj|solutionrelative:emantraders\\printreports\\rptaccountpayable.rdlc||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25D76B3E-36D5-46A5-95AC-DB19B90F26B6}|EmanTraders\\EmanTraders.csproj|E:\\Projects\\EmanTraders\\emantraders\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{25D76B3E-36D5-46A5-95AC-DB19B90F26B6}|EmanTraders\\EmanTraders.csproj|solutionrelative:emantraders\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25D76B3E-36D5-46A5-95AC-DB19B90F26B6}|EmanTraders\\EmanTraders.csproj|E:\\Projects\\EmanTraders\\emantraders\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{25D76B3E-36D5-46A5-95AC-DB19B90F26B6}|EmanTraders\\EmanTraders.csproj|solutionrelative:emantraders\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 7,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SalesInvoiceReturn.cshtml",
+              "DocumentMoniker": "E:\\Projects\\EmanTraders\\EmanTraders\\Views\\Print\\SalesInvoiceReturn.cshtml",
+              "RelativeDocumentMoniker": "EmanTraders\\Views\\Print\\SalesInvoiceReturn.cshtml",
+              "ToolTip": "E:\\Projects\\EmanTraders\\EmanTraders\\Views\\Print\\SalesInvoiceReturn.cshtml",
+              "RelativeToolTip": "EmanTraders\\Views\\Print\\SalesInvoiceReturn.cshtml",
+              "ViewState": "AgIAAL0BAAAAAAAAAAAYwM0BAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-09T19:29:01.471Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PurchaseReturnInvoice.cshtml",
+              "DocumentMoniker": "E:\\Projects\\EmanTraders\\EmanTraders\\Views\\Print\\PurchaseReturnInvoice.cshtml",
+              "RelativeDocumentMoniker": "EmanTraders\\Views\\Print\\PurchaseReturnInvoice.cshtml",
+              "ToolTip": "E:\\Projects\\EmanTraders\\EmanTraders\\Views\\Print\\PurchaseReturnInvoice.cshtml",
+              "RelativeToolTip": "EmanTraders\\Views\\Print\\PurchaseReturnInvoice.cshtml",
+              "ViewState": "AQIAALEBAAAAAAAAAAAYwLwBAABEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002242|",
+              "WhenOpened": "2024-05-09T19:28:53.578Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PurchaseInvoice.cshtml",
+              "DocumentMoniker": "E:\\Projects\\EmanTraders\\EmanTraders\\Views\\Print\\PurchaseInvoice.cshtml",
+              "RelativeDocumentMoniker": "EmanTraders\\Views\\Print\\PurchaseInvoice.cshtml",
+              "ToolTip": "E:\\Projects\\EmanTraders\\EmanTraders\\Views\\Print\\PurchaseInvoice.cshtml",
+              "RelativeToolTip": "EmanTraders\\Views\\Print\\PurchaseInvoice.cshtml",
+              "ViewState": "AQIAALEBAAAAAAAAAAAYwLwBAABEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002242|",
+              "WhenOpened": "2024-05-09T19:28:50.377Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "PrintReceipt.cshtml",
+              "DocumentMoniker": "E:\\Projects\\EmanTraders\\EmanTraders\\Views\\Print\\PrintReceipt.cshtml",
+              "RelativeDocumentMoniker": "EmanTraders\\Views\\Print\\PrintReceipt.cshtml",
+              "ToolTip": "E:\\Projects\\EmanTraders\\EmanTraders\\Views\\Print\\PrintReceipt.cshtml",
+              "RelativeToolTip": "EmanTraders\\Views\\Print\\PrintReceipt.cshtml",
+              "ViewState": "AQIAAP4AAAAAAAAAAAAYwAkBAABEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002242|",
+              "WhenOpened": "2024-05-09T19:28:45.189Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "PrintPaySlip.cshtml",
+              "DocumentMoniker": "E:\\Projects\\EmanTraders\\EmanTraders\\Views\\Print\\PrintPaySlip.cshtml",
+              "RelativeDocumentMoniker": "EmanTraders\\Views\\Print\\PrintPaySlip.cshtml",
+              "ToolTip": "E:\\Projects\\EmanTraders\\EmanTraders\\Views\\Print\\PrintPaySlip.cshtml",
+              "RelativeToolTip": "EmanTraders\\Views\\Print\\PrintPaySlip.cshtml",
+              "ViewState": "AQIAAOoAAAAAAAAAAAAYwPsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002242|",
+              "WhenOpened": "2024-05-09T19:28:34.54Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "rptSalesReport.rdlc",
+              "DocumentMoniker": "E:\\Projects\\EmanTraders\\EmanTraders\\PrintReports\\rptSalesReport.rdlc",
+              "RelativeDocumentMoniker": "EmanTraders\\PrintReports\\rptSalesReport.rdlc",
+              "ToolTip": "E:\\Projects\\EmanTraders\\EmanTraders\\PrintReports\\rptSalesReport.rdlc",
+              "RelativeToolTip": "EmanTraders\\PrintReports\\rptSalesReport.rdlc",
+              "ViewState": "AQIAAFIEAAAAAAAAAAAhwF4EAABGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001755|",
+              "WhenOpened": "2024-05-09T19:36:30.534Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "rptSaleInvoiceSummary.rdlc",
+              "DocumentMoniker": "E:\\Projects\\EmanTraders\\EmanTraders\\PrintReports\\rptSaleInvoiceSummary.rdlc",
+              "RelativeDocumentMoniker": "EmanTraders\\PrintReports\\rptSaleInvoiceSummary.rdlc",
+              "ToolTip": "E:\\Projects\\EmanTraders\\EmanTraders\\PrintReports\\rptSaleInvoiceSummary.rdlc",
+              "RelativeToolTip": "EmanTraders\\PrintReports\\rptSaleInvoiceSummary.rdlc",
+              "ViewState": "AQIAADkEAAAAAAAAAAAhwEUEAABJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001755|",
+              "WhenOpened": "2024-05-09T19:36:30.536Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Web.config",
+              "DocumentMoniker": "E:\\Projects\\EmanTraders\\EmanTraders\\Web.config",
+              "RelativeDocumentMoniker": "EmanTraders\\Web.config",
+              "ToolTip": "E:\\Projects\\EmanTraders\\EmanTraders\\Web.config",
+              "RelativeToolTip": "EmanTraders\\Web.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2024-05-09T19:23:52.34Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SalesInvoice.cshtml",
+              "DocumentMoniker": "E:\\Projects\\EmanTraders\\EmanTraders\\Views\\Print\\SalesInvoice.cshtml",
+              "RelativeDocumentMoniker": "EmanTraders\\Views\\Print\\SalesInvoice.cshtml",
+              "ToolTip": "E:\\Projects\\EmanTraders\\EmanTraders\\Views\\Print\\SalesInvoice.cshtml",
+              "RelativeToolTip": "EmanTraders\\Views\\Print\\SalesInvoice.cshtml",
+              "ViewState": "AQIAALQBAAAAAAAAAAAYwL8BAABEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002242|",
+              "WhenOpened": "2024-05-09T19:28:56.58Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "rptProfitAndLoss.rdlc",
+              "DocumentMoniker": "E:\\Projects\\EmanTraders\\EmanTraders\\PrintReports\\rptProfitAndLoss.rdlc",
+              "RelativeDocumentMoniker": "EmanTraders\\PrintReports\\rptProfitAndLoss.rdlc",
+              "ToolTip": "E:\\Projects\\EmanTraders\\EmanTraders\\PrintReports\\rptProfitAndLoss.rdlc",
+              "RelativeToolTip": "EmanTraders\\PrintReports\\rptProfitAndLoss.rdlc",
+              "ViewState": "AQIAAAUCAAAAAAAAAAAhwBECAABIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001755|",
+              "WhenOpened": "2024-05-09T19:36:30.537Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "rptLedger.rdlc",
+              "DocumentMoniker": "E:\\Projects\\EmanTraders\\EmanTraders\\PrintReports\\rptLedger.rdlc",
+              "RelativeDocumentMoniker": "EmanTraders\\PrintReports\\rptLedger.rdlc",
+              "ToolTip": "E:\\Projects\\EmanTraders\\EmanTraders\\PrintReports\\rptLedger.rdlc",
+              "RelativeToolTip": "EmanTraders\\PrintReports\\rptLedger.rdlc",
+              "ViewState": "AQIAAC4DAAAAAAAAAAAhwDoDAABIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001755|",
+              "WhenOpened": "2024-05-09T19:36:30.538Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "rptItemActivity.rdlc",
+              "DocumentMoniker": "E:\\Projects\\EmanTraders\\EmanTraders\\PrintReports\\rptItemActivity.rdlc",
+              "RelativeDocumentMoniker": "EmanTraders\\PrintReports\\rptItemActivity.rdlc",
+              "ToolTip": "E:\\Projects\\EmanTraders\\EmanTraders\\PrintReports\\rptItemActivity.rdlc",
+              "RelativeToolTip": "EmanTraders\\PrintReports\\rptItemActivity.rdlc",
+              "ViewState": "AQIAAFEEAAAAAAAAAAAhwF0EAABIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001755|",
+              "WhenOpened": "2024-05-09T19:36:30.539Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "rptInventoryOnHand.rdlc",
+              "DocumentMoniker": "E:\\Projects\\EmanTraders\\EmanTraders\\PrintReports\\rptInventoryOnHand.rdlc",
+              "RelativeDocumentMoniker": "EmanTraders\\PrintReports\\rptInventoryOnHand.rdlc",
+              "ToolTip": "E:\\Projects\\EmanTraders\\EmanTraders\\PrintReports\\rptInventoryOnHand.rdlc",
+              "RelativeToolTip": "EmanTraders\\PrintReports\\rptInventoryOnHand.rdlc",
+              "ViewState": "AQIAAL8FAAAAAAAAAAAhwMsFAABJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001755|",
+              "WhenOpened": "2024-05-09T19:36:30.542Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "rptExecutionReport.rdlc",
+              "DocumentMoniker": "E:\\Projects\\EmanTraders\\EmanTraders\\PrintReports\\rptExecutionReport.rdlc",
+              "RelativeDocumentMoniker": "EmanTraders\\PrintReports\\rptExecutionReport.rdlc",
+              "ToolTip": "E:\\Projects\\EmanTraders\\EmanTraders\\PrintReports\\rptExecutionReport.rdlc",
+              "RelativeToolTip": "EmanTraders\\PrintReports\\rptExecutionReport.rdlc",
+              "ViewState": "AQIAALYFAAAAAAAAAAAhwMIFAABHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001755|",
+              "WhenOpened": "2024-05-09T19:36:30.543Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "rptDailyLedgerStatement.rdlc",
+              "DocumentMoniker": "E:\\Projects\\EmanTraders\\EmanTraders\\PrintReports\\rptDailyLedgerStatement.rdlc",
+              "RelativeDocumentMoniker": "EmanTraders\\PrintReports\\rptDailyLedgerStatement.rdlc",
+              "ToolTip": "E:\\Projects\\EmanTraders\\EmanTraders\\PrintReports\\rptDailyLedgerStatement.rdlc",
+              "RelativeToolTip": "EmanTraders\\PrintReports\\rptDailyLedgerStatement.rdlc",
+              "ViewState": "AQIAADAGAAAAAAAAAAAhwDwGAABIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001755|",
+              "WhenOpened": "2024-05-09T19:36:30.545Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "rptDailyCashReport.rdlc",
+              "DocumentMoniker": "E:\\Projects\\EmanTraders\\EmanTraders\\PrintReports\\rptDailyCashReport.rdlc",
+              "RelativeDocumentMoniker": "EmanTraders\\PrintReports\\rptDailyCashReport.rdlc",
+              "ToolTip": "E:\\Projects\\EmanTraders\\EmanTraders\\PrintReports\\rptDailyCashReport.rdlc",
+              "RelativeToolTip": "EmanTraders\\PrintReports\\rptDailyCashReport.rdlc",
+              "ViewState": "AQIAAOkCAAAAAAAAAAAhwPUCAABJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001755|",
+              "WhenOpened": "2024-05-09T19:36:30.546Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "rptCustomerWiseBalance.rdlc",
+              "DocumentMoniker": "E:\\Projects\\EmanTraders\\EmanTraders\\PrintReports\\rptCustomerWiseBalance.rdlc",
+              "RelativeDocumentMoniker": "EmanTraders\\PrintReports\\rptCustomerWiseBalance.rdlc",
+              "ToolTip": "E:\\Projects\\EmanTraders\\EmanTraders\\PrintReports\\rptCustomerWiseBalance.rdlc",
+              "RelativeToolTip": "EmanTraders\\PrintReports\\rptCustomerWiseBalance.rdlc",
+              "ViewState": "AQIAANIDAAAAAAAAAAAhwN4DAABHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001755|",
+              "WhenOpened": "2024-05-09T19:36:30.547Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "rptCompanyPositionReport.rdlc",
+              "DocumentMoniker": "E:\\Projects\\EmanTraders\\EmanTraders\\PrintReports\\rptCompanyPositionReport.rdlc",
+              "RelativeDocumentMoniker": "EmanTraders\\PrintReports\\rptCompanyPositionReport.rdlc",
+              "ToolTip": "E:\\Projects\\EmanTraders\\EmanTraders\\PrintReports\\rptCompanyPositionReport.rdlc",
+              "RelativeToolTip": "EmanTraders\\PrintReports\\rptCompanyPositionReport.rdlc",
+              "ViewState": "AQIAAAQCAAAAAAAAAAAhwBACAABPAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001755|",
+              "WhenOpened": "2024-05-09T19:36:30.548Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "rptAccountReceivable.rdlc",
+              "DocumentMoniker": "E:\\Projects\\EmanTraders\\EmanTraders\\PrintReports\\rptAccountReceivable.rdlc",
+              "RelativeDocumentMoniker": "EmanTraders\\PrintReports\\rptAccountReceivable.rdlc",
+              "ToolTip": "E:\\Projects\\EmanTraders\\EmanTraders\\PrintReports\\rptAccountReceivable.rdlc",
+              "RelativeToolTip": "EmanTraders\\PrintReports\\rptAccountReceivable.rdlc",
+              "ViewState": "AQIAAOgCAAAAAAAAAAAhwPQCAABRAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001755|",
+              "WhenOpened": "2024-05-09T19:36:30.549Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "rptAccountPayable.rdlc",
+              "DocumentMoniker": "E:\\Projects\\EmanTraders\\EmanTraders\\PrintReports\\rptAccountPayable.rdlc",
+              "RelativeDocumentMoniker": "EmanTraders\\PrintReports\\rptAccountPayable.rdlc",
+              "ToolTip": "E:\\Projects\\EmanTraders\\EmanTraders\\PrintReports\\rptAccountPayable.rdlc",
+              "RelativeToolTip": "EmanTraders\\PrintReports\\rptAccountPayable.rdlc",
+              "ViewState": "AQIAAOUCAAAAAAAAAAAhwPECAABQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001755|",
+              "WhenOpened": "2024-05-09T19:36:30.55Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "E:\\Projects\\EmanTraders\\EmanTraders\\Views\\Account\\Login.cshtml",
+              "RelativeDocumentMoniker": "EmanTraders\\Views\\Account\\Login.cshtml",
+              "ToolTip": "E:\\Projects\\EmanTraders\\EmanTraders\\Views\\Account\\Login.cshtml",
+              "RelativeToolTip": "EmanTraders\\Views\\Account\\Login.cshtml",
+              "ViewState": "AQIAAFQAAAAAAAAAAAAAAGEAAABFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002242|",
+              "WhenOpened": "2024-05-09T19:26:35.83Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "E:\\Projects\\EmanTraders\\EmanTraders\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "EmanTraders\\Views\\Home\\Index.cshtml",
+              "ToolTip": "E:\\Projects\\EmanTraders\\EmanTraders\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "EmanTraders\\Views\\Home\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002242|",
+              "WhenOpened": "2024-05-09T19:26:24.466Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

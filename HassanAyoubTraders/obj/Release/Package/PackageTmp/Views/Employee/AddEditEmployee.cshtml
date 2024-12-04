@@ -1,0 +1,252 @@
+﻿@model EmanTraders.Models.ViewModels.AddEditAccountViewModel
+
+@{
+    ViewBag.Title = "Add/Edit Employee";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@using (Html.BeginForm("", "", FormMethod.Post, new { id = "add-edit-employee" }))
+{
+
+    @Html.HiddenFor(x => x.AccountID)
+
+    <div class="row clearfix">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="card">
+                <div class="header">
+                    <h2>
+                        Add / Edit Employee
+                    </h2>
+                </div>
+                <div class="body">
+                    <div class="row clearfix">
+                        <div class="col-md-3">
+                            <p>
+                                <b>Company</b>
+                            </p>
+                            @Html.DropDownListFor(x => x.CompanyId, Model.CompanyList, "Select", new { @class = "form-control input-sm  js-select2 " })
+                        </div>
+                        <div class="col-md-3">
+                            <p>
+                                <b>Employee Name</b>
+                            </p>
+                            @Html.TextBoxFor(x => x.Name, new { @class = "form-control input-sm" })
+                        </div>
+                        <div class="col-md-2">
+                            <p>
+                                <b>Mobile #</b>
+                            </p>
+                            @Html.TextBoxFor(x => x.MobileNo, new { @class = "form-control input-sm" })
+                        </div>
+                        <div class="col-md-2">
+                            <p>
+                                <b>CNIC #</b>
+                            </p>
+                            @Html.TextBoxFor(x => x.CNIC, new { @class = "form-control input-sm" })
+                        </div>
+                        <div class="col-md-2">
+                            <p>
+                                <b>Hiring Date</b>
+                            </p>
+                            @Html.TextBoxFor(x => x.HiringDate, new { @class = "form-control icon-download appdatepicker input-sm hiringDate" })
+                        </div>
+
+                        <div class="col-md-2">
+                            <p>
+                                <b>Salary</b>
+                            </p>
+                            @Html.TextBoxFor(x => x.Salary, new { @class = "form-control icon-download AllowDecimal input-sm" })
+                        </div>
+                        <div class="col-md-3">
+                            <p>
+                                <b>City</b>
+                            </p>
+                            @Html.DropDownListFor(x => x.City, Model.CityList, "Select", new { @class = "form-control input-sm  js-select2 " })
+                        </div>
+                        <div class="col-md-3">
+                            <p>
+                                <b>City Area</b>
+                            </p>
+                            @Html.DropDownListFor(x => x.CityAreaID, Model.CityAreaList, "Select", new { @class = "form-control input-sm ddlCA  js-select2" })
+                        </div>
+                        <div class="col-md-3">
+                            <p>
+                                <b>Designation</b>
+                            </p>
+                            @Html.DropDownListFor(x => x.Designation, Model.DesignationList, "Select", new { @class = "form-control input-sm  js-select2" })
+                        </div>
+                        <div class="col-md-12">
+                            <p>
+                                <b>Address</b>
+                            </p>
+                            @Html.TextAreaFor(x => x.Address, new { @class = "form-control input-sm" })
+                        </div>
+
+                    </div>
+                    <div class="row clearfix">
+                        <div class="col-md-5 pull-right">
+                            <button type="button" id="btnSave" class="btn btn-success waves-effect pull-right">
+                                <i class="material-icons">add_shopping_cart</i>
+                                <span>Save</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+}
+
+
+<script>
+
+
+    $(document).ready(function () {
+        $("#add-edit-employee :input").change(function () {
+            $("#add-edit-employee").data("changed", true);
+        });
+        $('#btnSave').click(function () {
+            Save();
+        });
+    });
+
+    function Validation() {
+        if ($("#CompanyId").val() == "") {
+            AlertMsg('<strong>Alert!</strong>', 'Company is Required!', 'info');
+            $('#CompanyId').focus();
+            return false;
+        }
+
+        if ($("#Name").val() == "") {
+            AlertMsg('<strong>Alert!</strong>', 'Employee Name is required.', 'info');
+            $('#EmpName').focus();
+            return;
+        }
+
+        if ($(".hiringDate").val() == "") {
+            AlertMsg('<strong>Alert!</strong>', 'Hiring Date is required.', 'info');
+            $('.hiringDate').focus();
+            return;
+        }
+
+        //if ($("#Salary").val() == "" || $("#Salary").val() == "0") {
+        //    AlertMsg('<strong>Alert!</strong>', 'Monthly Salary is required.', 'info');
+        //    $('#Salary').focus();
+        //    return;
+        //}
+
+        if ($("#City").val() == "") {
+            AlertMsg('<strong>Alert!</strong>', 'City is Required!', 'info');
+            $('#City').focus();
+            return false;
+        }
+
+        if ($("#CityAreaID").val() == "") {
+            AlertMsg('<strong>Alert!</strong>', 'City Area is Required!', 'info');
+            $('#CityAreaID').focus();
+            return false;
+        }
+
+        if ($("#Designation").val() == "") {
+            AlertMsg('<strong>Alert!</strong>', 'Designation is Required!', 'info');
+            $('#Designation').focus();
+            return false;
+        }
+
+         
+        return true;
+    }
+
+    function Save() {
+
+        if (!$("#add-edit-employee").data("changed")) {
+            AlertMsg('', '<strong>Form is unchanged!</strong>', 'warning');
+            return;
+        }
+
+
+        if (Validation() == true) {
+            var model = GetDataModel();
+
+            //Show loader here
+            $('.page-loader-wrapper').show();
+            $.ajax({
+                contentType: 'application/json; charset=utf-8',
+                dataType: 'json',
+                type: 'POST',
+                url: "@Url.Action("EmpAddEdit")",
+                data: JSON.stringify(model),
+                success: function (res) {
+                    if (res.Result == "OK") {
+                        AlertMsg('<strong>Success! </strong>', res.detail, 'info');
+                        setTimeout(function () {
+                            location.reload();
+                        }, 2000);
+                    }
+                    else {
+                        $('.page-loader-wrapper').hide();
+                        AlertMsg('<strong>Error! </strong>', res.detail, 'info');
+                    }
+                },
+                failure: function (response) {
+                    $('#result').html(response);
+                },
+                complete: function () {
+                    $('.page-loader-wrapper').hide();
+                }
+            });
+        }
+    }
+
+    function GetDataModel() {
+        var model = {
+            CompanyId: $('#CompanyId').val(),
+            CityAreaID: $('#CityAreaID').val(),
+            AccountTypeID: $('#AccountTypeID').val(),
+            Name: $('#Name').val(),
+            MobileNo: $('#MobileNo').val(),
+            PhoneNo: "",
+            OpeningBalance: "0",
+            OpeningBalanceDate: "",
+            AccountID: $('#AccountID').val(),
+            CNIC: $('#CNIC').val(),
+            Address: $('#Address').val(),
+            City: $('#City').val(),
+            HiringDate: $(".hiringDate").val(),
+            Salary: $('#Salary').val(),
+            Designation: $('#Designation').val()
+        };
+        return model;
+    }
+
+
+    $("#City").change(function () {
+        var cityId = parseInt($(this).val());
+
+        if (!isNaN(cityId)) {
+            var ddlCA = $('.ddlCA');
+            ddlCA.empty();
+            ddlCA.append($("<option></option>").val('').html('Please wait ...'));
+
+            $.ajax({
+                url: "@Url.Action("GetCityAreaByCityID")",
+                dataType: 'json',
+                type: 'POST',
+                data: { Id: cityId },
+                success: function (d) {
+                    ddlCA.empty(); // Clear the please wait
+                    ddlCA.append($("<option></option>").val('').html('Select'));
+                    $.each(d.CityAreaList, function (i, ca) {
+                        ddlCA.append($("<option></option>").val(ca.Value).html(ca.Text));
+                    });
+                },
+                error: function (e) {
+                    alert('Error!' + e.responseText);
+                }
+            });
+        }
+    });
+
+
+</script>

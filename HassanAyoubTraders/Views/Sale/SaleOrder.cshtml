@@ -1,0 +1,999 @@
+﻿@model HassanAyoubTraders.Models.ViewModels.SaleOrderViewModel
+@{
+    ViewBag.Title = "Sale Invoice";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<style>
+    .typeahead__list {
+        max-height: 200px;
+        overflow: auto;
+    }
+
+    .textRight {
+        text-align: right;
+    }
+
+    [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: absolute !important;
+        left: 20px !important;
+        opacity: 1 !important;
+    }
+</style>
+@using (Html.BeginForm("", "", FormMethod.Post, new { id = "sale-order" }))
+{
+    @Html.HiddenFor(x => x.IsUpdate)
+    @Html.HiddenFor(x => x.SaleOrderID)
+    @Html.HiddenFor(x => x.SONumber);
+    @Html.HiddenFor(x => x.UserRole);
+
+    <div class="row clearfix">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="card">
+                <div class="header">
+                    <h2>
+                        Sale Invoice
+                    </h2>
+                    <h2 class="pull-right ">
+                        <b>
+                            SO #
+                            <label>@Model.SONumber </label>
+                        </b>
+                    </h2>
+                </div>
+                <div class="body">
+                    <div class="row clearfix">
+                        <div class="col-md-2" style="display:none;">
+                            <p>
+                                <b>Entry Type</b>
+                            </p>
+                            @Html.DropDownListFor(x => x.EntryTypeID, Model.EntryTypeList, "Select", new { @class = "form-control input-sm js-select2" })
+                        </div>
+                        <div class="col-md-8">
+                            <p>
+                                <b>Customers</b>
+                            </p>
+                            @Html.DropDownListFor(x => x.CustomerID, Model.CustomerList, "Select", new { @class = "form-control input-sm js-select2" })
+                        </div>
+                        <div class="col-md-2">
+                            <p>
+                                <b>SO Date</b>
+                            </p>
+                            @Html.TextBoxFor(x => x.SODate, new { @class = "form-control icon-download appdatepicker input-sm" })
+                        </div>
+                        <div class="col-md-3">
+                            <p>
+                                <b>Booker</b>
+                            </p>
+                            @Html.DropDownListFor(x => x.BookerID, Model.BookerList, "Select", new { @class = "form-control input-sm js-select2" })
+                        </div>
+                        <div class="col-md-3">
+                            <p>
+                                <b>Supplier</b>
+                            </p>
+                            @Html.DropDownListFor(x => x.SupplierID, Model.SupplierList, "Select", new { @class = "form-control input-sm js-select2" })
+                        </div>
+                        <div class="col-md-3">
+                            <p>
+                                <b>Tax Order</b>
+                            </p>
+                            @Html.CheckBoxFor(x => x.IsTaxInvoice, new { @class = "" })
+                        </div>
+                        <div class="col-md-12">
+                            <p>
+                                <b>Notes</b>
+                            </p>
+                            @Html.TextAreaFor(x => x.Notes, new { @class = "form-control icon-download input-sm" })
+                        </div>
+
+                        @*<div class="col-md-3">
+                                <p>
+                                    <b>Invoice #</b>
+                                </p>
+                                @Html.TextBoxFor(x => x.InvoiceNo, new { @class = "form-control icon-download input-sm" })
+                            </div>*@
+                    </div>
+                    <div class="row clearfix">
+                        <a class="pull-right btn btn-sm btn-danger waves-effect btn-sm add-record" data-added="0">
+                            <i class="material-icons">queue</i>&nbsp;Add Item
+                        </a>
+                    </div>
+
+                    <div class="row clearfix">
+                        <hr />
+                    </div>
+                    <div class="row clearfix">
+                        <table class="table table-bordered" id="tbl_posts">
+                            <thead>
+                                <tr>
+                                    <th style="width:5%">#</th>
+                                    <th style="">Product</th>
+                                    <th style="width:8%">Quantity</th>
+                                    <th style="width:8%">T/Price</th>
+                                    <th style="width:8%">T.O</th>
+                                    <th style="width:10%">SubTotal</th>
+                                    <th style="width:8%">Disc(%)</th>
+                                    <th style="width:8%">S.Tax(%)</th>
+                                    <th style="width:10%">Total</th>
+                                    <th style="width:5%"></th>
+                                </tr>
+                            </thead>
+                            <tbody id="tbl_posts_body">
+
+                                @if (Model.IsUpdate)
+                                {
+                                    int count = 1;
+                                    foreach (var item in Model.EditSaleOrderDetail.ToList())
+                                    {
+                                        Model.ItemID = item.SubItemID.Value;
+                                        <tr id="rec-@count" class="datarow">
+                                            <td>
+                                                <span class="sn">@count</span>.
+                                            </td>
+                                            <td>
+                                                @*@Html.DropDownListFor(x => x.ItemID, Model.ItemList, "Select", new { @class = "form-control ddlItem  ", @disabled = "disabled" })*@
+
+                                                <input type="hidden" id="hdnInventoryID" value="@item.InventoryID" />
+                                                <input type="hidden" id="hdnInventoryStock" value="@item.Quantity" />
+                                                <input type="hidden" id="hdnItemId" value="@item.SubItemID" />
+                                                <input type="hidden" id="hdnItemName" value="@item.ProductFullName" />
+
+                                                <select class="chose-item form-control ddlItem"></select>
+
+                                            </td>
+                                            <td>
+                                                <input value="@item.Quantity" data-saleorderlineid="@item.SaleOrderLineID" type="number" class="AllowDecimal txtQty form-control input-sm" style="width: 80px;" />
+                                            </td>
+                                            <td>
+                                                <input value="@item.SalePrice" type="number" class="input-sm AllowDecimal txtPrice form-control" style="width: 80px;" />
+                                            </td>
+                                            <td>
+                                                <input value="@item.T_O" data-isused="0" type="number" class="input-sm AllowDecimal txtTO form-control" style="width: 80px;" />
+                                            </td>
+                                            <td>
+                                                <label class="lblRowSubTotal">@item.SubTotal</label>
+                                            </td>
+                                            <td>
+                                                <input value="@item.Discount" data-isused="0" type="number" class="input-sm AllowDecimal txtDiscount form-control" style="width: 80px;" />
+                                            </td>
+                                            <td>
+                                                <input value="@item.SalesTax" data-isused="0" type="number" class="input-sm AllowDecimal txtSalesTax form-control" style="width: 80px;" />
+                                            </td>
+                                            <td>
+                                                <label class="lblRowNetTotal">@item.NetTotalAmount</label>
+                                            </td>
+                                            <td>
+                                                <a class="delete-soitem" data-id="@count" data-saleorderlineid="@item.SaleOrderLineID" style="cursor:pointer;">
+                                                    <i class="material-icons">delete_forever</i>&nbsp;
+                                                </a>
+                                                @*<a class="hidden save-soitem save-record" data-id="@count" data-saleorderlineid="@item.SaleOrderLineID" style="cursor:pointer;">
+                                                        <i class="material-icons">save</i>&nbsp;
+                                                    </a>*@
+                                            </td>
+
+                                        </tr>
+                                        {
+                                            count++;
+                                        }
+                                    }
+                                }
+                                else
+                                {
+                                    <tr id="rec-1" class="datarow">
+                                        <td><span class="sn">1</span>.</td>
+                                        <td>
+                                            @*@Html.DropDownListFor(x => x.ItemID, Model.ItemList, "Select", new { @class = "form-control ddlItem " })*@
+
+                                            <select class="chose-item form-control ddlItem"></select>
+
+
+                                            <input type="hidden" id="hdnInventoryID" value="0" />
+                                            <input type="hidden" id="hdnInventoryStock" value="0" />
+                                            <input type="hidden" id="hdnItemId" value="0" />
+                                            <input type="hidden" id="hdnItemName" value="" />
+                                        </td>
+                                        <td>
+                                            <input value="0" data-saleorderlineid="0" type="number" class="AllowDecimal txtQty form-control input-sm" style="width: 80px;" />
+                                        </td>
+                                        <td>
+                                            <input value="0" type="number" class="input-sm AllowDecimal txtPrice form-control" style="width: 80px;" />
+                                        </td>
+                                        <td>
+                                            <input value="0" data-isused="0" type="number" class="input-sm AllowDecimal txtTO form-control" style="width: 80px;" />
+                                        </td>
+                                        <td>
+                                            <label class="lblRowSubTotal">0.00</label>
+                                        </td>
+                                        <td>
+                                            <input value="0" data-isused="0" type="number" class="input-sm AllowDecimal txtDiscount form-control" style="width: 80px;" />
+                                        </td>
+                                        <td>
+                                            <input value="0" data-isused="0" type="number" class="input-sm AllowDecimal txtSalesTax form-control" style="width: 80px;" />
+                                        </td>
+                                        <td>
+                                            <label class="lblRowNetTotal">0.00</label>
+                                        </td>
+                                        <td>
+                                            <a class="delete-record" data-id="1" data-saleorderlineid="0" style="cursor:pointer;">
+                                                <i class="material-icons">delete_forever</i>&nbsp;
+                                            </a>
+                                            <a class="save-record hidden" data-id="1" data-saleorderlineid="0" style="cursor:pointer;">
+                                                <i class="material-icons">save</i>&nbsp;
+                                            </a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="row clearfix">
+                        <table class="table table-bordered pull-right" style="width:40%;">
+                            <tbody>
+
+                                <tr>
+                                    <th>Expense</th>
+                                    <td>
+                                        <input value="@Model.Expense" type="number" id="txtExpense" class="input-sm AllowDecimal form-control" style="width: 80px;" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Discount(%)</th>
+                                    <td>
+                                        <input value="@Model.Discount" type="number" id="txtAllDiscount" class="input-sm AllowDecimal form-control" style="width: 80px;" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Discount2(%)</th>
+                                    <td>
+                                        <input value="@Model.Discount2" type="number" id="txtAllDiscount2" class="input-sm AllowDecimal form-control" style="width: 80px;" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Sales Tax(%)</th>
+                                    <td>
+                                        <input value="@Model.SalesTax" type="number" id="txtAllSalesTax" class="input-sm AllowDecimal form-control" style="width: 80px;" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Sub Total</th>
+                                    <td>
+                                        <label id="lblSubTtal">@Model.SubTotal</label>
+                                    </td>
+                                </tr>
+                                <tr style="display:none;">
+                                    <th>Paid Amount</th>
+                                    <td>
+                                        <input value="@Model.PaidAmount" type="number" id="txtAllPaidAmount" class="input-sm AllowDecimal form-control" style="width: 80px;" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Net Total</th>
+                                    <td>
+                                        <label id="lblNetTotal">@Model.NetTotalAmount</label>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="row clearfix">
+                        <div class="col-md-1 pull-right">
+                            <button type="button" id="btnSave" class="btn btn-success waves-effect pull-right btn-sm">
+                                <i class="material-icons">save</i>
+                                <span>Save</span>
+                            </button>
+                        </div>
+                        <div class="col-md-1 pull-right">
+                            <button type="button" id="btnSaveAndPrint" class="btn btn-success waves-effect pull-right btn-sm">
+                                <i class="material-icons">save</i>
+                                <span>Save & Print</span>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    //Normal Item Row Hidden
+    <div style="display:none;">
+        <table id="sample_table">
+            <tr id="" class="datarow">
+                <td><span class="sn">1</span>.</td>
+                <td>
+                    @*  @Html.DropDownListFor(x => x.ExtraItemID, Model.ExtraItemList, "Select", new { @class = "form-control ddlItem " })*@
+
+                    <select class="form-control ddlItem"></select>
+
+
+                    <input type="hidden" id="hdnInventoryID" value="0" />
+                    <input type="hidden" id="hdnInventoryStock" value="0" />
+                </td>
+                <td>
+                    <input value="0" type="number" data-saleorderlineid="0" class="AllowDecimal txtQty input-sm form-control" style="width: 80px;" />
+                </td>
+                <td>
+                    <input value="0" type="number" class="input-sm AllowDecimal txtPrice form-control" style="width: 80px;" />
+                </td>
+                <td>
+                    <input value="0" data-isused="0" type="number" class="input-sm AllowDecimal txtTO form-control" style="width: 80px;" />
+                </td>
+                <td>
+                    <label class="lblRowSubTotal">0.00</label>
+                </td>
+                <td>
+                    <input value="0" data-isused="0" type="number" class="input-sm AllowDecimal txtDiscount form-control" style="width: 80px;" />
+                </td>
+                <td>
+                    <input value="0" data-isused="0" type="number" class="input-sm AllowDecimal txtSalesTax form-control" style="width: 80px;" />
+                </td>
+                <td>
+                    <label class="lblRowNetTotal">0.00</label>
+                </td>
+                <td>
+                    <a class="delete-record" data-id="1" data-saleorderlineid="0" style="cursor:pointer;">
+                        <i class="material-icons">delete_forever</i>&nbsp;
+                    </a>
+
+                    <a class="save-record hidden" data-id="1" data-saleorderlineid="0" style="cursor:pointer;">
+                        <i class="material-icons">save</i>&nbsp;
+                    </a>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+}
+
+<script>
+
+    var deleteItemsIds = [];
+    $(document).ready(function () {
+        //------------------------ Check Validation on Update form change ---------------------------------------
+
+        setTimeout(function () {
+            RebindSelect2();
+        }, 1000);
+
+
+        if ($('#IsUpdate').val() == "False") {
+
+            $("#sale-order :input").change(function () {
+                $("#sale-order").data("changed", true);
+            });
+        }
+        else if ($('#IsUpdate').val() == "True") {
+
+            setTimeout(function () {
+                $(".datarow").each(function (index) {
+                    $row = $(this);
+                    var itemid = $row.find("td:eq(1) #hdnItemId").val();
+                    var itemname = $row.find("td:eq(1) #hdnItemName").val();
+
+                    if (itemid != null)
+                    {
+                        var $option = $("<option selected></option>").val(itemid).text(itemname);
+                        $row.find('.ddlItem').append($option);
+                        //$row.find('.ddlItem').append($option).trigger('change');
+                    }
+                });
+            }, 500);
+
+        }
+
+
+    });
+
+    //------------------------ ddlItem Change Event ----------------------------------------
+    $('body').on('change', '.ddlItem', function () {
+        var model = {
+            ItemID: $(this).val(),
+        };
+
+        $ddl = $(this);
+        var $row = $ddl.parent().parent();
+        $row.find('#hdnInventoryID').val(0)
+        $row.find('#hdnInventoryStock').val(0)
+        $row.find("td:eq(3) input[type=number]").val(0);
+
+        $.ajax({
+            contentType: 'application/json; charset=utf-8',
+            dataType: 'json',
+            type: 'POST',
+            url: "@Url.Action("GetInventoryItem")",
+            data: JSON.stringify(model),
+            success: function (res) {
+                if (res.data == null || res.data.AvailableStock <= 0) {
+                //if (res.data == null ) {
+                    AlertMsg('<strong>Alert! </strong>', 'Sorry you dont have inventory against this product', 'warning');
+                    var qty = $ddl.parent().parent().find("td:eq(2) input").val(0);
+                    return;
+                }
+
+                var price = res.data.SalePrice;
+                var invtoryId = 0;  //res.data.InventoryID;
+                var availableStock =  res.data.AvailableStock;
+                //var qty = $row.find("td:eq(2) input[type=number]").val() == '' ? 0 : $row.find("td:eq(2) input[type=number]").val();
+                $row.find('#hdnInventoryID').val(invtoryId)
+                $row.find('#hdnInventoryStock').val(availableStock)
+                $row.find("td:eq(3) input[type=number]").val(price);
+
+                if ($row != '') {
+                    RowCalculation($row)
+                }
+            },
+            failure: function (response) {
+                $('#result').html(response);
+            },
+            complete: function () {
+                $('.page-loader-wrapper').hide();
+            }
+        });
+    });
+
+    //------------------------ txtQty Change Event ----------------------------------------
+    $('body').on('change', '.txtQty', function () {
+        var $row = $(this).parent().parent();
+
+        if ($row.find("td:eq(1) .ddlItem option:selected").text() == null || $row.find("td:eq(1) .ddlItem option:selected").text() == '')
+            return;
+
+        var avlbstock = $row.find('#hdnInventoryStock').val();
+        var qty = $row.find("td:eq(2) input[type=number]").val() == '' ? 0 : $row.find("td:eq(2) input[type=number]").val();
+
+        if ($row != '') {
+                if (avlbstock != null && avlbstock != '' && parseInt(avlbstock) < parseInt(qty)) {
+                    AlertMsg('<strong>Alert!</strong>', 'Inserted quantity must be less than or equal available stock.', 'info');
+                     $row.find("td:eq(2) input[type=number]").val(parseInt(avlbstock));
+                }
+            RowCalculation($row)
+        }
+    });
+
+    //------------------------ txtPrice Change Event ----------------------------------------
+    $('body').on('change', '.txtPrice', function () {
+        var $row = $(this).parent().parent();
+
+        if ($row.find("td:eq(1) .ddlItem option:selected").text() == null || $row.find("td:eq(1) .ddlItem option:selected").text() == '')
+            return;
+
+        if ($row != '') {
+            RowCalculation($row)
+        }
+    });
+
+    //------------------------ txtTO Change Event ----------------------------------------
+    $('body').on('change', '.txtTO', function () {
+        var $row = $(this).parent().parent();
+
+        if ($row.find("td:eq(1) .ddlItem option:selected").text() == null || $row.find("td:eq(1) .ddlItem option:selected").text() == '')
+            return;
+
+        if ($row != '') {
+            RowCalculation($row)
+        }
+    });
+
+    //------------------------ txtDiscount Change Event ----------------------------------------
+    $('body').on('change', '.txtDiscount', function () {
+        var $row = $(this).parent().parent();
+
+        if ($row.find("td:eq(1) .ddlItem option:selected").text() == null || $row.find("td:eq(1) .ddlItem option:selected").text() == '')
+            return;
+
+        if ($row != '') {
+            RowCalculation($row)
+        }
+    });
+
+    //------------------------ txtSalesTax Change Event ----------------------------------------
+    $('body').on('change', '.txtSalesTax', function () {
+        var $row = $(this).parent().parent();
+
+        if ($row.find("td:eq(1) .ddlItem option:selected").text() == null || $row.find("td:eq(1) .ddlItem option:selected").text() == '')
+            return;
+
+        if ($row != '') {
+            RowCalculation($row)
+        }
+    });
+
+
+    //------------------------ Footer Expanse Change Event ----------------------------------------
+    $('body').on('change', '#txtExpense', function () {
+        Calculation();
+    });
+
+    //------------------------ Footer discount Change Event ----------------------------------------
+    $('body').on('change', '#txtAllDiscount', function () {
+        Calculation();
+    });
+
+    //------------------------ Footer discount2 Change Event ----------------------------------------
+    $('body').on('change', '#txtAllDiscount2', function () {
+        Calculation();
+    });
+
+    //------------------------ Footer Sales Tax Change Event ----------------------------------------
+    $('body').on('change', '#txtAllSalesTax', function () {
+        Calculation();
+    });
+
+    //------------------------ Footer Paid Amount Change Event ----------------------------------------
+    $('body').on('change', '#txtAllPaidAmount', function () {
+        Calculation();
+    });
+
+    //------------------------ Footer Paid Amount Change Event ----------------------------------------
+    $('body').on('click', '#btnSave', function () {
+        Save(0);
+    });
+
+    //------------------------ Footer Paid Amount Change Event ----------------------------------------
+    $('body').on('click', '#btnSaveAndPrint', function () {
+        Save(1);
+    });
+
+    function RowCalculation($row) {
+        if ($row != '') {
+            var qty = $row.find("td:eq(2) input[type=number]").val() == '' ? 0 : $row.find("td:eq(2) input[type=number]").val();
+            var pprice = $row.find("td:eq(3) input[type=number]").val() == '' ? 0 : $row.find("td:eq(3) input[type=number]").val();
+            var sprice = $row.find("#hdnSalesPrice").val() == '' ? 0 : $row.find("#hdnSalesPrice").val();
+            var to = $row.find("td:eq(4) input[type=number]").val() == '' ? 0 : $row.find("td:eq(4) input[type=number]").val();
+            var disc = $row.find("td:eq(6) input[type=number]").val() == '' ? 0 : $row.find("td:eq(6) input[type=number]").val();
+            var stax = $row.find("td:eq(7) input[type=number]").val() == '' ? 0 : $row.find("td:eq(7) input[type=number]").val();
+
+            var subtotal = qty * pprice;
+            var toTotal = qty * to;
+            subtotal = subtotal - toTotal;
+            var disAmount = (subtotal * disc) / 100;
+            var total = (subtotal - disAmount);
+            var taxAmount = (total * stax) / 100;
+            total = (total + taxAmount);
+
+            $row.find("td:eq(5) label").text((subtotal).toFixed(2));
+            $row.find("td:eq(8) label").text((total).toFixed(2));
+
+            Calculation();
+        }
+    }
+
+
+    $(document).ready(function () {
+        //------------------------ Delegates of Add New Row ---------------------------------------
+        jQuery(document).delegate('a.add-record', 'click', function (e) {
+            e.preventDefault();
+
+            var content = jQuery('#sample_table tr'),
+            size = jQuery('#tbl_posts >tbody >tr').length + 1,
+            element = null,
+            element = content.clone();
+            debugger;
+            element.attr('id', 'rec-' + size);
+            element.find('.delete-record').attr('data-id', size);
+            element.find('.save-record').attr('data-id', size);
+            element.appendTo('#tbl_posts_body');
+            element.find('.sn').html(size);
+            //InitTypeHead();
+
+
+            $(element.find('.ddlItem')).select2({
+                ajax: {
+                    url: "@Url.Action("GetItemsList")",
+                    width: 'resolve',
+                    data: function (params) {
+                        return {
+                            q: params.term// search term
+                        };
+                    },
+                    processResults: function (data) {
+                        return {
+                            results: data.items
+                        };
+                    },
+                    minimumInputLength: 2,
+                    width: 'resolve'
+                }
+            });
+
+            Calculation();
+            //RebindSelect2();
+        });
+
+        //------------------------ Delegates of Remove Row ---------------------------------------
+        jQuery(document).delegate('a.delete-record', 'click', function (e) {
+            e.preventDefault();
+            var didConfirm = confirm("Are you sure You want to delete");
+            if (didConfirm == true) {
+                var id = jQuery(this).attr('data-id');
+                var targetDiv = jQuery(this).attr('targetDiv');
+                jQuery('#rec-' + id).remove();
+
+                var saleorderlineid = jQuery(this).attr('data-saleorderlineid');
+                if (saleorderlineid != "" && saleorderlineid != "0") {
+                    deleteItemsIds.push(saleorderlineid);
+                }
+
+                //regnerate index number on table
+                $('#tbl_posts_body tr').each(function (index) {
+                    $(this).find('span.sn').html(index + 1);
+                });
+
+                Calculation();
+                return true;
+            } else {
+                return false;
+            }
+
+        });
+
+        //------------------------ Delegates of Delete SO Items click ---------------------------------------
+        jQuery(document).delegate('a.delete-soitem', 'click', function (e) {
+            e.preventDefault();
+            var didConfirm = confirm("Are you sure You want to delete");
+            if (didConfirm == true) {
+                var id = jQuery(this).attr('data-id');
+
+                var saleorderlineid = jQuery(this).attr('data-saleorderlineid');
+                if (saleorderlineid != "" && saleorderlineid != "0") {
+                    var model = {
+                        SaleOrderLineID: saleorderlineid,
+                        SaleOrderID: $('#SaleOrderID').val(),
+                    };
+                    $ddl = $(this);
+                    $.ajax({
+                        contentType: 'application/json; charset=utf-8',
+                        dataType: 'json',
+                        type: 'POST',
+                        url: "@Url.Action("DeleteSOItem")",
+                        data: JSON.stringify(model),
+                        success: function (res) {
+                            if (res.Result == "1") {
+                                var targetDiv = jQuery(this).attr('targetDiv');
+                                jQuery('#rec-' + id).remove();
+
+                                //regnerate index number on table
+                                $('#tbl_posts_body tr').each(function (index) {
+                                    $(this).find('span.sn').html(index + 1);
+                                });
+
+                                AlertMsg('<strong>Success! </strong>', "Item has been deleted successfully!", 'info');
+                                setTimeout(function () {
+                                    location.reload();
+                                }, 2000);
+
+                            }
+                            else {
+                                AlertMsg('<strong>Info! </strong>', 'Item is not deleted, Try Again!', 'info');
+
+                            }
+                        },
+                        failure: function (response) {
+                            $('#result').html(response);
+                        },
+                        complete: function () {
+                            $('.page-loader-wrapper').hide();
+                        }
+                    });
+                }
+                return true;
+            } else {
+                return false;
+            }
+        });
+
+        //------------------------ Delegates of Save Row ---------------------------------------
+        jQuery(document).delegate('a.save-record', 'click', function (e) {
+            e.preventDefault();
+            var didConfirm = confirm("Are you sure You want to save");
+            if (didConfirm == true) {
+                Save(0);
+
+                return true;
+            } else {
+                return false;
+            }
+        });
+    });
+
+    function RebindSelect2() {
+
+        $(".chose-item").select2({
+            ajax: {
+                url: "@Url.Action("GetItemsList")",
+                width: 'resolve',
+                data: function (params) {
+                    return {
+                        q: params.term// search term
+                    };
+                },
+                processResults: function (data) {
+                    return {
+                        results: data.items
+                    };
+                },
+                minimumInputLength: 2,
+                width: 'resolve'
+            }
+        });
+    }
+
+    function CalculationTotal($row) {
+        if ($row != '') {
+            var isScrap = $row.find('#hdnIsScrap').val();
+            var avlbstock = $row.find('#hdnInventoryStock').val();
+            var rpCharges = $row.find('#hdnRPCharges').val();
+            var qty = $row.find("td:eq(2) input[type=number]").val() == '' ? 0 : $row.find("td:eq(2) input[type=number]").val();
+
+            var price = $row.find("td:eq(3) input[type=number]").val() == '' ? 0 : $row.find("td:eq(3) input[type=number]").val();
+            var discount = $row.find("td:eq(4) input[type=number]").val() == '' ? 0 : $row.find("td:eq(4) input[type=number]").val();
+            var chkIsPercent = $row.find("td:eq(5) input[type=checkbox]").val() == '' ? true : $row.find("td:eq(5) input[type=checkbox]").is(":checked");
+
+            // Normal Items Calculation
+            if (isScrap != 1) {
+                if ($row != '') {
+                    if (avlbstock != null && avlbstock != '' && parseInt(avlbstock) < parseInt(qty)) {
+                        AlertMsg('<strong>Alert!</strong>', 'Inserted quantity must be less than or equal available stock.', 'info');
+                        $row.find("td:eq(2) input[type=number]").val(parseInt(avlbstock));
+                    }
+                }
+
+                var subtotal = price * qty;
+                var taxAmount = (subtotal * 17) / 100;
+                var rpDiscountAmount = 0;
+                if (chkIsPercent) {
+                    rpDiscountAmount = (rpCharges * discount) / 100;
+                } else {
+                    rpDiscountAmount = discount; //(rpCharges - discount);
+                }
+                var total = ((subtotal + taxAmount) - rpDiscountAmount);
+                $row.find("td:eq(6) label").text((total).toFixed(2));
+            }
+                // scrap Items Calculation
+            else {
+                var subtotal = price;// price * qty;
+                $row.find("td:eq(6) label").text((-subtotal).toFixed(2));
+            }
+            Calculation();
+        }
+    }
+
+    function Calculation() {
+        var sumNetTotal = 0;
+        var netTotal = 0;
+        $('.lblRowNetTotal').each(function () {
+            var rowTotal = $(this).text();
+            if (!isNaN(rowTotal) && rowTotal.length !== 0) {
+                sumNetTotal = sumNetTotal + parseFloat(rowTotal);
+            }
+        });
+
+        if ($('#txtExpense').val() != "" && $('#txtExpense').val() != "0") {
+            sumNetTotal = sumNetTotal + parseFloat($('#txtExpense').val());
+        }
+
+        if ($('#txtAllDiscount').val() != "" && $('#txtAllDiscount').val() != "0") {
+            var disc = parseFloat($('#txtAllDiscount').val())
+            var disAmount = (sumNetTotal * disc) / 100;
+            sumNetTotal = sumNetTotal - disAmount;
+        }
+
+        if ($('#txtAllDiscount2').val() != "" && $('#txtAllDiscount2').val() != "0") {
+            var disc = parseFloat($('#txtAllDiscount2').val())
+            var disAmount = (sumNetTotal * disc) / 100;
+            sumNetTotal = sumNetTotal - disAmount;
+        }
+
+        if ($('#txtAllSalesTax').val() != "" && $('#txtAllSalesTax').val() != "0") {
+            var stax = parseFloat($('#txtAllSalesTax').val())
+            var taxAmount = (sumNetTotal * stax) / 100;
+            sumNetTotal = sumNetTotal + taxAmount;
+        }
+
+        $('#lblSubTtal').text('');
+        $('#lblSubTtal').text(sumNetTotal.toFixed(2));
+
+        if ($('#txtAllPaidAmount').val() != "" && $('#txtAllPaidAmount').val() != "0") {
+            var paidAmount = parseFloat($('#txtAllPaidAmount').val())
+            netTotal = (sumNetTotal - paidAmount);
+        } else {
+            netTotal = sumNetTotal;
+        }
+
+        $('#lblNetTotal').text('');
+        $('#lblNetTotal').text(netTotal.toFixed(2));
+
+    }
+
+    function Validation() {
+        if ($('#IsUpdate').val() == "False") {
+            if (!$("#sale-order").data("changed")) {
+                AlertMsg('', '<strong>Form is unchanged!</strong>', 'warning');
+                return false;
+            }
+        }
+
+        var rowcount = document.getElementById("tbl_posts_body").rows.length
+        if (rowcount == 0) {
+            AlertMsg('<strong>Required!</strong>', 'Please Add at least one item!', 'danger');
+            return false;
+        }
+
+        if ($('#CustomerID').val() == "") {
+            AlertMsg('<strong>Required!</strong>', 'Customer is required.', 'danger');
+            $('#CustomerID').focus();
+            return false;
+        }
+
+        if ($('#SODate').val() == "") {
+            AlertMsg('<strong>Required!</strong>', 'Sale Invoice Date is required.', 'danger');
+            $('#SoDate').focus();
+            return false;
+        }
+
+        if ($("#EntryTypeID option:selected").text() == "Select" || $("#EntryTypeID option:selected").text() == "") {
+            AlertMsg('<strong>Required!</strong>', '<strong>Select entry type!</strong>', 'danger');
+            return false;
+        }
+
+        if ($("#EntryTypeID option:selected").text() == "Cash") {
+            if (parseFloat($("#txtAllPaidAmount").val()).toFixed(2) != parseFloat($("#lblNetTotal").text()).toFixed(2)) {
+                AlertMsg('<strong>Required!</strong>', '<strong>Invoice amount must match paid amount!</strong>', 'danger');
+                return false;
+            }
+        }
+        if ($('#BookerID').val() == "") {
+            AlertMsg('<strong>Required!</strong>', 'Booker is required.', 'danger');
+            $('#BookerID').focus();
+            return false;
+        }
+        if ($('#SupplierID').val() == "") {
+            AlertMsg('<strong>Required!</strong>', 'Vendor is required.', 'danger');
+            $('#SupplierID').focus();
+            return false;
+        }
+
+        if ($("#lblNetTotal").text() == "0" || $("#lblNetTotal").text() == "0.00") {
+            AlertMsg('<strong>Required!</strong>', '<strong>Invoice amount must greater than 0!</strong>', 'danger');
+            return false;
+        }
+
+
+        return true;
+    }
+
+    function GetDataModel() {
+        var items = [];
+        $(".datarow").each(function (index) {
+
+            $row = $(this);
+            if ($row.find("td:eq(1) .ddlItem").val() == null || $row.find("td:eq(1) .ddlItem").val() == '')
+                return;
+            var inventoryID = $row.find("td:eq(1) #hdnInventoryID").val();
+            var subitemid = $row.find("td:eq(1) .ddlItem").val();
+            var solineId = $row.find("td:eq(2) input[type=number]").attr("data-saleorderlineid");
+            var qty = $row.find("td:eq(2) input[type=number]").val() == '' ? 0 : $row.find("td:eq(2) input[type=number]").val();
+            var saleprice = $row.find("td:eq(3) input[type=number]").val() == '' ? 0 : $row.find("td:eq(3) input[type=number]").val();
+            var to = $row.find("td:eq(4) input[type=number]").val() == '' ? 0 : $row.find("td:eq(4) input[type=number]").val();
+            var subTotal = ($row.find("td:eq(5) label").text() == "") ? 0 : parseFloat($row.find("td:eq(5) label").text());
+            var discount = $row.find("td:eq(6) input[type=number]").val() == '' ? 0 : $row.find("td:eq(6) input[type=number]").val();
+            var stax = $row.find("td:eq(7) input[type=number]").val() == '' ? 0 : $row.find("td:eq(7) input[type=number]").val();
+            var total = ($row.find("td:eq(8) label").text() == "") ? 0 : parseFloat($row.find("td:eq(8) label").text());
+
+            //if (inventoryID == null || inventoryID == "0")
+            //    return;
+
+            if (subitemid != '') {
+                items.push({
+                    SaleOrderLineID: solineId,
+                    SubItemID: subitemid,
+                    Quantity: qty,
+                    SalePrice: saleprice,
+                    T_O: to,
+                    Discount: discount,
+                    SalesTax: stax,
+                    SubTotal: subTotal,
+                    NetTotalAmount: total,
+                    InventoryID: inventoryID
+                });
+            }
+        });
+
+        var model = {
+            SaleOrderDetail: items,
+            DeleteItems: deleteItemsIds,
+            SaleOrderID: $('#SaleOrderID').val(),
+            EntryTypeID: $('#EntryTypeID').val(),
+            CustomerID: $('#CustomerID').val(),
+            SONumber: $('#SONumber').val(),
+            SODate: $('#SODate').val(),
+            InvoiceNo: 0,
+            Notes: $('#Notes').val(),
+            SubTotal: $('#lblSubTtal').text(),
+            Expense: $('#txtExpense').val(),
+            Discount: $('#txtAllDiscount').val(),
+            Discount2: $('#txtAllDiscount2').val(),
+            SalesTax: $('#txtAllSalesTax').val(),
+            PaidAmount: $('#txtAllPaidAmount').val(),
+            NetTotalAmount: $('#lblNetTotal').text(),
+            BookerID: $('#BookerID').val(),
+            SupplierID: $('#SupplierID').val(),
+            IsUpdate: $('#IsUpdate').val()
+        };
+        return model;
+    }
+
+
+    function Save(isPrint) {
+
+        if (Validation()) {
+            var model = GetDataModel();
+            //Show loader here
+            $('.page-loader-wrapper').show();
+            $.ajax({
+                contentType: 'application/json; charset=utf-8',
+                dataType: 'json',
+                type: 'POST',
+                url: "@Url.Action("SaveSaleOrder")",
+                data: JSON.stringify(model),
+                success: function (res) {
+                    if (res.Result == "OK") {
+                        AlertMsg('<strong>Success! </strong>', res.detail, 'info');
+                        if (isPrint == 0) {
+                            setTimeout(function () {
+                                window.location.href = getWebsiteUrl + "/Sale/SaleOrder";
+                            }, 2000);
+                        } else {
+                            setTimeout(function () {
+                                var val = getWebsiteUrl + "/Print/SalesInvoice/" + res.SOID
+                                window.open(val);
+                                window.location.href = getWebsiteUrl + "/Sale/SaleOrder";
+                            }, 2000);
+                        }
+                    }
+                    else {
+                        $('.page-loader-wrapper').hide();
+                        AlertMsg('<strong>Error! </strong>', res.detail, 'info');
+                    }
+                },
+                failure: function (response) {
+                    $('#result').html(response);
+                },
+                complete: function () {
+                    $('.page-loader-wrapper').hide();
+                }
+            });
+        }
+    }
+
+    $("#CustomerID").change(function () {
+        @*$('#BookerID').val('');
+        $('#SupplierID').val('');
+        var customerID = parseInt($(this).val());
+        if (!isNaN(customerID)) {
+            $.ajax({
+                url: "@Url.Action("GetBookerIDByCustomerID")",
+                dataType: 'json',
+                type: 'POST',
+                data: { Id: customerID },
+                success: function (d) {
+                    if (d.BookerID != null) {
+                        var $optionBooker = $("<option selected></option>").val(d.BookerID).text(d.BookerName);
+                        var $optionSupplier = $("<option selected></option>").val(d.BookerID).text(d.BookerName);
+                        $("#BookerID").append($optionBooker);
+                        $("#SupplierID").append($optionSupplier);
+
+                        //$('#BookerID').val(d.BookerID);
+                        //$('#SupplierID').val(d.BookerID);
+                    }
+                },
+                error: function (e) {
+                    alert('Error!' + e.responseText);
+                }
+            });
+        }*@
+    });
+
+
+</script>

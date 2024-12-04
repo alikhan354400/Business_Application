@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="05d5fcaa26a54f8cad4c77d7e83d134b" Name="Diagram1" ZoomLevel="92">
+        <EntityTypeShape EntityType="EmanTradersDBModel.Account" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="EmanTradersDBModel.AspNetRole" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="EmanTradersDBModel.AspNetUserClaim" Width="1.5" PointX="2.75" PointY="3.75" />
+        <EntityTypeShape EntityType="EmanTradersDBModel.AspNetUserLogin" Width="1.5" PointX="4.75" PointY="0.75" />
+        <EntityTypeShape EntityType="EmanTradersDBModel.AspNetUserRole" Width="1.5" PointX="4.75" PointY="3.75" />
+        <EntityTypeShape EntityType="EmanTradersDBModel.AspNetUser" Width="1.5" PointX="6.75" PointY="0.75" />
+        <EntityTypeShape EntityType="EmanTradersDBModel.Bank" Width="1.5" PointX="2.75" PointY="6.75" />
+        <EntityTypeShape EntityType="EmanTradersDBModel.BankToBankTransfer" Width="1.5" PointX="4.75" PointY="6.75" />
+        <EntityTypeShape EntityType="EmanTradersDBModel.ChartofAccount" Width="1.5" PointX="6.75" PointY="5.75" />
+        <EntityTypeShape EntityType="EmanTradersDBModel.ChartOfAccountType" Width="1.5" PointX="8.75" PointY="0.75" />
+        <EntityTypeShape EntityType="EmanTradersDBModel.City" Width="1.5" PointX="8.75" PointY="3.75" />
+        <EntityTypeShape EntityType="EmanTradersDBModel.CityArea" Width="1.5" PointX="8.75" PointY="6.75" />
+        <EntityTypeShape EntityType="EmanTradersDBModel.Code" Width="1.5" PointX="6.75" PointY="9.75" />
+        <EntityTypeShape EntityType="EmanTradersDBModel.CompanyInformation" Width="1.5" PointX="8.75" PointY="9.75" />
+        <EntityTypeShape EntityType="EmanTradersDBModel.Country" Width="1.5" PointX="10.75" PointY="0.75" />
+        <EntityTypeShape EntityType="EmanTradersDBModel.Designation" Width="1.5" PointX="10.75" PointY="3.75" />
+        <EntityTypeShape EntityType="EmanTradersDBModel.Employee" Width="1.5" PointX="10.75" PointY="7.75" />
+        <EntityTypeShape EntityType="EmanTradersDBModel.EntryType" Width="1.5" PointX="0.75" PointY="11.75" />
+        <EntityTypeShape EntityType="EmanTradersDBModel.Expens" Width="1.5" PointX="2.75" PointY="11.75" />
+        <EntityTypeShape EntityType="EmanTradersDBModel.Inventory" Width="1.5" PointX="12.75" PointY="0.75" />
+        <EntityTypeShape EntityType="EmanTradersDBModel.Item" Width="1.5" PointX="12.75" PointY="4.75" />
+        <EntityTypeShape EntityType="EmanTradersDBModel.Payment" Width="1.5" PointX="12.75" PointY="9.75" />
+        <EntityTypeShape EntityType="EmanTradersDBModel.PaymentHeader" Width="1.5" PointX="4.75" PointY="13.75" />
+        <EntityTypeShape EntityType="EmanTradersDBModel.ProfitAndLoss" Width="1.5" PointX="14.75" PointY="0.75" />
+        <EntityTypeShape EntityType="EmanTradersDBModel.PurchaseOrder" Width="1.5" PointX="14.75" PointY="3.75" />
+        <EntityTypeShape EntityType="EmanTradersDBModel.PurchaseOrderLine" Width="1.5" PointX="6.75" PointY="14.75" />
+        <EntityTypeShape EntityType="EmanTradersDBModel.PurchaseOrderReturn" Width="1.5" PointX="8.75" PointY="14.75" />
+        <EntityTypeShape EntityType="EmanTradersDBModel.PurchaseOrderReturnLine" Width="1.5" PointX="14.75" PointY="10.75" />
+        <EntityTypeShape EntityType="EmanTradersDBModel.SaleOrder" Width="1.5" PointX="10.75" PointY="15.75" />
+        <EntityTypeShape EntityType="EmanTradersDBModel.SaleOrderLine" Width="1.5" PointX="12.75" PointY="15.75" />
+        <EntityTypeShape EntityType="EmanTradersDBModel.SaleOrderReturn" Width="1.5" PointX="14.75" PointY="15.75" />
+        <EntityTypeShape EntityType="EmanTradersDBModel.SaleOrderReturnLine" Width="1.5" PointX="16.75" PointY="0.75" />
+        <EntityTypeShape EntityType="EmanTradersDBModel.StatesByCountryID" Width="1.5" PointX="16.75" PointY="5.75" />
+        <EntityTypeShape EntityType="EmanTradersDBModel.SubItem" Width="1.5" PointX="16.75" PointY="8.75" />
+        <EntityTypeShape EntityType="EmanTradersDBModel.Transaction" Width="1.5" PointX="16.75" PointY="15.75" />
+        <EntityTypeShape EntityType="EmanTradersDBModel.UnitType" Width="1.5" PointX="0.75" PointY="17.75" />
+        <EntityTypeShape EntityType="EmanTradersDBModel.User" Width="1.5" PointX="2.75" PointY="17.75" />
+        <EntityTypeShape EntityType="EmanTradersDBModel.vv_ProfitLossExpanse" Width="1.5" PointX="18.75" PointY="0.75" />
+        <EntityTypeShape EntityType="EmanTradersDBModel.vv_ProfitLossGrossProfit" Width="1.5" PointX="18.75" PointY="3.75" />
+        <EntityTypeShape EntityType="EmanTradersDBModel.vv_ProfitLossPurchase" Width="1.5" PointX="18.75" PointY="6.75" />
+        <EntityTypeShape EntityType="EmanTradersDBModel.vv_ProfitLossSale" Width="1.5" PointX="18.75" PointY="9.75" />
+        <EntityTypeShape EntityType="EmanTradersDBModel.vw_AccountTransactions" Width="1.5" PointX="18.75" PointY="12.75" />
+        <EntityTypeShape EntityType="EmanTradersDBModel.vw_BankTransactions" Width="1.5" PointX="18.75" PointY="17.75" />
+        <EntityTypeShape EntityType="EmanTradersDBModel.vw_CashTransactions" Width="1.5" PointX="4.75" PointY="19.75" />
+        <EntityTypeShape EntityType="EmanTradersDBModel.vw_DailyCashTransactions" Width="1.5" PointX="20.75" PointY="0.75" />
+        <EntityTypeShape EntityType="EmanTradersDBModel.vw_DetailLedgerStatement" Width="1.5" PointX="20.75" PointY="4.75" />
+        <EntityTypeShape EntityType="EmanTradersDBModel.vw_GetAvailableStockBySubItem" Width="1.5" PointX="20.75" PointY="9.75" />
+        <EntityTypeShape EntityType="EmanTradersDBModel.vw_GetCustomerAllTableInfo" Width="1.5" PointX="20.75" PointY="12.75" />
+        <EntityTypeShape EntityType="EmanTradersDBModel.vw_GetPOReReturnItemForInventory" Width="1.5" PointX="20.75" PointY="16.75" />
+        <EntityTypeShape EntityType="EmanTradersDBModel.vw_GetSalesItemForInventory" Width="1.5" PointX="20.75" PointY="19.75" />
+        <EntityTypeShape EntityType="EmanTradersDBModel.vw_GetSOReReturnItemForInventory" Width="1.5" PointX="0.75" PointY="21.75" />
+        <EntityTypeShape EntityType="EmanTradersDBModel.vw_InvertoryOnHandAllTypes" Width="1.5" PointX="6.75" PointY="21.75" />
+        <EntityTypeShape EntityType="EmanTradersDBModel.vw_PaymentDetailForHeader" Width="1.5" PointX="22.75" PointY="0.75" />
+        <EntityTypeShape EntityType="EmanTradersDBModel.vw_PaymentHeader" Width="1.5" PointX="22.75" PointY="3.75" />
+        <EntityTypeShape EntityType="EmanTradersDBModel.vw_Payments" Width="1.5" PointX="8.75" PointY="22.75" />
+        <EntityTypeShape EntityType="EmanTradersDBModel.vw_PurchaseDetailForHeader" Width="1.5" PointX="22.75" PointY="9.75" />
+        <EntityTypeShape EntityType="EmanTradersDBModel.vw_PurchaseOrder" Width="1.5" PointX="10.75" PointY="22.75" />
+        <EntityTypeShape EntityType="EmanTradersDBModel.vw_PurchaseOrderReturn" Width="1.5" PointX="22.75" PointY="12.75" />
+        <EntityTypeShape EntityType="EmanTradersDBModel.vw_PurchaseReturnDetailForHeader" Width="1.5" PointX="12.75" PointY="22.75" />
+        <EntityTypeShape EntityType="EmanTradersDBModel.vw_SaleOrder" Width="1.5" PointX="14.75" PointY="22.75" />
+        <EntityTypeShape EntityType="EmanTradersDBModel.vw_SaleOrderReturn" Width="1.5" PointX="16.75" PointY="22.75" />
+        <EntityTypeShape EntityType="EmanTradersDBModel.vw_SalesDetailForHeader" Width="1.5" PointX="18.75" PointY="22.75" />
+        <EntityTypeShape EntityType="EmanTradersDBModel.vw_SalesReturnDetailForHeader" Width="1.5" PointX="20.75" PointY="22.75" />
+        <EntityTypeShape EntityType="EmanTradersDBModel.vw_TotalPaidAmountByOrderNo" Width="1.5" PointX="22.75" PointY="21.75" />
+        <EntityTypeShape EntityType="EmanTradersDBModel.vw_Transactions" Width="1.5" PointX="24.75" PointY="0.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

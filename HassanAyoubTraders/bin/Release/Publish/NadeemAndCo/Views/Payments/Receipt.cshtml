@@ -1,0 +1,231 @@
+﻿@model NadeemAndCo.Models.ViewModels.AddEditPaymentViewModel
+
+@{
+    ViewBag.Title = "Receipt Payment";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@using (Html.BeginForm("", "", FormMethod.Post, new { id = "receipt-payment" }))
+{
+    @Html.HiddenFor(x => x.PaymentID)
+
+    <div class="row clearfix">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="card">
+                <div class="header">
+                    <h2>
+                        Receipt Payment
+                    </h2>
+                </div>
+                <div class="body">
+                    <div class="row clearfix">
+
+                        <div class="col-md-6">
+                            <p>
+                                <b>Supplier / Customer</b>
+                            </p>
+                            @Html.DropDownListFor(x => x.AccountID, Model.AccountList, "Select", new { @class = "form-control input-sm js-select2", id = "ddlAccounts" })
+
+                        </div>
+
+                        <div class="col-md-6">
+                            <p>
+                                <b>Select Mode</b>
+                            </p>
+                            @Html.DropDownListFor(x => x.PaymentMode, Model.PaymentModeList, "Select", new { @class = "form-control input-sm js-select2", id = "ddlPaymentMode" })
+
+
+                        </div>
+                        <div class="col-md-6" id="OnlineCheckDate">
+                            <p>
+                                <b>Online/Check Date</b>
+                            </p>
+                            @Html.TextBoxFor(x => x.CheckDateOnlineDate, new { @class = "form-control icon-download appdatepicker input-sm", id = "checkdate" })
+                        </div>
+                        <div class="col-md-6" id="OnlineCheck">
+                            <p>
+                                <b>Online/Check No</b>
+                            </p>
+                            @Html.TextBoxFor(x => x.CheckNumberOnlineReciptNumber, new { @class = "form-control icon-download input-sm", id = "check" })
+
+                        </div>
+                        <div class="col-md-6">
+                            <p>
+                                <b>Amount</b>
+                            </p>
+                            @Html.TextBoxFor(x => x.Amount, new { @class = "form-control icon-download input-sm AllowDecimal", id = "Amount" })
+
+
+                        </div>
+                        <div class="col-md-6">
+                            <p>
+                                <b>Transaction Date</b>
+                            </p>
+                            @Html.TextBoxFor(x => x.TransactionDate, new { @class = "form-control icon-download appdatepicker input-sm", id = "TransactionDate" })
+                        </div>
+                        <div class="col-md-6" id="Bank">
+                            <p>
+                                <b>Bank</b>
+                            </p>
+                            @Html.DropDownListFor(x => x.BankID, Model.BankList, "Select", new { @class = "form-control input-sm js-select2", id = "ddlBank" })
+                        </div>
+                        <div class="col-md-12">
+                            <p>
+                                <b>Particular</b>
+                            </p>
+                            @Html.TextAreaFor(x => x.Particulars, new { @class = "form-control icon-download input-sm", id = "Particular" })
+                        </div>
+                        <div class="col-md-3">
+                            <button id="btnAddItem" type="button" class="btn btn-danger waves-effect col-md-3">SAVE</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+}
+<script>
+
+    $(document).ready(function () {
+        setTimeout(function () {
+            if ($('#PaymentID').val() != "") {
+                OnChangePaymentMode();
+            }
+        }, 1000);
+
+        function OnChangePaymentMode() {
+            if ($("#ddlPaymentMode option:selected").text() == "Bank") {
+                $('#OnlineCheckDate').show();
+                $('#OnlineCheck').show();
+                $('#Bank').show();
+                $('#ddlBank').show();
+            }
+            if ($("#ddlPaymentMode option:selected").text() == "Cash") {
+                $('#OnlineCheckDate').hide();
+                $('#OnlineCheck').hide();
+                $('#Bank').hide();
+                $('#ddlBank').hide();
+            }
+            if ($("#ddlPaymentMode option:selected").text() == "Select") {
+                $('#OnlineCheckDate').hide();
+                $('#OnlineCheck').hide();
+                $('#Bank').hide();
+                $('#ddlBank').hide();
+            }
+        }
+
+
+        $('#ddlPaymentMode').change(function () {
+            OnChangePaymentMode();
+        });
+
+        $('#OnlineCheckDate').hide();
+        $('#OnlineCheck').hide();
+        $('#Bank').hide();
+        $('#ddlBank').hide();
+
+        $('#btnAddItem').click(function () {
+
+            if ($("#ddlAccounts").val() == "") {
+                AlertMsg('<strong>Required!</strong>', 'Account is required.', 'info');
+                $('#ddlPaymentMode').focus()
+                return false;
+            }
+
+            if ($("#ddlPaymentMode").val() == "") {
+                AlertMsg('<strong>Required!</strong>', 'Payment Mode is required.', 'info');
+                $('#ddlPaymentMode').focus()
+                return false;
+            }
+
+            if ($("#ddlPaymentMode option:selected").text() == "Bank" && $('#checkdate').val() == "") {
+                AlertMsg('<strong>Required!</strong>', 'Enter Check Date', 'info');
+                return false;
+            }
+
+            if ($("#ddlPaymentMode option:selected").text() == "Bank" && $('#check').val() == "") {
+                AlertMsg('<strong>Required!</strong>', 'Enter Check No', 'info');
+                $('#check').focus();
+                return false;
+            }
+
+            if ($('#Amount').val() == "") {
+                AlertMsg('<strong>Required!</strong>', 'Enter Amount', 'info');
+                $('#Amount').focus();
+                return false;
+            }
+
+            if ($('#TransactionDate').val() == "") {
+                AlertMsg('<strong>Required!</strong>', 'Enter Transaction Date', 'info');
+                $('#TransactionDate').focus();
+                return false;
+            }
+
+            if ($("#ddlPaymentMode option:selected").text() == "Bank" && $('#ddlBank').val() == "") {
+                AlertMsg('<strong>Required!</strong>', 'Select Bank', 'info');
+                $('#ddlBank').focus();
+                return false;
+            }
+
+            if ($('#Particular').val() == "") {
+                AlertMsg('<strong>Required!</strong>', 'Enter Particular', 'info');
+                $('#Particular').focus()
+                return false;
+            }
+
+            InsertRecord();
+        });
+    });
+
+
+    function GetRecord() {
+        var type = "RP";
+
+        var model = {
+            PaymentID: $('#PaymentID').val(),
+            AccountID: $('#ddlAccounts').val(),
+            PaymentMode: $("#ddlPaymentMode option:selected").text(),
+            Amount: $('#Amount').val(),
+            CheckNumberOnlineReciptNumber: $('#check').val(),
+            CheckDateOnlineDate: $('#checkdate').val(),
+            TransactionDate: $('#TransactionDate').val(),
+            Particulars: $("#Particular").val(),
+            BankID: $("#ddlBank").val(),
+            VoucherType: type,
+            BranchID: 0,
+            AccountCode: "",
+        }
+        return model;
+    }
+
+    function InsertRecord() {
+        var model = GetRecord();
+        $('.page-loader-wrapper').show();
+        $.ajax({
+            contentType: 'application/json; charset=utf-8',
+            dataType: 'json',
+            type: 'POST',
+            url: "@Url.Action("InsertReceipt")",
+            data: JSON.stringify(model),
+            success: function (res) {
+                if (res.Result == "OK") {
+                    $('.page-loader-wrapper').hide();
+
+                    AlertMsg('<strong>Success!</strong>', 'Payment Save Successfully!', 'info');
+                    setTimeout(function () {
+                        location.reload();
+                    }, 1000);
+                }
+                else {
+                    $('.page-loader-wrapper').hide();
+                    AlertMsg('<strong>Error!</strong>', 'Payment Not Save, Try Again!', 'info');
+                }
+            },
+            failure: function (response) {
+                $('.page-loader-wrapper').hide();
+                console.log(response);
+            }
+        });
+    }
+</script>

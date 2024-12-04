@@ -1,0 +1,200 @@
+﻿@model NadeemAndCo.Models.ViewModels.SubItemAddEditListViewModel
+
+@{
+    ViewBag.Title = "Add/Edit Sub Item";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@using (Html.BeginForm("", "", FormMethod.Post, new { id = "edit-sub-item" }))
+{
+
+    @Html.HiddenFor(x => x.SubItemID)
+
+    <div class="row clearfix">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="card">
+                <div class="header">
+                    <h2>
+                        Add/Edit Sub Item
+                    </h2>
+                </div>
+                <div class="body">
+                    <div class="row clearfix">
+                        <div class="col-md-3">
+                            <p>
+                                <b>Item</b>
+                            </p>
+                            @Html.DropDownListFor(x => x.ItemID, Model.ItemsList, "Select", new { @class = "form-control  js-select2" })
+                        </div>
+                        <div class="col-md-2">
+                            <p>
+                                <b>Sub Item Code</b>
+                            </p>
+                            @Html.TextBoxFor(x => x.SubItemCode, new { @class = "form-control" })
+                        </div>
+                        <div class="col-md-3">
+                            <p>
+                                <b>Sub Item Name</b>
+                            </p>
+                            @Html.TextBoxFor(x => x.SubItemName, new { @class = "form-control" })
+                        </div>
+                        <div class="col-md-2">
+                            <p>
+                                <b>Purchase Price</b>
+                            </p>
+                            @Html.TextBoxFor(x => x.PurchasePrice, new { @class = "form-control AllowDecimal" })
+                        </div>
+                        <div class="col-md-2">
+                            <p>
+                                <b>Sale Price</b>
+                            </p>
+                            @Html.TextBoxFor(x => x.SalePrice, new { @class = "form-control AllowDecimal" })
+                        </div>
+
+                        <div class="col-md-2">
+                            <p>
+                                <b>Sales Tax</b>
+                            </p>
+                            @Html.TextBoxFor(x => x.SalesTax, new { @class = "form-control AllowDecimal" })
+                        </div>
+                        <div class="col-md-2" style="display:none;">
+                            <p>
+                                <b>RP Charges</b>
+                            </p>
+                            @Html.TextBoxFor(x => x.RPCharges, new { @class = "form-control AllowDecimal" })
+                        </div>
+                        <div class="col-md-2">
+                            <p>
+                                <b>Opening Inventory</b>
+                            </p>
+                            @Html.TextBoxFor(x => x.OpeningInventoryQty, new { @class = "form-control AllowDecimal" })
+                        </div>
+
+                    </div>
+                    <div class="row clearfix">
+                        <div class="col-md-5 pull-right">
+                            <button type="button" id="btnSave" class="btn btn-success waves-effect pull-right">
+                                <i class="material-icons">save</i>
+                                <span>Save</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+}
+
+
+<script>
+
+
+    $(document).ready(function () {
+
+        $("#edit-sub-item :input").change(function () {
+            $("#edit-sub-item").data("changed", true);
+        });
+
+        $('#btnSave').click(function () {
+            Save();
+        });
+    });
+
+    function Validation() {
+        if ($("#ItemID").val() == "") {
+            AlertMsg('<strong>Alert!</strong>', 'Item is required.', 'info');
+            $('#ItemID').focus();
+            return;
+        }
+        if ($("#SubItemCode").val() == "") {
+            AlertMsg('<strong>Alert!</strong>', 'Sub Item Code is required.', 'info');
+            $('#SubItemCode').focus();
+            return;
+        }
+        if ($("#SubItemName").val() == "") {
+            AlertMsg('<strong>Alert!</strong>', 'Sub Item Name is required.', 'info');
+            $('#SubItemName').focus();
+            return;
+        }
+        if ($("#PurchasePrice").val() == "") {
+            AlertMsg('<strong>Alert!</strong>', 'Purchase Price is Required!', 'info');
+            $('#PurchasePrice').focus();
+            return;
+        }
+
+        if ($("#SalePrice").val() == "") {
+            AlertMsg('<strong>Alert!</strong>', 'Sale Price is Required!', 'info');
+            $('#SalePrice').focus();
+            return;
+        }
+        //if ($("#RPCharges").val() == "") {
+        //    AlertMsg('<strong>Alert!</strong>', 'RP Charges is Required!', 'info');
+        //    $('#RPCharges').focus();
+        //    return;
+        //}
+        if ($("#OpeningInventoryQty").val() == "") {
+            AlertMsg('<strong>Alert!</strong>', 'Opening Inventory Quantity is Required!', 'info');
+            $('#RPCharges').focus();
+            return;
+        }
+
+        return true;
+    }
+
+    function Save() {
+
+        if (!$("#edit-sub-item").data("changed")) {
+            AlertMsg('', '<strong>Form is unchanged!</strong>', 'warning');
+            return;
+        }
+
+        if (Validation() == true) {
+            var model = GetDataModel();
+
+            //Show loader here
+            $('.page-loader-wrapper').show();
+            $.ajax({
+                contentType: 'application/json; charset=utf-8',
+                dataType: 'json',
+                type: 'POST',
+                url: "@Url.Action("EditSubItem")",
+                data: JSON.stringify(model),
+                success: function (res) {
+                    if (res.Result == "OK") {
+                        AlertMsg('<strong>Success! </strong>', res.detail, 'info');
+                        setTimeout(function () {
+                            location.reload();
+                        }, 2000);
+                    }
+                    else {
+                        $('.page-loader-wrapper').hide();
+                        AlertMsg('<strong>Error! </strong>', res.detail, 'info');
+                    }
+                },
+                failure: function (response) {
+                    $('#result').html(response);
+                },
+                complete: function () {
+                    $('.page-loader-wrapper').hide();
+                }
+            });
+        }
+    }
+
+    function GetDataModel() {
+        var model = {
+            ItemID: $('#ItemID').val(),
+            SubItemCode: $('#SubItemCode').val(),
+            SubItemName: $('#SubItemName').val(),
+            PurchasePrice: $('#PurchasePrice').val(),
+            SalePrice: $('#SalePrice').val(),
+            SalesTax: $('#SalesTax').val(),
+            SubItemID: $('#SubItemID').val(),
+            RPCharges: $('#RPCharges').val(),
+            OpeningInventoryQty: $('#OpeningInventoryQty').val()
+        };
+
+        return model;
+    }
+</script>

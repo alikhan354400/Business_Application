@@ -1,0 +1,215 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\hassanayoubtraders\\HassanAyoubTraders\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{25D76B3E-36D5-46A5-95AC-DB19B90F26B6}|HassanAyoubTraders\\HassanAyoubTraders.csproj|d:\\hassanayoubtraders\\hassanayoubtraders\\hassanayoubtraders\\controllers\\companycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25D76B3E-36D5-46A5-95AC-DB19B90F26B6}|HassanAyoubTraders\\HassanAyoubTraders.csproj|solutionrelative:hassanayoubtraders\\controllers\\companycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|HassanAyoubTraders||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25D76B3E-36D5-46A5-95AC-DB19B90F26B6}|HassanAyoubTraders\\HassanAyoubTraders.csproj|D:\\hassanayoubtraders\\HassanAyoubTraders\\hassanayoubtraders\\models\\ef\\hassanayoubdatamodel.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|",
+      "RelativeMoniker": "D:0:0:{25D76B3E-36D5-46A5-95AC-DB19B90F26B6}|HassanAyoubTraders\\HassanAyoubTraders.csproj|solutionrelative:hassanayoubtraders\\models\\ef\\hassanayoubdatamodel.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25D76B3E-36D5-46A5-95AC-DB19B90F26B6}|HassanAyoubTraders\\HassanAyoubTraders.csproj|D:\\hassanayoubtraders\\HassanAyoubTraders\\hassanayoubtraders\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25D76B3E-36D5-46A5-95AC-DB19B90F26B6}|HassanAyoubTraders\\HassanAyoubTraders.csproj|solutionrelative:hassanayoubtraders\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25D76B3E-36D5-46A5-95AC-DB19B90F26B6}|HassanAyoubTraders\\HassanAyoubTraders.csproj|D:\\hassanayoubtraders\\HassanAyoubTraders\\hassanayoubtraders\\views\\shared\\_layoutadmin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{25D76B3E-36D5-46A5-95AC-DB19B90F26B6}|HassanAyoubTraders\\HassanAyoubTraders.csproj|solutionrelative:hassanayoubtraders\\views\\shared\\_layoutadmin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25D76B3E-36D5-46A5-95AC-DB19B90F26B6}|HassanAyoubTraders\\HassanAyoubTraders.csproj|D:\\hassanayoubtraders\\HassanAyoubTraders\\hassanayoubtraders\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{25D76B3E-36D5-46A5-95AC-DB19B90F26B6}|HassanAyoubTraders\\HassanAyoubTraders.csproj|solutionrelative:hassanayoubtraders\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25D76B3E-36D5-46A5-95AC-DB19B90F26B6}|HassanAyoubTraders\\HassanAyoubTraders.csproj|D:\\hassanayoubtraders\\HassanAyoubTraders\\hassanayoubtraders\\views\\site\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{25D76B3E-36D5-46A5-95AC-DB19B90F26B6}|HassanAyoubTraders\\HassanAyoubTraders.csproj|solutionrelative:hassanayoubtraders\\views\\site\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25D76B3E-36D5-46A5-95AC-DB19B90F26B6}|HassanAyoubTraders\\HassanAyoubTraders.csproj|D:\\hassanayoubtraders\\HassanAyoubTraders\\hassanayoubtraders\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{25D76B3E-36D5-46A5-95AC-DB19B90F26B6}|HassanAyoubTraders\\HassanAyoubTraders.csproj|solutionrelative:hassanayoubtraders\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25D76B3E-36D5-46A5-95AC-DB19B90F26B6}|HassanAyoubTraders\\HassanAyoubTraders.csproj|D:\\hassanayoubtraders\\HassanAyoubTraders\\hassanayoubtraders\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{25D76B3E-36D5-46A5-95AC-DB19B90F26B6}|HassanAyoubTraders\\HassanAyoubTraders.csproj|solutionrelative:hassanayoubtraders\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25D76B3E-36D5-46A5-95AC-DB19B90F26B6}|HassanAyoubTraders\\HassanAyoubTraders.csproj|D:\\hassanayoubtraders\\HassanAyoubTraders\\hassanayoubtraders\\content\\css\\themes\\all-themes.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{25D76B3E-36D5-46A5-95AC-DB19B90F26B6}|HassanAyoubTraders\\HassanAyoubTraders.csproj|solutionrelative:hassanayoubtraders\\content\\css\\themes\\all-themes.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25D76B3E-36D5-46A5-95AC-DB19B90F26B6}|HassanAyoubTraders\\HassanAyoubTraders.csproj|D:\\hassanayoubtraders\\HassanAyoubTraders\\hassanayoubtraders\\views\\vendors\\vendorlist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{25D76B3E-36D5-46A5-95AC-DB19B90F26B6}|HassanAyoubTraders\\HassanAyoubTraders.csproj|solutionrelative:hassanayoubtraders\\views\\vendors\\vendorlist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25D76B3E-36D5-46A5-95AC-DB19B90F26B6}|HassanAyoubTraders\\HassanAyoubTraders.csproj|D:\\hassanayoubtraders\\HassanAyoubTraders\\hassanayoubtraders\\views\\cityarea\\areaaddedit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{25D76B3E-36D5-46A5-95AC-DB19B90F26B6}|HassanAyoubTraders\\HassanAyoubTraders.csproj|solutionrelative:hassanayoubtraders\\views\\cityarea\\areaaddedit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25D76B3E-36D5-46A5-95AC-DB19B90F26B6}|HassanAyoubTraders\\HassanAyoubTraders.csproj|d:\\hassanayoubtraders\\hassanayoubtraders\\hassanayoubtraders\\||{B270807C-D8C6-49EB-8EBE-8E8D566637A1}|5e9a8ac2-4f34-4521-858f-4c248ba31532"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "HassanAyoubTraders",
+              "DocumentMoniker": "D:\\hassanayoubtraders\\HassanAyoubTraders\\HassanAyoubTraders\\HassanAyoubTraders.csproj",
+              "RelativeDocumentMoniker": "HassanAyoubTraders\\HassanAyoubTraders.csproj",
+              "ToolTip": "D:\\hassanayoubtraders\\HassanAyoubTraders\\HassanAyoubTraders\\HassanAyoubTraders.csproj",
+              "RelativeToolTip": "HassanAyoubTraders\\HassanAyoubTraders.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-12-04T12:31:36.623Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CompanyController.cs",
+              "DocumentMoniker": "D:\\hassanayoubtraders\\HassanAyoubTraders\\HassanAyoubTraders\\Controllers\\CompanyController.cs",
+              "RelativeDocumentMoniker": "HassanAyoubTraders\\Controllers\\CompanyController.cs",
+              "ToolTip": "D:\\hassanayoubtraders\\HassanAyoubTraders\\HassanAyoubTraders\\Controllers\\CompanyController.cs*",
+              "RelativeToolTip": "HassanAyoubTraders\\Controllers\\CompanyController.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-03T12:16:36.874Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "HassanAyoubDataModel.edmx [Diagram1]",
+              "DocumentMoniker": "D:\\hassanayoubtraders\\HassanAyoubTraders\\HassanAyoubTraders\\Models\\EF\\HassanAyoubDataModel.edmx",
+              "RelativeDocumentMoniker": "HassanAyoubTraders\\Models\\EF\\HassanAyoubDataModel.edmx",
+              "ToolTip": "D:\\hassanayoubtraders\\HassanAyoubTraders\\HassanAyoubTraders\\Models\\EF\\HassanAyoubDataModel.edmx [Diagram1]",
+              "RelativeToolTip": "HassanAyoubTraders\\Models\\EF\\HassanAyoubDataModel.edmx [Diagram1]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001116|",
+              "WhenOpened": "2024-12-03T12:05:50.549Z",
+              "EditorCaption": " [Diagram1]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "all-themes.css",
+              "DocumentMoniker": "D:\\hassanayoubtraders\\HassanAyoubTraders\\HassanAyoubTraders\\Content\\css\\themes\\all-themes.css",
+              "RelativeDocumentMoniker": "HassanAyoubTraders\\Content\\css\\themes\\all-themes.css",
+              "ToolTip": "D:\\hassanayoubtraders\\HassanAyoubTraders\\HassanAyoubTraders\\Content\\css\\themes\\all-themes.css",
+              "RelativeToolTip": "HassanAyoubTraders\\Content\\css\\themes\\all-themes.css",
+              "ViewState": "AgIAAMwAAAAAAAAAAAAAAC0AAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-12-02T12:19:03.848Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Dashboard.cshtml",
+              "DocumentMoniker": "D:\\hassanayoubtraders\\HassanAyoubTraders\\HassanAyoubTraders\\Views\\Site\\Dashboard.cshtml",
+              "RelativeDocumentMoniker": "HassanAyoubTraders\\Views\\Site\\Dashboard.cshtml",
+              "ToolTip": "D:\\hassanayoubtraders\\HassanAyoubTraders\\HassanAyoubTraders\\Views\\Site\\Dashboard.cshtml",
+              "RelativeToolTip": "HassanAyoubTraders\\Views\\Site\\Dashboard.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-02T11:11:14.683Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "D:\\hassanayoubtraders\\HassanAyoubTraders\\HassanAyoubTraders\\Views\\Account\\Login.cshtml",
+              "RelativeDocumentMoniker": "HassanAyoubTraders\\Views\\Account\\Login.cshtml",
+              "ToolTip": "D:\\hassanayoubtraders\\HassanAyoubTraders\\HassanAyoubTraders\\Views\\Account\\Login.cshtml",
+              "RelativeToolTip": "HassanAyoubTraders\\Views\\Account\\Login.cshtml",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAqwBcAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-02T10:45:26.392Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "_LayoutAdmin.cshtml",
+              "DocumentMoniker": "D:\\hassanayoubtraders\\HassanAyoubTraders\\HassanAyoubTraders\\Views\\Shared\\_LayoutAdmin.cshtml",
+              "RelativeDocumentMoniker": "HassanAyoubTraders\\Views\\Shared\\_LayoutAdmin.cshtml",
+              "ToolTip": "D:\\hassanayoubtraders\\HassanAyoubTraders\\HassanAyoubTraders\\Views\\Shared\\_LayoutAdmin.cshtml",
+              "RelativeToolTip": "HassanAyoubTraders\\Views\\Shared\\_LayoutAdmin.cshtml",
+              "ViewState": "AgIAAFEAAAAAAAAAAAAAAFIAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-01T18:02:58.661Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "VendorList.cshtml",
+              "DocumentMoniker": "D:\\hassanayoubtraders\\HassanAyoubTraders\\HassanAyoubTraders\\Views\\Vendors\\VendorList.cshtml",
+              "RelativeDocumentMoniker": "HassanAyoubTraders\\Views\\Vendors\\VendorList.cshtml",
+              "ToolTip": "D:\\hassanayoubtraders\\HassanAyoubTraders\\HassanAyoubTraders\\Views\\Vendors\\VendorList.cshtml",
+              "RelativeToolTip": "HassanAyoubTraders\\Views\\Vendors\\VendorList.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-01T18:01:13.556Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "AreaAddEdit.cshtml",
+              "DocumentMoniker": "D:\\hassanayoubtraders\\HassanAyoubTraders\\HassanAyoubTraders\\Views\\CityArea\\AreaAddEdit.cshtml",
+              "RelativeDocumentMoniker": "HassanAyoubTraders\\Views\\CityArea\\AreaAddEdit.cshtml",
+              "ToolTip": "D:\\hassanayoubtraders\\HassanAyoubTraders\\HassanAyoubTraders\\Views\\CityArea\\AreaAddEdit.cshtml",
+              "RelativeToolTip": "HassanAyoubTraders\\Views\\CityArea\\AreaAddEdit.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-01T15:07:24.114Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\hassanayoubtraders\\HassanAyoubTraders\\HassanAyoubTraders\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "HassanAyoubTraders\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\hassanayoubtraders\\HassanAyoubTraders\\HassanAyoubTraders\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "HassanAyoubTraders\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-01T15:01:42.085Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\hassanayoubtraders\\HassanAyoubTraders\\HassanAyoubTraders\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "HassanAyoubTraders\\Views\\Home\\Index.cshtml",
+              "ToolTip": "D:\\hassanayoubtraders\\HassanAyoubTraders\\HassanAyoubTraders\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "HassanAyoubTraders\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-01T15:01:18.972Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "D:\\hassanayoubtraders\\HassanAyoubTraders\\HassanAyoubTraders\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "HassanAyoubTraders\\Controllers\\AccountController.cs",
+              "ToolTip": "D:\\hassanayoubtraders\\HassanAyoubTraders\\HassanAyoubTraders\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "HassanAyoubTraders\\Controllers\\AccountController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEkAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-01T15:00:15.971Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

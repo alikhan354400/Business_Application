@@ -1,0 +1,432 @@
+﻿@model NadeemAndCo.Models.ViewModels.PrintSalesReceiptViewModel
+@using System.Globalization;
+
+@{
+    ViewBag.Title = "PrintSO";
+    Layout = null;
+    CultureInfo ciPk = new CultureInfo("ur-PK");
+}
+<title>Nadeem & Co.</title>
+
+<!-- Favicon-->
+<link href="@Url.Content(" ~/favicon.ico")" rel="stylesheet" type="image/x-icon" />
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+
+<!-- Bootstrap Core Css -->
+<link href="@Url.Content("~/Content/plugins/bootstrap/css/bootstrap.css")" rel="stylesheet">
+
+<!-- Waves Effect Css -->
+<link href="@Url.Content("~/Content/plugins/node-waves/waves.css")" rel="stylesheet">
+
+<!-- Animation Css -->
+<link href="@Url.Content("~/Content/plugins/animate-css/animate.css")" rel="stylesheet">
+
+<!-- JQuery DataTable Css -->
+<link href="@Url.Content("~/Content/plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css")" rel="stylesheet">
+
+<!-- Bootstrap Material Datetime Picker Css -->
+<link href="@Url.Content("~/Content/plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css")" rel="stylesheet">
+
+<!-- Bootstrap DatePicker Css -->
+<link href="@Url.Content("~/Content/plugins/bootstrap-datepicker/css/bootstrap-datepicker.css")" rel="stylesheet">
+
+<!-- Morris Chart Css-->
+<link href="@Url.Content("~/Content/plugins/morrisjs/morris.css")" rel="stylesheet">
+
+<!-- Custom Css -->
+<link href="@Url.Content("~/Content/css/style.css")" rel="stylesheet">
+
+<!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
+<link href="@Url.Content("~/Content/css/themes/all-themes.css")" rel="stylesheet">
+
+<link href="@Url.Content("~/Content/jquery.typeahead.min.css")" rel="stylesheet" />
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+    .invoice-heading {
+        width: 100%;
+        text-align: center;
+        /* font-size: 20; */
+        font: bold 15px Helvetica, Sans-Serif;
+        height: 30px;
+        margin: 2px 0;
+        background-color: #222 !important;
+        -webkit-print-color-adjust: exact;
+        color: white !important;
+        letter-spacing: 20px;
+        padding: 7px 0px;
+    }
+
+    body {
+        background-color: white;
+        font-family: 'Calibri';
+    }
+
+    .page-wrap {
+        width: 800px;
+        margin: 0 auto;
+    }
+
+    .customer-title {
+        font-weight: bold;
+        float: left;
+        font: bold 24px Helvetica, Sans-Serif;
+    }
+</style>
+
+
+<div class="page-wrap">
+
+    <p class="invoice-heading">INVOICE</p>
+    <table class="col-sm-12" style="margin-bottom: 20px;">
+        <tr>
+            <td style="font-size: 12px; width:30%; ">
+                <span style="font: bold 20px Helvetica, Sans-Serif;">@Model.CustomerName</span><br />
+                <small style="flex-wrap: wrap;">
+                    NIC/NTN/GST #:  @Model.CustomerCNIC, @Model.CustomerNTN, @Model.CustomerSTRN
+                </small>
+                <br />
+                <small>
+                    Contact #:  @Model.CustomerContactNo
+                </small>
+                <br>
+                <small>
+                    City Area: @Model.CustomerCityArea
+                </small>
+                <br>
+                <small>
+                    Address :  @Model.CustomerAddress
+                </small>
+            </td>
+            <td style="">
+                <table border="1" style="width: 70%;">
+                    <tr>
+                        <th colspan="2" style="text-align:center; width: 30%;padding: 2px;">SALES INVOICE</th>
+                    </tr>
+                    <tr>
+                        <th style="padding: 2px;background-color: #eee !important;">Invoice #</th>
+                        <td style="padding: 2px; text-align: right;">@Model.InvoiceNumber</td>
+                    </tr>
+                    <tr>
+                        <th style="padding: 2px;background-color: #eee !important;">Inv Date</th>
+                        <td style="padding: 2px; text-align: right;">@Model.SODate</td>
+                    </tr>
+                    <tr style="display:none;">
+                        <th style="padding: 2px;background-color: #eee !important;">Amount Due</th>
+                        <td style="padding: 2px; text-align: right;">
+                            @{
+                                decimal parsedDueAmount = decimal.Parse(@Model.DueAmount.ToString(), CultureInfo.InvariantCulture);
+                                string dueAmount = string.Format(ciPk, "{0:c}", parsedDueAmount);
+                            }
+                            @dueAmount
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td style="font-size: 12px;  width:40%; padding-left:20px; ">
+                <span style="font: bold 20px Helvetica, Sans-Serif;">@Model.CompanyInfo.CompanyName</span><br />
+                <span style="flex-wrap: wrap; ">@Model.CompanyInfo.Address1</span><br />
+                <small style="flex-wrap: wrap;">
+                    STRN/NTN/GST #:  @Model.CompanyInfo.STRNNumber, @Model.CompanyInfo.ReferenceNumber, @Model.CompanyInfo.RegistrationNumber
+                </small>
+                <br />
+                <span>Email: @Model.CompanyInfo.Email</span><br />
+                <span>
+                    Phone: @Model.CompanyInfo.ContactNo1, @Model.CompanyInfo.ContactNo2
+                </span>
+            </td>
+        </tr>
+    </table>
+    <table class="col-sm-12" style="width: 100%;margin-bottom: 20px; font-size:12px;" border="1">
+        <thead>
+            <tr style="background-color: #eee !important;">
+                <th style="width:5%">#</th>
+                <th style="padding: 2px;text-align: center; ">Product</th>
+                <th style="padding: 2px;text-align: center;width: 40px;">Qty</th>
+                <th style="padding: 2px;text-align: center;width: 80px;">P/Price</th>
+                @*<th style="padding: 2px;text-align: center;width: 20px;">T.O</th>*@
+                <th style="padding: 2px;text-align: center;width: 100px;">Sub Total</th>
+                <th style="padding: 2px;text-align: center;width: 50px;">Disc(%)</th>
+                <th style="padding: 2px;text-align: center;width: 60px;">Disc</th>
+                <th style="padding: 2px;text-align: center;width: 60px;">S.Tax</th>
+                <th style="padding: 2px;text-align: center;width: 100px;">Total</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @{
+                int count = 1;
+                foreach (var item in Model.ItemDetail)
+                {
+                    <tr>
+                        <td><span class="sn">@count</span>.</td>
+                        <td class="text-left" style="padding: 2px;">@item.ItemName</td>
+                        <td class="" style="text-align: center;">@item.Quantity</td>
+                        <td class="" style="padding: 2px; text-align: right;">
+                            @{
+                                decimal parsedItemPrice = decimal.Parse(item.Price.ToString(), CultureInfo.InvariantCulture);
+                                string itemPrice = string.Format(ciPk, "{0:c}", parsedItemPrice);
+                            }
+                            @itemPrice
+                        </td>
+                        @*<td class="" style="padding: 2px; text-align: right;">
+                                @{
+                                    decimal parsedItemTO = decimal.Parse(item.TO.ToString(), CultureInfo.InvariantCulture);
+                                    string itemTO = string.Format(ciPk, "{0:c}", parsedItemTO);
+                                }
+                                @itemTO
+                            </td>*@
+                        <td class="" style="padding: 2px; text-align: right;">
+                            @{
+                                decimal parsedItemST = decimal.Parse(item.SubTotal.ToString(), CultureInfo.InvariantCulture);
+                                string itemST = string.Format(ciPk, "{0:c}", parsedItemST);
+                            }
+                            @itemST
+                        </td>
+                        <td class="" style="padding: 2px; text-align: right;">
+                            @item.Disc
+                        </td>
+                        <td class="" style="padding: 2px; text-align: right;">
+                            @{
+                                decimal parsedItemDis = decimal.Parse(((item.Disc * item.SubTotal) / 100).ToString(), CultureInfo.InvariantCulture);
+                                string itemDisc = string.Format(ciPk, "{0:c}", parsedItemDis);
+                            }
+                            @itemDisc
+                        </td>
+                        <td class="" style="padding: 2px; text-align: right;">
+                            @{
+                                decimal parsedItemTax = decimal.Parse(((item.SalesTax * (item.SubTotal - ((item.Disc * item.SubTotal) / 100))) / 100).ToString(), CultureInfo.InvariantCulture);
+                                string itemTax = string.Format(ciPk, "{0:c}", parsedItemTax);
+                            }
+                            @itemTax
+                        </td>
+                        <td class="" style="padding: 2px; text-align: right;">
+                            @{
+                                decimal parsedItemTot = decimal.Parse(item.Total.ToString(), CultureInfo.InvariantCulture);
+                                string itemTot = string.Format(ciPk, "{0:c}", parsedItemTot);
+                            }
+                            @itemTot
+                        </td>
+                    </tr>
+                    {
+                        count++;
+                    }
+                }
+                <tr style="background-color: #eee !important;font-size:12px;">
+                    <td class="text-left" style="padding: 2px; text-align: center;"><b></b></td>
+                    <td class="text-left" style="padding: 2px; text-align: center;"><b>Total</b></td>
+                    <td class="" style="text-align: center;">
+                        <b>
+                            @{
+                                decimal prQty = decimal.Parse(Model.ItemDetail.Sum(x => x.Quantity).ToString(), CultureInfo.InvariantCulture);
+                                string rQty = string.Format(ciPk, "{0}", prQty);
+                            }
+                            @rQty
+                        </b>
+                    </td>
+                    <td class="" style="padding: 2px; text-align: right;"></td>
+                    @*<td class="" style="padding: 2px; text-align: right;">
+                            <b>
+                                @{
+                                    decimal prTO = decimal.Parse(Model.ItemDetail.Sum(x => x.TO).ToString(), CultureInfo.InvariantCulture);
+                                    string rTO = string.Format(ciPk, "{0:c}", prTO);
+                                }
+                                @rTO
+                            </b>
+                        </td>*@
+                    <td class="" style="padding: 2px; text-align: right;">
+                        <b>
+                            @{
+                                decimal prSubTotal = decimal.Parse(Model.ItemDetail.Sum(x => x.SubTotal).ToString(), CultureInfo.InvariantCulture);
+                                string rSubTotal = string.Format(ciPk, "{0:c}", prSubTotal);
+                            }
+                            @rSubTotal
+                        </b>
+                    </td>
+                    <td class="" style="padding: 2px; text-align: right;">
+                        <b>
+                            @Model.ItemDetail.Sum(x => x.Disc)
+                        </b>
+                    </td>
+                    <td class="" style="padding: 2px; text-align: right;">
+                        <b>
+                            @{
+                                decimal prDisc = decimal.Parse(Model.ItemDetail.Sum(x => ((x.Disc * x.SubTotal) / 100)).ToString(), CultureInfo.InvariantCulture);
+                                string rDisc = string.Format(ciPk, "{0:c}", prDisc);
+                            }
+                            @rDisc
+                        </b>
+                    </td>
+                    <td class="" style="padding: 2px; text-align: right;">
+                        <b>
+                            @{
+                                decimal prSalesTax = decimal.Parse(Model.ItemDetail.Sum(x => ((x.SalesTax * x.SubTotal) / 100)).ToString(), CultureInfo.InvariantCulture);
+                                string rSalesTax = string.Format(ciPk, "{0:c}", prSalesTax);
+                            }
+                            @rSalesTax
+                        </b>
+                    </td>
+                    <td class="" style="padding: 2px; text-align: right;">
+                        <b>
+                            @{
+                                decimal prTotal = decimal.Parse(Model.ItemDetail.Sum(x => x.Total).ToString(), CultureInfo.InvariantCulture);
+                                string rTotal = string.Format(ciPk, "{0:c}", prTotal);
+                            }
+                            @rTotal
+                        </b>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <table class="" style="margin-bottom: 20px; width: 35%; float: left; margin: 5px;font-size: 10px;" border="0">
+        <tbody>
+            <tr>
+                <th style="border-bottom: 1px solid lightgray;padding:2px;text-align:center;border-right-style: hidden;border-left-style: hidden;border-top-style: hidden;letter-spacing: 2px;font-size: 12px;">
+                    شرائط
+                </th>
+            </tr>
+            <tr>
+                <td style="text-align:right ;">
+                    <br />.١. مل سیلز میں کی موجودگی میں چیک کر لیں بعد میں کوئی ذمداری نی ہو گی
+                    <br />.٢. سیلز میں سے بل کے علاوہ لیں دیں کی کمپنی ذمدار نی ہو گی
+                    <br />.٣. ماؤس کاٹ اور ایکسپائری تاریخ کی کمپنی ذمدار نی ہو گی
+                    <br />.٤. باؤنس چیک کی کمپنی 300 روپے وصول کی جاےگی
+                    <br />ڈائریکٹر واحد صاحب
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="" style="margin-bottom: 20px;width: 31%;float: left;margin: 5px; font-size: 12px;" border="0">
+        <tbody>
+            <tr>
+                <th style="padding:2px;text-align:right;border-right-style: hidden;padding-bottom: 12px;">
+                    Recvr Name & Sign:
+                </th>
+                <td style="padding: 2px;width:120px;padding-bottom: 12px;border-bottom: 1px solid lightgray;"></td>
+            </tr>
+            <tr>
+                <th style="padding:2px;text-align:right;border-right-style: hidden;padding-bottom: 12px;">
+                    Remarks:
+                </th>
+                <td style="padding: 2px;border-bottom: 1px solid lightgray;"></td>
+            </tr>
+            <tr>
+                <th style="padding:2px;text-align:right;border-right-style: hidden;padding-bottom: 12px;">
+                    S.Officer Or Supp:
+                </th>
+                <td style="padding: 2px;padding-bottom: 12px; border-bottom: 1px solid lightgray;">
+                    @Model.SalesOfficer
+                </td>
+            </tr>
+            <tr>
+                <th style="padding:2px;text-align:right;border-right-style: hidden;padding-bottom: 13px;">
+                    Inv Generated By:
+                </th>
+                <td style="padding: 2px;padding-bottom: 13px;border-bottom: 1px solid lightgray;"></td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="" style="margin-bottom: 20px;width: 30%;float: left;margin: 5px;font-size:12px;" border="1">
+        <tbody>
+            <tr>
+                <th style="padding:2px;text-align:right;border-right-style: hidden;">
+                    Expense
+                </th>
+                <td style="padding: 2px;width:120px;">
+                    @{
+                        decimal parsedExpAmt = decimal.Parse(Model.Expense.ToString(), CultureInfo.InvariantCulture);
+                        string totalExpAmt = string.Format(ciPk, "{0:c}", parsedExpAmt);
+                    }
+                    @totalExpAmt
+                </td>
+            </tr>
+            <tr>
+                <th style="padding:2px;text-align:right;border-right-style: hidden;">
+                    Discount
+                </th>
+                <td style="padding: 2px;">
+                    @{
+                        decimal parsedDiscount = decimal.Parse(Model.Discount.ToString(), CultureInfo.InvariantCulture);
+                        string totalDiscount = string.Format(ciPk, "{0:c}", parsedDiscount);
+                    }
+                    @totalDiscount
+                </td>
+            </tr>
+            <tr>
+                <th style="padding:2px;text-align:right;border-right-style: hidden;">
+                    Discount 2
+                </th>
+                <td style="padding: 2px;">
+                    @{
+                        decimal parsedDiscount2 = decimal.Parse(Model.Discount2.ToString(), CultureInfo.InvariantCulture);
+                        string totalDiscount2 = string.Format(ciPk, "{0:c}", parsedDiscount2);
+                    }
+                    @totalDiscount2
+                </td>
+            </tr>
+            <tr>
+                <th style="padding:2px;text-align:right;border-right-style: hidden;">
+                    Sales Tax
+                </th>
+                <td style="padding: 2px;">
+                    @{
+                        decimal parsedTax = decimal.Parse(Model.SalesTax.ToString(), CultureInfo.InvariantCulture);
+                        string tax = string.Format(ciPk, "{0:c}", parsedTax);
+                    }
+                    @tax
+                </td>
+            </tr>
+            <tr>
+                <th style="padding:2px;text-align:right;border-right-style: hidden;">
+                    Sub Total
+                </th>
+                <td style="padding: 2px;">
+                    @{
+                        decimal parsedST = decimal.Parse(Model.SubTotal.ToString(), CultureInfo.InvariantCulture);
+                        string subTotal = string.Format(ciPk, "{0:c}", parsedST);
+                    }
+                    @subTotal
+                </td>
+            </tr>
+            <tr>
+                <th style="padding:2px;text-align:right;border-right-style: hidden;">
+                    Paid Amount
+                </th>
+                <td style="padding: 2px;">
+                    @{
+                        decimal parsedPaidAmt = decimal.Parse(Model.PaidAmount.ToString(), CultureInfo.InvariantCulture);
+                        string totalPaidAmt = string.Format(ciPk, "{0:c}", parsedPaidAmt);
+                    }
+                    @totalPaidAmt
+                </td>
+            </tr>
+            <tr>
+                <th style="padding:2px;text-align:right;border-right-style: hidden;">
+                    Total
+                </th>
+                <td style="padding: 2px;">
+                    @{
+                        decimal parsedNetTotal = decimal.Parse(Model.TotalAmount.ToString(), CultureInfo.InvariantCulture);
+                        string netTotal = string.Format(ciPk, "{0:c}", parsedNetTotal);
+                    }
+                    @netTotal
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="col-sm-12" style="width: 100%;margin-bottom: 20px;">
+        <tbody>
+            <tr>
+                <td style="text-align: center;font-size: 14px;">
+                    Developed By: Muhammad Ahsan (+92-332-2641184) & Syed Jamil (+92-345-3419534)
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,164 @@
+﻿@model HassanAyoubTraders.Models.ViewModels.InventoryOnHandViewModel
+@using System.Globalization;
+
+@{
+    CultureInfo ciPk = new CultureInfo("ur-PK");
+}
+
+
+@Html.HiddenFor(model => model.ReportName)
+
+<div id="dvTableHeader" class="dvTableHeader" style="text-align:center; display:none;">
+    <span>
+        <strong>@Model.ReportName</strong>
+    </span>
+    <hr />
+</div>
+
+<table class="table table-striped table-bordered datatable" id="tbl">
+    <thead>
+        <tr>
+            <th style="width: 5%; text-align:center;">Sr #</th>
+            <th scope="col" style="text-align:center;">Sub Item</th>
+            <th scope="col" style="text-align:center; width:80px;">P/Price</th>
+            <th scope="col" style="text-align:center; width:80px;">Op/ Qty</th>
+            <th scope="col" style="text-align:center; width:80px;">P/Qty</th>
+            <th scope="col" style="text-align:center; width:80px;">S/Qty</th>
+            <th scope="col" style="text-align:center; width:80px;">PR/Qty</th>
+            <th scope="col" style="text-align:center; width:80px;">SR/Qty</th>
+            <th scope="col" style="text-align:center; width:100px;">Available Qty</th>
+            <th scope="col" style="text-align:center; width:120px;">Available Stock</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @{
+            int srNo = 0;
+            foreach (var item in Model.InventoryOnHandList)
+            {
+                <tr>
+                    <td style="text-align:center;">
+                        <a href="javascript:void(0);" class="btn btn-xs lnkInvoice" title="Invoice"><i class=""></i>@(++srNo)</a>
+                    </td>
+                    <td>
+                        @item.Descriptions
+                    </td>
+                    <td style="text-align:right;">
+                        @{
+                            decimal parsedSalePrice = decimal.Parse(item.PurchasePrice.ToString(), CultureInfo.InvariantCulture);
+                            string SalePrice = string.Format(ciPk, "{0:c}", parsedSalePrice);
+                        }
+                        @SalePrice
+                    </td>
+                    <td style="text-align:center;">
+                        @item.OpeningInventoryQty
+                    </td>
+                    <td style="text-align:center;">
+                        @item.PurchaseQuantity
+                    </td>
+                    <td style="text-align:center;">
+                        @item.SaleQuantity
+                    </td>
+                    <td style="text-align:center;">
+                        @item.TotalPOReturnQty
+                    </td>
+                    <td style="text-align:center;">
+                        @item.TotalSOReturnQty
+                    </td>
+                    <td style="text-align:center;">
+                        @item.AvailableStock
+                    </td>
+                    <td style="text-align:right;">
+                        @{
+                            decimal pAvaStock = decimal.Parse((item.AvailableStock * item.PurchasePrice).ToString(), CultureInfo.InvariantCulture);
+                            string avaStock = string.Format(ciPk, "{0:c}", pAvaStock);
+                        }
+                        @avaStock
+                    </td>
+                </tr>
+            } }
+    </tbody>
+
+    <tfoot>
+        <tr style="background-color: #eee !important;">
+            <td></td>
+            <td style="text-align:center;">
+                <b>
+                    Total
+                </b>
+            </td>
+            <td style="text-align:right;">
+                <b>
+                </b>
+            </td>
+            <td style="text-align:center;">
+                <b>
+                    @{
+                        decimal prOP = decimal.Parse(Model.InventoryOnHandList.Sum(x => x.OpeningInventoryQty).ToString(), CultureInfo.InvariantCulture);
+                        string rOP = string.Format(ciPk, "{0}", prOP);
+                    }
+                    @rOP
+                </b>
+            </td>
+            <td style="text-align:center;">
+                <b>
+                    @{
+                        decimal prPurchaseQuantity = decimal.Parse(Model.InventoryOnHandList.Sum(x => x.PurchaseQuantity).ToString(), CultureInfo.InvariantCulture);
+                        string rPurchaseQuantity = string.Format(ciPk, "{0}", prPurchaseQuantity);
+                    }
+                    @rPurchaseQuantity
+                </b>
+            </td>
+            <td style="text-align:center;">
+                <b>
+                    @{
+                        decimal prSaleQuantity = decimal.Parse(Model.InventoryOnHandList.Sum(x => x.SaleQuantity).ToString(), CultureInfo.InvariantCulture);
+                        string rSaleQuantity = string.Format(ciPk, "{0}", prSaleQuantity);
+                    }
+                    @rSaleQuantity
+                </b>
+            </td>
+            <td style="text-align:center;">
+                <b>
+                    @{
+                        decimal prTotalPOReturnQty = decimal.Parse(Model.InventoryOnHandList.Sum(x => x.TotalPOReturnQty).ToString(), CultureInfo.InvariantCulture);
+                        string rTotalPOReturnQty = string.Format(ciPk, "{0}", prTotalPOReturnQty);
+                    }
+                    @rTotalPOReturnQty
+                </b>
+            </td>
+            <td style="text-align:center;">
+                <b>
+                    @{
+                        decimal prTotalSOReturnQty = decimal.Parse(Model.InventoryOnHandList.Sum(x => x.TotalSOReturnQty).ToString(), CultureInfo.InvariantCulture);
+                        string rTotalSOReturnQty = string.Format(ciPk, "{0}", prTotalSOReturnQty);
+                    }
+                    @rTotalSOReturnQty
+                </b>
+            </td>
+            <td style="text-align:center;">
+                <b>
+                    @{
+                        decimal prAvailableStock = decimal.Parse(Model.InventoryOnHandList.Sum(x => x.AvailableStock).ToString(), CultureInfo.InvariantCulture);
+                        string rAvailableStock = string.Format(ciPk, "{0}", prAvailableStock);
+                    }
+                    @rAvailableStock
+                </b>
+            </td>
+            <td style="text-align:right;">
+                <b>
+                    @{
+                        decimal prtAvailableStock = decimal.Parse((Model.InventoryOnHandList.Sum(x => (x.PurchasePrice * x.AvailableStock))).ToString(), CultureInfo.InvariantCulture);
+                        string rtAvailableStock = string.Format(ciPk, "{0:c}", prtAvailableStock);
+                    }
+                    @rtAvailableStock
+                </b>
+            </td>
+        </tr>
+    </tfoot>
+</table>
+<script>
+    $(document).ready(function () {
+        $('.datatable').DataTable();
+    });
+</script>

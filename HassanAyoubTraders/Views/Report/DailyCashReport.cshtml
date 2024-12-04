@@ -1,0 +1,97 @@
+﻿@model HassanAyoubTraders.Models.ViewModels.LedgerViewModel
+
+@{
+    ViewBag.Title = "DailyCashReport";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+@using (Html.BeginForm("", "", FormMethod.Post, new { id = "Cash Ledger" }))
+{
+    <div class="row clearfix">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="card">
+                <div class="header">
+                    <h2>
+                        Daily Cash/Bank Report
+                    </h2>
+                </div>
+                <div class="body">
+                    <div class="row clearfix">
+                        <div class="col-md-2">
+                            <p>
+                                <b>Report Date</b>
+                            </p>
+                            @Html.TextBoxFor(x => x.StartDate, new { @class = "form-control icon-download appdatepicker" })
+                        </div>
+                        <div class="col-md-4">
+                            <button id="btnSearch" type="button" style="top: 30px;" class="btn btn-danger waves-effect btn-sm">Search</button>
+                            <button id="btnPrint" type="button" style="top: 30px;" class="btn btn-danger waves-effect Print btn-sm">Print</button>
+                        </div>
+                    </div>
+
+                    <div class="row  ">
+                        <div class="col-md-12">
+                            <div id="divResult"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<script>
+
+    $(document).ready(function () {
+        $('#btnSearch').on('click', function () {
+            LoadOrders($('#StartDate').val());
+        });
+
+        $('.Print').on('click', function () {
+            var accId = 0;
+            var st = $('#StartDate').val();
+            var ed = $('#EndDate').val();
+
+            var src = getWebsiteUrl + "/PrintReports/ViewReport.aspx?ReportName=DailyCashReport&StartDate=" + st.replace("/", "|").replace("/", "|");
+            PrintPopup(src, 950, 650, "Daily Cash Report");
+        });
+
+    });
+
+    function LoadOrders(startdate) {
+        //$("#divResult").load('@Url.Action("GetDailyCashReportSearch")', { StartDate: startdate });
+
+        $('.page-loader-wrapper').show();
+        var model = {
+            StartDate: startdate
+        };
+
+        $.ajax({
+            type: "POST",
+            url: '@Url.Action("GetDailyCashReportSearch")',
+            data: JSON.stringify(model),
+            contentType: "application/json; charset=utf-8",
+            dataType: "html",
+            success: function (response) {
+                $('#divResult').html(response);
+                $('.page-loader-wrapper').hide();
+            },
+            failure: function (response) {
+                $('.page-loader-wrapper').hide();
+                alert(response.responseText);
+            },
+            error: function (response) {
+                $('.page-loader-wrapper').hide();
+                alert(response.responseText);
+            }
+        });
+    }
+
+</script>
+
+
+
+
+
+

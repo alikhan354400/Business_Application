@@ -1,0 +1,101 @@
+﻿@model  List<EmanTraders.Models.EF.BrowseExpenses_Result>
+@using System.Globalization;
+@{
+    CultureInfo ciPk = new CultureInfo("ur-PK");
+}
+
+
+<div class="row clearfix">
+    <div class="col-md-12">
+        <div>
+            <table class="table table-striped table-bordered datatable" id="tblList">
+                <thead>
+                    <tr>
+                        <th style="width:10%;">Expense #</th>
+                        <th style="width:10%;">Expense Date</th>
+                        <th style="width:15%;">Expense For</th>
+                        <th style="width:20%;">Detail</th>
+                        <th style="width:25%;">Particular</th>
+                        <th>Amount</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @item.ExpenseID
+                            </td>
+                            <td>@(item.PaymentDate.HasValue == false ? "" : @item.PaymentDate.Value.ToString("dd/MM/yyyy"))</td>
+                            <td>
+                                @item.ExpenseType
+                            </td>
+                            <td>
+                                @if (item.PaymentMethod.Equals("Cash"))
+                                {
+                                    <div>
+                                        <p> <strong>Payment Mode:</strong> @item.PaymentMethod</p>
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div>
+                                        <p style="margin: 0px 0px 0px;"> <strong>Payment Mode:</strong> @item.PaymentMethod</p>
+                                        <p style="margin: 0px 0px 0px;"> <strong>Bank:</strong> @item.BankName</p>
+                                        <p style="margin: 0px 0px 0px;"> <strong>Check/Online #:</strong> @item.CheckNumberOrOnlineReciptNumber</p>
+                                        <p style="margin: 0px 0px 0px;"> <strong>Date:</strong> @item.CheckDate.Value.ToShortDateString()</p>
+                                    </div>
+                                }
+                            </td>
+                            <td>
+                                @item.Particulars
+                            </td>
+                            <td>
+                                @{
+                                    decimal parsedAmount = decimal.Parse(item.Amount.ToString(), CultureInfo.InvariantCulture);
+                                    string amnt = string.Format(ciPk, "{0:c}", parsedAmount);
+                                }
+                                @amnt
+                            </td>
+                            <td>
+                                <div class="dt-buttons">
+                                    <a href="#" data-id="@item.ExpenseID" class="btn btn-xs edit" title="Edit"><i class="fa fa-pencil-square-o"></i></a>
+                                    |
+                                    <a href="#" data-id="@item.ExpenseID" class="btn btn-xs delete" title="Remove"><i class="fa fa-trash"></i></a>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>
+
+
+<script>
+    $(document).ready(function () {
+
+        $('.datatable').DataTable({
+            responsive: true
+        });
+
+        $('.datatable').on('click', '.delete', function () {
+            var id = $(this).attr("data-id");
+            RemoveRow(id);
+
+        });
+
+        $('.datatable').on('click', '.edit', function () {
+            var id = $(this).attr("data-id");
+            $('.page-loader-wrapper').show();
+            var url = getWebsiteUrl + "/Expense/Expense?Id=" + id;
+            window.location.href = url;
+        });
+
+    });
+</script>

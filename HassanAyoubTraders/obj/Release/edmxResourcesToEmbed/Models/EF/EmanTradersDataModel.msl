@@ -1,0 +1,2272 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="EmanTradersDBModelStoreContainer" CdmEntityContainer="EmanTradersDBEntities">
+    <EntitySetMapping Name="Accounts">
+      <EntityTypeMapping TypeName="EmanTradersDBModel.Account">
+        <MappingFragment StoreEntitySet="Accounts">
+          <ScalarProperty Name="ModifyBy" ColumnName="ModifyBy" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="IsCashAccount" ColumnName="IsCashAccount" />
+          <ScalarProperty Name="NTN" ColumnName="NTN" />
+          <ScalarProperty Name="STR" ColumnName="STR" />
+          <ScalarProperty Name="Salary" ColumnName="Salary" />
+          <ScalarProperty Name="HiringDate" ColumnName="HiringDate" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+          <ScalarProperty Name="CityArea" ColumnName="CityArea" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="CNIC" ColumnName="CNIC" />
+          <ScalarProperty Name="OpeningBalanceDate" ColumnName="OpeningBalanceDate" />
+          <ScalarProperty Name="OpeningBalance" ColumnName="OpeningBalance" />
+          <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+          <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="AccountTite" ColumnName="AccountTite" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="AccountTypeID" ColumnName="AccountTypeID" />
+          <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetRoles">
+      <EntityTypeMapping TypeName="EmanTradersDBModel.AspNetRole">
+        <MappingFragment StoreEntitySet="AspNetRoles">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUserClaims">
+      <EntityTypeMapping TypeName="EmanTradersDBModel.AspNetUserClaim">
+        <MappingFragment StoreEntitySet="AspNetUserClaims">
+          <ScalarProperty Name="ClaimValue" ColumnName="ClaimValue" />
+          <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUserLogins">
+      <EntityTypeMapping TypeName="EmanTradersDBModel.AspNetUserLogin">
+        <MappingFragment StoreEntitySet="AspNetUserLogins">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
+          <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUserRoles">
+      <EntityTypeMapping TypeName="EmanTradersDBModel.AspNetUserRole">
+        <MappingFragment StoreEntitySet="AspNetUserRoles">
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUsers">
+      <EntityTypeMapping TypeName="EmanTradersDBModel.AspNetUser">
+        <MappingFragment StoreEntitySet="AspNetUsers">
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+          <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
+          <ScalarProperty Name="LockoutEndDateUtc" ColumnName="LockoutEndDateUtc" />
+          <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
+          <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+          <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+          <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Banks">
+      <EntityTypeMapping TypeName="EmanTradersDBModel.Bank">
+        <MappingFragment StoreEntitySet="Bank">
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="ModifyBy" ColumnName="ModifyBy" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
+          <ScalarProperty Name="OpeningBalanceDate" ColumnName="OpeningBalanceDate" />
+          <ScalarProperty Name="OpeningBalance" ColumnName="OpeningBalance" />
+          <ScalarProperty Name="AccountNumber" ColumnName="AccountNumber" />
+          <ScalarProperty Name="AccountTitle" ColumnName="AccountTitle" />
+          <ScalarProperty Name="BankBranchCity" ColumnName="BankBranchCity" />
+          <ScalarProperty Name="BankBranch" ColumnName="BankBranch" />
+          <ScalarProperty Name="BankName" ColumnName="BankName" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BankToBankTransfers">
+      <EntityTypeMapping TypeName="EmanTradersDBModel.BankToBankTransfer">
+        <MappingFragment StoreEntitySet="BankToBankTransfers">
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="ServiceCharges" ColumnName="ServiceCharges" />
+          <ScalarProperty Name="TransferDate" ColumnName="TransferDate" />
+          <ScalarProperty Name="ToBankID" ColumnName="ToBankID" />
+          <ScalarProperty Name="FromBankID" ColumnName="FromBankID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ChartofAccounts">
+      <EntityTypeMapping TypeName="EmanTradersDBModel.ChartofAccount">
+        <MappingFragment StoreEntitySet="ChartofAccounts">
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="AccountTypeID" ColumnName="AccountTypeID" />
+          <ScalarProperty Name="AccountName" ColumnName="AccountName" />
+          <ScalarProperty Name="AccountCode" ColumnName="AccountCode" />
+          <ScalarProperty Name="ChartofAccountID" ColumnName="ChartofAccountID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ChartOfAccountTypes">
+      <EntityTypeMapping TypeName="EmanTradersDBModel.ChartOfAccountType">
+        <MappingFragment StoreEntitySet="ChartOfAccountTypes">
+          <ScalarProperty Name="TransType" ColumnName="TransType" />
+          <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+          <ScalarProperty Name="ShortCode" ColumnName="ShortCode" />
+          <ScalarProperty Name="AccountType" ColumnName="AccountType" />
+          <ScalarProperty Name="ChartOfAccountTypeID" ColumnName="ChartOfAccountTypeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cities">
+      <EntityTypeMapping TypeName="EmanTradersDBModel.City">
+        <MappingFragment StoreEntitySet="Cities">
+          <ScalarProperty Name="State_Id" ColumnName="State_Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CityAreas">
+      <EntityTypeMapping TypeName="EmanTradersDBModel.CityArea">
+        <MappingFragment StoreEntitySet="CityArea">
+          <ScalarProperty Name="CityId" ColumnName="CityId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Codes">
+      <EntityTypeMapping TypeName="EmanTradersDBModel.Code">
+        <MappingFragment StoreEntitySet="Codes">
+          <ScalarProperty Name="ModifyBy" ColumnName="ModifyBy" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+          <ScalarProperty Name="CodeValue" ColumnName="CodeValue" />
+          <ScalarProperty Name="CodeType" ColumnName="CodeType" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CompanyInformations">
+      <EntityTypeMapping TypeName="EmanTradersDBModel.CompanyInformation">
+        <MappingFragment StoreEntitySet="CompanyInformation">
+          <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="STRNNumber" ColumnName="STRNNumber" />
+          <ScalarProperty Name="ReferenceNumber" ColumnName="ReferenceNumber" />
+          <ScalarProperty Name="RegistrationNumber" ColumnName="RegistrationNumber" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="ContactNo2" ColumnName="ContactNo2" />
+          <ScalarProperty Name="ContactNo1" ColumnName="ContactNo1" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="OwnerName" ColumnName="OwnerName" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Countries">
+      <EntityTypeMapping TypeName="EmanTradersDBModel.Country">
+        <MappingFragment StoreEntitySet="Countries">
+          <ScalarProperty Name="PhoneCode" ColumnName="PhoneCode" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="SortName" ColumnName="SortName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Designations">
+      <EntityTypeMapping TypeName="EmanTradersDBModel.Designation">
+        <MappingFragment StoreEntitySet="Designations">
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="ModifyBy" ColumnName="ModifyBy" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employees">
+      <EntityTypeMapping TypeName="EmanTradersDBModel.Employee">
+        <MappingFragment StoreEntitySet="Employee">
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="EmployeeTypeID" ColumnName="EmployeeTypeID" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="BranchID" ColumnName="BranchID" />
+          <ScalarProperty Name="MonthlySalary" ColumnName="MonthlySalary" />
+          <ScalarProperty Name="HiringDate" ColumnName="HiringDate" />
+          <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+          <ScalarProperty Name="CNICNo" ColumnName="CNICNo" />
+          <ScalarProperty Name="EmpName" ColumnName="EmpName" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EntryTypes">
+      <EntityTypeMapping TypeName="EmanTradersDBModel.EntryType">
+        <MappingFragment StoreEntitySet="EntryType">
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Expenses">
+      <EntityTypeMapping TypeName="EmanTradersDBModel.Expens">
+        <MappingFragment StoreEntitySet="Expenses">
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="ExpenseTypeID" ColumnName="ExpenseTypeID" />
+          <ScalarProperty Name="BranchID" ColumnName="BranchID" />
+          <ScalarProperty Name="BankID" ColumnName="BankID" />
+          <ScalarProperty Name="ModifyBy" ColumnName="ModifyBy" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="VoucherType" ColumnName="VoucherType" />
+          <ScalarProperty Name="Particulars" ColumnName="Particulars" />
+          <ScalarProperty Name="PaymentDate" ColumnName="PaymentDate" />
+          <ScalarProperty Name="CheckDate" ColumnName="CheckDate" />
+          <ScalarProperty Name="CheckNumberOrOnlineReciptNumber" ColumnName="CheckNumberOrOnlineReciptNumber" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="PaymentModeID" ColumnName="PaymentModeID" />
+          <ScalarProperty Name="AccountID" ColumnName="AccountID" />
+          <ScalarProperty Name="ExpenseID" ColumnName="ExpenseID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Inventories">
+      <EntityTypeMapping TypeName="EmanTradersDBModel.Inventory">
+        <MappingFragment StoreEntitySet="Inventory">
+          <ScalarProperty Name="RecordID" ColumnName="RecordID" />
+          <ScalarProperty Name="RecordType" ColumnName="RecordType" />
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="SalePrice" ColumnName="SalePrice" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="SubItemID" ColumnName="SubItemID" />
+          <ScalarProperty Name="InventoryID" ColumnName="InventoryID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Items">
+      <EntityTypeMapping TypeName="EmanTradersDBModel.Item">
+        <MappingFragment StoreEntitySet="Items">
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifyBy" ColumnName="ModifyBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="IsScrap" ColumnName="IsScrap" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+          <ScalarProperty Name="ProductImage" ColumnName="ProductImage" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="UnitTypeID" ColumnName="UnitTypeID" />
+          <ScalarProperty Name="VendorId" ColumnName="VendorId" />
+          <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Payments">
+      <EntityTypeMapping TypeName="EmanTradersDBModel.Payment">
+        <MappingFragment StoreEntitySet="Payment">
+          <ScalarProperty Name="OrderNumber" ColumnName="OrderNumber" />
+          <ScalarProperty Name="PaymentHeaderID" ColumnName="PaymentHeaderID" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="BankID" ColumnName="BankID" />
+          <ScalarProperty Name="ModifyBy" ColumnName="ModifyBy" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="RecordId" ColumnName="RecordId" />
+          <ScalarProperty Name="RecordType" ColumnName="RecordType" />
+          <ScalarProperty Name="VoucherType" ColumnName="VoucherType" />
+          <ScalarProperty Name="Particulars" ColumnName="Particulars" />
+          <ScalarProperty Name="TransactionDate" ColumnName="TransactionDate" />
+          <ScalarProperty Name="CheckDate" ColumnName="CheckDate" />
+          <ScalarProperty Name="CheckNumberOrOnlineReciptNumber" ColumnName="CheckNumberOrOnlineReciptNumber" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="PaymentMode" ColumnName="PaymentMode" />
+          <ScalarProperty Name="AccountID" ColumnName="AccountID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PaymentHeaders">
+      <EntityTypeMapping TypeName="EmanTradersDBModel.PaymentHeader">
+        <MappingFragment StoreEntitySet="PaymentHeader">
+          <ScalarProperty Name="PaymentDate" ColumnName="PaymentDate" />
+          <ScalarProperty Name="ModifyBy" ColumnName="ModifyBy" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="VoucherType" ColumnName="VoucherType" />
+          <ScalarProperty Name="Particulars" ColumnName="Particulars" />
+          <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+          <ScalarProperty Name="ReceiptNo" ColumnName="ReceiptNo" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProfitAndLosses">
+      <EntityTypeMapping TypeName="EmanTradersDBModel.ProfitAndLoss">
+        <MappingFragment StoreEntitySet="ProfitAndLoss">
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="RecordType" ColumnName="RecordType" />
+          <ScalarProperty Name="RecordID" ColumnName="RecordID" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="TransID" ColumnName="TransID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PurchaseOrders">
+      <EntityTypeMapping TypeName="EmanTradersDBModel.PurchaseOrder">
+        <MappingFragment StoreEntitySet="PurchaseOrder">
+          <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+          <ScalarProperty Name="IsTaxInvoice" ColumnName="IsTaxInvoice" />
+          <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+          <ScalarProperty Name="BookerID" ColumnName="BookerID" />
+          <ScalarProperty Name="SalesOrderID" ColumnName="SalesOrderID" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+          <ScalarProperty Name="PaidAmount" ColumnName="PaidAmount" />
+          <ScalarProperty Name="SalesTax" ColumnName="SalesTax" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="Expense" ColumnName="Expense" />
+          <ScalarProperty Name="SubTotal" ColumnName="SubTotal" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
+          <ScalarProperty Name="PODate" ColumnName="PODate" />
+          <ScalarProperty Name="VendorID" ColumnName="VendorID" />
+          <ScalarProperty Name="EntryTypeID" ColumnName="EntryTypeID" />
+          <ScalarProperty Name="RecordType" ColumnName="RecordType" />
+          <ScalarProperty Name="PONumber" ColumnName="PONumber" />
+          <ScalarProperty Name="PurchaseOrderID" ColumnName="PurchaseOrderID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PurchaseOrderLines">
+      <EntityTypeMapping TypeName="EmanTradersDBModel.PurchaseOrderLine">
+        <MappingFragment StoreEntitySet="PurchaseOrderLine">
+          <ScalarProperty Name="SOLineID" ColumnName="SOLineID" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+          <ScalarProperty Name="SubTotal" ColumnName="SubTotal" />
+          <ScalarProperty Name="SalesTax" ColumnName="SalesTax" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="T_O" ColumnName="T_O" />
+          <ScalarProperty Name="SalePrice" ColumnName="SalePrice" />
+          <ScalarProperty Name="PurchasePrice" ColumnName="PurchasePrice" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="SubItemID" ColumnName="SubItemID" />
+          <ScalarProperty Name="PurchaseOrderID" ColumnName="PurchaseOrderID" />
+          <ScalarProperty Name="PurchaseOrderLineID" ColumnName="PurchaseOrderLineID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PurchaseOrderReturns">
+      <EntityTypeMapping TypeName="EmanTradersDBModel.PurchaseOrderReturn">
+        <MappingFragment StoreEntitySet="PurchaseOrderReturn">
+          <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+          <ScalarProperty Name="BookerID" ColumnName="BookerID" />
+          <ScalarProperty Name="SalesOrderID" ColumnName="SalesOrderID" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+          <ScalarProperty Name="PaidAmount" ColumnName="PaidAmount" />
+          <ScalarProperty Name="SalesTax" ColumnName="SalesTax" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="Expense" ColumnName="Expense" />
+          <ScalarProperty Name="SubTotal" ColumnName="SubTotal" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
+          <ScalarProperty Name="PODate" ColumnName="PODate" />
+          <ScalarProperty Name="VendorID" ColumnName="VendorID" />
+          <ScalarProperty Name="EntryTypeID" ColumnName="EntryTypeID" />
+          <ScalarProperty Name="RecordType" ColumnName="RecordType" />
+          <ScalarProperty Name="PONumber" ColumnName="PONumber" />
+          <ScalarProperty Name="PurchaseOrderReturnID" ColumnName="PurchaseOrderReturnID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PurchaseOrderReturnLines">
+      <EntityTypeMapping TypeName="EmanTradersDBModel.PurchaseOrderReturnLine">
+        <MappingFragment StoreEntitySet="PurchaseOrderReturnLine">
+          <ScalarProperty Name="SOLineID" ColumnName="SOLineID" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+          <ScalarProperty Name="SubTotal" ColumnName="SubTotal" />
+          <ScalarProperty Name="SalesTax" ColumnName="SalesTax" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="T_O" ColumnName="T_O" />
+          <ScalarProperty Name="SalePrice" ColumnName="SalePrice" />
+          <ScalarProperty Name="PurchasePrice" ColumnName="PurchasePrice" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="SubItemID" ColumnName="SubItemID" />
+          <ScalarProperty Name="PurchaseOrderReturnID" ColumnName="PurchaseOrderReturnID" />
+          <ScalarProperty Name="PurchaseOrderReturnLineID" ColumnName="PurchaseOrderReturnLineID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SaleOrders">
+      <EntityTypeMapping TypeName="EmanTradersDBModel.SaleOrder">
+        <MappingFragment StoreEntitySet="SaleOrder">
+          <ScalarProperty Name="Discount2" ColumnName="Discount2" />
+          <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+          <ScalarProperty Name="IsTaxInvoice" ColumnName="IsTaxInvoice" />
+          <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+          <ScalarProperty Name="BookerID" ColumnName="BookerID" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="NetTotalAmount" ColumnName="NetTotalAmount" />
+          <ScalarProperty Name="PaidAmount" ColumnName="PaidAmount" />
+          <ScalarProperty Name="SalesTax" ColumnName="SalesTax" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="Expense" ColumnName="Expense" />
+          <ScalarProperty Name="SubTotal" ColumnName="SubTotal" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
+          <ScalarProperty Name="SODate" ColumnName="SODate" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="EntryTypeID" ColumnName="EntryTypeID" />
+          <ScalarProperty Name="RecordType" ColumnName="RecordType" />
+          <ScalarProperty Name="SONumber" ColumnName="SONumber" />
+          <ScalarProperty Name="SaleOrderID" ColumnName="SaleOrderID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SaleOrderLines">
+      <EntityTypeMapping TypeName="EmanTradersDBModel.SaleOrderLine">
+        <MappingFragment StoreEntitySet="SaleOrderLine">
+          <ScalarProperty Name="PurchasePrice" ColumnName="PurchasePrice" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="InventoryID" ColumnName="InventoryID" />
+          <ScalarProperty Name="NetTotalAmount" ColumnName="NetTotalAmount" />
+          <ScalarProperty Name="SubTotal" ColumnName="SubTotal" />
+          <ScalarProperty Name="SalesTax" ColumnName="SalesTax" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="T_O" ColumnName="T_O" />
+          <ScalarProperty Name="SalePrice" ColumnName="SalePrice" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="SubItemID" ColumnName="SubItemID" />
+          <ScalarProperty Name="SaleOrderID" ColumnName="SaleOrderID" />
+          <ScalarProperty Name="SaleOrderLineID" ColumnName="SaleOrderLineID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SaleOrderReturns">
+      <EntityTypeMapping TypeName="EmanTradersDBModel.SaleOrderReturn">
+        <MappingFragment StoreEntitySet="SaleOrderReturn">
+          <ScalarProperty Name="IsTaxInvoice" ColumnName="IsTaxInvoice" />
+          <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+          <ScalarProperty Name="BookerID" ColumnName="BookerID" />
+          <ScalarProperty Name="NetTotalAmount" ColumnName="NetTotalAmount" />
+          <ScalarProperty Name="PaidAmount" ColumnName="PaidAmount" />
+          <ScalarProperty Name="SalesTax" ColumnName="SalesTax" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="TotalExpense" ColumnName="TotalExpense" />
+          <ScalarProperty Name="SubTotal" ColumnName="SubTotal" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
+          <ScalarProperty Name="SODate" ColumnName="SODate" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="EntryTypeID" ColumnName="EntryTypeID" />
+          <ScalarProperty Name="RecordType" ColumnName="RecordType" />
+          <ScalarProperty Name="SONumber" ColumnName="SONumber" />
+          <ScalarProperty Name="SaleOrderReturnID" ColumnName="SaleOrderReturnID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SaleOrderReturnLines">
+      <EntityTypeMapping TypeName="EmanTradersDBModel.SaleOrderReturnLine">
+        <MappingFragment StoreEntitySet="SaleOrderReturnLine">
+          <ScalarProperty Name="PurchasePrice" ColumnName="PurchasePrice" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="InventoryID" ColumnName="InventoryID" />
+          <ScalarProperty Name="NetTotalAmount" ColumnName="NetTotalAmount" />
+          <ScalarProperty Name="SubTotal" ColumnName="SubTotal" />
+          <ScalarProperty Name="SalesTaxRate" ColumnName="SalesTaxRate" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="T_O" ColumnName="T_O" />
+          <ScalarProperty Name="SalePrice" ColumnName="SalePrice" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="SubItemID" ColumnName="SubItemID" />
+          <ScalarProperty Name="SaleOrderReturnID" ColumnName="SaleOrderReturnID" />
+          <ScalarProperty Name="SaleOrderReturnLineID" ColumnName="SaleOrderReturnLineID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StatesByCountryIDs">
+      <EntityTypeMapping TypeName="EmanTradersDBModel.StatesByCountryID">
+        <MappingFragment StoreEntitySet="StatesByCountryID">
+          <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SubItems">
+      <EntityTypeMapping TypeName="EmanTradersDBModel.SubItem">
+        <MappingFragment StoreEntitySet="SubItem">
+          <ScalarProperty Name="PicesPerCorton" ColumnName="PicesPerCorton" />
+          <ScalarProperty Name="SubItemCode" ColumnName="SubItemCode" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="IsScrap" ColumnName="IsScrap" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="OpeningInventoryQty" ColumnName="OpeningInventoryQty" />
+          <ScalarProperty Name="OpeningInventoryId" ColumnName="OpeningInventoryId" />
+          <ScalarProperty Name="Diameter" ColumnName="Diameter" />
+          <ScalarProperty Name="Height" ColumnName="Height" />
+          <ScalarProperty Name="Width" ColumnName="Width" />
+          <ScalarProperty Name="Length" ColumnName="Length" />
+          <ScalarProperty Name="RPCharges" ColumnName="RPCharges" />
+          <ScalarProperty Name="SalesTax" ColumnName="SalesTax" />
+          <ScalarProperty Name="SalePrice" ColumnName="SalePrice" />
+          <ScalarProperty Name="PurchasePrice" ColumnName="PurchasePrice" />
+          <ScalarProperty Name="SubItemName" ColumnName="SubItemName" />
+          <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+          <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="SubItemID" ColumnName="SubItemID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Transactions">
+      <EntityTypeMapping TypeName="EmanTradersDBModel.Transaction">
+        <MappingFragment StoreEntitySet="Transactions">
+          <ScalarProperty Name="RecordType" ColumnName="RecordType" />
+          <ScalarProperty Name="RecordID" ColumnName="RecordID" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CR" ColumnName="CR" />
+          <ScalarProperty Name="DR" ColumnName="DR" />
+          <ScalarProperty Name="TransDate" ColumnName="TransDate" />
+          <ScalarProperty Name="AccountCode" ColumnName="AccountCode" />
+          <ScalarProperty Name="TransID" ColumnName="TransID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UnitTypes">
+      <EntityTypeMapping TypeName="EmanTradersDBModel.UnitType">
+        <MappingFragment StoreEntitySet="UnitTypes">
+          <ScalarProperty Name="UnitType1" ColumnName="UnitType" />
+          <ScalarProperty Name="UnitTypeID" ColumnName="UnitTypeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="EmanTradersDBModel.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="ModifyBy" ColumnName="ModifyBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="BranchID" ColumnName="BranchID" />
+          <ScalarProperty Name="SimplePassword" ColumnName="SimplePassword" />
+          <ScalarProperty Name="AspNetUserID" ColumnName="AspNetUserID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vv_ProfitLossExpanse">
+      <EntityTypeMapping TypeName="EmanTradersDBModel.vv_ProfitLossExpanse">
+        <MappingFragment StoreEntitySet="vv_ProfitLossExpanse">
+          <ScalarProperty Name="ExpenseID" ColumnName="ExpenseID" />
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="PaymentDate" ColumnName="PaymentDate" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vv_ProfitLossGrossProfit">
+      <EntityTypeMapping TypeName="EmanTradersDBModel.vv_ProfitLossGrossProfit">
+        <MappingFragment StoreEntitySet="vv_ProfitLossGrossProfit">
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="Dis" ColumnName="Dis" />
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="SoDate" ColumnName="SoDate" />
+          <ScalarProperty Name="SaleOrderID" ColumnName="SaleOrderID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vv_ProfitLossPurchase">
+      <EntityTypeMapping TypeName="EmanTradersDBModel.vv_ProfitLossPurchase">
+        <MappingFragment StoreEntitySet="vv_ProfitLossPurchase">
+          <ScalarProperty Name="PurchaseOrderID" ColumnName="PurchaseOrderID" />
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="PoDate" ColumnName="PoDate" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vv_ProfitLossSale">
+      <EntityTypeMapping TypeName="EmanTradersDBModel.vv_ProfitLossSale">
+        <MappingFragment StoreEntitySet="vv_ProfitLossSale">
+          <ScalarProperty Name="SaleOrderID" ColumnName="SaleOrderID" />
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="SoDate" ColumnName="SoDate" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_AccountTransactions">
+      <EntityTypeMapping TypeName="EmanTradersDBModel.vw_AccountTransactions">
+        <MappingFragment StoreEntitySet="vw_AccountTransactions">
+          <ScalarProperty Name="Particular" ColumnName="Particular" />
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="ChartOfAccountName" ColumnName="ChartOfAccountName" />
+          <ScalarProperty Name="AccountName" ColumnName="AccountName" />
+          <ScalarProperty Name="AccountID" ColumnName="AccountID" />
+          <ScalarProperty Name="BankID" ColumnName="BankID" />
+          <ScalarProperty Name="RecordType" ColumnName="RecordType" />
+          <ScalarProperty Name="RecordID" ColumnName="RecordID" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CR" ColumnName="CR" />
+          <ScalarProperty Name="DR" ColumnName="DR" />
+          <ScalarProperty Name="TransDate" ColumnName="TransDate" />
+          <ScalarProperty Name="AccountCode" ColumnName="AccountCode" />
+          <ScalarProperty Name="TransID" ColumnName="TransID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_BankTransactions">
+      <EntityTypeMapping TypeName="EmanTradersDBModel.vw_BankTransactions">
+        <MappingFragment StoreEntitySet="vw_BankTransactions">
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="AccountName" ColumnName="AccountName" />
+          <ScalarProperty Name="AccountID" ColumnName="AccountID" />
+          <ScalarProperty Name="BankID" ColumnName="BankID" />
+          <ScalarProperty Name="RecordType" ColumnName="RecordType" />
+          <ScalarProperty Name="RecordID" ColumnName="RecordID" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CR" ColumnName="CR" />
+          <ScalarProperty Name="DR" ColumnName="DR" />
+          <ScalarProperty Name="TransDate" ColumnName="TransDate" />
+          <ScalarProperty Name="AccountCode" ColumnName="AccountCode" />
+          <ScalarProperty Name="TransID" ColumnName="TransID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_CashTransactions">
+      <EntityTypeMapping TypeName="EmanTradersDBModel.vw_CashTransactions">
+        <MappingFragment StoreEntitySet="vw_CashTransactions">
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="AccountName" ColumnName="AccountName" />
+          <ScalarProperty Name="AccountID" ColumnName="AccountID" />
+          <ScalarProperty Name="RecordType" ColumnName="RecordType" />
+          <ScalarProperty Name="RecordID" ColumnName="RecordID" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CR" ColumnName="CR" />
+          <ScalarProperty Name="DR" ColumnName="DR" />
+          <ScalarProperty Name="TransDate" ColumnName="TransDate" />
+          <ScalarProperty Name="AccountCode" ColumnName="AccountCode" />
+          <ScalarProperty Name="TransID" ColumnName="TransID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_DailyCashTransactions">
+      <EntityTypeMapping TypeName="EmanTradersDBModel.vw_DailyCashTransactions">
+        <MappingFragment StoreEntitySet="vw_DailyCashTransactions">
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="CR" ColumnName="CR" />
+          <ScalarProperty Name="DR" ColumnName="DR" />
+          <ScalarProperty Name="AccountName" ColumnName="AccountName" />
+          <ScalarProperty Name="AccountID" ColumnName="AccountID" />
+          <ScalarProperty Name="Particular" ColumnName="Particular" />
+          <ScalarProperty Name="ChartOfAccountName" ColumnName="ChartOfAccountName" />
+          <ScalarProperty Name="AccountCode" ColumnName="AccountCode" />
+          <ScalarProperty Name="TransDate" ColumnName="TransDate" />
+          <ScalarProperty Name="TransID" ColumnName="TransID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_DetailLedgerStatement">
+      <EntityTypeMapping TypeName="EmanTradersDBModel.vw_DetailLedgerStatement">
+        <MappingFragment StoreEntitySet="vw_DetailLedgerStatement">
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="RecordId" ColumnName="RecordId" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="Cr" ColumnName="Cr" />
+          <ScalarProperty Name="Dr" ColumnName="Dr" />
+          <ScalarProperty Name="Rate" ColumnName="Rate" />
+          <ScalarProperty Name="OutQty" ColumnName="OutQty" />
+          <ScalarProperty Name="InQty" ColumnName="InQty" />
+          <ScalarProperty Name="Descriptions" ColumnName="Descriptions" />
+          <ScalarProperty Name="TransDate" ColumnName="TransDate" />
+          <ScalarProperty Name="AccountName" ColumnName="AccountName" />
+          <ScalarProperty Name="AccountId" ColumnName="AccountId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_GetAvailableStockBySubItem">
+      <EntityTypeMapping TypeName="EmanTradersDBModel.vw_GetAvailableStockBySubItem">
+        <MappingFragment StoreEntitySet="vw_GetAvailableStockBySubItem">
+          <ScalarProperty Name="AvailableStock" ColumnName="AvailableStock" />
+          <ScalarProperty Name="SubItemID" ColumnName="SubItemID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_GetCustomerAllTableInfo">
+      <EntityTypeMapping TypeName="EmanTradersDBModel.vw_GetCustomerAllTableInfo">
+        <MappingFragment StoreEntitySet="vw_GetCustomerAllTableInfo">
+          <ScalarProperty Name="SalesOfficer" ColumnName="SalesOfficer" />
+          <ScalarProperty Name="CityAreaName" ColumnName="CityAreaName" />
+          <ScalarProperty Name="CityAreaID" ColumnName="CityAreaID" />
+          <ScalarProperty Name="CityName" ColumnName="CityName" />
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+          <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+          <ScalarProperty Name="SODate" ColumnName="SODate" />
+          <ScalarProperty Name="RecordType" ColumnName="RecordType" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="RecordID" ColumnName="RecordID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_GetPOReReturnItemForInventory">
+      <EntityTypeMapping TypeName="EmanTradersDBModel.vw_GetPOReReturnItemForInventory">
+        <MappingFragment StoreEntitySet="vw_GetPOReReturnItemForInventory">
+          <ScalarProperty Name="SubItemID" ColumnName="SubItemID" />
+          <ScalarProperty Name="TotalPORQty" ColumnName="TotalPORQty" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_GetSalesItemForInventory">
+      <EntityTypeMapping TypeName="EmanTradersDBModel.vw_GetSalesItemForInventory">
+        <MappingFragment StoreEntitySet="vw_GetSalesItemForInventory">
+          <ScalarProperty Name="SubItemID" ColumnName="SubItemID" />
+          <ScalarProperty Name="TotalSOQty" ColumnName="TotalSOQty" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_GetSOReReturnItemForInventory">
+      <EntityTypeMapping TypeName="EmanTradersDBModel.vw_GetSOReReturnItemForInventory">
+        <MappingFragment StoreEntitySet="vw_GetSOReReturnItemForInventory">
+          <ScalarProperty Name="SubItemID" ColumnName="SubItemID" />
+          <ScalarProperty Name="TotalSORQty" ColumnName="TotalSORQty" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_InvertoryOnHandAllTypes">
+      <EntityTypeMapping TypeName="EmanTradersDBModel.vw_InvertoryOnHandAllTypes">
+        <MappingFragment StoreEntitySet="vw_InvertoryOnHandAllTypes">
+          <ScalarProperty Name="DeailID" ColumnName="DeailID" />
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="RecordType" ColumnName="RecordType" />
+          <ScalarProperty Name="RecordID" ColumnName="RecordID" />
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="SalePrice" ColumnName="SalePrice" />
+          <ScalarProperty Name="PurchasePrice" ColumnName="PurchasePrice" />
+          <ScalarProperty Name="InventoryID" ColumnName="InventoryID" />
+          <ScalarProperty Name="SubItemName" ColumnName="SubItemName" />
+          <ScalarProperty Name="SubItemID" ColumnName="SubItemID" />
+          <ScalarProperty Name="ItemName" ColumnName="ItemName" />
+          <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_PaymentDetailForHeader">
+      <EntityTypeMapping TypeName="EmanTradersDBModel.vw_PaymentDetailForHeader">
+        <MappingFragment StoreEntitySet="vw_PaymentDetailForHeader">
+          <ScalarProperty Name="PaymentDetail" ColumnName="PaymentDetail" />
+          <ScalarProperty Name="PaymentHeaderID" ColumnName="PaymentHeaderID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_PaymentHeader">
+      <EntityTypeMapping TypeName="EmanTradersDBModel.vw_PaymentHeader">
+        <MappingFragment StoreEntitySet="vw_PaymentHeader">
+          <ScalarProperty Name="PaymentDetail" ColumnName="PaymentDetail" />
+          <ScalarProperty Name="VoucharType" ColumnName="VoucharType" />
+          <ScalarProperty Name="Particular" ColumnName="Particular" />
+          <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+          <ScalarProperty Name="CityAreaName" ColumnName="CityAreaName" />
+          <ScalarProperty Name="NTN" ColumnName="NTN" />
+          <ScalarProperty Name="STRN" ColumnName="STRN" />
+          <ScalarProperty Name="OfficerAddress" ColumnName="OfficerAddress" />
+          <ScalarProperty Name="CNIC" ColumnName="CNIC" />
+          <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
+          <ScalarProperty Name="SalesOfficer" ColumnName="SalesOfficer" />
+          <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+          <ScalarProperty Name="ReceiptNo" ColumnName="ReceiptNo" />
+          <ScalarProperty Name="PaymentDate" ColumnName="PaymentDate" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_Payments">
+      <EntityTypeMapping TypeName="EmanTradersDBModel.vw_Payments">
+        <MappingFragment StoreEntitySet="vw_Payments">
+          <ScalarProperty Name="BankName" ColumnName="BankName" />
+          <ScalarProperty Name="AccountName" ColumnName="AccountName" />
+          <ScalarProperty Name="OrderNumber" ColumnName="OrderNumber" />
+          <ScalarProperty Name="PaymentHeaderID" ColumnName="PaymentHeaderID" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="BankID" ColumnName="BankID" />
+          <ScalarProperty Name="ModifyBy" ColumnName="ModifyBy" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="RecordId" ColumnName="RecordId" />
+          <ScalarProperty Name="RecordType" ColumnName="RecordType" />
+          <ScalarProperty Name="VoucherType" ColumnName="VoucherType" />
+          <ScalarProperty Name="Particulars" ColumnName="Particulars" />
+          <ScalarProperty Name="TransactionDate" ColumnName="TransactionDate" />
+          <ScalarProperty Name="CheckDate" ColumnName="CheckDate" />
+          <ScalarProperty Name="CheckNumberOrOnlineReciptNumber" ColumnName="CheckNumberOrOnlineReciptNumber" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="PaymentMode" ColumnName="PaymentMode" />
+          <ScalarProperty Name="AccountID" ColumnName="AccountID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_PurchaseDetailForHeader">
+      <EntityTypeMapping TypeName="EmanTradersDBModel.vw_PurchaseDetailForHeader">
+        <MappingFragment StoreEntitySet="vw_PurchaseDetailForHeader">
+          <ScalarProperty Name="PurchaseDetail" ColumnName="PurchaseDetail" />
+          <ScalarProperty Name="PurchaseOrderID" ColumnName="PurchaseOrderID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_PurchaseOrder">
+      <EntityTypeMapping TypeName="EmanTradersDBModel.vw_PurchaseOrder">
+        <MappingFragment StoreEntitySet="vw_PurchaseOrder">
+          <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+          <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+          <ScalarProperty Name="BookerName" ColumnName="BookerName" />
+          <ScalarProperty Name="BookerID" ColumnName="BookerID" />
+          <ScalarProperty Name="VendorCityArea" ColumnName="VendorCityArea" />
+          <ScalarProperty Name="VendorNTN" ColumnName="VendorNTN" />
+          <ScalarProperty Name="VendorSTR" ColumnName="VendorSTR" />
+          <ScalarProperty Name="VendorAddress" ColumnName="VendorAddress" />
+          <ScalarProperty Name="VendorCNIC" ColumnName="VendorCNIC" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="IsTaxInvoice" ColumnName="IsTaxInvoice" />
+          <ScalarProperty Name="TotalSubTotal" ColumnName="TotalSubTotal" />
+          <ScalarProperty Name="TotalQty" ColumnName="TotalQty" />
+          <ScalarProperty Name="TotalPurchasePrice" ColumnName="TotalPurchasePrice" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+          <ScalarProperty Name="PaidAmount" ColumnName="PaidAmount" />
+          <ScalarProperty Name="SalesTax" ColumnName="SalesTax" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="Expense" ColumnName="Expense" />
+          <ScalarProperty Name="SubTotal" ColumnName="SubTotal" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
+          <ScalarProperty Name="PurchaseOrderDate" ColumnName="PurchaseOrderDate" />
+          <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
+          <ScalarProperty Name="VendorName" ColumnName="VendorName" />
+          <ScalarProperty Name="AccountID" ColumnName="AccountID" />
+          <ScalarProperty Name="EntryType" ColumnName="EntryType" />
+          <ScalarProperty Name="EntryTypeID" ColumnName="EntryTypeID" />
+          <ScalarProperty Name="RecordType" ColumnName="RecordType" />
+          <ScalarProperty Name="PONumber" ColumnName="PONumber" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+          <ScalarProperty Name="PurchaseOrderID" ColumnName="PurchaseOrderID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_PurchaseOrderReturn">
+      <EntityTypeMapping TypeName="EmanTradersDBModel.vw_PurchaseOrderReturn">
+        <MappingFragment StoreEntitySet="vw_PurchaseOrderReturn">
+          <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+          <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+          <ScalarProperty Name="BookerName" ColumnName="BookerName" />
+          <ScalarProperty Name="BookerID" ColumnName="BookerID" />
+          <ScalarProperty Name="VendorCityArea" ColumnName="VendorCityArea" />
+          <ScalarProperty Name="VendorNTN" ColumnName="VendorNTN" />
+          <ScalarProperty Name="VendorSTR" ColumnName="VendorSTR" />
+          <ScalarProperty Name="VendorAddress" ColumnName="VendorAddress" />
+          <ScalarProperty Name="VendorCNIC" ColumnName="VendorCNIC" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="IsTaxInvoice" ColumnName="IsTaxInvoice" />
+          <ScalarProperty Name="TotalSubTotal" ColumnName="TotalSubTotal" />
+          <ScalarProperty Name="TotalQty" ColumnName="TotalQty" />
+          <ScalarProperty Name="TotalPurchasePrice" ColumnName="TotalPurchasePrice" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+          <ScalarProperty Name="PaidAmount" ColumnName="PaidAmount" />
+          <ScalarProperty Name="SalesTax" ColumnName="SalesTax" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="Expense" ColumnName="Expense" />
+          <ScalarProperty Name="SubTotal" ColumnName="SubTotal" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
+          <ScalarProperty Name="PurchaseOrderDate" ColumnName="PurchaseOrderDate" />
+          <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
+          <ScalarProperty Name="VendorName" ColumnName="VendorName" />
+          <ScalarProperty Name="AccountID" ColumnName="AccountID" />
+          <ScalarProperty Name="EntryType" ColumnName="EntryType" />
+          <ScalarProperty Name="EntryTypeID" ColumnName="EntryTypeID" />
+          <ScalarProperty Name="RecordType" ColumnName="RecordType" />
+          <ScalarProperty Name="PONumber" ColumnName="PONumber" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+          <ScalarProperty Name="PurchaseOrderReturnID" ColumnName="PurchaseOrderReturnID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_PurchaseReturnDetailForHeader">
+      <EntityTypeMapping TypeName="EmanTradersDBModel.vw_PurchaseReturnDetailForHeader">
+        <MappingFragment StoreEntitySet="vw_PurchaseReturnDetailForHeader">
+          <ScalarProperty Name="PurchaseReturnDetail" ColumnName="PurchaseReturnDetail" />
+          <ScalarProperty Name="PurchaseOrderReturnID" ColumnName="PurchaseOrderReturnID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_SaleOrder">
+      <EntityTypeMapping TypeName="EmanTradersDBModel.vw_SaleOrder">
+        <MappingFragment StoreEntitySet="vw_SaleOrder">
+          <ScalarProperty Name="AccountID" ColumnName="AccountID" />
+          <ScalarProperty Name="SalesOfficer" ColumnName="SalesOfficer" />
+          <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+          <ScalarProperty Name="BookerName" ColumnName="BookerName" />
+          <ScalarProperty Name="BookerID" ColumnName="BookerID" />
+          <ScalarProperty Name="EntryTypeID" ColumnName="EntryTypeID" />
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="SaleOrderDate" ColumnName="SaleOrderDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
+          <ScalarProperty Name="IsTaxInvoice" ColumnName="IsTaxInvoice" />
+          <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+          <ScalarProperty Name="PaidAmount" ColumnName="PaidAmount" />
+          <ScalarProperty Name="SalesTax" ColumnName="SalesTax" />
+          <ScalarProperty Name="Discount2" ColumnName="Discount2" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="Expense" ColumnName="Expense" />
+          <ScalarProperty Name="SubTotal" ColumnName="SubTotal" />
+          <ScalarProperty Name="CustomerCityArea" ColumnName="CustomerCityArea" />
+          <ScalarProperty Name="CustomerNTN" ColumnName="CustomerNTN" />
+          <ScalarProperty Name="CustomerSTRN" ColumnName="CustomerSTRN" />
+          <ScalarProperty Name="CustomerAddress" ColumnName="CustomerAddress" />
+          <ScalarProperty Name="CustomerCNIC" ColumnName="CustomerCNIC" />
+          <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="EntryType" ColumnName="EntryType" />
+          <ScalarProperty Name="RecordType" ColumnName="RecordType" />
+          <ScalarProperty Name="SONumber" ColumnName="SONumber" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+          <ScalarProperty Name="SaleOrderID" ColumnName="SaleOrderID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_SaleOrderReturn">
+      <EntityTypeMapping TypeName="EmanTradersDBModel.vw_SaleOrderReturn">
+        <MappingFragment StoreEntitySet="vw_SaleOrderReturn">
+          <ScalarProperty Name="AccountID" ColumnName="AccountID" />
+          <ScalarProperty Name="SalesOfficer" ColumnName="SalesOfficer" />
+          <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+          <ScalarProperty Name="BookerName" ColumnName="BookerName" />
+          <ScalarProperty Name="BookerID" ColumnName="BookerID" />
+          <ScalarProperty Name="EntryTypeID" ColumnName="EntryTypeID" />
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="SaleOrderDate" ColumnName="SaleOrderDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
+          <ScalarProperty Name="IsTaxInvoice" ColumnName="IsTaxInvoice" />
+          <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+          <ScalarProperty Name="PaidAmount" ColumnName="PaidAmount" />
+          <ScalarProperty Name="SalesTax" ColumnName="SalesTax" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="Expense" ColumnName="Expense" />
+          <ScalarProperty Name="SubTotal" ColumnName="SubTotal" />
+          <ScalarProperty Name="CustomerCityArea" ColumnName="CustomerCityArea" />
+          <ScalarProperty Name="CustomerNTN" ColumnName="CustomerNTN" />
+          <ScalarProperty Name="CustomerSTRN" ColumnName="CustomerSTRN" />
+          <ScalarProperty Name="CustomerAddress" ColumnName="CustomerAddress" />
+          <ScalarProperty Name="CustomerCNIC" ColumnName="CustomerCNIC" />
+          <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="EntryType" ColumnName="EntryType" />
+          <ScalarProperty Name="RecordType" ColumnName="RecordType" />
+          <ScalarProperty Name="SONumber" ColumnName="SONumber" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+          <ScalarProperty Name="SaleOrderReturnID" ColumnName="SaleOrderReturnID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_SalesDetailForHeader">
+      <EntityTypeMapping TypeName="EmanTradersDBModel.vw_SalesDetailForHeader">
+        <MappingFragment StoreEntitySet="vw_SalesDetailForHeader">
+          <ScalarProperty Name="SalesDetail" ColumnName="SalesDetail" />
+          <ScalarProperty Name="SaleOrderID" ColumnName="SaleOrderID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_SalesReturnDetailForHeader">
+      <EntityTypeMapping TypeName="EmanTradersDBModel.vw_SalesReturnDetailForHeader">
+        <MappingFragment StoreEntitySet="vw_SalesReturnDetailForHeader">
+          <ScalarProperty Name="SalesReturnDetail" ColumnName="SalesReturnDetail" />
+          <ScalarProperty Name="SaleOrderReturnID" ColumnName="SaleOrderReturnID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_TotalPaidAmountByOrderNo">
+      <EntityTypeMapping TypeName="EmanTradersDBModel.vw_TotalPaidAmountByOrderNo">
+        <MappingFragment StoreEntitySet="vw_TotalPaidAmountByOrderNo">
+          <ScalarProperty Name="OrderNumber" ColumnName="OrderNumber" />
+          <ScalarProperty Name="TotalPaid" ColumnName="TotalPaid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_Transactions">
+      <EntityTypeMapping TypeName="EmanTradersDBModel.vw_Transactions">
+        <MappingFragment StoreEntitySet="vw_Transactions">
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="CR" ColumnName="CR" />
+          <ScalarProperty Name="DR" ColumnName="DR" />
+          <ScalarProperty Name="TransDate" ColumnName="TransDate" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="RecordType" ColumnName="RecordType" />
+          <ScalarProperty Name="RecordID" ColumnName="RecordID" />
+          <ScalarProperty Name="AccountCode" ColumnName="AccountCode" />
+          <ScalarProperty Name="TransID" ColumnName="TransID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="AddUpdateBankTransferTrans" FunctionName="EmanTradersDBModel.Store.AddUpdateBankTransferTrans" />
+    <FunctionImportMapping FunctionImportName="AddUpdatePurchaseOrderReturnTransactions" FunctionName="EmanTradersDBModel.Store.AddUpdatePurchaseOrderReturnTransactions" />
+    <FunctionImportMapping FunctionImportName="AddUpdatePurchaseOrderTransactions" FunctionName="EmanTradersDBModel.Store.AddUpdatePurchaseOrderTransactions" />
+    <FunctionImportMapping FunctionImportName="AddUpdatePurchasePaymentTransactions" FunctionName="EmanTradersDBModel.Store.AddUpdatePurchasePaymentTransactions" />
+    <FunctionImportMapping FunctionImportName="AddUpdateSaleOrderReturnTransactions" FunctionName="EmanTradersDBModel.Store.AddUpdateSaleOrderReturnTransactions" />
+    <FunctionImportMapping FunctionImportName="AddUpdateSaleOrderTransactions" FunctionName="EmanTradersDBModel.Store.AddUpdateSaleOrderTransactions" />
+    <FunctionImportMapping FunctionImportName="BrowseAccount" FunctionName="EmanTradersDBModel.Store.BrowseAccount">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmanTradersDBModel.BrowseAccount_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+          <ScalarProperty Name="AccountTypeID" ColumnName="AccountTypeID" />
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="AccountTite" ColumnName="AccountTite" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+          <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+          <ScalarProperty Name="OpeningBalance" ColumnName="OpeningBalance" />
+          <ScalarProperty Name="OpeningBalanceDate" ColumnName="OpeningBalanceDate" />
+          <ScalarProperty Name="CNIC" ColumnName="CNIC" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="CityArea" ColumnName="CityArea" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="HiringDate" ColumnName="HiringDate" />
+          <ScalarProperty Name="Salary" ColumnName="Salary" />
+          <ScalarProperty Name="STR" ColumnName="STR" />
+          <ScalarProperty Name="NTN" ColumnName="NTN" />
+          <ScalarProperty Name="IsCashAccount" ColumnName="IsCashAccount" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+          <ScalarProperty Name="ModifyBy" ColumnName="ModifyBy" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="AccountType" ColumnName="AccountType" />
+          <ScalarProperty Name="CityName" ColumnName="CityName" />
+          <ScalarProperty Name="CityAreaName" ColumnName="CityAreaName" />
+          <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="BrowseAccountByID" FunctionName="EmanTradersDBModel.Store.BrowseAccountByID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmanTradersDBModel.BrowseAccountByID_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+          <ScalarProperty Name="AccountTypeID" ColumnName="AccountTypeID" />
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="AccountTite" ColumnName="AccountTite" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+          <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+          <ScalarProperty Name="OpeningBalance" ColumnName="OpeningBalance" />
+          <ScalarProperty Name="OpeningBalanceDate" ColumnName="OpeningBalanceDate" />
+          <ScalarProperty Name="CNIC" ColumnName="CNIC" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="CityArea" ColumnName="CityArea" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="HiringDate" ColumnName="HiringDate" />
+          <ScalarProperty Name="Salary" ColumnName="Salary" />
+          <ScalarProperty Name="STR" ColumnName="STR" />
+          <ScalarProperty Name="NTN" ColumnName="NTN" />
+          <ScalarProperty Name="IsCashAccount" ColumnName="IsCashAccount" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+          <ScalarProperty Name="ModifyBy" ColumnName="ModifyBy" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="AccountType" ColumnName="AccountType" />
+          <ScalarProperty Name="CityNamae" ColumnName="CityNamae" />
+          <ScalarProperty Name="CityAreaName" ColumnName="CityAreaName" />
+          <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="BrowseAccountLedger" FunctionName="EmanTradersDBModel.Store.BrowseAccountLedger" />
+    <FunctionImportMapping FunctionImportName="BrowseAccountLedger_New" FunctionName="EmanTradersDBModel.Store.BrowseAccountLedger_New">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmanTradersDBModel.BrowseAccountLedger_New_Result">
+          <ScalarProperty Name="TransID" ColumnName="TransID" />
+          <ScalarProperty Name="AccountCode" ColumnName="AccountCode" />
+          <ScalarProperty Name="TransDate" ColumnName="TransDate" />
+          <ScalarProperty Name="RecordID" ColumnName="RecordID" />
+          <ScalarProperty Name="RecordType" ColumnName="RecordType" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="DR" ColumnName="DR" />
+          <ScalarProperty Name="CR" ColumnName="CR" />
+          <ScalarProperty Name="Balance" ColumnName="Balance" />
+          <ScalarProperty Name="AccountName" ColumnName="AccountName" />
+          <ScalarProperty Name="ValueType" ColumnName="ValueType" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="BrowseAccountPayableReport" FunctionName="EmanTradersDBModel.Store.BrowseAccountPayableReport">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmanTradersDBModel.BrowseAccountPayableReport_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="TotalPurchase" ColumnName="TotalPurchase" />
+          <ScalarProperty Name="TotalPayment" ColumnName="TotalPayment" />
+          <ScalarProperty Name="TotalPurchaseReturn" ColumnName="TotalPurchaseReturn" />
+          <ScalarProperty Name="PayableAmount" ColumnName="PayableAmount" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="BrowseAccountRecievableReport" FunctionName="EmanTradersDBModel.Store.BrowseAccountRecievableReport">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmanTradersDBModel.BrowseAccountRecievableReport_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="TotalSale" ColumnName="TotalSale" />
+          <ScalarProperty Name="TotalPayment" ColumnName="TotalPayment" />
+          <ScalarProperty Name="TotalSalesReturn" ColumnName="TotalSalesReturn" />
+          <ScalarProperty Name="RecievableAmount" ColumnName="RecievableAmount" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="BrowseAllCityArea" FunctionName="EmanTradersDBModel.Store.BrowseAllCityArea">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmanTradersDBModel.BrowseAllCityArea_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="CityId" ColumnName="CityId" />
+          <ScalarProperty Name="CityName" ColumnName="CityName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="BrowseAllCompanies" FunctionName="EmanTradersDBModel.Store.BrowseAllCompanies">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmanTradersDBModel.BrowseAllCompanies_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="OwnerName" ColumnName="OwnerName" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="ContactNo1" ColumnName="ContactNo1" />
+          <ScalarProperty Name="ContactNo2" ColumnName="ContactNo2" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="RegistrationNumber" ColumnName="RegistrationNumber" />
+          <ScalarProperty Name="ReferenceNumber" ColumnName="ReferenceNumber" />
+          <ScalarProperty Name="STRNNumber" ColumnName="STRNNumber" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="BrowseAllEmployees" FunctionName="EmanTradersDBModel.Store.BrowseAllEmployees">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmanTradersDBModel.BrowseAllEmployees_Result">
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="EmpName" ColumnName="EmpName" />
+          <ScalarProperty Name="CNICNo" ColumnName="CNICNo" />
+          <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+          <ScalarProperty Name="HiringDate" ColumnName="HiringDate" />
+          <ScalarProperty Name="MonthlySalary" ColumnName="MonthlySalary" />
+          <ScalarProperty Name="BranchID" ColumnName="BranchID" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="EmployeeTypeID" ColumnName="EmployeeTypeID" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="BrowseAllItmes" FunctionName="EmanTradersDBModel.Store.BrowseAllItmes">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmanTradersDBModel.BrowseAllItmes_Result">
+          <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+          <ScalarProperty Name="VendorId" ColumnName="VendorId" />
+          <ScalarProperty Name="UnitTypeID" ColumnName="UnitTypeID" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ProductImage" ColumnName="ProductImage" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+          <ScalarProperty Name="IsScrap" ColumnName="IsScrap" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifyBy" ColumnName="ModifyBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="VendorName" ColumnName="VendorName" />
+          <ScalarProperty Name="UnitType" ColumnName="UnitType" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="BrowseAllSubItems" FunctionName="EmanTradersDBModel.Store.BrowseAllSubItems">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmanTradersDBModel.BrowseAllSubItems_Result">
+          <ScalarProperty Name="SubItemID" ColumnName="SubItemID" />
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+          <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+          <ScalarProperty Name="SubItemName" ColumnName="SubItemName" />
+          <ScalarProperty Name="PurchasePrice" ColumnName="PurchasePrice" />
+          <ScalarProperty Name="SalePrice" ColumnName="SalePrice" />
+          <ScalarProperty Name="SalesTax" ColumnName="SalesTax" />
+          <ScalarProperty Name="RPCharges" ColumnName="RPCharges" />
+          <ScalarProperty Name="Length" ColumnName="Length" />
+          <ScalarProperty Name="Width" ColumnName="Width" />
+          <ScalarProperty Name="Height" ColumnName="Height" />
+          <ScalarProperty Name="Diameter" ColumnName="Diameter" />
+          <ScalarProperty Name="OpeningInventoryId" ColumnName="OpeningInventoryId" />
+          <ScalarProperty Name="OpeningInventoryQty" ColumnName="OpeningInventoryQty" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="IsScrap" ColumnName="IsScrap" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="SubItemCode" ColumnName="SubItemCode" />
+          <ScalarProperty Name="PicesPerCorton" ColumnName="PicesPerCorton" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="BrowseBankAccount" FunctionName="EmanTradersDBModel.Store.BrowseBankAccount">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmanTradersDBModel.BrowseBankAccount_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="BankName" ColumnName="BankName" />
+          <ScalarProperty Name="BankBranch" ColumnName="BankBranch" />
+          <ScalarProperty Name="BankBranchCity" ColumnName="BankBranchCity" />
+          <ScalarProperty Name="AccountTitle" ColumnName="AccountTitle" />
+          <ScalarProperty Name="AccountNumber" ColumnName="AccountNumber" />
+          <ScalarProperty Name="OpeningBalance" ColumnName="OpeningBalance" />
+          <ScalarProperty Name="OpeningBalanceDate" ColumnName="OpeningBalanceDate" />
+          <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+          <ScalarProperty Name="ModifyBy" ColumnName="ModifyBy" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="BrowseBankTransfers" FunctionName="EmanTradersDBModel.Store.BrowseBankTransfers">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmanTradersDBModel.BrowseBankTransfers_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="FromBankID" ColumnName="FromBankID" />
+          <ScalarProperty Name="ToBankID" ColumnName="ToBankID" />
+          <ScalarProperty Name="TransferDate" ColumnName="TransferDate" />
+          <ScalarProperty Name="ServiceCharges" ColumnName="ServiceCharges" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="FromBank" ColumnName="FromBank" />
+          <ScalarProperty Name="ToBank" ColumnName="ToBank" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="BrowseCodesByType" FunctionName="EmanTradersDBModel.Store.BrowseCodesByType">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmanTradersDBModel.BrowseCodesByType_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CodeType" ColumnName="CodeType" />
+          <ScalarProperty Name="CodeValue" ColumnName="CodeValue" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+          <ScalarProperty Name="ModifyBy" ColumnName="ModifyBy" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="BrowseCustomerWiseBalanceReport" FunctionName="EmanTradersDBModel.Store.BrowseCustomerWiseBalanceReport">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmanTradersDBModel.BrowseCustomerWiseBalanceReport_Result">
+          <ScalarProperty Name="AccountID" ColumnName="AccountID" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+          <ScalarProperty Name="CityName" ColumnName="CityName" />
+          <ScalarProperty Name="CityAreaID" ColumnName="CityAreaID" />
+          <ScalarProperty Name="CityAreaName" ColumnName="CityAreaName" />
+          <ScalarProperty Name="SalesOfficer" ColumnName="SalesOfficer" />
+          <ScalarProperty Name="OpeningBalance" ColumnName="OpeningBalance" />
+          <ScalarProperty Name="TotalSales" ColumnName="TotalSales" />
+          <ScalarProperty Name="TotalSalesReturn" ColumnName="TotalSalesReturn" />
+          <ScalarProperty Name="TotalAmountReceived" ColumnName="TotalAmountReceived" />
+          <ScalarProperty Name="Balance" ColumnName="Balance" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="BrowseDetailLedgerStatement" FunctionName="EmanTradersDBModel.Store.BrowseDetailLedgerStatement">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmanTradersDBModel.BrowseDetailLedgerStatement_Result">
+          <ScalarProperty Name="AccountId" ColumnName="AccountId" />
+          <ScalarProperty Name="AccountName" ColumnName="AccountName" />
+          <ScalarProperty Name="TransDate" ColumnName="TransDate" />
+          <ScalarProperty Name="Descriptions" ColumnName="Descriptions" />
+          <ScalarProperty Name="InQty" ColumnName="InQty" />
+          <ScalarProperty Name="OutQty" ColumnName="OutQty" />
+          <ScalarProperty Name="Rate" ColumnName="Rate" />
+          <ScalarProperty Name="Dr" ColumnName="Dr" />
+          <ScalarProperty Name="Cr" ColumnName="Cr" />
+          <ScalarProperty Name="Balance" ColumnName="Balance" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="RecordId" ColumnName="RecordId" />
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="ValueType" ColumnName="ValueType" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="BrowseEditPOLine" FunctionName="EmanTradersDBModel.Store.BrowseEditPOLine">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmanTradersDBModel.BrowseEditPOLine_Result">
+          <ScalarProperty Name="IsUsed" ColumnName="IsUsed" />
+          <ScalarProperty Name="PurchaseOrderLineID" ColumnName="PurchaseOrderLineID" />
+          <ScalarProperty Name="PurchaseOrderID" ColumnName="PurchaseOrderID" />
+          <ScalarProperty Name="SubItemID" ColumnName="SubItemID" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="PurchasePrice" ColumnName="PurchasePrice" />
+          <ScalarProperty Name="SalePrice" ColumnName="SalePrice" />
+          <ScalarProperty Name="T_O" ColumnName="T_O" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="SalesTax" ColumnName="SalesTax" />
+          <ScalarProperty Name="SubTotal" ColumnName="SubTotal" />
+          <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="SOLineID" ColumnName="SOLineID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="BrowseEditPOReturnLine" FunctionName="EmanTradersDBModel.Store.BrowseEditPOReturnLine">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmanTradersDBModel.BrowseEditPOReturnLine_Result">
+          <ScalarProperty Name="PurchaseOrderReturnLineID" ColumnName="PurchaseOrderReturnLineID" />
+          <ScalarProperty Name="PurchaseOrderReturnID" ColumnName="PurchaseOrderReturnID" />
+          <ScalarProperty Name="SubItemID" ColumnName="SubItemID" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="PurchasePrice" ColumnName="PurchasePrice" />
+          <ScalarProperty Name="SalePrice" ColumnName="SalePrice" />
+          <ScalarProperty Name="T_O" ColumnName="T_O" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="SalesTax" ColumnName="SalesTax" />
+          <ScalarProperty Name="SubTotal" ColumnName="SubTotal" />
+          <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="SOLineID" ColumnName="SOLineID" />
+          <ScalarProperty Name="IsUsed" ColumnName="IsUsed" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="BrowseExceutionReport" FunctionName="EmanTradersDBModel.Store.BrowseExceutionReport">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmanTradersDBModel.BrowseExceutionReport_Result">
+          <ScalarProperty Name="SubItemID" ColumnName="SubItemID" />
+          <ScalarProperty Name="SubItemName" ColumnName="SubItemName" />
+          <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+          <ScalarProperty Name="ItemName" ColumnName="ItemName" />
+          <ScalarProperty Name="TotalSalesQuantity" ColumnName="TotalSalesQuantity" />
+          <ScalarProperty Name="TotalSalesPrice" ColumnName="TotalSalesPrice" />
+          <ScalarProperty Name="TotalSalesReturnQuantity" ColumnName="TotalSalesReturnQuantity" />
+          <ScalarProperty Name="TotalSalesReturnPrice" ColumnName="TotalSalesReturnPrice" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="BrowseExceutionReport_New" FunctionName="EmanTradersDBModel.Store.BrowseExceutionReport_New">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmanTradersDBModel.BrowseExceutionReport_New_Result">
+          <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+          <ScalarProperty Name="ItemName" ColumnName="ItemName" />
+          <ScalarProperty Name="SubItemName" ColumnName="SubItemName" />
+          <ScalarProperty Name="SubItemID" ColumnName="SubItemID" />
+          <ScalarProperty Name="TotalSQ" ColumnName="TotalSQ" />
+          <ScalarProperty Name="TotalSP" ColumnName="TotalSP" />
+          <ScalarProperty Name="TotalRQ" ColumnName="TotalRQ" />
+          <ScalarProperty Name="TotalRP" ColumnName="TotalRP" />
+          <ScalarProperty Name="RemainingQty" ColumnName="RemainingQty" />
+          <ScalarProperty Name="RemainingPrice" ColumnName="RemainingPrice" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="BrowseExpenses" FunctionName="EmanTradersDBModel.Store.BrowseExpenses">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmanTradersDBModel.BrowseExpenses_Result">
+          <ScalarProperty Name="ExpenseID" ColumnName="ExpenseID" />
+          <ScalarProperty Name="AccountID" ColumnName="AccountID" />
+          <ScalarProperty Name="PaymentModeID" ColumnName="PaymentModeID" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="CheckNumberOrOnlineReciptNumber" ColumnName="CheckNumberOrOnlineReciptNumber" />
+          <ScalarProperty Name="CheckDate" ColumnName="CheckDate" />
+          <ScalarProperty Name="PaymentDate" ColumnName="PaymentDate" />
+          <ScalarProperty Name="Particulars" ColumnName="Particulars" />
+          <ScalarProperty Name="VoucherType" ColumnName="VoucherType" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+          <ScalarProperty Name="ModifyBy" ColumnName="ModifyBy" />
+          <ScalarProperty Name="BankID" ColumnName="BankID" />
+          <ScalarProperty Name="BranchID" ColumnName="BranchID" />
+          <ScalarProperty Name="ExpenseTypeID" ColumnName="ExpenseTypeID" />
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="AccountName" ColumnName="AccountName" />
+          <ScalarProperty Name="PaymentMethod" ColumnName="PaymentMethod" />
+          <ScalarProperty Name="BankName" ColumnName="BankName" />
+          <ScalarProperty Name="ExpenseType" ColumnName="ExpenseType" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="BrowseItemActivityReport" FunctionName="EmanTradersDBModel.Store.BrowseItemActivityReport">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmanTradersDBModel.BrowseItemActivityReport_Result">
+          <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+          <ScalarProperty Name="Descriptions" ColumnName="Descriptions" />
+          <ScalarProperty Name="InWard" ColumnName="InWard" />
+          <ScalarProperty Name="OutWard" ColumnName="OutWard" />
+          <ScalarProperty Name="Balance" ColumnName="Balance" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="BrowseNewNumber" FunctionName="EmanTradersDBModel.Store.BrowseNewNumber" />
+    <FunctionImportMapping FunctionImportName="BrowsePaymentHeader" FunctionName="EmanTradersDBModel.Store.BrowsePaymentHeader">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmanTradersDBModel.BrowsePaymentHeader_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+          <ScalarProperty Name="SalesOfficer" ColumnName="SalesOfficer" />
+          <ScalarProperty Name="SOMobileNo" ColumnName="SOMobileNo" />
+          <ScalarProperty Name="SOCityArea" ColumnName="SOCityArea" />
+          <ScalarProperty Name="ReceiptNo" ColumnName="ReceiptNo" />
+          <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+          <ScalarProperty Name="Particular" ColumnName="Particular" />
+          <ScalarProperty Name="VoucharType" ColumnName="VoucharType" />
+          <ScalarProperty Name="PaymentDetail" ColumnName="PaymentDetail" />
+          <ScalarProperty Name="PaymentDate" ColumnName="PaymentDate" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="BrowsePayments" FunctionName="EmanTradersDBModel.Store.BrowsePayments">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmanTradersDBModel.BrowsePayments_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="AccountID" ColumnName="AccountID" />
+          <ScalarProperty Name="PaymentMode" ColumnName="PaymentMode" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="CheckNumberOrOnlineReciptNumber" ColumnName="CheckNumberOrOnlineReciptNumber" />
+          <ScalarProperty Name="CheckDate" ColumnName="CheckDate" />
+          <ScalarProperty Name="TransactionDate" ColumnName="TransactionDate" />
+          <ScalarProperty Name="Particulars" ColumnName="Particulars" />
+          <ScalarProperty Name="VoucherType" ColumnName="VoucherType" />
+          <ScalarProperty Name="RecordType" ColumnName="RecordType" />
+          <ScalarProperty Name="RecordId" ColumnName="RecordId" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+          <ScalarProperty Name="ModifyBy" ColumnName="ModifyBy" />
+          <ScalarProperty Name="BankID" ColumnName="BankID" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="PaymentHeaderID" ColumnName="PaymentHeaderID" />
+          <ScalarProperty Name="OrderNumber" ColumnName="OrderNumber" />
+          <ScalarProperty Name="AccountName" ColumnName="AccountName" />
+          <ScalarProperty Name="BankName" ColumnName="BankName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="BrowsePODetailBPOID" FunctionName="EmanTradersDBModel.Store.BrowsePODetailBPOID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmanTradersDBModel.BrowsePODetailBPOID_Result">
+          <ScalarProperty Name="ItemName" ColumnName="ItemName" />
+          <ScalarProperty Name="PurchaseOrderLineID" ColumnName="PurchaseOrderLineID" />
+          <ScalarProperty Name="PurchaseOrderID" ColumnName="PurchaseOrderID" />
+          <ScalarProperty Name="SubItemID" ColumnName="SubItemID" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="PurchasePrice" ColumnName="PurchasePrice" />
+          <ScalarProperty Name="SalePrice" ColumnName="SalePrice" />
+          <ScalarProperty Name="T_O" ColumnName="T_O" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="SalesTax" ColumnName="SalesTax" />
+          <ScalarProperty Name="SubTotal" ColumnName="SubTotal" />
+          <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="SOLineID" ColumnName="SOLineID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="BrowsePurchaseOrderReturn" FunctionName="EmanTradersDBModel.Store.BrowsePurchaseOrderReturn">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmanTradersDBModel.BrowsePurchaseOrderReturn_Result">
+          <ScalarProperty Name="PurchaseOrderReturnID" ColumnName="PurchaseOrderReturnID" />
+          <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="PONumber" ColumnName="PONumber" />
+          <ScalarProperty Name="RecordType" ColumnName="RecordType" />
+          <ScalarProperty Name="EntryTypeID" ColumnName="EntryTypeID" />
+          <ScalarProperty Name="EntryType" ColumnName="EntryType" />
+          <ScalarProperty Name="AccountID" ColumnName="AccountID" />
+          <ScalarProperty Name="VendorName" ColumnName="VendorName" />
+          <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
+          <ScalarProperty Name="PurchaseOrderDate" ColumnName="PurchaseOrderDate" />
+          <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="SubTotal" ColumnName="SubTotal" />
+          <ScalarProperty Name="Expense" ColumnName="Expense" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="SalesTax" ColumnName="SalesTax" />
+          <ScalarProperty Name="PaidAmount" ColumnName="PaidAmount" />
+          <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="TotalPurchasePrice" ColumnName="TotalPurchasePrice" />
+          <ScalarProperty Name="TotalQty" ColumnName="TotalQty" />
+          <ScalarProperty Name="TotalSubTotal" ColumnName="TotalSubTotal" />
+          <ScalarProperty Name="IsTaxInvoice" ColumnName="IsTaxInvoice" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="VendorCNIC" ColumnName="VendorCNIC" />
+          <ScalarProperty Name="VendorAddress" ColumnName="VendorAddress" />
+          <ScalarProperty Name="VendorSTR" ColumnName="VendorSTR" />
+          <ScalarProperty Name="VendorNTN" ColumnName="VendorNTN" />
+          <ScalarProperty Name="VendorCityArea" ColumnName="VendorCityArea" />
+          <ScalarProperty Name="BookerID" ColumnName="BookerID" />
+          <ScalarProperty Name="BookerName" ColumnName="BookerName" />
+          <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+          <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="BrowsePurchaseOrders" FunctionName="EmanTradersDBModel.Store.BrowsePurchaseOrders">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmanTradersDBModel.BrowsePurchaseOrders_Result">
+          <ScalarProperty Name="PurchaseOrderID" ColumnName="PurchaseOrderID" />
+          <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="PONumber" ColumnName="PONumber" />
+          <ScalarProperty Name="RecordType" ColumnName="RecordType" />
+          <ScalarProperty Name="EntryTypeID" ColumnName="EntryTypeID" />
+          <ScalarProperty Name="EntryType" ColumnName="EntryType" />
+          <ScalarProperty Name="AccountID" ColumnName="AccountID" />
+          <ScalarProperty Name="VendorName" ColumnName="VendorName" />
+          <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
+          <ScalarProperty Name="PurchaseOrderDate" ColumnName="PurchaseOrderDate" />
+          <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="SubTotal" ColumnName="SubTotal" />
+          <ScalarProperty Name="Expense" ColumnName="Expense" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="SalesTax" ColumnName="SalesTax" />
+          <ScalarProperty Name="PaidAmount" ColumnName="PaidAmount" />
+          <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="TotalPurchasePrice" ColumnName="TotalPurchasePrice" />
+          <ScalarProperty Name="TotalQty" ColumnName="TotalQty" />
+          <ScalarProperty Name="TotalSubTotal" ColumnName="TotalSubTotal" />
+          <ScalarProperty Name="IsTaxInvoice" ColumnName="IsTaxInvoice" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="VendorCNIC" ColumnName="VendorCNIC" />
+          <ScalarProperty Name="VendorAddress" ColumnName="VendorAddress" />
+          <ScalarProperty Name="VendorSTR" ColumnName="VendorSTR" />
+          <ScalarProperty Name="VendorNTN" ColumnName="VendorNTN" />
+          <ScalarProperty Name="VendorCityArea" ColumnName="VendorCityArea" />
+          <ScalarProperty Name="BookerID" ColumnName="BookerID" />
+          <ScalarProperty Name="BookerName" ColumnName="BookerName" />
+          <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+          <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="BrowseSaleOrders" FunctionName="EmanTradersDBModel.Store.BrowseSaleOrders">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmanTradersDBModel.BrowseSaleOrders_Result">
+          <ScalarProperty Name="SaleOrderID" ColumnName="SaleOrderID" />
+          <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="SONumber" ColumnName="SONumber" />
+          <ScalarProperty Name="RecordType" ColumnName="RecordType" />
+          <ScalarProperty Name="EntryType" ColumnName="EntryType" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
+          <ScalarProperty Name="CustomerCNIC" ColumnName="CustomerCNIC" />
+          <ScalarProperty Name="CustomerAddress" ColumnName="CustomerAddress" />
+          <ScalarProperty Name="CustomerSTRN" ColumnName="CustomerSTRN" />
+          <ScalarProperty Name="CustomerNTN" ColumnName="CustomerNTN" />
+          <ScalarProperty Name="CustomerCityArea" ColumnName="CustomerCityArea" />
+          <ScalarProperty Name="SubTotal" ColumnName="SubTotal" />
+          <ScalarProperty Name="Expense" ColumnName="Expense" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="Discount2" ColumnName="Discount2" />
+          <ScalarProperty Name="SalesTax" ColumnName="SalesTax" />
+          <ScalarProperty Name="PaidAmount" ColumnName="PaidAmount" />
+          <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+          <ScalarProperty Name="IsTaxInvoice" ColumnName="IsTaxInvoice" />
+          <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="SaleOrderDate" ColumnName="SaleOrderDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="EntryTypeID" ColumnName="EntryTypeID" />
+          <ScalarProperty Name="BookerID" ColumnName="BookerID" />
+          <ScalarProperty Name="BookerName" ColumnName="BookerName" />
+          <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+          <ScalarProperty Name="SalesOfficer" ColumnName="SalesOfficer" />
+          <ScalarProperty Name="AccountID" ColumnName="AccountID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="BrowseSaleOrdersReturn" FunctionName="EmanTradersDBModel.Store.BrowseSaleOrdersReturn">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmanTradersDBModel.BrowseSaleOrdersReturn_Result">
+          <ScalarProperty Name="SaleOrderReturnID" ColumnName="SaleOrderReturnID" />
+          <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="SONumber" ColumnName="SONumber" />
+          <ScalarProperty Name="RecordType" ColumnName="RecordType" />
+          <ScalarProperty Name="EntryType" ColumnName="EntryType" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
+          <ScalarProperty Name="CustomerCNIC" ColumnName="CustomerCNIC" />
+          <ScalarProperty Name="CustomerAddress" ColumnName="CustomerAddress" />
+          <ScalarProperty Name="CustomerSTRN" ColumnName="CustomerSTRN" />
+          <ScalarProperty Name="CustomerNTN" ColumnName="CustomerNTN" />
+          <ScalarProperty Name="CustomerCityArea" ColumnName="CustomerCityArea" />
+          <ScalarProperty Name="SubTotal" ColumnName="SubTotal" />
+          <ScalarProperty Name="Expense" ColumnName="Expense" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="SalesTax" ColumnName="SalesTax" />
+          <ScalarProperty Name="PaidAmount" ColumnName="PaidAmount" />
+          <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+          <ScalarProperty Name="IsTaxInvoice" ColumnName="IsTaxInvoice" />
+          <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="SaleOrderDate" ColumnName="SaleOrderDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="EntryTypeID" ColumnName="EntryTypeID" />
+          <ScalarProperty Name="BookerID" ColumnName="BookerID" />
+          <ScalarProperty Name="BookerName" ColumnName="BookerName" />
+          <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+          <ScalarProperty Name="SalesOfficer" ColumnName="SalesOfficer" />
+          <ScalarProperty Name="AccountID" ColumnName="AccountID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="BrowseSalesInvoiceSummary" FunctionName="EmanTradersDBModel.Store.BrowseSalesInvoiceSummary">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmanTradersDBModel.BrowseSalesInvoiceSummary_Result">
+          <ScalarProperty Name="SaleOrderID" ColumnName="SaleOrderID" />
+          <ScalarProperty Name="SONumber" ColumnName="SONumber" />
+          <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
+          <ScalarProperty Name="SaleOrderDate" ColumnName="SaleOrderDate" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="PaidAmount" ColumnName="PaidAmount" />
+          <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+          <ScalarProperty Name="SalesOfficer" ColumnName="SalesOfficer" />
+          <ScalarProperty Name="AccountID" ColumnName="AccountID" />
+          <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="BrowseSalesReport" FunctionName="EmanTradersDBModel.Store.BrowseSalesReport">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmanTradersDBModel.BrowseSalesReport_Result">
+          <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+          <ScalarProperty Name="ItemName" ColumnName="ItemName" />
+          <ScalarProperty Name="SubItemName" ColumnName="SubItemName" />
+          <ScalarProperty Name="SubItemID" ColumnName="SubItemID" />
+          <ScalarProperty Name="TotalSQ" ColumnName="TotalSQ" />
+          <ScalarProperty Name="TotalSP" ColumnName="TotalSP" />
+          <ScalarProperty Name="TotalRQ" ColumnName="TotalRQ" />
+          <ScalarProperty Name="TotalRP" ColumnName="TotalRP" />
+          <ScalarProperty Name="RemainingQty" ColumnName="RemainingQty" />
+          <ScalarProperty Name="RemainingPrice" ColumnName="RemainingPrice" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="BrowseSODetailBSOID" FunctionName="EmanTradersDBModel.Store.BrowseSODetailBSOID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmanTradersDBModel.BrowseSODetailBSOID_Result">
+          <ScalarProperty Name="ItemName" ColumnName="ItemName" />
+          <ScalarProperty Name="SaleOrderLineID" ColumnName="SaleOrderLineID" />
+          <ScalarProperty Name="SaleOrderID" ColumnName="SaleOrderID" />
+          <ScalarProperty Name="SubItemID" ColumnName="SubItemID" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="SalePrice" ColumnName="SalePrice" />
+          <ScalarProperty Name="T_O" ColumnName="T_O" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="SalesTax" ColumnName="SalesTax" />
+          <ScalarProperty Name="SubTotal" ColumnName="SubTotal" />
+          <ScalarProperty Name="NetTotalAmount" ColumnName="NetTotalAmount" />
+          <ScalarProperty Name="InventoryID" ColumnName="InventoryID" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="PurchasePrice" ColumnName="PurchasePrice" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="BrowseSOReturnDetailBSOID" FunctionName="EmanTradersDBModel.Store.BrowseSOReturnDetailBSOID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmanTradersDBModel.BrowseSOReturnDetailBSOID_Result">
+          <ScalarProperty Name="ItemName" ColumnName="ItemName" />
+          <ScalarProperty Name="SaleOrderReturnLineID" ColumnName="SaleOrderReturnLineID" />
+          <ScalarProperty Name="SaleOrderReturnID" ColumnName="SaleOrderReturnID" />
+          <ScalarProperty Name="SubItemID" ColumnName="SubItemID" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="SalePrice" ColumnName="SalePrice" />
+          <ScalarProperty Name="T_O" ColumnName="T_O" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="SalesTaxRate" ColumnName="SalesTaxRate" />
+          <ScalarProperty Name="SubTotal" ColumnName="SubTotal" />
+          <ScalarProperty Name="NetTotalAmount" ColumnName="NetTotalAmount" />
+          <ScalarProperty Name="InventoryID" ColumnName="InventoryID" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="PurchasePrice" ColumnName="PurchasePrice" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="DeleteBankTransfer" FunctionName="EmanTradersDBModel.Store.DeleteBankTransfer" />
+    <FunctionImportMapping FunctionImportName="DeleteCashPaymentEntry" FunctionName="EmanTradersDBModel.Store.DeleteCashPaymentEntry" />
+    <FunctionImportMapping FunctionImportName="DeleteExpense" FunctionName="EmanTradersDBModel.Store.DeleteExpense" />
+    <FunctionImportMapping FunctionImportName="DeletePayment" FunctionName="EmanTradersDBModel.Store.DeletePayment" />
+    <FunctionImportMapping FunctionImportName="DeletePaymentTransaction" FunctionName="EmanTradersDBModel.Store.DeletePaymentTransaction" />
+    <FunctionImportMapping FunctionImportName="DeletePOLine" FunctionName="EmanTradersDBModel.Store.DeletePOLine" />
+    <FunctionImportMapping FunctionImportName="DeletePOReturnLine" FunctionName="EmanTradersDBModel.Store.DeletePOReturnLine" />
+    <FunctionImportMapping FunctionImportName="DeletePurchaseOrder" FunctionName="EmanTradersDBModel.Store.DeletePurchaseOrder" />
+    <FunctionImportMapping FunctionImportName="DeletePurchaseOrderReturn" FunctionName="EmanTradersDBModel.Store.DeletePurchaseOrderReturn" />
+    <FunctionImportMapping FunctionImportName="DeleteSaleOrderLine" FunctionName="EmanTradersDBModel.Store.DeleteSaleOrderLine" />
+    <FunctionImportMapping FunctionImportName="DeleteSaleOrderReturnLine" FunctionName="EmanTradersDBModel.Store.DeleteSaleOrderReturnLine" />
+    <FunctionImportMapping FunctionImportName="DeleteSalesOrder" FunctionName="EmanTradersDBModel.Store.DeleteSalesOrder" />
+    <FunctionImportMapping FunctionImportName="DeleteSalesOrderReturn" FunctionName="EmanTradersDBModel.Store.DeleteSalesOrderReturn" />
+    <FunctionImportMapping FunctionImportName="DeleteSinglePaymentTransaction" FunctionName="EmanTradersDBModel.Store.DeleteSinglePaymentTransaction" />
+    <FunctionImportMapping FunctionImportName="GetAccountDueAmountByIDandEndDate" FunctionName="EmanTradersDBModel.Store.GetAccountDueAmountByIDandEndDate" />
+    <FunctionImportMapping FunctionImportName="GetAccountPayableForCompanyPosition" FunctionName="EmanTradersDBModel.Store.GetAccountPayableForCompanyPosition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmanTradersDBModel.GetAccountPayableForCompanyPosition_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="TotalPurchase" ColumnName="TotalPurchase" />
+          <ScalarProperty Name="TotalPayment" ColumnName="TotalPayment" />
+          <ScalarProperty Name="TotalPurchaseReturn" ColumnName="TotalPurchaseReturn" />
+          <ScalarProperty Name="PayableAmount" ColumnName="PayableAmount" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetAccountRecievableForCompanyPosition" FunctionName="EmanTradersDBModel.Store.GetAccountRecievableForCompanyPosition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmanTradersDBModel.GetAccountRecievableForCompanyPosition_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="TotalSale" ColumnName="TotalSale" />
+          <ScalarProperty Name="TotalPayment" ColumnName="TotalPayment" />
+          <ScalarProperty Name="TotalSalesReturn" ColumnName="TotalSalesReturn" />
+          <ScalarProperty Name="RecievableAmount" ColumnName="RecievableAmount" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetBankLedger" FunctionName="EmanTradersDBModel.Store.GetBankLedger">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmanTradersDBModel.GetBankLedger_Result">
+          <ScalarProperty Name="TransID" ColumnName="TransID" />
+          <ScalarProperty Name="AccountCode" ColumnName="AccountCode" />
+          <ScalarProperty Name="TransDate" ColumnName="TransDate" />
+          <ScalarProperty Name="RecordID" ColumnName="RecordID" />
+          <ScalarProperty Name="RecordType" ColumnName="RecordType" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="DR" ColumnName="DR" />
+          <ScalarProperty Name="CR" ColumnName="CR" />
+          <ScalarProperty Name="Balance" ColumnName="Balance" />
+          <ScalarProperty Name="ValueType" ColumnName="ValueType" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetBankLedgerForCompanyPosition" FunctionName="EmanTradersDBModel.Store.GetBankLedgerForCompanyPosition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmanTradersDBModel.GetBankLedgerForCompanyPosition_Result">
+          <ScalarProperty Name="TransID" ColumnName="TransID" />
+          <ScalarProperty Name="AccountCode" ColumnName="AccountCode" />
+          <ScalarProperty Name="TransDate" ColumnName="TransDate" />
+          <ScalarProperty Name="RecordID" ColumnName="RecordID" />
+          <ScalarProperty Name="RecordType" ColumnName="RecordType" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="DR" ColumnName="DR" />
+          <ScalarProperty Name="CR" ColumnName="CR" />
+          <ScalarProperty Name="Balance" ColumnName="Balance" />
+          <ScalarProperty Name="RowNumber" ColumnName="RowNumber" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetCashLedger" FunctionName="EmanTradersDBModel.Store.GetCashLedger">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmanTradersDBModel.GetCashLedger_Result">
+          <ScalarProperty Name="TransID" ColumnName="TransID" />
+          <ScalarProperty Name="AccountCode" ColumnName="AccountCode" />
+          <ScalarProperty Name="TransDate" ColumnName="TransDate" />
+          <ScalarProperty Name="RecordID" ColumnName="RecordID" />
+          <ScalarProperty Name="RecordType" ColumnName="RecordType" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="DR" ColumnName="DR" />
+          <ScalarProperty Name="CR" ColumnName="CR" />
+          <ScalarProperty Name="Balance" ColumnName="Balance" />
+          <ScalarProperty Name="ValueType" ColumnName="ValueType" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetCompanyPositionReport" FunctionName="EmanTradersDBModel.Store.GetCompanyPositionReport">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmanTradersDBModel.GetCompanyPositionReport_Result">
+          <ScalarProperty Name="RecordType" ColumnName="RecordType" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetDailCashReport" FunctionName="EmanTradersDBModel.Store.GetDailCashReport">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmanTradersDBModel.GetDailCashReport_Result">
+          <ScalarProperty Name="TransID" ColumnName="TransID" />
+          <ScalarProperty Name="TransDate" ColumnName="TransDate" />
+          <ScalarProperty Name="AccountCode" ColumnName="AccountCode" />
+          <ScalarProperty Name="ChartOfAccountName" ColumnName="ChartOfAccountName" />
+          <ScalarProperty Name="Particular" ColumnName="Particular" />
+          <ScalarProperty Name="AccountID" ColumnName="AccountID" />
+          <ScalarProperty Name="AccountName" ColumnName="AccountName" />
+          <ScalarProperty Name="DR" ColumnName="DR" />
+          <ScalarProperty Name="CR" ColumnName="CR" />
+          <ScalarProperty Name="Balance" ColumnName="Balance" />
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetDailCashReportForCompanyPosition" FunctionName="EmanTradersDBModel.Store.GetDailCashReportForCompanyPosition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmanTradersDBModel.GetDailCashReportForCompanyPosition_Result">
+          <ScalarProperty Name="TransID" ColumnName="TransID" />
+          <ScalarProperty Name="TransDate" ColumnName="TransDate" />
+          <ScalarProperty Name="AccountCode" ColumnName="AccountCode" />
+          <ScalarProperty Name="ChartOfAccountName" ColumnName="ChartOfAccountName" />
+          <ScalarProperty Name="Particular" ColumnName="Particular" />
+          <ScalarProperty Name="AccountID" ColumnName="AccountID" />
+          <ScalarProperty Name="AccountName" ColumnName="AccountName" />
+          <ScalarProperty Name="DR" ColumnName="DR" />
+          <ScalarProperty Name="CR" ColumnName="CR" />
+          <ScalarProperty Name="Balance" ColumnName="Balance" />
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="RowNumber" ColumnName="RowNumber" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetInventoryItemByID" FunctionName="EmanTradersDBModel.Store.GetInventoryItemByID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmanTradersDBModel.GetInventoryItemByID_Result">
+          <ScalarProperty Name="InventoryID" ColumnName="InventoryID" />
+          <ScalarProperty Name="SubItemID" ColumnName="SubItemID" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="SalePrice" ColumnName="SalePrice" />
+          <ScalarProperty Name="AvailableStock" ColumnName="AvailableStock" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="TransferedTimeStock" ColumnName="TransferedTimeStock" />
+          <ScalarProperty Name="SaleQuantity" ColumnName="SaleQuantity" />
+          <ScalarProperty Name="TotalPOReturnQty" ColumnName="TotalPOReturnQty" />
+          <ScalarProperty Name="TotalSOReturnQty" ColumnName="TotalSOReturnQty" />
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="Descriptions" ColumnName="Descriptions" />
+          <ScalarProperty Name="DescriptionsForDdl" ColumnName="DescriptionsForDdl" />
+          <ScalarProperty Name="SubItemName" ColumnName="SubItemName" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetInventoryItemOnHand" FunctionName="EmanTradersDBModel.Store.GetInventoryItemOnHand">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmanTradersDBModel.GetInventoryItemOnHand_Result">
+          <ScalarProperty Name="SubItemID" ColumnName="SubItemID" />
+          <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+          <ScalarProperty Name="SubItemName" ColumnName="SubItemName" />
+          <ScalarProperty Name="PurchasePrice" ColumnName="PurchasePrice" />
+          <ScalarProperty Name="SalePrice" ColumnName="SalePrice" />
+          <ScalarProperty Name="AvailableStock" ColumnName="AvailableStock" />
+          <ScalarProperty Name="PurchaseQuantity" ColumnName="PurchaseQuantity" />
+          <ScalarProperty Name="SaleQuantity" ColumnName="SaleQuantity" />
+          <ScalarProperty Name="TotalPOReturnQty" ColumnName="TotalPOReturnQty" />
+          <ScalarProperty Name="TotalSOReturnQty" ColumnName="TotalSOReturnQty" />
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="Descriptions" ColumnName="Descriptions" />
+          <ScalarProperty Name="DescriptionsForDdl" ColumnName="DescriptionsForDdl" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetInventoryItemOnHand_New" FunctionName="EmanTradersDBModel.Store.GetInventoryItemOnHand_New">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmanTradersDBModel.GetInventoryItemOnHand_New_Result">
+          <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="SubItemID" ColumnName="SubItemID" />
+          <ScalarProperty Name="SubItemName" ColumnName="SubItemName" />
+          <ScalarProperty Name="Descriptions" ColumnName="Descriptions" />
+          <ScalarProperty Name="PurchasePrice" ColumnName="PurchasePrice" />
+          <ScalarProperty Name="SalePrice" ColumnName="SalePrice" />
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="OpeningInventoryQty" ColumnName="OpeningInventoryQty" />
+          <ScalarProperty Name="PurchaseQuantity" ColumnName="PurchaseQuantity" />
+          <ScalarProperty Name="SaleQuantity" ColumnName="SaleQuantity" />
+          <ScalarProperty Name="TotalPOReturnQty" ColumnName="TotalPOReturnQty" />
+          <ScalarProperty Name="TotalSOReturnQty" ColumnName="TotalSOReturnQty" />
+          <ScalarProperty Name="AvailableStock" ColumnName="AvailableStock" />
+          <ScalarProperty Name="DescriptionsForDdl" ColumnName="DescriptionsForDdl" />
+          <ScalarProperty Name="Column1" ColumnName="Column1" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetMainProductsForDdl" FunctionName="EmanTradersDBModel.Store.GetMainProductsForDdl">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmanTradersDBModel.GetMainProductsForDdl_Result">
+          <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+          <ScalarProperty Name="VendorId" ColumnName="VendorId" />
+          <ScalarProperty Name="UnitTypeID" ColumnName="UnitTypeID" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ProductImage" ColumnName="ProductImage" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+          <ScalarProperty Name="IsScrap" ColumnName="IsScrap" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifyBy" ColumnName="ModifyBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="UnitType" ColumnName="UnitType" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetPaymentsByPaymentHeaderId" FunctionName="EmanTradersDBModel.Store.GetPaymentsByPaymentHeaderId">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmanTradersDBModel.GetPaymentsByPaymentHeaderId_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="AccountID" ColumnName="AccountID" />
+          <ScalarProperty Name="PaymentMode" ColumnName="PaymentMode" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="CheckNumberOrOnlineReciptNumber" ColumnName="CheckNumberOrOnlineReciptNumber" />
+          <ScalarProperty Name="CheckDate" ColumnName="CheckDate" />
+          <ScalarProperty Name="TransactionDate" ColumnName="TransactionDate" />
+          <ScalarProperty Name="Particulars" ColumnName="Particulars" />
+          <ScalarProperty Name="VoucherType" ColumnName="VoucherType" />
+          <ScalarProperty Name="RecordType" ColumnName="RecordType" />
+          <ScalarProperty Name="RecordId" ColumnName="RecordId" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+          <ScalarProperty Name="ModifyBy" ColumnName="ModifyBy" />
+          <ScalarProperty Name="BankID" ColumnName="BankID" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="PaymentHeaderID" ColumnName="PaymentHeaderID" />
+          <ScalarProperty Name="OrderNumber" ColumnName="OrderNumber" />
+          <ScalarProperty Name="BankName" ColumnName="BankName" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetProductsForDdl" FunctionName="EmanTradersDBModel.Store.GetProductsForDdl">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmanTradersDBModel.GetProductsForDdl_Result">
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="SubItemID" ColumnName="SubItemID" />
+          <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="PurchasePrice" ColumnName="PurchasePrice" />
+          <ScalarProperty Name="SalePrice" ColumnName="SalePrice" />
+          <ScalarProperty Name="ItemQtyPerCtn" ColumnName="ItemQtyPerCtn" />
+          <ScalarProperty Name="ProductFullName" ColumnName="ProductFullName" />
+          <ScalarProperty Name="SubItemName" ColumnName="SubItemName" />
+          <ScalarProperty Name="AvailableStock" ColumnName="AvailableStock" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetProductsForDdlWithoutDetail" FunctionName="EmanTradersDBModel.Store.GetProductsForDdlWithoutDetail">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmanTradersDBModel.GetProductsForDdlWithoutDetail_Result">
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="SubItemID" ColumnName="SubItemID" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="SubItemName" ColumnName="SubItemName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetProfitAndLossReport" FunctionName="EmanTradersDBModel.Store.GetProfitAndLossReport">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmanTradersDBModel.GetProfitAndLossReport_Result">
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Detail" ColumnName="Detail" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetProfitAndLossReport_New" FunctionName="EmanTradersDBModel.Store.GetProfitAndLossReport_New">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmanTradersDBModel.GetProfitAndLossReport_New_Result">
+          <ScalarProperty Name="RecordType" ColumnName="RecordType" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetPurhcaseOrderItemById" FunctionName="EmanTradersDBModel.Store.GetPurhcaseOrderItemById">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmanTradersDBModel.GetPurhcaseOrderItemById_Result">
+          <ScalarProperty Name="PurchaseOrderLineID" ColumnName="PurchaseOrderLineID" />
+          <ScalarProperty Name="PurchaseOrderID" ColumnName="PurchaseOrderID" />
+          <ScalarProperty Name="SubItemID" ColumnName="SubItemID" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="PurchasePrice" ColumnName="PurchasePrice" />
+          <ScalarProperty Name="SalePrice" ColumnName="SalePrice" />
+          <ScalarProperty Name="T_O" ColumnName="T_O" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="SalesTax" ColumnName="SalesTax" />
+          <ScalarProperty Name="SubTotal" ColumnName="SubTotal" />
+          <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="SOLineID" ColumnName="SOLineID" />
+          <ScalarProperty Name="ProductFullName" ColumnName="ProductFullName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetPurhcaseOrderReturnItemById" FunctionName="EmanTradersDBModel.Store.GetPurhcaseOrderReturnItemById">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmanTradersDBModel.GetPurhcaseOrderReturnItemById_Result">
+          <ScalarProperty Name="PurchaseOrderReturnLineID" ColumnName="PurchaseOrderReturnLineID" />
+          <ScalarProperty Name="PurchaseOrderReturnID" ColumnName="PurchaseOrderReturnID" />
+          <ScalarProperty Name="SubItemID" ColumnName="SubItemID" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="PurchasePrice" ColumnName="PurchasePrice" />
+          <ScalarProperty Name="SalePrice" ColumnName="SalePrice" />
+          <ScalarProperty Name="T_O" ColumnName="T_O" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="SalesTax" ColumnName="SalesTax" />
+          <ScalarProperty Name="SubTotal" ColumnName="SubTotal" />
+          <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="SOLineID" ColumnName="SOLineID" />
+          <ScalarProperty Name="ProductFullName" ColumnName="ProductFullName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetSalesOrderItemById" FunctionName="EmanTradersDBModel.Store.GetSalesOrderItemById">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmanTradersDBModel.GetSalesOrderItemById_Result">
+          <ScalarProperty Name="SaleOrderLineID" ColumnName="SaleOrderLineID" />
+          <ScalarProperty Name="SaleOrderID" ColumnName="SaleOrderID" />
+          <ScalarProperty Name="SubItemID" ColumnName="SubItemID" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="SalePrice" ColumnName="SalePrice" />
+          <ScalarProperty Name="T_O" ColumnName="T_O" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="SalesTax" ColumnName="SalesTax" />
+          <ScalarProperty Name="SubTotal" ColumnName="SubTotal" />
+          <ScalarProperty Name="NetTotalAmount" ColumnName="NetTotalAmount" />
+          <ScalarProperty Name="InventoryID" ColumnName="InventoryID" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="PurchasePrice" ColumnName="PurchasePrice" />
+          <ScalarProperty Name="ProductFullName" ColumnName="ProductFullName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetSalesOrderReturnItemById" FunctionName="EmanTradersDBModel.Store.GetSalesOrderReturnItemById">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmanTradersDBModel.GetSalesOrderReturnItemById_Result">
+          <ScalarProperty Name="SaleOrderReturnLineID" ColumnName="SaleOrderReturnLineID" />
+          <ScalarProperty Name="SaleOrderReturnID" ColumnName="SaleOrderReturnID" />
+          <ScalarProperty Name="SubItemID" ColumnName="SubItemID" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="SalePrice" ColumnName="SalePrice" />
+          <ScalarProperty Name="T_O" ColumnName="T_O" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="SalesTaxRate" ColumnName="SalesTaxRate" />
+          <ScalarProperty Name="SubTotal" ColumnName="SubTotal" />
+          <ScalarProperty Name="NetTotalAmount" ColumnName="NetTotalAmount" />
+          <ScalarProperty Name="InventoryID" ColumnName="InventoryID" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="PurchasePrice" ColumnName="PurchasePrice" />
+          <ScalarProperty Name="ProductFullName" ColumnName="ProductFullName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetTotalRecovery" FunctionName="EmanTradersDBModel.Store.GetTotalRecovery" />
+    <FunctionImportMapping FunctionImportName="GetTotalRecoveryForSalesReport" FunctionName="EmanTradersDBModel.Store.GetTotalRecoveryForSalesReport" />
+    <FunctionImportMapping FunctionImportName="InsertAndDeleteLedgerEntry" FunctionName="EmanTradersDBModel.Store.InsertAndDeleteLedgerEntry" />
+    <FunctionImportMapping FunctionImportName="InsertPayment" FunctionName="EmanTradersDBModel.Store.InsertPayment" />
+    <FunctionImportMapping FunctionImportName="InsertProfitAndLoss" FunctionName="EmanTradersDBModel.Store.InsertProfitAndLoss" />
+    <FunctionImportMapping FunctionImportName="ResetDatabase" FunctionName="EmanTradersDBModel.Store.ResetDatabase" />
+    <FunctionImportMapping FunctionImportName="sp_ProfitAndLostSummary" FunctionName="EmanTradersDBModel.Store.sp_ProfitAndLostSummary">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmanTradersDBModel.sp_ProfitAndLostSummary_Result">
+          <ScalarProperty Name="RecordType" ColumnName="RecordType" />
+          <ScalarProperty Name="SONumber" ColumnName="SONumber" />
+          <ScalarProperty Name="SODate" ColumnName="SODate" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="PurchasePrice" ColumnName="PurchasePrice" />
+          <ScalarProperty Name="SalesPrice" ColumnName="SalesPrice" />
+          <ScalarProperty Name="TotalPurchase" ColumnName="TotalPurchase" />
+          <ScalarProperty Name="TotalSale" ColumnName="TotalSale" />
+          <ScalarProperty Name="TotalProfit" ColumnName="TotalProfit" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="UpdatePayment" FunctionName="EmanTradersDBModel.Store.UpdatePayment" />
+  </EntityContainerMapping>
+</Mapping>

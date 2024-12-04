@@ -1,0 +1,122 @@
+﻿@model SamaaMarketing.Models.ViewModels.SaleInvoiceSummaryViewModel
+
+@{
+    ViewBag.Title = "SaleInvoiceSummaryReport";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@using (Html.BeginForm("", "", FormMethod.Post, new { id = "Sale Invoice Summary" }))
+{
+    <div class="row clearfix">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="card">
+                <div class="header">
+                    <h2>
+                        Sale Invoice Summary
+                    </h2>
+                </div>
+                <div class="body">
+                    <div class="row clearfix">
+                        <div class="col-md-3">
+                            <p>
+                                <b>Sale Officer</b>
+                            </p>
+                            @Html.DropDownListFor(x => x.SaleOfficerID, Model.SalesOfficerList, "Select", new { @class = "form-control input-sm js-select2" })
+                        </div>
+                        <div class="col-md-3">
+                            <p>
+                                <b>Customer</b>
+                            </p>
+                            @Html.DropDownListFor(x => x.CustomerID, Model.CustomerList, "Select", new { @class = "form-control input-sm js-select2" })
+                        </div>
+                        <div class="col-md-2">
+                            <p>
+                                <b>From Date</b>
+                            </p>
+                            @Html.TextBoxFor(x => x.StartDate, new { @class = "form-control icon-download appdatepicker" })
+                        </div>
+                        <div class="col-md-2">
+                            <p>
+                                <b>To Date</b>
+                            </p>
+                            @Html.TextBoxFor(x => x.EndDate, new { @class = "form-control icon-download appdatepicker" })
+                        </div>
+                        <div class="col-md-2">
+                            <button id="btnSearch" type="button" style="top: 30px;" class="btn btn-danger waves-effect btn-sm">Search</button>
+                            <button id="btnPrint" type="button" style="top: 30px;" class="btn btn-danger waves-effect Print btn-sm">Print</button>
+                        </div>
+                    </div>
+
+                    <div class="row dvPrint" id="dvPrint">
+                        <div class="col-md-12">
+                            <div id="divResult"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<script>
+
+    $(document).ready(function () {
+        setTimeout(function (s, e) {
+            LoadOrders('-1','-1',$('#StartDate').val(),$('#EndDate').val());
+        }, 50);
+
+        $('#btnSearch').on('click', function () {
+            LoadOrders(
+                ($('#SaleOfficerID').val() == "" ? -1 : $('#SaleOfficerID').val()),
+                ($('#CustomerID').val() == "" ? -1 : $('#CustomerID').val()),
+                $('#StartDate').val(),
+                $('#EndDate').val());
+        });
+
+        $('.Print').on('click', function () {
+            var soId = ($('#SaleOfficerID').val() == "" ? -1 : $('#SaleOfficerID').val());
+            var cusID = ($('#CustomerID').val() == "" ? -1 : $('#CustomerID').val());
+            var st = $('#StartDate').val();
+            var ed = $('#EndDate').val();
+
+            var src = getWebsiteUrl +  "/PrintReports/ViewReport.aspx?ReportName=SaleInvoiceSummary&SaleOfficerID=" + soId + "&CustomerID=" + cusID + "&StartDate=" + st.replace("/", "|").replace("/", "|") + "&EndDate=" + ed.replace("/", "|").replace("/", "|");
+            PrintPopup(src, 950, 650, "Sale Invoice Summary");
+        });
+
+    });
+
+
+
+    function LoadOrders(saesOffierId,customerId, startdate, enddate) {
+        $('.page-loader-wrapper').show();
+        var model = {
+            SaleOfficerID: saesOffierId,
+            CustomerID: customerId,
+            StartDate: startdate,
+            EndDate: enddate
+        };
+
+        $.ajax({
+            type: "POST",
+            url: '@Url.Action("GetSaleInvoiceSummarySearch")',
+            data: JSON.stringify(model),
+            contentType: "application/json; charset=utf-8",
+            dataType: "html",
+            success: function (response) {
+                $('#divResult').html(response);
+                $('.page-loader-wrapper').hide();
+            },
+            failure: function (response) {
+                $('.page-loader-wrapper').hide();
+                alert(response.responseText);
+            },
+            error: function (response) {
+                $('.page-loader-wrapper').hide();
+                alert(response.responseText);
+            }
+        });
+    }
+
+</script>
+
+

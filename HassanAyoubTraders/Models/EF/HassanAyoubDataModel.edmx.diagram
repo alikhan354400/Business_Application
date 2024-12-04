@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="783e9ef09f564e20858b523ab5b9923e" Name="Diagram1" ZoomLevel="90">
+        <EntityTypeShape EntityType="HassanAyoubDBModel.Account" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="HassanAyoubDBModel.AspNetRole" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="HassanAyoubDBModel.AspNetUserClaim" Width="1.5" PointX="2.75" PointY="3.75" />
+        <EntityTypeShape EntityType="HassanAyoubDBModel.AspNetUserLogin" Width="1.5" PointX="4.75" PointY="0.75" />
+        <EntityTypeShape EntityType="HassanAyoubDBModel.AspNetUserRole" Width="1.5" PointX="4.75" PointY="3.75" />
+        <EntityTypeShape EntityType="HassanAyoubDBModel.AspNetUser" Width="1.5" PointX="6.75" PointY="0.75" />
+        <EntityTypeShape EntityType="HassanAyoubDBModel.Bank" Width="1.5" PointX="2.75" PointY="6.75" />
+        <EntityTypeShape EntityType="HassanAyoubDBModel.BankToBankTransfer" Width="1.5" PointX="4.75" PointY="6.75" />
+        <EntityTypeShape EntityType="HassanAyoubDBModel.ChartofAccount" Width="1.5" PointX="6.75" PointY="5.75" />
+        <EntityTypeShape EntityType="HassanAyoubDBModel.ChartOfAccountType" Width="1.5" PointX="8.75" PointY="0.75" />
+        <EntityTypeShape EntityType="HassanAyoubDBModel.City" Width="1.5" PointX="8.75" PointY="3.75" />
+        <EntityTypeShape EntityType="HassanAyoubDBModel.CityArea" Width="1.5" PointX="8.75" PointY="6.75" />
+        <EntityTypeShape EntityType="HassanAyoubDBModel.Code" Width="1.5" PointX="6.75" PointY="9.75" />
+        <EntityTypeShape EntityType="HassanAyoubDBModel.CompanyInformation" Width="1.5" PointX="8.75" PointY="9.75" />
+        <EntityTypeShape EntityType="HassanAyoubDBModel.Country" Width="1.5" PointX="10.75" PointY="0.75" />
+        <EntityTypeShape EntityType="HassanAyoubDBModel.Designation" Width="1.5" PointX="10.75" PointY="3.75" />
+        <EntityTypeShape EntityType="HassanAyoubDBModel.Employee" Width="1.5" PointX="10.75" PointY="7.75" />
+        <EntityTypeShape EntityType="HassanAyoubDBModel.EntryType" Width="1.5" PointX="0.75" PointY="11.75" />
+        <EntityTypeShape EntityType="HassanAyoubDBModel.Expens" Width="1.5" PointX="2.75" PointY="11.75" />
+        <EntityTypeShape EntityType="HassanAyoubDBModel.Inventory" Width="1.5" PointX="12.75" PointY="0.75" />
+        <EntityTypeShape EntityType="HassanAyoubDBModel.Item" Width="1.5" PointX="12.75" PointY="4.75" />
+        <EntityTypeShape EntityType="HassanAyoubDBModel.Payment" Width="1.5" PointX="12.75" PointY="9.75" />
+        <EntityTypeShape EntityType="HassanAyoubDBModel.PaymentHeader" Width="1.5" PointX="4.75" PointY="13.75" />
+        <EntityTypeShape EntityType="HassanAyoubDBModel.ProfitAndLoss" Width="1.5" PointX="14.75" PointY="0.75" />
+        <EntityTypeShape EntityType="HassanAyoubDBModel.PurchaseOrder" Width="1.5" PointX="14.75" PointY="3.75" />
+        <EntityTypeShape EntityType="HassanAyoubDBModel.PurchaseOrderLine" Width="1.5" PointX="6.75" PointY="14.75" />
+        <EntityTypeShape EntityType="HassanAyoubDBModel.PurchaseOrderReturn" Width="1.5" PointX="8.75" PointY="14.75" />
+        <EntityTypeShape EntityType="HassanAyoubDBModel.PurchaseOrderReturnLine" Width="1.5" PointX="14.75" PointY="10.75" />
+        <EntityTypeShape EntityType="HassanAyoubDBModel.SaleOrder" Width="1.5" PointX="10.75" PointY="15.75" />
+        <EntityTypeShape EntityType="HassanAyoubDBModel.SaleOrderLine" Width="1.5" PointX="12.75" PointY="15.75" />
+        <EntityTypeShape EntityType="HassanAyoubDBModel.SaleOrderReturn" Width="1.5" PointX="14.75" PointY="15.75" />
+        <EntityTypeShape EntityType="HassanAyoubDBModel.SaleOrderReturnLine" Width="1.5" PointX="16.75" PointY="0.75" />
+        <EntityTypeShape EntityType="HassanAyoubDBModel.StatesByCountryID" Width="1.5" PointX="16.75" PointY="5.75" />
+        <EntityTypeShape EntityType="HassanAyoubDBModel.SubItem" Width="1.5" PointX="16.75" PointY="8.75" />
+        <EntityTypeShape EntityType="HassanAyoubDBModel.Transaction" Width="1.5" PointX="16.75" PointY="15.75" />
+        <EntityTypeShape EntityType="HassanAyoubDBModel.UnitType" Width="1.5" PointX="0.75" PointY="17.75" />
+        <EntityTypeShape EntityType="HassanAyoubDBModel.User" Width="1.5" PointX="2.75" PointY="17.75" />
+        <EntityTypeShape EntityType="HassanAyoubDBModel.vv_ProfitLossExpanse" Width="1.5" PointX="18.75" PointY="0.75" />
+        <EntityTypeShape EntityType="HassanAyoubDBModel.vv_ProfitLossGrossProfit" Width="1.5" PointX="18.75" PointY="3.75" />
+        <EntityTypeShape EntityType="HassanAyoubDBModel.vv_ProfitLossPurchase" Width="1.5" PointX="18.75" PointY="6.75" />
+        <EntityTypeShape EntityType="HassanAyoubDBModel.vv_ProfitLossSale" Width="1.5" PointX="18.75" PointY="9.75" />
+        <EntityTypeShape EntityType="HassanAyoubDBModel.vw_AccountTransactions" Width="1.5" PointX="18.75" PointY="12.75" />
+        <EntityTypeShape EntityType="HassanAyoubDBModel.vw_BankTransactions" Width="1.5" PointX="18.75" PointY="17.75" />
+        <EntityTypeShape EntityType="HassanAyoubDBModel.vw_CashTransactions" Width="1.5" PointX="4.75" PointY="19.75" />
+        <EntityTypeShape EntityType="HassanAyoubDBModel.vw_DailyCashTransactions" Width="1.5" PointX="20.75" PointY="0.75" />
+        <EntityTypeShape EntityType="HassanAyoubDBModel.vw_DetailLedgerStatement" Width="1.5" PointX="20.75" PointY="4.75" />
+        <EntityTypeShape EntityType="HassanAyoubDBModel.vw_GetAvailableStockBySubItem" Width="1.5" PointX="20.75" PointY="9.75" />
+        <EntityTypeShape EntityType="HassanAyoubDBModel.vw_GetCustomerAllTableInfo" Width="1.5" PointX="20.75" PointY="12.75" />
+        <EntityTypeShape EntityType="HassanAyoubDBModel.vw_GetPOReReturnItemForInventory" Width="1.5" PointX="20.75" PointY="16.75" />
+        <EntityTypeShape EntityType="HassanAyoubDBModel.vw_GetSalesItemForInventory" Width="1.5" PointX="20.75" PointY="19.75" />
+        <EntityTypeShape EntityType="HassanAyoubDBModel.vw_GetSOReReturnItemForInventory" Width="1.5" PointX="0.75" PointY="21.75" />
+        <EntityTypeShape EntityType="HassanAyoubDBModel.vw_InvertoryOnHandAllTypes" Width="1.5" PointX="6.75" PointY="21.75" />
+        <EntityTypeShape EntityType="HassanAyoubDBModel.vw_PaymentDetailForHeader" Width="1.5" PointX="22.75" PointY="0.75" />
+        <EntityTypeShape EntityType="HassanAyoubDBModel.vw_PaymentHeader" Width="1.5" PointX="22.75" PointY="3.75" />
+        <EntityTypeShape EntityType="HassanAyoubDBModel.vw_Payments" Width="1.5" PointX="8.75" PointY="22.75" />
+        <EntityTypeShape EntityType="HassanAyoubDBModel.vw_PurchaseDetailForHeader" Width="1.5" PointX="22.75" PointY="9.75" />
+        <EntityTypeShape EntityType="HassanAyoubDBModel.vw_PurchaseOrder" Width="1.5" PointX="10.75" PointY="22.75" />
+        <EntityTypeShape EntityType="HassanAyoubDBModel.vw_PurchaseOrderReturn" Width="1.5" PointX="22.75" PointY="12.75" />
+        <EntityTypeShape EntityType="HassanAyoubDBModel.vw_PurchaseReturnDetailForHeader" Width="1.5" PointX="12.75" PointY="22.75" />
+        <EntityTypeShape EntityType="HassanAyoubDBModel.vw_SaleOrder" Width="1.5" PointX="14.75" PointY="22.75" />
+        <EntityTypeShape EntityType="HassanAyoubDBModel.vw_SaleOrderReturn" Width="1.5" PointX="16.75" PointY="22.75" />
+        <EntityTypeShape EntityType="HassanAyoubDBModel.vw_SalesDetailForHeader" Width="1.5" PointX="18.75" PointY="22.75" />
+        <EntityTypeShape EntityType="HassanAyoubDBModel.vw_SalesReturnDetailForHeader" Width="1.5" PointX="20.75" PointY="22.75" />
+        <EntityTypeShape EntityType="HassanAyoubDBModel.vw_TotalPaidAmountByOrderNo" Width="1.5" PointX="22.75" PointY="21.75" />
+        <EntityTypeShape EntityType="HassanAyoubDBModel.vw_Transactions" Width="1.5" PointX="24.75" PointY="0.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

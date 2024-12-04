@@ -1,0 +1,167 @@
+﻿@model HassanAyoubTraders.Models.ViewModels.AddEditAccountViewModel
+
+@{
+    ViewBag.Title = "ExpenseAccountAddEdit";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+<style>
+    .textRight {
+        text-align: right;
+    }
+
+    [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: absolute !important;
+        left: 20px !important;
+        opacity: 1 !important;
+    }
+</style>
+
+@using (Html.BeginForm("", "", FormMethod.Post, new { id = "add-edit-vendor" }))
+{
+
+    @Html.HiddenFor(x => x.AccountID)
+
+    <div class="row clearfix">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="card">
+                <div class="header">
+                    <h2>
+                        Add/Edit Expense Accounts
+                    </h2>
+                </div>
+                <div class="body">
+                    <div class="row clearfix">
+                        <div class="col-md-3">
+                            <p>
+                                <b>Name</b>
+                            </p>
+
+                            @Html.TextBoxFor(x => x.Name, new { @class = "form-control " })
+                        </div>
+ 
+                        <div class="col-md-3">
+                            <p>
+                                <b>Opening Balance</b>
+                            </p>
+                            @Html.TextBoxFor(x => x.OpeningBalance, new { @class = "form-control AllowDecimal " })
+                        </div>
+                        <div class="col-md-3">
+                            <p>
+                                <b>Opening Balance Date</b>
+                            </p>
+                            @Html.TextBoxFor(x => x.OpeningBalanceDate, new { @class = "form-control appdatepicker openingBalanceDate" })
+                        </div>
+
+                        <div class="col-md-12">
+                            <p>
+                                <b>Address</b>
+                            </p>
+                            @Html.TextAreaFor(x => x.Address, new { @class = "form-control  " })
+                        </div>
+
+                    </div>
+                    <div class="row clearfix">
+                        <div class="col-md-5 pull-right">
+                            <button type="button" id="btnSave" class="btn btn-success waves-effect pull-right">
+                                <i class="material-icons">add_shopping_cart</i>
+                                <span>Save</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+}
+
+
+<script>
+
+    $(document).ready(function () {
+
+        $("#add-edit-vendor :input").change(function () {
+            $("#add-edit-vendor").data("changed", true);
+        });
+
+        $('#btnSave').click(function () {
+            Checkout();
+        });
+    });
+
+    function Checkout() {
+        var table = document.getElementById("tbl"); //get the table
+
+        if (!$("#add-edit-vendor").data("changed")) {
+            AlertMsg('', '<strong>Form is unchanged!</strong>', 'warning');
+            return;
+        }
+
+        if ($("#Name").val() == "") {
+            AlertMsg('<strong>Required!</strong>', 'Name is Required!', 'info');
+            $('#Name').focus();
+            return;
+        }
+
+        if ($("#OpeningBalance").val() == "") {
+            AlertMsg('<strong>Required!</strong>', 'Opening Balance is Required!', 'info');
+            $('#OpeningBalance').focus();
+            return;
+        }
+
+        if (($("#OpeningBalance").val() != "" && parseFloat($("#OpeningBalance").val()) > 0) && $('.openingBalanceDate').val() == "") {
+            AlertMsg('<strong>Required!</strong>', 'Opening Balance Date is required', 'info');
+            $('.openingBalanceDate').focus();
+            return false;
+        }
+
+        var model = GetDataModel();
+
+        //Show loader here
+        $('.page-loader-wrapper').show();
+        $.ajax({
+            contentType: 'application/json; charset=utf-8',
+            dataType: 'json',
+            type: 'POST',
+            url: "@Url.Action("SaveAccount")",
+            data: JSON.stringify(model),
+            success: function (res) {
+                if (res.Result == "OK") {
+                    AlertMsg('<strong>Success! </strong>', res.detail, 'info');
+                    setTimeout(function () {
+                        location.reload();
+                    }, 2000);
+                }
+                else {
+                    $('.page-loader-wrapper').hide();
+                    AlertMsg('<strong>Error! </strong>', res.detail, 'info');
+                }
+            },
+            failure: function (response) {
+                $('#result').html(response);
+            },
+            complete: function () {
+                $('.page-loader-wrapper').hide();
+            }
+        });
+    }
+
+    function GetDataModel() {
+        var model = {
+            AccountTypeID: $('#AccountTypeID').val(),
+            Name: $('#Name').val(),
+            MobileNo: "",
+            OpeningBalance: $('#OpeningBalance').val(),
+            OpeningBalanceDate: $('.openingBalanceDate').val(),
+            AccountID: $('#AccountID').val(),
+            CNIC: "",
+            Address: $('#Address').val(),
+            STR: "",
+            NTN: "",
+            IsCashAccount: false
+        };
+        return model;
+    }
+</script>

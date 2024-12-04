@@ -1,0 +1,46 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Blank.master.cs" Inherits="SamaaMarketing.PrintReports.Blank" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>SamaaMarketing</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link href="~/Content/plugins/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css" rel="stylesheet" />
+    <link href="~/Content/plugins/bootstrap-datepicker/css/bootstrap-datepicker.css" rel="stylesheet" />
+
+    <script src='<%= Page.ResolveUrl("~/Scripts/jquery-1.10.2.min.js") %>'></script>
+    <script src='<%= Page.ResolveUrl("~/Content/plugins/bootstrap/js/bootstrap.js") %>'></script>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+
+    <script src='<%= Page.ResolveUrl("~/Content/plugins/momentjs/moment.js") %>'></script>
+    <script src='<%= Page.ResolveUrl("~/Content/plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js") %>'></script>
+    <script src='<%= Page.ResolveUrl("~/Content/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js") %>'></script>
+
+    <script>
+        $(document).ready(function () {
+
+            $('.date-picker').datepicker({
+                autoclose: true,
+                format: 'dd/mm/yyyy',
+            });
+
+        });
+
+    </script>
+
+</body>
+</html>
