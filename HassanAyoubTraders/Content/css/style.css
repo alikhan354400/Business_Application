@@ -1910,7 +1910,7 @@
     color: #fff !important; }
 
 .bg-green {
-  background-color: #4CAF50 !important;
+  background-color: #003135 !important;
   color: #fff; }
   .bg-green .content .text,
   .bg-green .content .number {
@@ -1959,7 +1959,7 @@
     color: #fff !important; }
 
 .bg-brown {
-  background-color: #795548 !important;
+  background-color: #024950 !important;
   color: #fff; }
   .bg-brown .content .text,
   .bg-brown .content .number {
@@ -3057,14 +3057,15 @@ section.content {
 
 /* Infobox ===================================== */
 .info-box {
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-  height: 80px;
-  display: flex;
-  cursor: default;
-  background-color: #fff;
-  position: relative;
-  overflow: hidden;
-  margin-bottom: 30px; }
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    height: 80px;
+    display: flex;
+    cursor: default;
+    background-color: #0FA4AF;
+    overflow: hidden;
+    margin-bottom: 30px;
+    border-radius: 20px;
+}
   .info-box .icon {
     display: inline-block;
     text-align: center;
@@ -5479,7 +5480,8 @@ fieldset[disabled] .form-control {
   font-weight: bold; }
 
 .breadcrumb-bg-brown {
-  background-color: #795548 !important; }
+    background-color: #024950 !important;
+}
   .breadcrumb-bg-brown li {
     color: #fff !important; }
     .breadcrumb-bg-brown li a {
@@ -5744,9 +5746,10 @@ fieldset[disabled] .form-control {
   stroke: #4CAF50; }
 
 .list-group .list-group-bg-green {
-  background-color: #4CAF50;
-  border: none;
-  color: #fff; }
+    background-color: #003135;
+    border: none;
+    color: #fff;
+}
   .list-group .list-group-bg-green:hover, .list-group .list-group-bg-green:focus {
     background-color: #4CAF50;
     color: #fff;

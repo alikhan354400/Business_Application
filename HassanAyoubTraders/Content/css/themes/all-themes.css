@@ -1,22 +1,22 @@
 ﻿.theme-red .navbar {
-    background-color: #1508cf;
+    background-color: #0FA4AF;
 }
 
 .theme-red .navbar-brand {
-    color:  #fff;
+    color: #3572EF;
 }
     .theme-red .navbar-brand:hover {
-        color:  #fff;
+        color: #3572EF;
     }
     .theme-red .navbar-brand:active {
-        color:  #fff;
+        color: #3572EF;
     }
     .theme-red .navbar-brand:focus {
-        color:  #fff;
+        color: #3572EF;
     }
 
 .theme-red .nav > li > a {
-    color:  #fff;
+    color: #3572EF;
 }
   .theme-red .nav > li > a:hover {
     background-color: transparent; }
@@ -31,13 +31,13 @@
     background-color: transparent; }
 
 .theme-red .bars {
-    color:  #fff;
+    color: #3572EF;
 }
 
 .theme-red .sidebar .menu .list li.active {
   background-color: transparent; }
     .theme-red .sidebar .menu .list li.active > :first-child i, .theme-red .sidebar .menu .list li.active > :first-child span {
-        color: #1508cf;
+        color: #3572EF;
     }
 
 .theme-red .sidebar .menu .list .toggled {
@@ -47,7 +47,7 @@
   background-color: transparent; }
 
 .theme-red .sidebar .legal {
-    background-color:  #fff;
+    background-color: #3572EF;
 }
     .theme-red .sidebar .legal .copyright a {
         color: #1508cf !important;
@@ -57,21 +57,21 @@
   background-color: #E91E63; }
 
 .theme-pink .navbar-brand {
-    color:  #fff;
+    color: #3572EF;
 }
     .theme-pink .navbar-brand:hover {
-        color:  #fff;
+        color:  #3572EF;
     }
     .theme-pink .navbar-brand:active {
-        color:  #fff;
+        color:  #3572EF;
     }
     .theme-pink .navbar-brand:focus {
-        color:  #fff;
+        color:  #3572EF;
     }
 
 .theme-pink .nav > li > a {
-    color:  #fff;
-}
+    color:  #3572EF;
+
   .theme-pink .nav > li > a:hover {
     background-color: transparent; }
   .theme-pink .nav > li > a:focus {
@@ -85,7 +85,7 @@
     background-color: transparent; }
 
 .theme-pink .bars {
-    color:  #fff;
+    color:  #3572EF;
 }
 
 .theme-pink .sidebar .menu .list li.active {
@@ -100,7 +100,7 @@
   background-color: transparent; }
 
 .theme-pink .sidebar .legal {
-    background-color:  #fff;
+    background-color:  #3572EF;
 }
   .theme-pink .sidebar .legal .copyright a {
     color: #E91E63 !important; }
@@ -109,20 +109,20 @@
   background-color: #9C27B0; }
 
 .theme-purple .navbar-brand {
-    color:  #fff;
+    color:  #3572EF;
 }
     .theme-purple .navbar-brand:hover {
-        color:  #fff;
+        color:  #3572EF;
     }
     .theme-purple .navbar-brand:active {
-        color:  #fff;
+        color:  #3572EF;
     }
     .theme-purple .navbar-brand:focus {
-        color:  #fff;
+        color:  #3572EF;
     }
 
 .theme-purple .nav > li > a {
-    color:  #fff;
+    color:  #3572EF;
 }
   .theme-purple .nav > li > a:hover {
     background-color: transparent; }
@@ -137,7 +137,7 @@
     background-color: transparent; }
 
 .theme-purple .bars {
-    color:  #fff;
+    color:  #3572EF;
 }
 
 .theme-purple .sidebar .menu .list li.active {
@@ -152,7 +152,7 @@
   background-color: transparent; }
 
 .theme-purple .sidebar .legal {
-    background-color:  #fff;
+    background-color:  #3572EF;
 }
   .theme-purple .sidebar .legal .copyright a {
     color: #9C27B0 !important; }
@@ -161,16 +161,16 @@
   background-color: #673AB7; }
 
 .theme-deep-purple .navbar-brand {
-  color:   #fff; }
+  color:   #3572EF; }
   .theme-deep-purple .navbar-brand:hover {
-    color:   #fff; }
+    color:   #3572EF; }
   .theme-deep-purple .navbar-brand:active {
-    color:   #fff; }
+    color:   #3572EF; }
   .theme-deep-purple .navbar-brand:focus {
-    color:   #fff; }
+    color:   #3572EF; }
 
 .theme-deep-purple .nav > li > a {
-  color:   #fff; }
+  color:   #3572EF; }
   .theme-deep-purple .nav > li > a:hover {
     background-color: transparent; }
   .theme-deep-purple .nav > li > a:focus {
@@ -184,7 +184,7 @@
     background-color: transparent; }
 
 .theme-deep-purple .bars {
-  color:   #fff; }
+  color:   #3572EF; }
 
 .theme-deep-purple .sidebar .menu .list li.active {
   background-color: transparent; }
@@ -198,7 +198,7 @@
   background-color: transparent; }
 
 .theme-deep-purple .sidebar .legal {
-  background-color:   #fff; }
+  background-color:   #3572EF; }
   .theme-deep-purple .sidebar .legal .copyright a {
     color: #673AB7 !important; }
 
@@ -206,16 +206,16 @@
   background-color: #3F51B5; }
 
 .theme-indigo .navbar-brand {
-  color:   #fff; }
+  color:   #3572EF; }
   .theme-indigo .navbar-brand:hover {
-    color:   #fff; }
+    color:   #3572EF; }
   .theme-indigo .navbar-brand:active {
-    color:   #fff; }
+    color:   #3572EF; }
   .theme-indigo .navbar-brand:focus {
-    color:   #fff; }
+    color:   #3572EF; }
 
 .theme-indigo .nav > li > a {
-  color:   #fff; }
+  color:   #3572EF; }
   .theme-indigo .nav > li > a:hover {
     background-color: transparent; }
   .theme-indigo .nav > li > a:focus {
@@ -229,7 +229,7 @@
     background-color: transparent; }
 
 .theme-indigo .bars {
-  color:   #fff; }
+  color:   #3572EF; }
 
 .theme-indigo .sidebar .menu .list li.active {
   background-color: transparent; }
@@ -243,7 +243,7 @@
   background-color: transparent; }
 
 .theme-indigo .sidebar .legal {
-  background-color:   #fff; }
+  background-color:   #3572EF; }
   .theme-indigo .sidebar .legal .copyright a {
     color: #3F51B5 !important; }
 
@@ -251,16 +251,16 @@
   background-color: #2196F3; }
 
 .theme-blue .navbar-brand {
-  color:   #fff; }
+  color:   #3572EF; }
   .theme-blue .navbar-brand:hover {
-    color:   #fff; }
+    color:   #3572EF; }
   .theme-blue .navbar-brand:active {
-    color:   #fff; }
+    color:   #3572EF; }
   .theme-blue .navbar-brand:focus {
-    color:   #fff; }
+    color:   #3572EF; }
 
 .theme-blue .nav > li > a {
-  color:   #fff; }
+  color:   #3572EF; }
   .theme-blue .nav > li > a:hover {
     background-color: transparent; }
   .theme-blue .nav > li > a:focus {
@@ -274,7 +274,7 @@
     background-color: transparent; }
 
 .theme-blue .bars {
-  color:   #fff; }
+  color:   #3572EF; }
 
 .theme-blue .sidebar .menu .list li.active {
   background-color: transparent; }
@@ -288,7 +288,7 @@
   background-color: transparent; }
 
 .theme-blue .sidebar .legal {
-  background-color:   #fff; }
+  background-color:   #3572EF; }
   .theme-blue .sidebar .legal .copyright a {
     color: #2196F3 !important; }
 
@@ -296,16 +296,16 @@
   background-color: #03A9F4; }
 
 .theme-light-blue .navbar-brand {
-  color:   #fff; }
+  color:   #3572EF; }
   .theme-light-blue .navbar-brand:hover {
-    color:   #fff; }
+    color:   #3572EF; }
   .theme-light-blue .navbar-brand:active {
-    color:   #fff; }
+    color:   #3572EF; }
   .theme-light-blue .navbar-brand:focus {
-    color:   #fff; }
+    color:   #3572EF; }
 
 .theme-light-blue .nav > li > a {
-  color:   #fff; }
+  color:   #3572EF; }
   .theme-light-blue .nav > li > a:hover {
     background-color: transparent; }
   .theme-light-blue .nav > li > a:focus {
@@ -319,7 +319,7 @@
     background-color: transparent; }
 
 .theme-light-blue .bars {
-  color:   #fff; }
+  color:   #3572EF; }
 
 .theme-light-blue .sidebar .menu .list li.active {
   background-color: transparent; }
@@ -333,7 +333,7 @@
   background-color: transparent; }
 
 .theme-light-blue .sidebar .legal {
-  background-color:   #fff; }
+  background-color:   #3572EF; }
   .theme-light-blue .sidebar .legal .copyright a {
     color: #03A9F4 !important; }
 
@@ -341,16 +341,16 @@
   background-color: #00BCD4; }
 
 .theme-cyan .navbar-brand {
-  color:   #fff; }
+  color:   #3572EF; }
   .theme-cyan .navbar-brand:hover {
-    color:   #fff; }
+    color:   #3572EF; }
   .theme-cyan .navbar-brand:active {
-    color:   #fff; }
+    color:   #3572EF; }
   .theme-cyan .navbar-brand:focus {
-    color:   #fff; }
+    color:   #3572EF; }
 
 .theme-cyan .nav > li > a {
-  color:   #fff; }
+  color:   #3572EF; }
   .theme-cyan .nav > li > a:hover {
     background-color: transparent; }
   .theme-cyan .nav > li > a:focus {
@@ -364,7 +364,7 @@
     background-color: transparent; }
 
 .theme-cyan .bars {
-  color:   #fff; }
+  color:   #3572EF; }
 
 .theme-cyan .sidebar .menu .list li.active {
   background-color: transparent; }
@@ -378,7 +378,7 @@
   background-color: transparent; }
 
 .theme-cyan .sidebar .legal {
-  background-color:   #fff; }
+  background-color:   #3572EF; }
   .theme-cyan .sidebar .legal .copyright a {
     color: #00BCD4 !important; }
 
@@ -386,16 +386,16 @@
   background-color: #009688; }
 
 .theme-teal .navbar-brand {
-  color:   #fff; }
+  color:   #3572EF; }
   .theme-teal .navbar-brand:hover {
-    color:   #fff; }
+    color:   #3572EF; }
   .theme-teal .navbar-brand:active {
-    color:   #fff; }
+    color:   #3572EF; }
   .theme-teal .navbar-brand:focus {
-    color:   #fff; }
+    color:   #3572EF; }
 
 .theme-teal .nav > li > a {
-  color:   #fff; }
+  color:   #3572EF; }
   .theme-teal .nav > li > a:hover {
     background-color: transparent; }
   .theme-teal .nav > li > a:focus {
@@ -409,7 +409,7 @@
     background-color: transparent; }
 
 .theme-teal .bars {
-  color:   #fff; }
+  color:   #3572EF; }
 
 .theme-teal .sidebar .menu .list li.active {
   background-color: transparent; }
@@ -423,7 +423,7 @@
   background-color: transparent; }
 
 .theme-teal .sidebar .legal {
-  background-color:   #fff; }
+  background-color:   #3572EF; }
   .theme-teal .sidebar .legal .copyright a {
     color: #009688 !important; }
 
@@ -431,16 +431,16 @@
   background-color: #4CAF50; }
 
 .theme-green .navbar-brand {
-  color:   #fff; }
+  color:   #3572EF; }
   .theme-green .navbar-brand:hover {
-    color:   #fff; }
+    color:   #3572EF; }
   .theme-green .navbar-brand:active {
-    color:   #fff; }
+    color:   #3572EF; }
   .theme-green .navbar-brand:focus {
-    color:   #fff; }
+    color:   #3572EF; }
 
 .theme-green .nav > li > a {
-  color:   #fff; }
+  color:   #3572EF; }
   .theme-green .nav > li > a:hover {
     background-color: transparent; }
   .theme-green .nav > li > a:focus {
@@ -454,7 +454,7 @@
     background-color: transparent; }
 
 .theme-green .bars {
-  color:   #fff; }
+  color:   #3572EF; }
 
 .theme-green .sidebar .menu .list li.active {
   background-color: transparent; }
@@ -468,7 +468,7 @@
   background-color: transparent; }
 
 .theme-green .sidebar .legal {
-  background-color:   #fff; }
+  background-color:   #3572EF; }
   .theme-green .sidebar .legal .copyright a {
     color: #4CAF50 !important; }
 
@@ -476,16 +476,16 @@
   background-color: #8BC34A; }
 
 .theme-light-green .navbar-brand {
-  color:   #fff; }
+  color:   #3572EF; }
   .theme-light-green .navbar-brand:hover {
-    color:   #fff; }
+    color:   #3572EF; }
   .theme-light-green .navbar-brand:active {
-    color:   #fff; }
+    color:   #3572EF; }
   .theme-light-green .navbar-brand:focus {
-    color:   #fff; }
+    color:   #3572EF; }
 
 .theme-light-green .nav > li > a {
-  color:   #fff; }
+  color:   #3572EF; }
   .theme-light-green .nav > li > a:hover {
     background-color: transparent; }
   .theme-light-green .nav > li > a:focus {
@@ -499,7 +499,7 @@
     background-color: transparent; }
 
 .theme-light-green .bars {
-  color:   #fff; }
+  color:   #3572EF; }
 
 .theme-light-green .sidebar .menu .list li.active {
   background-color: transparent; }
@@ -513,7 +513,7 @@
   background-color: transparent; }
 
 .theme-light-green .sidebar .legal {
-  background-color:   #fff; }
+  background-color:   #3572EF; }
   .theme-light-green .sidebar .legal .copyright a {
     color: #8BC34A !important; }
 
@@ -521,16 +521,16 @@
   background-color: #CDDC39; }
 
 .theme-lime .navbar-brand {
-  color:   #fff; }
+  color:   #3572EF; }
   .theme-lime .navbar-brand:hover {
-    color:   #fff; }
+    color:   #3572EF; }
   .theme-lime .navbar-brand:active {
-    color:   #fff; }
+    color:   #3572EF; }
   .theme-lime .navbar-brand:focus {
-    color:   #fff; }
+    color:   #3572EF; }
 
 .theme-lime .nav > li > a {
-  color:   #fff; }
+  color:   #3572EF; }
   .theme-lime .nav > li > a:hover {
     background-color: transparent; }
   .theme-lime .nav > li > a:focus {
@@ -544,7 +544,7 @@
     background-color: transparent; }
 
 .theme-lime .bars {
-  color:   #fff; }
+  color:   #3572EF; }
 
 .theme-lime .sidebar .menu .list li.active {
   background-color: transparent; }
@@ -558,7 +558,7 @@
   background-color: transparent; }
 
 .theme-lime .sidebar .legal {
-  background-color:   #fff; }
+  background-color:   #3572EF; }
   .theme-lime .sidebar .legal .copyright a {
     color: #CDDC39 !important; }
 
@@ -566,16 +566,16 @@
   background-color: #FFEB3B; }
 
 .theme-yellow .navbar-brand {
-  color:   #fff; }
+  color:   #3572EF; }
   .theme-yellow .navbar-brand:hover {
-    color:   #fff; }
+    color:   #3572EF; }
   .theme-yellow .navbar-brand:active {
-    color:   #fff; }
+    color:   #3572EF; }
   .theme-yellow .navbar-brand:focus {
-    color:   #fff; }
+    color:   #3572EF; }
 
 .theme-yellow .nav > li > a {
-  color:   #fff; }
+  color:   #3572EF; }
   .theme-yellow .nav > li > a:hover {
     background-color: transparent; }
   .theme-yellow .nav > li > a:focus {
@@ -589,7 +589,7 @@
     background-color: transparent; }
 
 .theme-yellow .bars {
-  color:   #fff; }
+  color:   #3572EF; }
 
 .theme-yellow .sidebar .menu .list li.active {
   background-color: transparent; }
@@ -603,7 +603,7 @@
   background-color: transparent; }
 
 .theme-yellow .sidebar .legal {
-  background-color:   #fff; }
+  background-color:   #3572EF; }
   .theme-yellow .sidebar .legal .copyright a {
     color: #FFEB3B !important; }
 
@@ -611,16 +611,16 @@
   background-color: #FFC107; }
 
 .theme-amber .navbar-brand {
-  color:   #fff; }
+  color:   #3572EF; }
   .theme-amber .navbar-brand:hover {
-    color:   #fff; }
+    color:   #3572EF; }
   .theme-amber .navbar-brand:active {
-    color:   #fff; }
+    color:   #3572EF; }
   .theme-amber .navbar-brand:focus {
-    color:   #fff; }
+    color:   #3572EF; }
 
 .theme-amber .nav > li > a {
-  color:   #fff; }
+  color:   #3572EF; }
   .theme-amber .nav > li > a:hover {
     background-color: transparent; }
   .theme-amber .nav > li > a:focus {
@@ -634,7 +634,7 @@
     background-color: transparent; }
 
 .theme-amber .bars {
-  color:   #fff; }
+  color:   #3572EF; }
 
 .theme-amber .sidebar .menu .list li.active {
   background-color: transparent; }
@@ -648,7 +648,7 @@
   background-color: transparent; }
 
 .theme-amber .sidebar .legal {
-  background-color:   #fff; }
+  background-color:   #3572EF; }
   .theme-amber .sidebar .legal .copyright a {
     color: #FFC107 !important; }
 
@@ -656,16 +656,16 @@
   background-color: #FF9800; }
 
 .theme-orange .navbar-brand {
-  color:   #fff; }
+  color:   #3572EF; }
   .theme-orange .navbar-brand:hover {
-    color:   #fff; }
+    color:   #3572EF; }
   .theme-orange .navbar-brand:active {
-    color:   #fff; }
+    color:   #3572EF; }
   .theme-orange .navbar-brand:focus {
-    color:   #fff; }
+    color:   #3572EF; }
 
 .theme-orange .nav > li > a {
-  color:   #fff; }
+  color:   #3572EF; }
   .theme-orange .nav > li > a:hover {
     background-color: transparent; }
   .theme-orange .nav > li > a:focus {
@@ -679,7 +679,7 @@
     background-color: transparent; }
 
 .theme-orange .bars {
-  color:   #fff; }
+  color:   #3572EF; }
 
 .theme-orange .sidebar .menu .list li.active {
   background-color: transparent; }
@@ -693,7 +693,7 @@
   background-color: transparent; }
 
 .theme-orange .sidebar .legal {
-  background-color:   #fff; }
+  background-color:   #3572EF; }
   .theme-orange .sidebar .legal .copyright a {
     color: #FF9800 !important; }
 
@@ -701,16 +701,16 @@
   background-color: #FF5722; }
 
 .theme-deep-orange .navbar-brand {
-  color:   #fff; }
+  color:   #3572EF; }
   .theme-deep-orange .navbar-brand:hover {
-    color:   #fff; }
+    color:   #3572EF; }
   .theme-deep-orange .navbar-brand:active {
-    color:   #fff; }
+    color:   #3572EF; }
   .theme-deep-orange .navbar-brand:focus {
-    color:   #fff; }
+    color:   #3572EF; }
 
 .theme-deep-orange .nav > li > a {
-  color:   #fff; }
+  color:   #3572EF; }
   .theme-deep-orange .nav > li > a:hover {
     background-color: transparent; }
   .theme-deep-orange .nav > li > a:focus {
@@ -724,7 +724,7 @@
     background-color: transparent; }
 
 .theme-deep-orange .bars {
-  color:   #fff; }
+  color:   #3572EF; }
 
 .theme-deep-orange .sidebar .menu .list li.active {
   background-color: transparent; }
@@ -738,7 +738,7 @@
   background-color: transparent; }
 
 .theme-deep-orange .sidebar .legal {
-  background-color:   #fff; }
+  background-color:   #3572EF; }
   .theme-deep-orange .sidebar .legal .copyright a {
     color: #FF5722 !important; }
 
@@ -746,16 +746,16 @@
   background-color: #795548; }
 
 .theme-brown .navbar-brand {
-  color:   #fff; }
+  color:   #3572EF; }
   .theme-brown .navbar-brand:hover {
-    color:   #fff; }
+    color:   #3572EF; }
   .theme-brown .navbar-brand:active {
-    color:   #fff; }
+    color:   #3572EF; }
   .theme-brown .navbar-brand:focus {
-    color:   #fff; }
+    color:   #3572EF; }
 
 .theme-brown .nav > li > a {
-  color:   #fff; }
+  color:   #3572EF; }
   .theme-brown .nav > li > a:hover {
     background-color: transparent; }
   .theme-brown .nav > li > a:focus {
@@ -769,7 +769,7 @@
     background-color: transparent; }
 
 .theme-brown .bars {
-  color:   #fff; }
+  color:   #3572EF; }
 
 .theme-brown .sidebar .menu .list li.active {
   background-color: transparent; }
@@ -783,7 +783,7 @@
   background-color: transparent; }
 
 .theme-brown .sidebar .legal {
-  background-color:   #fff; }
+  background-color:   #3572EF; }
   .theme-brown .sidebar .legal .copyright a {
     color: #795548 !important; }
 
@@ -791,16 +791,16 @@
   background-color: #9E9E9E; }
 
 .theme-grey .navbar-brand {
-  color:   #fff; }
+  color:   #3572EF; }
   .theme-grey .navbar-brand:hover {
-    color:   #fff; }
+    color:   #3572EF; }
   .theme-grey .navbar-brand:active {
-    color:   #fff; }
+    color:   #3572EF; }
   .theme-grey .navbar-brand:focus {
-    color:   #fff; }
+    color:   #3572EF; }
 
 .theme-grey .nav > li > a {
-  color:   #fff; }
+  color:   #3572EF; }
   .theme-grey .nav > li > a:hover {
     background-color: transparent; }
   .theme-grey .nav > li > a:focus {
@@ -814,7 +814,7 @@
     background-color: transparent; }
 
 .theme-grey .bars {
-  color:   #fff; }
+  color:   #3572EF; }
 
 .theme-grey .sidebar .menu .list li.active {
   background-color: transparent; }
@@ -828,7 +828,7 @@
   background-color: transparent; }
 
 .theme-grey .sidebar .legal {
-  background-color:   #fff; }
+  background-color:   #3572EF; }
   .theme-grey .sidebar .legal .copyright a {
     color: #9E9E9E !important; }
 
@@ -836,16 +836,16 @@
   background-color: #607D8B; }
 
 .theme-blue-grey .navbar-brand {
-  color:   #fff; }
+  color:   #3572EF; }
   .theme-blue-grey .navbar-brand:hover {
-    color:   #fff; }
+    color:   #3572EF; }
   .theme-blue-grey .navbar-brand:active {
-    color:   #fff; }
+    color:   #3572EF; }
   .theme-blue-grey .navbar-brand:focus {
-    color:   #fff; }
+    color:   #3572EF; }
 
 .theme-blue-grey .nav > li > a {
-  color:   #fff; }
+  color:   #3572EF; }
   .theme-blue-grey .nav > li > a:hover {
     background-color: transparent; }
   .theme-blue-grey .nav > li > a:focus {
@@ -859,7 +859,7 @@
     background-color: transparent; }
 
 .theme-blue-grey .bars {
-  color:   #fff; }
+  color:   #3572EF; }
 
 .theme-blue-grey .sidebar .menu .list li.active {
   background-color: transparent; }
@@ -873,7 +873,7 @@
   background-color: transparent; }
 
 .theme-blue-grey .sidebar .legal {
-  background-color:   #fff; }
+  background-color:   #3572EF; }
   .theme-blue-grey .sidebar .legal .copyright a {
     color: #607D8B !important; }
 
@@ -881,16 +881,16 @@
   background-color: #000; }
 
 .theme-black .navbar-brand {
-  color:   #fff; }
+  color:   #3572EF; }
   .theme-black .navbar-brand:hover {
-    color:   #fff; }
+    color:   #3572EF; }
   .theme-black .navbar-brand:active {
-    color:   #fff; }
+    color:   #3572EF; }
   .theme-black .navbar-brand:focus {
-    color:   #fff; }
+    color:   #3572EF; }
 
 .theme-black .nav > li > a {
-  color:   #fff; }
+  color:   #3572EF; }
   .theme-black .nav > li > a:hover {
     background-color: transparent; }
   .theme-black .nav > li > a:focus {
@@ -904,7 +904,7 @@
     background-color: transparent; }
 
 .theme-black .bars {
-  color:   #fff; }
+  color:   #3572EF; }
 
 .theme-black .sidebar .menu .list li.active {
   background-color: transparent; }
@@ -918,7 +918,7 @@
   background-color: transparent; }
 
 .theme-black .sidebar .legal {
-  background-color:   #fff; }
+  background-color:   #3572EF; }
   .theme-black .sidebar .legal .copyright a {
     color: #000 !important; }
 

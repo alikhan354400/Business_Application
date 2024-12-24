@@ -77,8 +77,12 @@ namespace HassanAyoubTraders.Controllers
                 return View(model);
             }
 
-            // This doesn't count login failures towards account lockout
-            // To enable password failures to trigger account lockout, change to shouldLockout: true
+            if (ValidateLicense())
+            {
+                ModelState.AddModelError("", "Alert...! Your licesnse has been expired. Please contact to administrator.");
+                return View(model);
+            }
+
             var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
 
             switch (result)
@@ -90,7 +94,6 @@ namespace HassanAyoubTraders.Controllers
 
                     var roles = string.Join(",", UserManager.GetRoles<ApplicationUser, string>(user.Id).ToList());
 
-                    FormsAuthentication.SetAuthCookie(model.Email, false);
                     var authTicket = new FormsAuthenticationTicket(1, model.Email, DateTime.Now, DateTime.Now.AddMinutes(20), false, roles);
                     string encryptedTicket = FormsAuthentication.Encrypt(authTicket);
                     var authCookie = new HttpCookie(FormsAuthentication.FormsCookieName, encryptedTicket);
@@ -505,5 +508,20 @@ namespace HassanAyoubTraders.Controllers
             }
         }
         #endregion
+
+
+
+
+        public bool ValidateLicense()
+        {
+            bool isValid = false;
+            string expiryDateString = ConfigurationManager.AppSettings["ExpiryDate"];
+            if (!string.IsNullOrEmpty(expiryDateString))
+            {
+                DateTime expiryDate = DateTime.ParseExact(expiryDateString, "MM/dd/yyyy", null);
+                isValid = (expiryDate <= DateTime.Now);
+            }
+            return isValid;
+        }
     }
 }
